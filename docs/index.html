@@ -1,0 +1,266 @@
+<!doctype html><html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+#topper {
+ display:grid;
+ grid-template-columns:36px auto max-content ;
+ align-items:center;padding: 5px;
+  text-align: center
+}
+#bottoms {
+ display:grid;
+ grid-template-columns:120px max-content;
+ align-items:center;padding: 5px;
+  text-align: center;
+  width:100%
+}
+#topper_logo{font-weight: bold}
+html{
+  font-family:  Arial, Helvetica Neue, Helvetica, sans-serif;
+  background:
+  linear-gradient(27deg, rgba(255,0,0,.8) 20%,blueviolet) 100%;
+  background-attachment: fixed;
+color:white;
+height:100%}
+*{color: white;text-decoration: none;padding: 5px}
+#stats{display:grid;grid-template-columns: 50% 50%;}
+#recents{display:grid;grid-template-columns: auto;}
+#stabutton{background:
+  linear-gradient(-153deg, rgba(255,0,0,.4) 20%,rgba(138,43,226,0.5)) 100%;}
+.statbox{margin: 8px;border-radius:15px;background:
+  linear-gradient(-153deg, rgba(255,0,0,.4) 20%,rgba(138,43,226,0.5)) 100%;}
+.recentbox{margin: 8px;border-radius:15px;background:
+  linear-gradient(-127deg, rgba(255,0,0,.4) 20%,rgba(138,43,226,0.5)) 100%;
+  font-size:0.75em}
+.statnumb{font-size: 1.25em}
+.statname{font-size: 0.75em}
+
+.statbox div:last-child{border-radius:15px;background:
+  linear-gradient(120deg, rgba(255,90,0,.4) 20%,rgba(138,143,246,0.5)) 100%;}
+.recentbox div:last-child{border-radius:15px;background:
+  linear-gradient(120deg, rgba(255,90,0,.4) 20%,rgba(138,143,246,0.5)) 100%;
+  font-size:0.75em}
+div#intro{display: grid;grid-template-columns: auto;font-size: 0.7em}
+#joinus{font-size: 0.7em}
+
+div#intro_pro,div#intro_sol{
+  background:linear-gradient(-153deg, rgba(255,0,0,.4) 20%,rgba(138,43,226,0.5)) 100%;
+  padding:2px;
+  border-radius:15px
+}
+div#intro_sol_dis{background:
+  linear-gradient(120deg, rgba(255,90,0,.4) 20%,rgba(138,143,246,0.5)) 100%;
+  border-radius:15px;
+  width:60%
+}
+#exploreus{display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center}
+
+
+
+@media(min-width:641px){
+	#stats{
+		border-radius:15px;
+		display:grid;
+		grid-template-columns:33% 33% 33%;}
+	#recents{
+		border-radius:15px;
+		display:grid;
+		grid-template-columns:50% 50%;}
+	div#intro{
+		grid-template-columns: auto 30% 30% auto; grid-gap:20px}
+  #exploreus{
+    display: grid;grid-template-columns: auto auto auto auto auto;font-size:1em;text-align: center}
+}
+</style>
+<div id="topper">
+	<div id="topper_explore">
+		++<br>++
+	</div>
+	<div id="topper_links">
+		<a href="https://discord.gg">Discord</a>
+		<a href="https://t.me/daibase">Telegram</a>
+	</div>
+	<div id="topper_logo">
+		<span onclick="this.textContent=this.textContent=='FEES 🟢'?this.textContent='FEES ⭕':this.textContent='FEES 🟢'">DAIX ⭕</span><!--🟢-->
+	</div>
+</div>
+
+
+
+<div id="exploreus">
+	<div>
+	<img width="64px" src="img/shopping.svg">
+	<br>Buy\Sell
+	</div>
+	<div>
+	<img width="64px" src="img/exchange.svg">
+	<br>Swaps
+	</div>
+	<div>
+	<img width="64px" src="img/farmer.svg">
+	<br>Farms
+	</div>
+	<div>
+	<img width="64px" src="img/govern.svg">
+	<br>D.A.O.
+	</div>
+	<div>
+	<img width="64px" src="img/toll.svg">
+	<br>Revenues
+	</div>
+	<div>
+	<img width="64px" src="img/charts.svg">
+	<br>Dashboard
+	</div>
+	<div>
+	<img width="64px" src="img/guide.svg">
+	<br>Guides
+	</div>
+	<div>
+	<img width="64px" src="img/roadmap.svg">
+	<br>Roadmap
+	</div>
+	<div>
+	<img width="64px" src="img/news.svg">
+	<br>News
+	</div>
+</div>
+
+<div id="stats">
+	<div class="statbox">
+		<div class="stat statnumb">000</div>
+		<div class="stat statname">Epochs Elapsed</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Unique Users</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000</div>
+		<div class="stat statname">№ of Blockchains</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Number of Tokens</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Transaction Count</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Total Value Locked</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Average Price</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">№ of DEX pairs</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Total Supply</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Market Cap.</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000</div>
+		<div class="stat statname">Total Revenue</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">more info…?</div>
+		<div class="stat statname">Open Dashboard</div>
+	</div>
+</div>
+
+
+<div style="font-size:1.25em" align="center"><i>DAIX is growing!</i>
+<hr style="padding:0;width:50%">
+
+
+<div>
+<div id="intro">
+	<div></div>
+	<div id="intro_sol">
+	<i><b>What are DAIX tokens?</b><br>
+	<br>DAIX is a cross-chain compatible array of tokens that target the multi-collateral DAI stablecoin.<br>
+	<br>Native DAIX tokens are non-collateralized algorithmic stablecoins, issued on multiple chains:<div align="left" style="margin:10px">
+	xDAIX : xDAI blockchain<br>
+	bDAIX : Binance Smart Chain<br>
+	sDAIX : Solana (SOL)<br>
+	bDAIX : Polygon (MATIC)<br>
+	eDAIX : Ethereum<br>
+	… and more to come!</div>
+	</i>
+	</div>
+	<div id="intro_pro">
+	<i><b>Why do we need DAIX?</b><br>
+	<br>Chances are, you have used ERC20-DAI and other similar assets on Ethereum.<br>
+	<br>But now, along with the cryptocurrency prices, the transaction costs have also gone up, and aren't essentially too attractive as compared to the competetive blockchain solutions of today, like xDAI.</i><br><br>DAIX brings a brand new sub-asset class to the most efficient, day-to-day use blockchains.<br><br>
+	<div id="intro_sol_dis">Discover DAIX Ecosytem!</div>
+	</div>
+	<div></div>
+	<div></div>
+	<div id="intro_sol">
+	<i><b>Where to find DAIX tokens?</b><br>
+	<br>DAIX protocol strives to be multi-chain compatible.<br>
+	<br>Native DAIX stablecoins will be launched on multiple blockchains, including Binance Smart Chain (BSC), Polygon (MATIC), Solana ($SOL) and Ethereum.<br>
+	<br>First listing will be at Honeyswap of the xDAI blockchain network.<br>
+	<br>You can also generate xDAIX (DAIX native to xDAI blockachain) by simply sending some xDAI coins to the DAIX smart contract.<br>Kindly use a "gas limit" of 500000 (500k).</i>
+	<br><br><div id="intro_sol_dis">Discover DAIX Ecosytem!</div><!--The FEES Protocol is very simple to use: Just transform your TRC-20 Tokens into thier *F pegged-assets, and use these pegged-tokens for your daily use, without worrying about the energy costs burning your precious TRX away!-->
+	</div>
+	<div id="intro_pro">
+	<i><b>How do these DAIX stabilize?</b><br>
+	<br>When the price of any DAIX is above 1 DAI (roughly $1) in the open market, DAIX coins are sent across all addresses upto the amount which brings the price back to 1 DAI inthe open markets.<br>
+	<br>Similarly, when the price falls under a DAI, the stabilization mechanism makes all users burn their DAIX tokens!<br>
+	Apart from this, there is a tiny fees that goes to the promotional aspect of DAIX: Farms and Vaults, which help secure the DAIX against flash attacks by locking up (staking) *DAIX tokens. All DAIX users can participate in these promotional events and earn rewards!</i><br><br>Anyone can make 1 DAIX equal 1 DAI at the press of a big button below!<br>
+
+	</div>
+	<div></div>
+</div>
+<div align="centre"><button id="stabutton" style="font-size:1.2em; width:"><b><i>STABILIZE DAIX!</i></b></button></div>
+
+<hr style="padding:0;width:50%">
+<i id="joinus">Join our wonderful community today!</i><br>
+<b><a href="https://t.me/SaveFees">@Daibase</a></b>
+
+
+<div id="recents">
+	<div class="recentbox">
+		DAIX Protocol introduces a new sub-asset class
+			<div>
+			The ideas behind DAIX tokens are introduced publicly and initial development begins in the later weeks of March 2021.<br>
+			First official testing was scheduled for 31st March (Wednesday).
+			</div>
+	</div>
+	<div class="recentbox">
+		Initial 'premiere' unviels $XDAIX on xDAI blockchain
+			<div>
+			The first mainnet version of DAIX Protocol will be launched on the xDAI network : also better known as the most stable "Layer 2" blockchain.<br>It will be first listed on Honeyswap AMM-DEX for the public to trade.<br></div>
+	</div>
+</div>
+
+
+
+<div align="center" style="font-size:0.7em; width:85%"><b>Important note:</b>
+<br>There was never, and will be no "pre-sale".<br>
+Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
+
+
+<div id="bottoms">
+	<div align="left">DAIBASE<br>v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></div>
+	<div>
+		<a href="https://discord.gg">Twitter</a>
+		<a href="https://discord.gg">Discord</a>
+		<a href="https://t.me/daibase">Telegram</a>
+	</div>
+</div>
+
+</html>
