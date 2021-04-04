@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
+*{word-wrap: break-word}
 
 #topper {
  display:grid;
@@ -28,7 +28,7 @@ height:100%}
 *{color: white;text-decoration: none;padding: 5px}
 #stats{display:grid;grid-template-columns: 50% 50%;}
 #recents{display:grid;grid-template-columns: auto;}
-#stabutton{background:
+button{background:
   linear-gradient(-153deg, rgba(255,0,0,.4) 20%,rgba(138,43,226,0.5)) 100%;}
 .statbox{margin: 8px;border-radius:15px;background:
   linear-gradient(-153deg, rgba(255,0,0,.4) 20%,rgba(138,43,226,0.5)) 100%;}
@@ -84,11 +84,18 @@ div#intro_sol_dis{background:
 		<a href="https://t.me/daibase">Telegram</a>
 	</div>
 	<div id="topper_logo">
-		<span onclick="this.textContent=this.textContent=='FEES 🟢'?this.textContent='FEES ⭕':this.textContent='FEES 🟢'">DAIX ⭕</span><!--🟢-->
+		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
 	</div>
 </div>
 
 
+	<div class="statbox">
+		<div class="stat statnumb">⚠ Important Notice!</div>
+		<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
+		We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate.
+		<br>Please use the control panel provided near the bottom of our page.
+		<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Week of April '21.</div>
+	</div>
 
 <div id="exploreus">
 	<div>
@@ -194,8 +201,8 @@ div#intro_sol_dis{background:
 	<br>Native DAIX tokens are non-collateralized algorithmic stablecoins, issued on multiple chains:<div align="left" style="margin:10px">
 	xDAIX : xDAI blockchain<br>
 	bDAIX : Binance Smart Chain<br>
-	sDAIX : Solana (SOL)<br>
-	bDAIX : Polygon (MATIC)<br>
+	oDAIX : Harmony (ONE)<br>
+	mDAIX : Polygon (MATIC)<br>
 	eDAIX : Ethereum<br>
 	… and more to come!</div>
 	</i>
@@ -248,20 +255,250 @@ div#intro_sol_dis{background:
 </div>
 
 
+<hr style="padding:0;width:50%">
+
+<h32 align="center">Tester's Control Panel</h3>
+
+
+<div align="center" style="font-size:0.7em;">
+
+<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:75%;text-align: center;" id="ci" maxlength="42" value="0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6" placeholder="DAIX Contract"><br>
+<button id="rb" onlick="gs()">Recalculate</button>
+<button id="sb">Synchronize</button>
+<button id="bb">BaseCanon</button><br>
+<span id="er"></span><br>
+Name : <span id="i_n"></span><br>
+Symbol : <span id="i_s"></span><br>
+Supply : <span id="i_t"></span><br>
+Epoch : <span id="i_e"></span><br>
+Height : <span id="i_h"></span><br>
+Tax/Bn : <span id="i_x"></span><br>
+<button id="cb" onclick="wc()">Connect Wallet</button><br>
+<span id="ua">You're not connected</span>
+</div>
+<script src="web3.min.js"></script>
+<script>
+function $(_) {return document.getElementById(_);}
+window.addEventListener('load',
+	function()
+	{
+		if(!window.ethereum){alert("Please use a web3-enabled browser / Metamask");}
+		else{web3 = new Web3(web3.currentProvider);gs();}
+	}, false);
+var abi = [
+	{
+		"inputs": [],
+		"name": "allpairssync",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "guy",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "basecanon",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lastepoch",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lastheight",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "taxperbillion",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+//above is perma
+
+function gs()
+{
+	try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
+		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r});
+		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r});
+		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r});
+		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
+		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+function wc()
+{
+	await window.ethereum.enable();
+	$("ua").innerHTML= window.ethereum.selectedAddress + " is connected on " + _n() + " Network.";
+}
+function _n()
+{
+/*
+	switch(window.ethereum.chainId)
+	{
+		case "0x1": return "Ethereum Mainnet";
+		case "0x2": return "Expanse Network";
+		case "0x3": return "Ropsten Testnet";
+		case "0x4": return "Ethereum Testnet Rinkeby";
+		case "0x5": return "Ethereum Testnet Görli";
+		case "0x38": return "Binance Smart Chain";
+		case "0x2a": return "Ethereum Testnet Kovan";
+		case "0x63": return "POA Network Core";
+		case "0x64": return "xDAI Blockchain";
+		case "0x89": return "Matic Mainnet";
+	}
+	switch([window.ethereum.networkVersion,window.ethereum.chainId])
+	{
+		case ["1","0x1"]: return "Ethereum Mainnet";
+		case ["3","0x3"]: return "Ethereum Ropsten Testnet";
+		case ["4","0x4"]: return "Ethereum Testnet Rinkeby";
+		case ["5","0x5"]: return "Ethereum Testnet Görli";
+		case ["99","0x63"]: return "POA Network Core";
+		case ["100","0x64"]: return "xDAI Blockchain";
+		case ["137","0x89"]: return "Matic Mainnet";
+	}
+	//OR
+	switch(window.ethereum.networkVersion+"#"+window.ethereum.chainId)
+	{
+		case ("1#0x1"): return "Ethereum Mainnet";
+		case ("3#0x3"): return "Ethereum Ropsten Testnet";
+		case ("4#0x4"): return "Ethereum Testnet Rinkeby";
+		case ("5#0x5"): return "Ethereum Testnet Görli";
+		case ("99#0x63"): return "POA Network Core";
+		case ("100#0x64"): return "xDAI Blockchain";
+		case ("137#0x89"): return "Matic Mainnet";
+	}
+	*/
+	//BEST
+	switch(window.ethereum.chainId)
+	{
+		case "1#0x1": return "Ethereum Mainnet";
+		case "1#0x2": return "Expanse Network";
+		case "3#0x3": return "Ropsten Testnet";
+		case "4#0x4": return "Ethereum Testnet Rinkeby";
+		case "5#0x5": return "Ethereum Testnet Görli";
+		case "56#0x38": return "Binance Smart Chain";
+		case "42#0x2a": return "Ethereum Testnet Kovan";
+		case "99#0x63": return "POA Network Core";
+		case "100#0x64": return "xDAI Blockchain";
+		case "137#0x89": return "Matic Mainnet";
+	}
+
+}
+</script>
+
+
+
+
+
+<hr style="padding:0;width:50%">
+
 
 <div align="center" style="font-size:0.7em; width:85%"><b>Important note:</b>
 <br>There was never, and will be no "pre-sale".<br>
 Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
 
 
-<div id="bottoms">
-	<div align="left">DAIBASE<br>v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></div>
-	<div></div>
-	<div>
-		<a href="https://discord.gg">Twitter</a>
-		<a href="https://discord.gg">Discord</a>
-		<a href="https://t.me/daibase">Telegram</a>
-	</div>
+
+
+
+
+<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
+
+<div align="center">
+<a href="https://twitter.com/daibased">Twitter</a>
+<a href="https://discord.gg">Discord</a>
+<a href="https://t.me/daibase">Telegram</a>
 </div>
+
 
 </html>
