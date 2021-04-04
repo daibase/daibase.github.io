@@ -415,7 +415,7 @@ function gs()
 	}
 	catch(e){$("er").innerHTML=e;}
 }
-function wc()
+async function wc()
 {
 	await window.ethereum.enable();
 	$("ua").innerHTML= window.ethereum.selectedAddress + " is connected on " + _n() + " Network.";
