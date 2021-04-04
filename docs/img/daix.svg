@@ -1,0 +1,29 @@
+<svg width="200" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <rect x="0" y="0" fill="#F5AC37" style="padding: 44;" height="200" width="200"></rect>
+  <defs>
+    <clipPath id="cut-off-bottom">
+      <rect x="105" y="5" width="95" height="195"></rect>
+
+    </clipPath>
+  </defs>
+  <g stroke-opacity="1" stroke="#FEFEFD">
+  	<circle cx="105" cy="105" r="50" fill="none" stroke-width="10" clip-path="url(#cut-off-bottom)" stroke-linecap="square">
+	</circle>
+
+  	<polyline fill="none" stroke-width="10" points="55 155, 55 55" stroke-linecap="square">
+	</polyline>
+  	<polyline fill="none" stroke-width="10" stroke-linecap="square" points="55 55, 105 55">
+	</polyline>
+  	<polyline fill="none" stroke-width="10" stroke-linecap="square" points="35 155, 105 155">
+	</polyline>
+	<polyline fill="none" stroke-width="10" points="55 55, 160 160" stroke-linecap="round">
+	</polyline>
+
+	<polyline stroke="yellow" fill="none" stroke-width="10" stroke-linecap="square" points="155 35, 135 55" stroke-opacity="0">
+	</polyline>
+<circle r="10" stroke-width="10" stroke-linecap="square" fill="#F5AC37" cx="45" cy="45">
+	</circle>
+<circle stroke-linecap="square" fill="none" cx="100" cy="100" r="100" stroke-width="2">
+	</circle>
+</g>
+</svg>
