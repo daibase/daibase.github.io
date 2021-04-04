@@ -58,6 +58,7 @@ div#intro_sol_dis{background:
 }
 #exploreus{display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center}
 
+#TCP{display:grid;grid-template-columns: auto auto;border-radius:15px;}
 
 
 @media(min-width:641px){
@@ -71,8 +72,10 @@ div#intro_sol_dis{background:
 		grid-template-columns:50% 50%;}
 	div#intro{
 		grid-template-columns: auto 30% 30% auto; grid-gap:20px}
-  #exploreus{
-    display: grid;grid-template-columns: auto auto auto auto auto;font-size:1em;text-align: center}
+	#exploreus{
+		display: grid;grid-template-columns: auto auto auto auto auto;font-size:1em;text-align: center}
+	#TCP{
+		display:grid;grid-template-columns: auto auto auto;border-radius:15px;}
 }
 </style>
 <div id="topper">
@@ -257,25 +260,54 @@ div#intro_sol_dis{background:
 
 <hr style="padding:0;width:50%">
 
-<h32 align="center">Tester's Control Panel</h3>
+<h3 align="center">Tester's Control Panel</h3>
 
+<button id="cb" onclick="wc()">Connect Wallet</button><br>
+<span id="ua">You're not connected</span>
 
 <div align="center" style="font-size:0.7em;">
-
-<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:75%;text-align: center;" id="ci" maxlength="42" value="0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6" placeholder="DAIX Contract"><br>
+	<span id="er"></span><br>
+	<div id="TCP">
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">Nameless</div>
+			<div class="stat statname">Full Name</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">UNKNOWN</div>
+			<div class="stat statname">Token Symbol</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">Uncountable</div>
+			<div class="stat statname">Total Supply</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">Timeless</div>
+			<div class="stat statname">Epochs Elapsed</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">Zero</div>
+			<div class="stat statname">Base Block</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">Undefined</div>
+			<div class="stat statname">Tax per billion</div>
+		</div>
+		<!--
+		Name : <span id="i_n"></span><br>
+		Symbol : <span id="i_s"></span><br>
+		Supply : <span id="i_t"></span><br>
+		Epoch : <span id="i_e"></span><br>
+		Height : <span id="i_h"></span><br>
+		Tax/Bn : <span id="i_x"></span><br>
+		-->
+	</div>
+</div>
+<br>Import DAIX Contract
+<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:75%;text-align: center;" id="ci" maxlength="42" value="0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6" placeholder="DAIX Contract"><br><br>
 <button id="rb" onlick="gs()">Recalculate</button>
 <button id="sb">Synchronize</button>
 <button id="bb">BaseCanon</button><br>
-<span id="er"></span><br>
-Name : <span id="i_n"></span><br>
-Symbol : <span id="i_s"></span><br>
-Supply : <span id="i_t"></span><br>
-Epoch : <span id="i_e"></span><br>
-Height : <span id="i_h"></span><br>
-Tax/Bn : <span id="i_x"></span><br>
-<button id="cb" onclick="wc()">Connect Wallet</button><br>
-<span id="ua">You're not connected</span>
-</div>
+
 <script src="web3.min.js"></script>
 <script>
 function $(_) {return document.getElementById(_);}
@@ -408,8 +440,8 @@ function gs()
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
 		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r});
-		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r});
-		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r});
+		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r/1e18 + "DAIX"});
+		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
 	}
