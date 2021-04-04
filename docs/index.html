@@ -58,7 +58,7 @@ div#intro_sol_dis{background:
 }
 #exploreus{display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center}
 
-#TCP{display:grid;grid-template-columns: auto auto;border-radius:15px;}
+#TCP{display:grid;grid-template-columns: auto;border-radius:15px;}
 
 
 @media(min-width:641px){
@@ -444,6 +444,26 @@ function gs()
 		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+function s_s()
+{
+	try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.basecanon().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+function s_b()
+{
+try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.allpairssync().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
