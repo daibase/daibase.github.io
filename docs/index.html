@@ -80,11 +80,11 @@ div#intro_sol_dis{background:
 </style>
 <div id="topper">
 	<div id="topper_explore">
-		++<br>++
+		<img src="img/daix.svg" width="32px" style="border-radius:32%"><!--++<br>++-->
 	</div>
-	<div id="topper_links">
+	<div id="topper_links"><!--
 		<a href="https://discord.gg">Discord</a>
-		<a href="https://t.me/daibase">Telegram</a>
+		<a href="https://t.me/daibase">Telegram</a>-->
 	</div>
 	<div id="topper_logo">
 		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
@@ -305,8 +305,8 @@ div#intro_sol_dis{background:
 <br>Import DAIX Contract
 <input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:75%;text-align: center;" id="ci" maxlength="42" value="0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6" placeholder="DAIX Contract"><br><br>
 <button id="rb" onlick="gs()">Recalculate</button>
-<button id="sb">Synchronize</button>
-<button id="bb">BaseCanon</button><br>
+<button id="sb" onclick="s_s()">Synchronize</button>
+<button id="bb" onclick="s_b()">BaseCanon</button><br>
 
 <script src="web3.min.js"></script>
 <script>
@@ -447,7 +447,7 @@ function gs()
 	}
 	catch(e){$("er").innerHTML=e;}
 }
-function s_s()
+function s_b()
 {
 	try
 	{
@@ -457,7 +457,7 @@ function s_s()
 	}
 	catch(e){$("er").innerHTML=e;}
 }
-function s_b()
+function s_s()
 {
 try
 	{
