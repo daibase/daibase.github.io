@@ -459,7 +459,7 @@ function _n()
 	}
 	*/
 	//BEST
-	switch(window.ethereum.chainId)
+	switch(window.ethereum.networkVersion+"#"+window.ethereum.chainId)
 	{
 		case "1#0x1": return "Ethereum Mainnet";
 		case "1#0x2": return "Expanse Network";
