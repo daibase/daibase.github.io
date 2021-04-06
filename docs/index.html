@@ -1,6 +1,10 @@
 <!doctype html><html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <link rel="shortcut icon" href="img/daix.svg" />
+</head>
+
 <style>
 *{word-wrap: break-word}
 
@@ -95,8 +99,7 @@ div#intro_sol_dis{background:
 	<div class="statbox">
 		<div class="stat statnumb">⚠ Important Notice!</div>
 		<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
-		We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate.
-		<br>Please use the control panel provided near the bottom of our page.
+		We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided near the <a href="#cb">bottom of our page</a>.
 		<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Week of April '21.</div>
 	</div>
 
@@ -244,14 +247,14 @@ div#intro_sol_dis{background:
 
 <div id="recents">
 	<div class="recentbox">
-		DAIX Protocol introduces a new sub-asset class
+		DAIX Protocol is introduced and public testing begins!
 			<div>
 			The ideas behind DAIX tokens are introduced publicly and initial development begins in the later weeks of March 2021.<br>
 			First official testing was scheduled for 31st March (Wednesday).
 			</div>
 	</div>
 	<div class="recentbox">
-		Initial 'premiere' unviels $XDAIX on xDAI blockchain
+		Initial 'premiere' unviels $XDAIX on xDAI blockchain.
 			<div>
 			The first mainnet version of DAIX Protocol will be launched on the xDAI network : also better known as the most stable "Layer 2" blockchain.<br>It will be first listed on Honeyswap AMM-DEX for the public to trade.<br></div>
 	</div>
@@ -262,8 +265,10 @@ div#intro_sol_dis{background:
 
 <h3 align="center">Tester's Control Panel</h3>
 
-<button id="cb" onclick="wc()">Connect Wallet</button><br>
-<span id="ua">You're not connected</span>
+<button id="cb" onclick="wc()">Connect Wallet</button><br><br>
+<span id="ua">You're not connected</span><br><br>
+
+<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
 
 <div align="center" style="font-size:0.7em;">
 	<span id="er"></span><br>
@@ -277,8 +282,8 @@ div#intro_sol_dis{background:
 			<div class="stat statname">Token Symbol</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="i_t">Uncountable</div>
-			<div class="stat statname">Total Supply</div>
+			<div class="stat statnumb" id="i_b">Nothing</div>
+			<div class="stat statname">Your Balance</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="i_e">Timeless</div>
@@ -287,6 +292,10 @@ div#intro_sol_dis{background:
 		<div class="statbox">
 			<div class="stat statnumb" id="i_h">Zero</div>
 			<div class="stat statname">Base Block</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_t">Uncountable</div>
+			<div class="stat statname">Total Supply</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="i_x">Undefined</div>
@@ -302,11 +311,81 @@ div#intro_sol_dis{background:
 		-->
 	</div>
 </div>
-<br>Import DAIX Contract
-<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:75%;text-align: center;" id="ci" maxlength="42" value="0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6" placeholder="DAIX Contract"><br><br>
-<button id="rb" onlick="gs()">Recalculate</button>
-<button id="sb" onclick="s_s()">Synchronize</button>
-<button id="bb" onclick="s_b()">BaseCanon</button><br>
+<br>
+
+<button style="height:auto;font-size:1.5em" id="sb" onclick="s_s()">Synchronize</button>
+<button style="height:auto;font-size:1.5em" id="bb" onclick="s_b()">BaseCannon</button><br>
+
+
+<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="" placeholder="Some DAIX hodlr"><br><button id="fb" onlick="fb()">Check</button>someone's balance<br>
+<span id="fabb"></span><br>
+
+
+<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="" placeholder="Address of a Pair"><br><button id="fb" onlick="fpb()">Fetch</button>a pair's price<br>
+<span id="fpbb"></span><br>
+
+
+
+
+<h4>Recently Tested Versions</h4>
+Ordered as per recency. Detailed as follows:<br><br>
+{version} : {Network}<br>{DAIX Token contract}<br>
+[{WETH Uniswap}<br>[{UNI Uniswap}<br>[{DAI Uniswap}
+<br>[{WETH Sushiswap}<br>[{USDC Sushiswap}<br>[{UNI Sushiswap}]]]]]]<br>
+<br>
+<li><b>v0.0.37 : Ropsten</b>
+<pre>
+0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A
+
+0x00Fcc7B1243a5b873751f7905Cf3693DB751775E
+0xb95fDc24067225b14A74FF053AC035162a70d168
+0xc95b55f931557801D6109F395A17D540b30087dD
+
+0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04
+0xde5aB223e5DD542D4d9f6fCfB2C4C8c486399b2d
+0x7CdA68f364790CDf5913d67faee60F9b02A410d2</pre>
+<li><b>v0.0.21 (r14) : Ropsten</b>
+<pre>
+0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6
+0x095D094cc3C58b5979966a872C42382fdbB3852f
+0x682Bc44BCb5A5AB1Ec5796502f781A7b750Ae803
+-
+0xE668B83AFC06672E4BA0014E92394DDD2C102D68</pre>
+</li>
+<li><b>v0.0.4 : Kovan</b>
+<pre>
+0x1376BB93c4BCEd5e1d5D3517656775043E050482</pre>
+</li>
+
+
+<br>
+<h4>Addressbook</h4>
+<pre>
+0xc778417E063141139Fce010982780140Aa0cD5Ab	WETH
+0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f	UF
+0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D	UR
+0xd8db9b7a20a7716aC22c85518D0aFED1D8a851E8	ME</pre>
+
+
+
+<hr style="padding:0;width:50%">
+
+
+<div align="center" style="font-size:0.7em; width:85%"><b>Important note:</b>
+<br>There was never, and will be no "pre-sale".<br>
+Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
+
+
+<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
+
+<div align="center">
+<a href="https://twitter.com/daibased">Twitter</a>
+<a href="https://discord.gg/VU8NHdmYu6">Discord</a>
+<a href="https://t.me/daibase">Telegram</a>
+</div>
+
 
 <script src="web3.min.js"></script>
 <script>
@@ -440,12 +519,13 @@ function gs()
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
 		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r});
+		theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
 		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r/1e18 + "DAIX"});
 		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
 	}
-	catch(e){$("er").innerHTML=e;}
+	catch(e){$("e").innerHTML=e;}
 }
 function s_b()
 {
@@ -455,7 +535,7 @@ function s_b()
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.basecanon().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 	}
-	catch(e){$("er").innerHTML=e;}
+	catch(e){$("e").innerHTML=e;}
 }
 function s_s()
 {
@@ -465,7 +545,37 @@ try
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.allpairssync().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 	}
-	catch(e){$("er").innerHTML=e;}
+	catch(e){$("e").innerHTML=e;}
+}
+function fb()
+{
+try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.balanceOf($("fab").value).call((e, r) => {$("fabb").innerHTML = r/1e18 +"DAIX"});
+	}
+	catch(e){$("e").innerHTML=e;}
+}
+function fpb()
+{
+try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=r});
+		var pairAdd = $("ipb").value;
+		thePC = new web3.eth.Contract(PA, pairAdd);
+		thePC.methods.getReserves().call((e, r) => {pairAddBal=r});
+		$("fpbb").innerHTML=`Daix balance: ${conAddBal}
+			<br>Reserves: ${pairAddBal}
+			<br>R1 : ${pairAddBal[0]}
+			<br>R2 : ${pairAddBal.[1]}
+			<br>Price : ${pairAddBal[0]/pairAddBal[1]}
+			<br>Quote : ${pairAddBal.[1]/pairAddBal[0]}`;
+		console.log("PB",conAddBal,"res:",pairAddBal);
+	}
+	catch(e){$("e").innerHTML=e;}
 }
 async function wc()
 {
@@ -524,33 +634,63 @@ function _n()
 		case "100#0x64": return "xDAI Blockchain";
 		case "137#0x89": return "Matic Mainnet";
 	}
-
+PA=[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getReserves",
+    "outputs": [
+      {
+        "internalType": "uint112",
+        "name": "_reserve0",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint112",
+        "name": "_reserve1",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_blockTimestampLast",
+        "type": "uint32"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "token0",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "token1",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+];
 }
 </script>
-
-
-
-
-
-<hr style="padding:0;width:50%">
-
-
-<div align="center" style="font-size:0.7em; width:85%"><b>Important note:</b>
-<br>There was never, and will be no "pre-sale".<br>
-Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
-
-
-
-
-
-
-<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
-
-<div align="center">
-<a href="https://twitter.com/daibased">Twitter</a>
-<a href="https://discord.gg">Discord</a>
-<a href="https://t.me/daibase">Telegram</a>
-</div>
-
-
 </html>
