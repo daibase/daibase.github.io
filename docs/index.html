@@ -685,16 +685,16 @@ try
 	{
 		var conAdd = $("ci").value;
 		theCon = new web3.eth.Contract(abi, conAdd);
-		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=r;$("fpbb").innerHTML=`Balance: ${conAddBal/1e18+"DAIX"}<br>`;});
+		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=Number(r);$("fpbb").innerHTML=`Balance: ${(conAddBal)/1e18+"DAIX"}<br>`;});
 		var pairAdd = $("ipb").value;
 		thePC = new web3.eth.Contract(PA, pairAdd);
-		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r/1e18;$("fpbb").innerHTML+=
+		await thePC.methods.getReserves().call((e, r) => {$("fpbb").innerHTML+=
 			`<br>Reserves
-			<br>R1 : ${pairAddBal[0]/1e18}
-			<br>R2 : ${pairAddBal[1]/1e18}
+			<br>R1 : ${Number(pairAddBal[0])/1e18}
+			<br>R2 : ${Number(pairAddBal[1])/1e18}
 			<br>Prices
-			<br>Asset : ${pairAddBal[0]/pairAddBal[1]}
-			<br>Base : ${pairAddBal[1]/pairAddBal[0]}`;});
+			<br>Asset : ${Number(pairAddBal[0])/Number(pairAddBal[1])}
+			<br>Base : ${Number(pairAddBal[1])/Number(pairAddBal[0])}`;});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
