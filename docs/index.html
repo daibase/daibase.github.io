@@ -30,7 +30,7 @@
 	Softwares/product/Information.
 	-->
 <head>
-<title>Coil Crypto Rebase Tracer Tracker</title>
+<title>Daibase Protocol</title>
 <!--
 To tip me or to donate, visit:
 "https://9xo.github.io/R/teb".
@@ -48,7 +48,7 @@ $COIL:
 0xD0f79B71A8ffB7f70392630f8BFc900fcA27af42
 -->
 <meta name="description" content="Daibase is an algorithmic, cross-blockchain and multi-blockchain array of Smart Cotracts that targets multi-collateral Dai. Learn more!">
-<meta name="keywords" content="Dai DAIX Daibase Rebase Algorithmic Cross-chain Multi-blockchain Stablecoin xDAI BDAIX EDAIX MDAIX ODAIX TDAIX XDAIX">
+<meta name="keywords" content="Dai DAIX Daibase Rebase Algorithmic Cross-chain Multi-blockchain Stablecoin xDAI BDAIX EDAIX MDAIX ODAIX TDAIX XDAIX Decentralized Finance defi">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--This stylesheet is under a copyright by itsN1X.
 © 2020 itsN1X | E. X. Information Technologies | 9Xo.github.io-->
@@ -117,6 +117,8 @@ div#intro_sol_dis{background:
 
 pre{overflow-x:auto}
 
+li{margin-left:10%;}
+
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -151,7 +153,7 @@ pre{overflow-x:auto}
 	<div class="statbox">
 		<div class="stat statnumb">⚠ Important Notice!</div>
 		<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
-		We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided near the <a href="#cb">bottom of our page</a>.
+		We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided near the<b><a href="#cb">bottom of our page</a></b>.
 		<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Week of April '21.</div>
 	</div>
 
@@ -378,16 +380,43 @@ pre{overflow-x:auto}
 <input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x00Fcc7B1243a5b873751f7905Cf3693DB751775E" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
 <span id="fpbb"></span><br>
 
-
-
-
+<h4>Scope of Testing</h4>
+The chief objective of the testing phase of Daibase Smart Contracts is to ensure seamless quality and provide valuable feedback for improvment prior to launching v1.0.0 of DAIX Contracts.<br>The main testing platform will be the various Ethereum testnets (Kovan & Ropsten) with focus on post-Istanbul architecture compatibility.<br>Daibase's primary contract ("core") is an ERC20 standard compliant smart-contract. It is capable of orchestrating an Elastic Supply book-keeping for its various users.<br><br>
+DAIX is not a fork. Nor does it use any previously deployed Economic model. All major features of Daibase are a product of direct innovstion and hence we call it "An Experimental Decentralized Finance" project. To ensure expected behaviour, we will test the following aspects and make sure of their accuracy and precision:<br><br>
+<div class="tesins" style="text-align:left;font-size:0.81em">
+<i>Please note that during testing of upto v0.1.37 contracts, we shall be treating ETH as if it were XDAI.<br>i.e. 1 ETH represents 1 XDAI.</i><br><br>
+<b>Sending & Receiving DAIX tokens</b><br>
+<li>Make sure the amount you send or receive is the amount that was transacted.</li>
+<li>Check if the Block Explorer shows the correct amounts in the transaction details.</li>
+<li>Inspect your wallet balance manually from the Explorer and Control Panel for a match with your wallet balance</li>
+<li>Verify if the per trasaction tax is 2% of the amount sent by sender. The receiver would receive 98%</li>
+<i>NOTE: There is no transaction tax for amounts smaller than 0.00000001 DAIX.</i><br><br>
+<b>Adding and Removing Liquidity</b><br>
+<li>Try to add and remove liquidity from any AMM of your choice.</li>
+<li>Use partial or fractional amounts as well as 100% while testing.</li>
+<li>Move around your L.P. Tokens and redeeming your liquidity from a different address.</li>
+<i>NOTE: We will test with Uniswap (WETH, UNI, DAI) and Sushiswap (WETH, USDC, UNI) pairs initially. Anyone can list DAIX anywhere, but there might be some errors encountered, which can be resolved by calling the "SYNCHRONIZE" function that removes any such bugs ("k-errors"). For this method to be effective, each new pair will have to be added to the Smart Contract manually. This shall be decided by the DaixDAO voting at later stages post launch, or simply be recommended by the community prior launch at any of our Social channels (links below).</i>
+<br><br>
+<b>Swapping DAIX</b>
+<li>Perform simple swaps: ETH to DAIX, DAIX to ETH.</li>
+<li>Attempt Token to Token swaps: UNI to DAIX, DAIX to USDC, DAIX to DAI, etc.</li>
+<li>Attempt multi-hop swaps, if possible: DAIX to UNI to USDC, UNI to DAI to DAIX, etc.</li>
+<li>Attempt flash swaps, if possible: DAIX to UNI to USDC to DAIX, etc.</li>
+<i>NOTE: Use a slippage of an additional 2% for each "hop" (due to the DAIX moving penalty of 2% on each move). A slippage tolerance of 3% to 5% is recommended.</i><br><br>
+<b>Direct trustless buying (from DAIX Contract)</b><br>
+<li>Send a small amount of ETH (0.0001) to the Token's contract address to get back an equivalent worth of DAIX tokens based on the current market price.</li>
+<li>Try to "hit the BaseCannon" before making such a purchase to receive DAIX at a 1:1 price.</li>
+<li>Attempt sending some ETH via a Smart Contract that is capable to recieve DAIX (Flashing), if possible.</li>
+<i>NOTE: Read more about the "Need" of this mechanism in our<b><a href="">Goldpaper</a></b>and learn how Daibase is poised to become the b̶a̶c̶k̶b̶o̶n̶e̶ <b>Vertebrae of the Permissionless Future..</b><br>
+DEV NOTE: This the default "receive()" method which generates an internal call to "parti()", which upon success returns an unsigned integer of 16 Bytes, representing the amount of DAIX sent to the caller, emitting the "Partied" event. If you are a buidlr, we welcome you to stack over and under us in your Legonomics.</i>
+</div>
 <h4>Recently Tested Versions</h4>
 Ordered as per recency. Detailed as follows:<br><br>
 <font size="2">{version} : {Network}<br>{DAIX Token contract}<br>
 [{WETH Uniswap}<br>[{UNI Uniswap}<br>[{DAI Uniswap}
 <br>[{WETH Sushiswap}<br>[{USDC Sushiswap}<br>[{UNI Sushiswap}]]]]]]<br></font>
 <br>
-<li><b>v0.0.37 : Ropsten</b>
+<b>v0.0.37 : Ropsten</b>
 <pre>
 0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A
 
@@ -398,18 +427,17 @@ Ordered as per recency. Detailed as follows:<br><br>
 0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04
 0xde5aB223e5DD542D4d9f6fCfB2C4C8c486399b2d
 0x7CdA68f364790CDf5913d67faee60F9b02A410d2</pre>
-<li><b>v0.0.21 (r14) : Ropsten</b>
+<b>v0.0.21 (r14) : Ropsten</b>
 <pre>
 0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6
 0x095D094cc3C58b5979966a872C42382fdbB3852f
 0x682Bc44BCb5A5AB1Ec5796502f781A7b750Ae803
 
 0xE668B83AFC06672E4BA0014E92394DDD2C102D68</pre>
-</li>
-<li><b>v0.0.4 : Kovan</b>
+
+<b>v0.0.4 : Kovan</b>
 <pre>
 0x1376BB93c4BCEd5e1d5D3517656775043E050482</pre>
-</li>
 
 
 <br>
@@ -620,7 +648,7 @@ try
 		var pairAdd = $("ipb").value;
 		thePC = new web3.eth.Contract(PA, pairAdd);
 		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r/1e18;$("fpbb").innerHTML+=
-			<br>Reserves
+			`<br>Reserves
 			<br>R1 : ${pairAddBal[0]/1e18}
 			<br>R2 : ${pairAddBal[1]/1e18}
 			<br>Prices
