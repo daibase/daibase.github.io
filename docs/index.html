@@ -526,7 +526,7 @@ function gs()
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
 	}
-	catch(e){$("e").innerHTML=e;}
+	catch(e){$("er").innerHTML=e;}
 }
 function s_b()
 {
@@ -536,7 +536,7 @@ function s_b()
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.basecanon().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 	}
-	catch(e){$("e").innerHTML=e;}
+	catch(e){$("er").innerHTML=e;}
 }
 function s_s()
 {
@@ -546,7 +546,7 @@ try
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.allpairssync().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 	}
-	catch(e){$("e").innerHTML=e;}
+	catch(e){$("er").innerHTML=e;}
 }
 function fb()
 {
@@ -556,29 +556,30 @@ try
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.balanceOf($("fab").value).call((e, r) => {$("fabb").innerHTML = r/1e18 +"DAIX"});
 	}
-	catch(e){$("e").innerHTML=e;}
+	catch(e){$("er").innerHTML=e;}
 }
-function fpb()
+async function fpb()
 {
-try
-	{
 		var conAddBal;
 		var pairAddBal;
+try
+	{
 		var conAdd = $("ci").value;
 		theCon = new web3.eth.Contract(abi, conAdd);
-		theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=r});
+		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=r});
 		var pairAdd = $("ipb").value;
 		thePC = new web3.eth.Contract(PA, pairAdd);
-		thePC.methods.getReserves().call((e, r) => {pairAddBal=r});
+		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r/1e18});
 		$("fpbb").innerHTML=`Daix balance: ${conAddBal}
-			<br>Reserves: ${pairAddBal}
+			<br>Reserves
 			<br>R1 : ${pairAddBal[0]}
 			<br>R2 : ${pairAddBal[1]}
-			<br>Price : ${pairAddBal[0]/pairAddBal[1]}
-			<br>Quote : ${pairAddBal[1]/pairAddBal[0]}`;
+			<br>Prices
+			<br>Asset : ${pairAddBal[0]/pairAddBal[1]}
+			<br>Base : ${pairAddBal[1]/pairAddBal[0]}`;
 		console.log("PB",conAddBal,"res:",pairAddBal);
 	}
-	catch(e){$("e").innerHTML=e;}
+	catch(e){$("er").innerHTML=e;}
 }
 async function wc()
 {
