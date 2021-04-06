@@ -381,10 +381,9 @@ li{margin-left:10%;}
 <span id="fpbb"></span><br>
 
 <h4>Scope of Testing</h4>
-The chief objective of the testing phase of Daibase Smart Contracts is to ensure seamless quality and provide valuable feedback for improvment prior to launching v1.0.0 of DAIX Contracts.<br>The main testing platform will be the various Ethereum testnets (Kovan & Ropsten) with focus on post-Istanbul architecture compatibility.<br>Daibase's primary contract ("core") is an ERC20 standard compliant smart-contract. It is capable of orchestrating an Elastic Supply book-keeping for its various users.<br><br>
-DAIX is not a fork. Nor does it use any previously deployed Economic model. All major features of Daibase are a product of direct innovstion and hence we call it "An Experimental Decentralized Finance" project. To ensure expected behaviour, we will test the following aspects and make sure of their accuracy and precision:<br><br>
+The chief objective of the testing phase of Daibase Smart Contracts is to ensure seamless quality and provide valuable feedback for improvment prior to launching v1.0.0 of DAIX Contracts. The main testing platform will be the various Ethereum testnets (Kovan & Ropsten) with focus on post-Istanbul architecture compatibility.<br><br><b>DAIX is not a fork.</b><br><br>Nor does it use any previously deployed Economic model. All major features of Daibase are a product of direct innovation and hence we call it "An Experimental Decentralized Finance" project.Daibase's primary contract ("core") is an ERC20 standard compliant smart-contract. It is capable of orchestrating an Elastic Supply book-keeping for its various users<br><br> To ensure expected behaviour, we will test the following aspects and make sure of their accuracy and precision:<br><br>
 <div class="tesins" style="text-align:left;font-size:0.81em">
-<i>Please note that during testing of upto v0.1.37 contracts, we shall be treating ETH as if it were XDAI.<br>i.e. 1 ETH represents 1 XDAI.</i><br><br>
+<i>Please note that during testing of upto v0.1.37 contracts, we shall be treating ETH as if it were XDAI.<br>i.e. 1 ETH represents 1 XDAI.<br>The "ETH/DAIX" pair of Uniswap AMM\DEX will be referred to as the "First Pair".</i><br><br>
 <b>Sending & Receiving DAIX tokens</b><br>
 <li>Make sure the amount you send or receive is the amount that was transacted.</li>
 <li>Check if the Block Explorer shows the correct amounts in the transaction details.</li>
@@ -394,7 +393,8 @@ DAIX is not a fork. Nor does it use any previously deployed Economic model. All 
 <b>Adding and Removing Liquidity</b><br>
 <li>Try to add and remove liquidity from any AMM of your choice.</li>
 <li>Use partial or fractional amounts as well as 100% while testing.</li>
-<li>Move around your L.P. Tokens and redeeming your liquidity from a different address.</li>
+<li>Move around your L.P. Tokens</li>
+<li>Redeem your liquidity from a different address.</li>
 <i>NOTE: We will test with Uniswap (WETH, UNI, DAI) and Sushiswap (WETH, USDC, UNI) pairs initially. Anyone can list DAIX anywhere, but there might be some errors encountered, which can be resolved by calling the "SYNCHRONIZE" function that removes any such bugs ("k-errors"). For this method to be effective, each new pair will have to be added to the Smart Contract manually. This shall be decided by the DaixDAO voting at later stages post launch, or simply be recommended by the community prior launch at any of our Social channels (links below).</i>
 <br><br>
 <b>Swapping DAIX</b>
@@ -408,13 +408,48 @@ DAIX is not a fork. Nor does it use any previously deployed Economic model. All 
 <li>Try to "hit the BaseCannon" before making such a purchase to receive DAIX at a 1:1 price.</li>
 <li>Attempt sending some ETH via a Smart Contract that is capable to recieve DAIX (Flashing), if possible.</li>
 <i>NOTE: Read more about the "Need" of this mechanism in our<b><a href="">Goldpaper</a></b>and learn how Daibase is poised to become the b̶a̶c̶k̶b̶o̶n̶e̶ <b>Vertebrae of the Permissionless Future..</b><br>
-DEV NOTE: This the default "receive()" method which generates an internal call to "parti()", which upon success returns an unsigned integer of 16 Bytes, representing the amount of DAIX sent to the caller, emitting the "Partied" event. If you are a buidlr, we welcome you to stack over and under us in your Legonomics.</i>
+DEV NOTE: This the default "receive()" method which generates an internal call to "parti()", which upon success returns an unsigned integer of 16 Bytes, representing the amount of DAIX sent to the caller, emitting the "Partied" event. If you are a buidlr, we welcome you to stack over and under us in your Legonomics.</i><br><br>
+<b>Hit the BaseCannon</b>
+<li>Push the "BaseCannon" button from the Control Panel, and sign the generated transaction. Doing this will create a new "Epoch" and "Synchronize" the Daibase Ecosytem on the respective chain.<br>Expected behaviour: At confirmation, the price in the "First Pair" would be restabilized to unity (1:1).</li>
+<i>NOTE: Please note down your balance provided from the Control Panel, Explorer or Wallet. Additionally, note down the balances and reserves of the trading pairs. After the transaction succeeds, instantly compare and recheck if these numbers behave as per design. The balances will be sent more DAIX tokens if the price at the time of Stabilization is over unity. The converse will also hold, and the users would burn their tokens on account of setting the Ecosystem back to equilibrium (1 DAIX = 1 DAI).</i><br><br>
+<b>Synchronize the Daibase Ecosytem</b>
+<li>Pressing the "Synchronize" button from the Control Panel.</li>
+<i>NOTE: This is useful if you are experiencing an unusual Swap error ("This seems to be an error with one of the Tokens your're using"/"k-error"/undefined/"Insufficient Output Token Amount"), pressing this button should resolve it.<br>Each call of BaseCannon also includes an internal call to Synchronize.</i><br>
+<h4>Known Bugs</h4>
+<li>"This seems to be a problem with one of the tokens you're using"</li>
+It has been found that this situation can be solved by the below methods:
+<ol>
+	<li>Increasing Slippage Tolerance to 3% or more depending on the number of "hops", or intermediary tokens traversed during your swap.</li>
+	<li>A slippage of 5% is enough to Add or Remove liquidity. Using 3% for simple ETH/DAIX pairs is ample.</li>
+</ol>
+<li>"Error: Undefined"</li>
+Such a error arises if there's a disbalance in the pairs balances and the count of its reserves in its memory. This is common in newly listed pairs and can be cured by:
+<ol>
+	<li>Making a "multi-hop" swap.</li>
+	<li>Executing a "flash" swap.</li>
+	<li>Having the pair contract added to the Daibase "core" smart contract.<br>This can be done only by the DaixDAO voting if DAIX has already launched.<br>Such a pair must have adequate liquidity to be eligible/adopted by the DAO because adding a new pair results in increased costs for each new epoch.</li>
+	<li>Hitting the BaseCannon can cure it sometimes.</li>
+	<li>Synchronizing also can solve this issue, and would be cheaper than creating a new Epoch.
+</ol>
+<h4>Exceptions</h4>
+<li>Don't send more than 10 Billion coins (ETH/XDAI/BNB/ONE,etc.) to the contract for a direct purchase or parti().</li>
+<li>Don't hit the BaseCannon twice within 42 blocks (about 10 min. on Eth, 3-4 mins. on xDAI and Polygon, 2 min. on BSC and Tron, 84 secs. on Harmony, etc.).</li>
+<i>NOTE: This limit is reduced to 4 Blocks during the testing phase.</i>
 </div>
 <h4>Recently Tested Versions</h4>
-Ordered as per recency. Detailed as follows:<br><br>
-<font size="2">{version} : {Network}<br>{DAIX Token contract}<br>
-[{WETH Uniswap}<br>[{UNI Uniswap}<br>[{DAI Uniswap}
-<br>[{WETH Sushiswap}<br>[{USDC Sushiswap}<br>[{UNI Sushiswap}]]]]]]<br></font>
+(Ordered as per recency.)<br>Detailed as follows:<br><br>
+<pre>
+{version} : {Network}
+{DAIX Token contract}
+
+{WETH Uniswap}
+{UNI  Uniswap}
+{DAI  Uniswap}
+
+{WETH Sushiswap}
+{USDC Sushiswap}
+{UNI  Sushiswap}
+</pre><br>
 <br>
 <b>v0.0.37 : Ropsten</b>
 <pre>
@@ -430,6 +465,7 @@ Ordered as per recency. Detailed as follows:<br><br>
 <b>v0.0.21 (r14) : Ropsten</b>
 <pre>
 0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6
+
 0x095D094cc3C58b5979966a872C42382fdbB3852f
 0x682Bc44BCb5A5AB1Ec5796502f781A7b750Ae803
 
@@ -439,14 +475,19 @@ Ordered as per recency. Detailed as follows:<br><br>
 <pre>
 0x1376BB93c4BCEd5e1d5D3517656775043E050482</pre>
 
+Older versions can be found in the CHEF wallet (new) on Kovan and Rinkeby.<br>
+
 
 <br>
 <h4>Addressbook</h4>
 <pre>
-0xc778417E063141139Fce010982780140Aa0cD5Ab	WETH
-0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f	UF
-0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D	UR
-0xd8db9b7a20a7716aC22c85518D0aFED1D8a851E8	ME</pre>
+0xc778417E063141139Fce010982780140Aa0cD5Ab  WETH
+0x1f9840a85d5af5bf1d1762f925bdaddc4201f984  _UNI
+0xad6d458402f60fd3bd25163575031acdce07538d  _DAI
+0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f  U.F.
+0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D  U.R.
+0xd8db9b7a20a7716aC22c85518D0aFED1D8a851E8  CHEF
+</pre>
 
 
 
