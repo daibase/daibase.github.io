@@ -562,6 +562,8 @@ function fpb()
 {
 try
 	{
+		var conAddBal;
+		var pairAddBal;
 		var conAdd = $("ci").value;
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=r});
@@ -635,7 +637,7 @@ function _n()
 		case "100#0x64": return "xDAI Blockchain";
 		case "137#0x89": return "Matic Mainnet";
 	}
-PA=[
+var PA=[
   {
     "constant": true,
     "inputs": [],
