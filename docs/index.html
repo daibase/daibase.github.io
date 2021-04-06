@@ -415,7 +415,7 @@ DEV NOTE: This the default "receive()" method which generates an internal call t
 <b>Synchronize the Daibase Ecosytem</b>
 <li>Pressing the "Synchronize" button from the Control Panel.</li>
 <i>NOTE: This is useful if you are experiencing an unusual Swap error ("This seems to be an error with one of the Tokens your're using"/"k-error"/undefined/"Insufficient Output Token Amount"), pressing this button should resolve it.<br>Each call of BaseCannon also includes an internal call to Synchronize.</i><br>
-<h4>Known Bugs</h4>
+<h3 align="center">Known Bugs</h3>
 <b>"This seems to be a problem with one of the tokens you're using"</b>
 It has been found that this situation can be solved by the below methods:
 <ol>
@@ -431,10 +431,12 @@ Such a error arises if there's a disbalance in the pairs balances and the count 
 	<li>Hitting the BaseCannon can cure it sometimes.</li>
 	<li>Synchronizing also can solve this issue, and would be cheaper than creating a new Epoch.
 </ol>
-<h4>Exceptions</h4>
+<h3 align="center">Exceptions</h3>
 <li>Don't send more than 10 Billion coins (ETH/XDAI/BNB/ONE,etc.) to the contract for a direct purchase or parti().</li>
 <li>Don't hit the BaseCannon twice within 42 blocks (about 10 min. on Eth, 3-4 mins. on xDAI and Polygon, 2 min. on BSC and Tron, 84 secs. on Harmony, etc.).</li>
 <i>NOTE: This limit is reduced to 4 Blocks during the testing phase.</i>
+<li>"FAIL: OUT OF GAS"</li>
+This can occur when sending native coins (XDAI/ETH/BNB/ONE/MATIC/TRX,etc.) to the DAIX Smart Contract. It happens due to MetaMask or other Wallets erroneously ascribing a "Gas Limit" of "21000". We suggest manually editing it to "500000" (Five hundred thousands) instead.
 </div>
 <h4>Recently Tested Versions</h4>
 (Ordered as per recency.)<br>Detailed as follows:<br><br>
@@ -475,7 +477,7 @@ Such a error arises if there's a disbalance in the pairs balances and the count 
 <pre>
 0x1376BB93c4BCEd5e1d5D3517656775043E050482</pre>
 
-Older versions can be found in the CHEF wallet (new) on Kovan and Rinkeby.<br>
+Older versions can be found in the CHEF's wallet on Ropsten, Kovan, B.S.C. and Rinkeby.<br>
 
 
 <br>
