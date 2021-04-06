@@ -1,6 +1,57 @@
-<!doctype html><html>
-<meta charset="UTF-8">
+<!doctype html><html><meta charset="UTF-8">
+<!--
+	Written by @itsN1X on day 8769
+	@github.com/itsN1X/8769_rebtra
+	To tip me or to donate, visit:
+	>> https://9xo.github.io/R/teb
+	This Software is void of every
+	warranty, guarentee, assurance
+	or any liability of all kinds.
+	Please use this ware carefuly.
+	It was made for a Client based
+	over the International Waters,
+	and has been deployed for them
+	over their private network. It
+	should be noted that sending a
+	request over internet is risky
+	& due diligence is obligatory.
+	The E. X. (I) Technologies has
+	to be indemnified for any loss
+	or misfortunes rendered by use
+	of this Software solution, and
+	must be done in any Legal, sub
+	-legal and other jurisdictions
+	under any court of Law or jury
+	or a consortium or institution
+	of Justice, local, federal and
+	international. Every user must
+	consent to this clause if they
+	interact, view or download our
+	Softwares/product/Information.
+	-->
+<head>
+<title>Coil Crypto Rebase Tracer Tracker</title>
+<!--
+To tip me or to donate, visit:
+"https://9xo.github.io/R/teb".
+BITCOIN:
+1N1X8i5VuRS1BeMxiy5ZaeensjhsVWdQeC
+BITCOIN CASH:
+1TsNiXCQkPKaB6zfDQQXAwMBfe12ySoKa
+DOGECOIN:
+DFTEuCkJwX3Djh1EMT4XNK6a6NixxrMfhx
+NIX Platform:
+GUNS36xAq9Kzr8ehDiTnAVH94Rai34SHDC
+ETH:
+0xD0f79B71A8ffB7f70392630f8BFc900fcA27af42
+$COIL:
+0xD0f79B71A8ffB7f70392630f8BFc900fcA27af42
+-->
+<meta name="description" content="Daibase is an algorithmic, cross-blockchain and multi-blockchain array of Smart Cotracts that targets multi-collateral Dai. Learn more!">
+<meta name="keywords" content="Dai DAIX Daibase Rebase Algorithmic Cross-chain Multi-blockchain Stablecoin xDAI BDAIX EDAIX MDAIX ODAIX TDAIX XDAIX">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--This stylesheet is under a copyright by itsN1X.
+© 2020 itsN1X | E. X. Information Technologies | 9Xo.github.io-->
 <head>
   <link rel="shortcut icon" href="img/daix.svg" />
 </head>
@@ -319,12 +370,12 @@ pre{overflow-x:auto}
 
 
 <br>
-<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
 <span id="fabb"></span><br>
 
 
 <br>
-<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x00Fcc7B1243a5b873751f7905Cf3693DB751775E" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
 <span id="fpbb"></span><br>
 
 
@@ -520,7 +571,6 @@ function gs()
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
 		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r});
-		theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
 		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r/1e18 + "DAIX"});
 		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
@@ -566,18 +616,16 @@ try
 	{
 		var conAdd = $("ci").value;
 		theCon = new web3.eth.Contract(abi, conAdd);
-		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=r});
+		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=r;$("fpbb").innerHTML=`Balance: ${conAddBal/1e18+"DAIX"}<br>`;});
 		var pairAdd = $("ipb").value;
 		thePC = new web3.eth.Contract(PA, pairAdd);
-		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r/1e18});
-		$("fpbb").innerHTML=`Daix balance: ${conAddBal}
+		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r/1e18;$("fpbb").innerHTML+=
 			<br>Reserves
-			<br>R1 : ${pairAddBal[0]}
-			<br>R2 : ${pairAddBal[1]}
+			<br>R1 : ${pairAddBal[0]/1e18}
+			<br>R2 : ${pairAddBal[1]/1e18}
 			<br>Prices
 			<br>Asset : ${pairAddBal[0]/pairAddBal[1]}
-			<br>Base : ${pairAddBal[1]/pairAddBal[0]}`;
-		console.log("PB",conAddBal,"res:",pairAddBal);
+			<br>Base : ${pairAddBal[1]/pairAddBal[0]}`;});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -585,46 +633,12 @@ async function wc()
 {
 	await window.ethereum.enable();
 	$("ua").innerHTML= window.ethereum.selectedAddress + " is connected on " + _n() + " Network.";
+	var conAdd = $("ci").value;
+	theCon = new web3.eth.Contract(abi, conAdd);
+	theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
 }
 function _n()
 {
-/*
-	switch(window.ethereum.chainId)
-	{
-		case "0x1": return "Ethereum Mainnet";
-		case "0x2": return "Expanse Network";
-		case "0x3": return "Ropsten Testnet";
-		case "0x4": return "Ethereum Testnet Rinkeby";
-		case "0x5": return "Ethereum Testnet Görli";
-		case "0x38": return "Binance Smart Chain";
-		case "0x2a": return "Ethereum Testnet Kovan";
-		case "0x63": return "POA Network Core";
-		case "0x64": return "xDAI Blockchain";
-		case "0x89": return "Matic Mainnet";
-	}
-	switch([window.ethereum.networkVersion,window.ethereum.chainId])
-	{
-		case ["1","0x1"]: return "Ethereum Mainnet";
-		case ["3","0x3"]: return "Ethereum Ropsten Testnet";
-		case ["4","0x4"]: return "Ethereum Testnet Rinkeby";
-		case ["5","0x5"]: return "Ethereum Testnet Görli";
-		case ["99","0x63"]: return "POA Network Core";
-		case ["100","0x64"]: return "xDAI Blockchain";
-		case ["137","0x89"]: return "Matic Mainnet";
-	}
-	//OR
-	switch(window.ethereum.networkVersion+"#"+window.ethereum.chainId)
-	{
-		case ("1#0x1"): return "Ethereum Mainnet";
-		case ("3#0x3"): return "Ethereum Ropsten Testnet";
-		case ("4#0x4"): return "Ethereum Testnet Rinkeby";
-		case ("5#0x5"): return "Ethereum Testnet Görli";
-		case ("99#0x63"): return "POA Network Core";
-		case ("100#0x64"): return "xDAI Blockchain";
-		case ("137#0x89"): return "Matic Mainnet";
-	}
-	*/
-	//BEST
 	switch(window.ethereum.networkVersion+"#"+window.ethereum.chainId)
 	{
 		case "1#0x1": return "Ethereum Mainnet";
