@@ -416,13 +416,13 @@ DEV NOTE: This the default "receive()" method which generates an internal call t
 <li>Pressing the "Synchronize" button from the Control Panel.</li>
 <i>NOTE: This is useful if you are experiencing an unusual Swap error ("This seems to be an error with one of the Tokens your're using"/"k-error"/undefined/"Insufficient Output Token Amount"), pressing this button should resolve it.<br>Each call of BaseCannon also includes an internal call to Synchronize.</i><br>
 <h4>Known Bugs</h4>
-<li>"This seems to be a problem with one of the tokens you're using"</li>
+<b>"This seems to be a problem with one of the tokens you're using"</b>
 It has been found that this situation can be solved by the below methods:
 <ol>
 	<li>Increasing Slippage Tolerance to 3% or more depending on the number of "hops", or intermediary tokens traversed during your swap.</li>
 	<li>A slippage of 5% is enough to Add or Remove liquidity. Using 3% for simple ETH/DAIX pairs is ample.</li>
 </ol>
-<li>"Error: Undefined"</li>
+<b>"Error: Undefined"</b>
 Such a error arises if there's a disbalance in the pairs balances and the count of its reserves in its memory. This is common in newly listed pairs and can be cured by:
 <ol>
 	<li>Making a "multi-hop" swap.</li>
@@ -688,7 +688,7 @@ try
 		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=Number(r);$("fpbb").innerHTML=`Balance: ${(conAddBal)/1e18+"DAIX"}<br>`;});
 		var pairAdd = $("ipb").value;
 		thePC = new web3.eth.Contract(PA, pairAdd);
-		await thePC.methods.getReserves().call((e, r) => {$("fpbb").innerHTML+=
+		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r;$("fpbb").innerHTML+=
 			`<br>Reserves
 			<br>R1 : ${Number(pairAddBal[0])/1e18}
 			<br>R2 : ${Number(pairAddBal[1])/1e18}
