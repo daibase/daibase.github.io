@@ -274,8 +274,10 @@ function $(_) {return document.getElementById(_);}
 window.addEventListener('load',
 	function()
 	{
-		if(!window.ethereum){$("er").innerHTML+=("Please use a web3-enabled browser / Metamask<hr>";}
-		else{web3 = new Web3(web3.currentProvider);gs();}
+		if(!window.ethereum)
+			{$("er").innerHTML+="Please use a web3-enabled browser / Metamask<hr>";}
+		else
+			{web3 = new Web3(web3.currentProvider);gs();}
 	}, false);
 var abi = [
 	{
