@@ -1,0 +1,13 @@
+{
+  "name": "Daibase dApp",
+  "short_name": "DAIX dApp",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F5AC37",
+  "description": "A multi-blockchain cross-chain agorithmic self-stabilizing smart contract targetting multi-collateralized DAI stablecoin.",
+  "icons": [{
+    "src": "img/daix.svg",
+    "sizes": "200x200"
+  }],
+  "theme-color": "#F5AC37"
+}
