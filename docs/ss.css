@@ -1,5 +1,5 @@
 
-*{word-wrap: break-word;}
+*{word-wrap: break-word;text-align: center}
 
 #topper {
  display:grid;
@@ -60,7 +60,7 @@ div#intro_sol_dis{background:
 
 pre{overflow-x:auto}
 
-li{margin-left:10%;}
+li{margin-left:10%;text-align: right}
 
 @media(min-width:641px){
 	#stats{
