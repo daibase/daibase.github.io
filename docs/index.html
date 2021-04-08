@@ -122,6 +122,8 @@ li{margin-left:10%;}
 
 .cu{display:none}
 
+#heir_new{display:grid;grid-template-columns: auto;border-radius:15px;}
+
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -137,6 +139,8 @@ li{margin-left:10%;}
 		display: grid;grid-template-columns: auto auto auto auto auto;font-size:1em;text-align: center}
 	#TCP{
 		display:grid;grid-template-columns: auto auto auto;border-radius:15px;}
+	#heir_new{
+		display:grid;grid-template-columns: auto auto;border-radius:15px;}
 }
 </style>
 <div id="topper">
@@ -165,23 +169,23 @@ li{margin-left:10%;}
 	<img width="64px" src="img/learn.svg">
 	<br>Learn</a>
 	</div>
-	<div><a href="learn.html">
+	<div id="id_shopping" onclick="c(this.id.substr(1))"><a href="#d_learn">
 	<img width="64px" src="img/shopping.svg">
-	<br>Participate</a>
+	<br>Shop</a>
 	</div>
-	<div><a href="learn.html">
+	<div id="id_trading" onclick="c(this.id.substr(1))"><a href="#d_learn">
 	<img width="64px" src="img/exchange.svg">
-	<br>Swaps</a>
+	<br>Swap</a>
 	</div>
-	<div><a href="learn.html">
+	<div id="id_farms" onclick="c(this.id.substr(1))"><a href="#d_learn">
 	<img width="64px" src="img/farmer.svg">
 	<br>Farms</a>
 	</div>
-	<div><a href="learn.html">
+	<div id="id_dao" onclick="c(this.id.substr(1))"><a href="#d_learn">
 	<img width="64px" src="img/govern.svg">
 	<br>D.A.O.</a>
 	</div>
-	<div><a href="learn.html">
+	<div id="id_revenues" onclick="c(this.id.substr(1))"><a href="#d_learn">
 	<img width="64px" src="img/toll.svg">
 	<br>Revenues</a>
 	</div>
@@ -193,11 +197,15 @@ li{margin-left:10%;}
 	<img width="64px" src="img/lab.svg">
 	<br>Laboratory</a>
 	</div>
-	<div><a href="learn.html">
+	<div id="id_integration" onclick="c(this.id.substr(1))"><a href="#d_learn">
 	<img width="64px" src="img/contract.svg">
 	<br>Integration</a>
 	</div>
-	<div><a href="learn.html">
+	<div id="id_heir" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<img width="64px" src="img/crown.svg">
+	<br>DAIX Heir</a>
+	</div>
+	<div id="id_guides" onclick="c(this.id.substr(1))"><a href="#d_learn">
 	<img width="64px" src="img/guide.svg">
 	<br>Guides</a>
 	</div>
@@ -205,7 +213,7 @@ li{margin-left:10%;}
 	<img width="64px" src="img/news.svg">
 	<br>News</a>
 	</div>
-	<div><a href="https://t.me/s/DaiBased/4">
+	<div><a href="https://t.me/s/DaiBased/4" target="_blank">
 	<img width="64px" src="img/roadmap.svg">
 	<br>Roadmap</a>
 	</div>
@@ -527,6 +535,26 @@ li{margin-left:10%;}
 	</div>
 </div>
 
+<div class="cu" id="d_heir">
+	<div style="font-size:1.25em" align="center">
+		<h3>The Chosen Ones</h3>
+		Those who make the biggest sacrifices within the last 210000 blocks, get Crowned the legitimate Heir and receive 2% from each DAIX transaction!<br>
+		<img src="img/crown.svg" width="200px"></img><br>
+		<span id="heir_tco">Nobody yet</span> is <b>The Chosen One</b> on xDAI Chain!<br><br>
+		<div id="heir_new">
+			<div>
+			<img src="img/bag.svg" width="128px"><br>
+			To become The Chosen One, you must donate <span id="heir_sacrifice">1</span> XDAI to the <b>KingMaker</b> smart contract, 8% further than the previous sacrifices.
+			</div>
+			<div>
+			<img src="img/clock.svg" width="128px"><br>
+			Alternatively, you could await The Chosen One to step down from the throne at <span id="heir_clock">sometime within the next 210000 blocks.
+			</div>
+		</div>
+
+	</div>
+	<hr style="padding:0;width:50%">
+</div>
 
 
 
