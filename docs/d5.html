@@ -1,0 +1,545 @@
+<!doctype html><html><meta charset="UTF-8">
+<!--
+	Written by @itsN1X on day 8769
+	_://daibase/daibase.github.io\
+	To tip me or to donate, visit:
+	>> https://9xo.github.io/R/teb
+	This Software is void of every
+	warranty, guarentee, assurance
+	or any liability of all kinds.
+	Please use this ware carefuly.
+	It was made for a Client based
+	over the International Waters,
+	and has been deployed for them
+	over their private network. It
+	should be noted that sending a
+	request over internet is risky
+	& due diligence is obligatory.
+	The E. X. (I) Technologies has
+	to be indemnified for any loss
+	or misfortunes rendered by use
+	of this Software solution, and
+	must be done in any Legal, sub
+	-legal and other jurisdictions
+	under any court of Law or jury
+	or a consortium or institution
+	of Justice, local, federal and
+	international. Every user must
+	consent to this clause if they
+	interact, view or download our
+	Softwares/product/Information.
+	-->
+<title>Daibase Protocol</title>
+<!--
+To tip me or to donate, visit:
+"https://9xo.github.io/R/teb".
+BITCOIN:
+1N1X8i5VuRS1BeMxiy5ZaeensjhsVWdQeC
+BITCOIN CASH:
+1TsNiXCQkPKaB6zfDQQXAwMBfe12ySoKa
+DOGECOIN:
+DFTEuCkJwX3Djh1EMT4XNK6a6NixxrMfhx
+NIX Platform:
+GUNS36xAq9Kzr8ehDiTnAVH94Rai34SHDC
+ETH:
+0xD0f79B71A8ffB7f70392630f8BFc900fcA27af42
+$COIL:
+0xD0f79B71A8ffB7f70392630f8BFc900fcA27af42
+-->
+<meta name="description" content="Daibase is an algorithmic, cross-blockchain and multi-blockchain array of Smart Contracts that targets multi-collateral Dai. Learn more!">
+<meta name="keywords" content="Dai DAIX Daibase Rebase Algorithmic Cross-chain Multi-blockchain Stablecoin xDAI BDAIX EDAIX MDAIX ODAIX TDAIX XDAIX Decentralized Finance defi">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--This stylesheet is under a copyright by itsN1X.
+© 2020 itsN1X | E. X. Information Technologies | 9Xo.github.io-->
+<link rel="shortcut icon" href="img/daix.svg" />
+<link rel="manifest" href="manifest.json">
+<script src="web3.min.js" id="scrrr"></script>
+<link rel="stylesheet" type="text/css" href="ss.css">
+<div id="topper">
+	<div id="topper_explore">
+		<img src="img/daix.svg" width="32px" style="border-radius:32%"><!--++<br>++-->
+	</div>
+	<div id="topper_links"><!--
+		<a href="https://discord.gg">Discord</a>
+		<a href="https://t.me/daibase">Telegram</a>-->
+	</div>
+	<div id="topper_logo">
+		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
+	</div>
+</div>
+<div class="statbox">
+	<div class="stat statnumb">⚠ Important Notice!</div>
+	<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
+	We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided near the<b><a href="#cb">bottom of our page</a></b>.
+	<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Week of April '21.</div>
+</div>
+
+<h3 align="center">DAIX hmmmmmmmmm</h3>
+
+<div id="stats">
+	<div class="statbox">
+		<div class="stat statnumb">000</div>
+		<div class="stat statname">Epochs Elapsed</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Unique Users</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000</div>
+		<div class="stat statname">№ of Blockchains</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Number of Tokens</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Transaction Count</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Total Value Locked</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Average Price</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">№ of DEX pairs</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Total Supply</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Market Cap.</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000</div>
+		<div class="stat statname">Total Revenue</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">more info…?</div>
+		<div class="stat statname">Open Dashboard</div>
+	</div>
+</div>
+
+
+<hr style="padding:0;width:50%">
+
+<h3 align="center">XDAIX : xDAI Daibase</h3>
+
+<button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button><br><br>
+<span id="ua">You're not connected</span><br><br>
+
+<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
+
+<div align="center" style="font-size:0.7em;">
+	<span id="er"></span><br>
+	<div id="TCP">
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">Nameless</div>
+			<div class="stat statname">Full Name</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_s">UNKNOWN</div>
+			<div class="stat statname">Token Symbol</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_b">Nothing</div>
+			<div class="stat statname">Your Balance</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_e">Timeless</div>
+			<div class="stat statname">Epochs Elapsed</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_h">Zero</div>
+			<div class="stat statname">Base Block</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_t">Uncountable</div>
+			<div class="stat statname">Total Supply</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_x">Undefined</div>
+			<div class="stat statname">Tax per billion</div>
+		</div>
+		<!--
+		Name : <span id="i_n"></span><br>
+		Symbol : <span id="i_s"></span><br>
+		Supply : <span id="i_t"></span><br>
+		Epoch : <span id="i_e"></span><br>
+		Height : <span id="i_h"></span><br>
+		Tax/Bn : <span id="i_x"></span><br>
+		-->
+	</div>
+</div>
+<br>
+
+<button style="height:auto;font-size:1.5em" id="sb" onclick="s_s()">Synchronize</button>
+<button style="height:auto;font-size:1.5em" id="bb" onclick="s_b()">BaseCannon</button><br>
+
+
+<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
+<span id="fabb"></span><br>
+
+
+<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x00Fcc7B1243a5b873751f7905Cf3693DB751775E" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
+<span id="fpbb"></span><br>
+
+
+
+
+
+<div id="exploreus">
+	<div><a href="learn.html">
+	<img width="64px" src="img/learn.svg">
+	<br>Learn</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/shopping.svg">
+	<br>Participate</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/exchange.svg">
+	<br>Swaps</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/farmer.svg">
+	<br>Farms</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/govern.svg">
+	<br>D.A.O.</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/toll.svg">
+	<br>Revenues</a>
+	</div>
+	<div><a href="dashboard.html">
+	<img width="64px" src="img/charts.svg">
+	<br>Dashboard</a>
+	</div>
+	<div><a href="laboratory.html">
+	<img width="64px" src="img/lab.svg">
+	<br>Laboratory</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/contract.svg">
+	<br>Integration</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/guide.svg">
+	<br>Guides</a>
+	</div>
+	<div><a href="https://t.me/s/DaiBased" target="_blank">
+	<img width="64px" src="img/news.svg">
+	<br>News</a>
+	</div>
+	<div><a href="https://t.me/s/DaiBased/4">
+	<img width="64px" src="img/roadmap.svg">
+	<br>Roadmap</a>
+	</div>
+</div>
+
+
+<hr style="padding:0;width:50%">
+<div align="width:85%"><b>Important note:</b><br>
+<br>There was never, and will be no "pre-sale".<br>
+Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.
+</div>
+<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span>
+</div>
+<div align="center">
+<a href="https://twitter.com/daibased">Twitter</a>
+<a href="https://discord.gg/VU8NHdmYu6">Discord</a>
+<a href="https://t.me/daibase">Telegram</a>
+</div>
+
+
+<script>
+function $(_) {return document.getElementById(_);}
+var script = document.querySelector('#scrrr');
+  script.addEventListener('load', function() {
+if(!window.ethereum)
+			{$("er").innerHTML+="Please use a web3-enabled browser / Metamask<hr>";}
+		else
+			{web3 = new Web3(web3.currentProvider);gs();}  });
+window.addEventListener('load',
+	function()
+	{
+		if(!window.ethereum)
+			{$("er").innerHTML+="Please use a web3-enabled browser / Metamask<hr>";}
+		else
+			{web3 = new Web3(web3.currentProvider);gs();}
+	}, false);
+var abi = [
+	{
+		"inputs": [],
+		"name": "allpairssync",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "guy",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "basecanon",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lastepoch",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lastheight",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "taxperbillion",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+//above is perma
+
+function gs()
+{
+	try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
+		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r});
+		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r/1e18 + "DAIX"});
+		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
+		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
+		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+function s_b()
+{
+	try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.basecanon().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+function s_s()
+{
+try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.allpairssync().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+function fb()
+{
+try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.balanceOf($("fab").value).call((e, r) => {$("fabb").innerHTML = r/1e18 +"DAIX"});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+async function fpb()
+{
+		var conAddBal;
+		var pairAddBal;
+try
+	{
+		var conAdd = $("ci").value;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=Number(r);$("fpbb").innerHTML=`Balance: ${(conAddBal)/1e18+"DAIX"}<br>`;});
+		var pairAdd = $("ipb").value;
+		thePC = new web3.eth.Contract(PA, pairAdd);
+		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r;$("fpbb").innerHTML+=
+			`<br>Reserves
+			<br>R1 : ${Number(pairAddBal[0])/1e18}
+			<br>R2 : ${Number(pairAddBal[1])/1e18}
+			<br>Prices
+			<br>Asset : ${Number(pairAddBal[0])/Number(pairAddBal[1])}
+			<br>Base : ${Number(pairAddBal[1])/Number(pairAddBal[0])}`;});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+async function wc()
+{
+	await window.ethereum.enable();
+	$("ua").innerHTML= window.ethereum.selectedAddress + " is connected on " + _n() + " Network.";
+	var conAdd = $("ci").value;
+	theCon = new web3.eth.Contract(abi, conAdd);
+	theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
+}
+function _n()
+{
+	switch(window.ethereum.networkVersion+"#"+window.ethereum.chainId)
+	{
+		case "1#0x1": return "Ethereum Mainnet";
+		case "1#0x2": return "Expanse";
+		case "3#0x3": return "Ropsten Testnet";
+		case "4#0x4": return "Ethereum Testnet Rinkeby";
+		case "5#0x5": return "Ethereum Testnet Görli";
+		case "56#0x38": return "Binance Smart Chain";
+		case "42#0x2a": return "Ethereum Testnet Kovan";
+		case "99#0x63": return "POA Network Core";
+		case "100#0x64": return "xDAI Blockchain";
+		case "137#0x89": return "Matic Mainnet";
+	}
+}
+var PA=[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getReserves",
+    "outputs": [
+      {
+        "internalType": "uint112",
+        "name": "_reserve0",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint112",
+        "name": "_reserve1",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_blockTimestampLast",
+        "type": "uint32"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "token0",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "token1",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+];
+</script>
+</html>
