@@ -54,224 +54,15 @@ $COIL:
 <link rel="shortcut icon" href="img/daix.svg" />
 <link rel="manifest" href="manifest.json">
 <script src="web3.min.js"></script>
-<link rel="stylesheet" type="text/css" href="ss.css">
-<div id="topper">
-	<div id="topper_explore">
-		<img src="img/daix.svg" width="32px" style="border-radius:32%"><!--++<br>++-->
-	</div>
-	<div id="topper_links"><!--
-		<a href="https://discord.gg">Discord</a>
-		<a href="https://t.me/daibase">Telegram</a>-->
-	</div>
-	<div id="topper_logo">
-		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
-	</div>
-</div>
-<div class="statbox">
-	<div class="stat statnumb">⚠ Important Notice!</div>
-	<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
-	We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided near the<b><a href="#cb">bottom of our page</a></b>.
-	<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Week of April '21.</div>
-</div>
-
-<h3 align="center">DAIX Dashboard</h3>
-
-<div id="stats">
-	<div class="statbox">
-		<div class="stat statnumb">000</div>
-		<div class="stat statname">Epochs Elapsed</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000</div>
-		<div class="stat statname">Unique Users</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000</div>
-		<div class="stat statname">№ of Blockchains</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000</div>
-		<div class="stat statname">Number of Tokens</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000 000 000</div>
-		<div class="stat statname">Transaction Count</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000 000 000</div>
-		<div class="stat statname">Total Value Locked</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000</div>
-		<div class="stat statname">Average Price</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000</div>
-		<div class="stat statname">№ of DEX pairs</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000 000 000</div>
-		<div class="stat statname">Total Supply</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000 000 000</div>
-		<div class="stat statname">Market Cap.</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">000 000 000</div>
-		<div class="stat statname">Total Revenue</div>
-	</div>
-	<div class="statbox">
-		<div class="stat statnumb">more info…?</div>
-		<div class="stat statname">Open Dashboard</div>
-	</div>
-</div>
-
-
-<hr style="padding:0;width:50%">
-
-<h3 align="center">XDAIX : xDAI Daibase</h3>
-
-<button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button><br><br>
-<span id="ua">You're not connected</span><br><br>
-
-<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
-
-<div align="center" style="font-size:0.7em;">
-	<span id="er"></span><br>
-	<div id="TCP">
-		<div class="statbox">
-			<div class="stat statnumb" id="i_n">Nameless</div>
-			<div class="stat statname">Full Name</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="i_s">UNKNOWN</div>
-			<div class="stat statname">Token Symbol</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="i_b">Nothing</div>
-			<div class="stat statname">Your Balance</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="i_e">Timeless</div>
-			<div class="stat statname">Epochs Elapsed</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="i_h">Zero</div>
-			<div class="stat statname">Base Block</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="i_t">Uncountable</div>
-			<div class="stat statname">Total Supply</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="i_x">Undefined</div>
-			<div class="stat statname">Tax per billion</div>
-		</div>
-		<!--
-		Name : <span id="i_n"></span><br>
-		Symbol : <span id="i_s"></span><br>
-		Supply : <span id="i_t"></span><br>
-		Epoch : <span id="i_e"></span><br>
-		Height : <span id="i_h"></span><br>
-		Tax/Bn : <span id="i_x"></span><br>
-		-->
-	</div>
-</div>
-<br>
-
-<button style="height:auto;font-size:1.5em" id="sb" onclick="s_s()">Synchronize</button>
-<button style="height:auto;font-size:1.5em" id="bb" onclick="s_b()">BaseCannon</button><br>
-
-
-<br>
-<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
-<span id="fabb"></span><br>
-
-
-<br>
-<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x00Fcc7B1243a5b873751f7905Cf3693DB751775E" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
-<span id="fpbb"></span><br>
-
-
-
-
-
-<div id="exploreus">
-	<div><a href="learn.html">
-	<img width="64px" src="img/learn.svg">
-	<br>Learn</a>
-	</div>
-	<div><a href="learn.html">
-	<img width="64px" src="img/shopping.svg">
-	<br>Participate</a>
-	</div>
-	<div><a href="learn.html">
-	<img width="64px" src="img/exchange.svg">
-	<br>Swaps</a>
-	</div>
-	<div><a href="learn.html">
-	<img width="64px" src="img/farmer.svg">
-	<br>Farms</a>
-	</div>
-	<div><a href="learn.html">
-	<img width="64px" src="img/govern.svg">
-	<br>D.A.O.</a>
-	</div>
-	<div><a href="learn.html">
-	<img width="64px" src="img/toll.svg">
-	<br>Revenues</a>
-	</div>
-	<div><a href="dashboard.html">
-	<img width="64px" src="img/charts.svg">
-	<br>Dashboard</a>
-	</div>
-	<div><a href="laboratory.html">
-	<img width="64px" src="img/lab.svg">
-	<br>Laboratory</a>
-	</div>
-	<div><a href="learn.html">
-	<img width="64px" src="img/contract.svg">
-	<br>Integration</a>
-	</div>
-	<div><a href="learn.html">
-	<img width="64px" src="img/guide.svg">
-	<br>Guides</a>
-	</div>
-	<div><a href="https://t.me/s/DaiBased" target="_blank">
-	<img width="64px" src="img/news.svg">
-	<br>News</a>
-	</div>
-	<div><a href="https://t.me/s/DaiBased/4">
-	<img width="64px" src="img/roadmap.svg">
-	<br>Roadmap</a>
-	</div>
-</div>
-
-
-<hr style="padding:0;width:50%">
-<div align="width:85%"><b>Important note:</b><br>
-<br>There was never, and will be no "pre-sale".<br>
-Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.
-</div>
-<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span>
-</div>
-<div align="center">
-<a href="https://twitter.com/daibased">Twitter</a>
-<a href="https://discord.gg/VU8NHdmYu6">Discord</a>
-<a href="https://t.me/daibase">Telegram</a>
-</div>
-
-
 <script>
 function $(_) {return document.getElementById(_);}
 function d()
-	{
+	{try{
 		if(!window.ethereum)
 			{$("er").innerHTML+="Please use a web3-enabled browser / Metamask<hr>";}
 		else
 			{web3 = new Web3(web3.currentProvider);gs();}
-	}
+	}catch(me){};}
 window.addEventListener('load',
 	function()
 	{
@@ -544,4 +335,213 @@ var PA=[
   }
 ];
 </script>
+<link rel="stylesheet" type="text/css" href="ss.css">
+<div id="topper">
+	<div id="topper_explore">
+		<img src="img/daix.svg" width="32px" style="border-radius:32%"><!--++<br>++-->
+	</div>
+	<div id="topper_links"><!--
+		<a href="https://discord.gg">Discord</a>
+		<a href="https://t.me/daibase">Telegram</a>-->
+	</div>
+	<div id="topper_logo">
+		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
+	</div>
+</div>
+<div class="statbox">
+	<div class="stat statnumb">⚠ Important Notice!</div>
+	<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
+	We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided near the<b><a href="#cb">bottom of our page</a></b>.
+	<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Week of April '21.</div>
+</div>
+
+<h3 align="center">DAIX Dashboard</h3>
+
+<div id="stats">
+	<div class="statbox">
+		<div class="stat statnumb">000</div>
+		<div class="stat statname">Epochs Elapsed</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Unique Users</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000</div>
+		<div class="stat statname">№ of Blockchains</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Number of Tokens</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Transaction Count</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Total Value Locked</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">Average Price</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000</div>
+		<div class="stat statname">№ of DEX pairs</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Total Supply</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000 000</div>
+		<div class="stat statname">Market Cap.</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">000 000 000</div>
+		<div class="stat statname">Total Revenue</div>
+	</div>
+	<div class="statbox">
+		<div class="stat statnumb">more info…?</div>
+		<div class="stat statname">Open Dashboard</div>
+	</div>
+</div>
+
+
+<hr style="padding:0;width:50%">
+
+<h3 align="center">XDAIX : xDAI Daibase</h3>
+
+<button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button><br><br>
+<span id="ua">You're not connected</span><br><br>
+
+<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
+
+<div align="center" style="font-size:0.7em;">
+	<span id="er"></span><br>
+	<div id="TCP">
+		<div class="statbox">
+			<div class="stat statnumb" id="i_n">Nameless</div>
+			<div class="stat statname">Full Name</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_s">UNKNOWN</div>
+			<div class="stat statname">Token Symbol</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_b">Nothing</div>
+			<div class="stat statname">Your Balance</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_e">Timeless</div>
+			<div class="stat statname">Epochs Elapsed</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_h">Zero</div>
+			<div class="stat statname">Base Block</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_t">Uncountable</div>
+			<div class="stat statname">Total Supply</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="i_x">Undefined</div>
+			<div class="stat statname">Tax per billion</div>
+		</div>
+		<!--
+		Name : <span id="i_n"></span><br>
+		Symbol : <span id="i_s"></span><br>
+		Supply : <span id="i_t"></span><br>
+		Epoch : <span id="i_e"></span><br>
+		Height : <span id="i_h"></span><br>
+		Tax/Bn : <span id="i_x"></span><br>
+		-->
+	</div>
+</div>
+<br>
+
+<button style="height:auto;font-size:1.5em" id="sb" onclick="s_s()">Synchronize</button>
+<button style="height:auto;font-size:1.5em" id="bb" onclick="s_b()">BaseCannon</button><br>
+
+
+<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
+<span id="fabb"></span><br>
+
+
+<br>
+<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x00Fcc7B1243a5b873751f7905Cf3693DB751775E" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
+<span id="fpbb"></span><br>
+
+
+
+
+
+<div id="exploreus">
+	<div><a href="learn.html">
+	<img width="64px" src="img/learn.svg">
+	<br>Learn</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/shopping.svg">
+	<br>Participate</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/exchange.svg">
+	<br>Swaps</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/farmer.svg">
+	<br>Farms</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/govern.svg">
+	<br>D.A.O.</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/toll.svg">
+	<br>Revenues</a>
+	</div>
+	<div><a href="dashboard.html">
+	<img width="64px" src="img/charts.svg">
+	<br>Dashboard</a>
+	</div>
+	<div><a href="laboratory.html">
+	<img width="64px" src="img/lab.svg">
+	<br>Laboratory</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/contract.svg">
+	<br>Integration</a>
+	</div>
+	<div><a href="learn.html">
+	<img width="64px" src="img/guide.svg">
+	<br>Guides</a>
+	</div>
+	<div><a href="https://t.me/s/DaiBased" target="_blank">
+	<img width="64px" src="img/news.svg">
+	<br>News</a>
+	</div>
+	<div><a href="https://t.me/s/DaiBased/4">
+	<img width="64px" src="img/roadmap.svg">
+	<br>Roadmap</a>
+	</div>
+</div>
+
+
+<hr style="padding:0;width:50%">
+<div align="width:85%"><b>Important note:</b><br>
+<br>There was never, and will be no "pre-sale".<br>
+Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.
+</div>
+<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.18<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span>
+</div>
+<div align="center">
+<a href="https://twitter.com/daibased">Twitter</a>
+<a href="https://discord.gg/VU8NHdmYu6">Discord</a>
+<a href="https://t.me/daibase">Telegram</a>
+</div>
+
+
 </html>
