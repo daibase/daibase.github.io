@@ -156,8 +156,8 @@ li{margin-left:10%;}
 	</div>
 </div>
 
-	<span id="ua">You're not connected.</span>
-	Touch to<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</span></b>
+	<span id="ua">You're not connected.</span><br>
+	<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</span></b>.
 	<br>
 
 
@@ -747,10 +747,9 @@ function gs()
 		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
-		theCon.methods.kingmaker().call((e, r) =>{$("heir_kima").innerHTML = r;});
+		theCon.methods.kingmaker().call((e, r) =>{$("heir_kima").innerHTML = r;km_d(r);gsd+=1;});
 	}
 	catch(e){$("er").innerHTML=e;}
-	km_d();gsd+=1;
 }
 function s_b()
 {
@@ -803,9 +802,9 @@ try
 	}
 	catch(e){$("er").innerHTML=e;}
 }
-function km_d()
+function km_d(a)
 {
-	var KMA = $("heir_kima").value;
+	var KMA = a;
 	KMC = new web3.eth.Contract(KM, KMA);
 	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r});
 	KMC.methods.clock().call((e, r) =>{$("heir_clock").innerHTML = r});
