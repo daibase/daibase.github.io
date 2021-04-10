@@ -565,7 +565,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 			</div>
 			<div>
 			<img src="img/clock.svg" width="128px"><br>
-			Alternatively, you could await The Chosen One crowned at <span id="heir_clock">sometime within the next 210000 blocks.</span> to descend the throne.
+			Alternatively, you must await the present Chosen One to descend the throne at <span id="heir_clock">sometime within the next 210000 blocks.</span> .
 			</div>
 		</div>
 		<button style="font-size:1.5em" id="heir_yield" onclick="km_y()">Conquer Coffer</button>
@@ -812,8 +812,8 @@ try
 function km_d()
 {
 	KMC = new web3.eth.Contract(KM, KMA);
-	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r/1e18});
-	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp*1e3))})});
+	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r/1e18*1.09});
+	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp*1e3+60000))})});//60k for 4blocks
 	KMC.methods.TheChosenOne().call((e, r) =>{$("heir_tco").innerHTML = r});
 }
 function km_y()
