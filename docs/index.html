@@ -342,8 +342,6 @@ li{margin-left:10%;}
 	</div>
 
 
-	<hr style="padding:0;width:50%">
-
 	</div>
 
 </div>
@@ -359,7 +357,7 @@ li{margin-left:10%;}
 	<button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button><br><br>
 	<span id="ua">You're not connected</span><br><br>
 
-	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0x18adb2264C802c0E3022036D477D5d55bdA7d5B4" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
 
 	<div align="center" style="font-size:0.7em;">
 		<span id="er"></span><br>
@@ -409,12 +407,12 @@ li{margin-left:10%;}
 
 
 	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0xaD3Ed38b64E795e61Ff0E2DF5a8803CCBbd53e39" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
 	<span id="fabb"></span><br>
 
 
 	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x00Fcc7B1243a5b873751f7905Cf3693DB751775E" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x86E34e85519088eF75D6AF9ef39050bfa753216e" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
 	<span id="fpbb"></span><br>
 
 	<h4>Scope of Testing</h4>
@@ -481,6 +479,8 @@ li{margin-left:10%;}
 {version} : {Network}
 {DAIX Token contract}
 
+{KingMaker Contract}
+
 {WETH Uniswap}
 {UNI  Uniswap}
 {DAI  Uniswap}
@@ -489,6 +489,15 @@ li{margin-left:10%;}
 {USDC Sushiswap}
 {UNI  Sushiswap}
 	</pre><br>
+	<br>
+	<b>v0.0.40 : Ropsten</b>
+	<pre>
+DAIX40 0x18adb2264C802c0E3022036D477D5d55bdA7d5B4
+
+KinMak 0xaD3Ed38b64E795e61Ff0E2DF5a8803CCBbd53e39
+
+u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
+</pre>
 	<br>
 	<b>v0.0.37 : Ropsten</b>
 	<pre>
@@ -530,7 +539,6 @@ li{margin-left:10%;}
 
 
 
-	<hr style="padding:0;width:50%">
 
 	</div>
 </div>
@@ -551,12 +559,15 @@ li{margin-left:10%;}
 			Alternatively, you could await The Chosen One to step down from the throne at <span id="heir_clock">sometime within the next 210000 blocks.
 			</div>
 		</div>
-
 	</div>
-	<hr style="padding:0;width:50%">
+	<br>The King-Maker is <span id="heir_kima"></span><br>
+	<br>Only <b>The Chosen One</b>, the legitimate heir to the Reserve Treasures of The DAIX, must press the button below.<br>
+	<button id="heir_yield">Conquer Coffer</button>
+	<br><span style="font-size:0.75em">Wrath be cast unto those who fake 'Their identity!</span>
+
 </div>
 
-
+<hr style="padding:0;width:50%">
 
 <div style="text-align:center;"><b>Important note:</b>
 <br>There was never, and will be no "pre-sale".<br>
@@ -700,10 +711,23 @@ var abi = [
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "kingmaker",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
 //above is perma
-
+var gsd=0;
 function gs()
 {
 	try
@@ -716,6 +740,7 @@ function gs()
 		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
+		theCon.methods.kingmaker.call((e, r) =>{$("heir_kima").innerHTML = r;km_d();gsd+=1;});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -769,6 +794,24 @@ try
 			<br>Base : ${Number(pairAddBal[1])/Number(pairAddBal[0])}`;});
 	}
 	catch(e){$("er").innerHTML=e;}
+}
+function km_d()
+{
+	var KMA = $("heir_kima").value;
+	KMC = new web3.eth.Contract(KM, KMA);
+	KMC.methods.sacrifice.call((e, r) =>{$("heir_sacrifice").innerHTML = r});
+	KMC.methods.clock.call((e, r) =>{$("heir_clock").innerHTML = r});
+	KMC.methods.TheChosenOne.call((e, r) =>{$("heir_tco").innerHTML = r});
+}
+function km_y()
+{
+	if(gsd)
+	{
+		var KMA = $("heir_kima").value;
+		KMC = new web3.eth.Contract(KM, KMA);
+		KMC.methods.yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+	}
+	else{console.log("TOO EARLY TO YIELD. AWAIT KingMaker TO BE FOUND!")}
 }
 async function wc()
 {
@@ -850,6 +893,65 @@ var PA=[
     "stateMutability": "view",
     "type": "function"
   }
+];
+KM=[
+	{
+		"inputs": [],
+		"name": "Yield",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "clock",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "sacrifice",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "TheChosenOne",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
 ];
 </script>
 </html>
