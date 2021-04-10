@@ -366,7 +366,7 @@ li{margin-left:10%;}
 	<h3 align="center">Tester's Control Panel</h3>
 	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.40<br><br>
 
-	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0x18adb2264C802c0E3022036D477D5d55bdA7d5B4" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xDa1939F962F204443dC0D6c041E1F67FFc2B9380" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
 
 	<div align="center" style="font-size:0.7em;">
 		<span id="er"></span><br>
@@ -397,7 +397,7 @@ li{margin-left:10%;}
 			</div>
 			<div class="statbox">
 				<div class="stat statnumb" id="i_x">Undefined</div>
-				<div class="stat statname">Tax per billion</div>
+				<div class="stat statname">Tax per thousand</div>
 			</div>
 			<!--
 			Name : <span id="i_n"></span><br>
@@ -416,12 +416,12 @@ li{margin-left:10%;}
 
 
 	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0xaD3Ed38b64E795e61Ff0E2DF5a8803CCBbd53e39" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
 	<span id="fabb"></span><br>
 
 
 	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x86E34e85519088eF75D6AF9ef39050bfa753216e" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
 	<span id="fpbb"></span><br>
 
 	<h4>Scope of Testing</h4>
@@ -432,7 +432,7 @@ li{margin-left:10%;}
 	<li>Make sure the amount you send or receive is the amount that was transacted.</li>
 	<li>Check if the Block Explorer shows the correct amounts in the transaction details.</li>
 	<li>Inspect your wallet balance manually from the Explorer and Control Panel for a match with your wallet balance</li>
-	<li>Verify if the per trasaction tax is 2% of the amount sent by sender. The receiver would receive 98%</li>
+	<li>Verify if the per trasaction tax is 1% of the amount sent by sender. The receiver would receive 98%</li>
 	<i>NOTE: There is no transaction tax for amounts smaller than 0.00000001 DAIX.</i><br><br>
 	<b>Adding and Removing Liquidity</b><br>
 	<li>Try to add and remove liquidity from any AMM of your choice.</li>
@@ -499,6 +499,14 @@ li{margin-left:10%;}
 {UNI  Sushiswap}
 	</pre><br>
 	<br>
+	<b>v0.0.41 : Ropsten</b>
+	<pre>
+DAIX41 0xDa1939F962F204443dC0D6c041E1F67FFc2B9380
+
+KinMak none
+
+u/WETH 0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46
+</pre>	<br>
 	<b>v0.0.40 : Ropsten</b>
 	<pre>
 DAIX40 0x18adb2264C802c0E3022036D477D5d55bdA7d5B4
@@ -695,7 +703,7 @@ var abi = [
 	},
 	{
 		"inputs": [],
-		"name": "taxperbillion",
+		"name": "taxperk",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -744,7 +752,7 @@ function gs()
 		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
 		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r});
 		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r/1e18 + "DAIX"});
-		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
+		theCon.methods.taxperk().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
 		theCon.methods.kingmaker().call((e, r) =>
