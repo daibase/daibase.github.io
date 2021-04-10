@@ -568,8 +568,8 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 			Alternatively, you could await The Chosen One to step down from the throne at <span id="heir_clock">sometime within the next 210000 blocks.
 			</div>
 		</div>
-		<br>Only <b>The Chosen One</b>, the legitimate heir to the Reserve Treasures of The DAIX, must press the button below.<br>
-		<button id="heir_yield" onclick="km_y()">Conquer Coffer</button>
+		<br>Only <b>The Chosen One</b>, the legitimate heir to the Reserve Treasures of The DAIX, must press the button below, and be blessed with <span id="heir_purse">some DAIX</span>.<br>
+		<button style="font-size:1.5em" id="heir_yield" onclick="km_y()">Conquer Coffer</button>
 		<br><span style="font-size:0.75em">The King-Maker <span id="heir_kima"></span>'s wrath be cast unto those who fake 'Their identiticon!</span>
 	</div>
 </div>
@@ -747,7 +747,14 @@ function gs()
 		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
-		theCon.methods.kingmaker().call((e, r) =>{$("heir_kima").innerHTML = r;KMA=r;km_d();});
+		theCon.methods.kingmaker().call((e, r) =>
+		{
+			$("heir_kima").innerHTML = r;
+			KMA=r;
+			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});
+			km_d();
+
+		});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -806,7 +813,7 @@ function km_d()
 {
 	KMC = new web3.eth.Contract(KM, KMA);
 	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r/1e18});
-	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp))})});
+	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp*1e3))})});
 	KMC.methods.TheChosenOne().call((e, r) =>{$("heir_tco").innerHTML = r});
 }
 function km_y()
