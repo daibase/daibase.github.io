@@ -146,7 +146,6 @@ li{margin-left:10%;}
 <div id="topper">
 	<div id="topper_explore">
 		<img src="img/daix.svg" width="32px" style="border-radius:32%"><!--++<br>++-->
-	<button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button>
 	</div>
 	<div id="topper_links"><!--
 		<a href="https://discord.gg">Discord</a>
@@ -157,7 +156,9 @@ li{margin-left:10%;}
 	</div>
 </div>
 
-	<span id="ua">You're not connected.</span><br>
+	<span id="ua">You're not connected.</span>
+	Touch to<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</span></b>
+	<br>
 
 
 	<div class="statbox">
@@ -826,7 +827,7 @@ async function wc()
 	var conAdd = $("ci").value;
 	theCon = new web3.eth.Contract(abi, conAdd);
 	theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
-	$("cb").textContent="Connected";
+	$("cb").style.display="none";
 }
 function _n()
 {
