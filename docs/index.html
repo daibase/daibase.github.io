@@ -569,7 +569,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 			</div>
 		</div>
 		<br>Only <b>The Chosen One</b>, the legitimate heir to the Reserve Treasures of The DAIX, must press the button below.<br>
-		<button id="heir_yield">Conquer Coffer</button>
+		<button id="heir_yield" onclick="km_y()">Conquer Coffer</button>
 		<br><span style="font-size:0.75em">The King-Maker <span id="heir_kima"></span>'s wrath be cast unto those who fake 'Their identiticon!</span>
 	</div>
 </div>
@@ -806,8 +806,8 @@ function km_d(a)
 {
 	var KMA = a;
 	KMC = new web3.eth.Contract(KM, KMA);
-	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r});
-	KMC.methods.clock().call((e, r) =>{$("heir_clock").innerHTML = r});
+	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r/1e18});
+	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp))})});
 	KMC.methods.TheChosenOne().call((e, r) =>{$("heir_tco").innerHTML = r});
 }
 function km_y()
@@ -816,7 +816,7 @@ function km_y()
 	{
 		var KMA = $("heir_kima").value;
 		KMC = new web3.eth.Contract(KM, KMA);
-		KMC.methods.yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+		KMC.methods.Yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 	}
 	else{console.log("TOO EARLY TO YIELD. AWAIT KingMaker TO BE FOUND!")}
 }
