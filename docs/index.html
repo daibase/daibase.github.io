@@ -157,7 +157,7 @@ li{margin-left:10%;}
 </div>
 
 	<span id="ua">You're not connected.</span><br>
-	<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</span></b>.
+	<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet.</span></b>
 	<br>
 
 
@@ -734,7 +734,7 @@ var abi = [
 	}
 ];
 //above is perma
-var gsd=0;
+var KMA;
 function gs()
 {
 	try
@@ -747,7 +747,7 @@ function gs()
 		theCon.methods.taxperbillion().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
-		theCon.methods.kingmaker().call((e, r) =>{$("heir_kima").innerHTML = r;km_d(r);gsd+=1;});
+		theCon.methods.kingmaker().call((e, r) =>{$("heir_kima").innerHTML = r;KMA=r;km_d();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -802,9 +802,8 @@ try
 	}
 	catch(e){$("er").innerHTML=e;}
 }
-function km_d(a)
+function km_d()
 {
-	var KMA = a;
 	KMC = new web3.eth.Contract(KM, KMA);
 	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r/1e18});
 	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp))})});
@@ -812,13 +811,8 @@ function km_d(a)
 }
 function km_y()
 {
-	if(gsd)
-	{
-		var KMA = $("heir_kima").value;
-		KMC = new web3.eth.Contract(KM, KMA);
-		KMC.methods.Yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
-	}
-	else{console.log("TOO EARLY TO YIELD. AWAIT KingMaker TO BE FOUND!")}
+	KMC = new web3.eth.Contract(KM, KMA);
+	KMC.methods.Yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 }
 async function wc()
 {
