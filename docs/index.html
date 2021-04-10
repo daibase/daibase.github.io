@@ -146,6 +146,7 @@ li{margin-left:10%;}
 <div id="topper">
 	<div id="topper_explore">
 		<img src="img/daix.svg" width="32px" style="border-radius:32%"><!--++<br>++-->
+	<button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button>
 	</div>
 	<div id="topper_links"><!--
 		<a href="https://discord.gg">Discord</a>
@@ -155,6 +156,8 @@ li{margin-left:10%;}
 		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
 	</div>
 </div>
+
+	<span id="ua">You're not connected.</span><br>
 
 
 	<div class="statbox">
@@ -360,9 +363,7 @@ li{margin-left:10%;}
 
 
 	<h3 align="center">Tester's Control Panel</h3>
-	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.37<br><br>
-	<button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button><br><br>
-	<span id="ua">You're not connected</span><br><br>
+	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.40<br><br>
 
 	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0x18adb2264C802c0E3022036D477D5d55bdA7d5B4" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
 
@@ -825,6 +826,7 @@ async function wc()
 	var conAdd = $("ci").value;
 	theCon = new web3.eth.Contract(abi, conAdd);
 	theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
+	$("cb").textContent="Connected";
 }
 function _n()
 {
