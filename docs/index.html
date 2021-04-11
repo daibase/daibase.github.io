@@ -231,8 +231,8 @@ li{margin-left:10%;}
 	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
 		<div style="border:2px solid orange; border-radius:5px" align="center">
 			Balance:<span id="shop_ethbal">?</span><br>
-			<input id="shop_in" oninput="s_i()" style="color:black" placeholder="Coin spent" value=""></input><br>
-			<input id="shop_out" style="color:black" placeholder="DAIX received" value=""></input><br>
+			<input id="shop_in" oninput="s_i()" style="color:black" placeholder="Coins to spend" value=""></input><br>
+			<input id="shop_out" style="color:black" placeholder="DAIX received" disabled="true"></input><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
 			<br><span onclick="this.value=''" style="font-size:0.75em"></span>
 			<br><br>Always ensure gas limit is NOT 21000. Set it to 500000.
@@ -1067,7 +1067,7 @@ function s_i()
 	$("shop_in").value=$("shop_in").value.replace(/(?![0-9])./gmi,'');
 	var pairAdd = "0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46";
 	thePC = new web3.eth.Contract(PA, pairAdd);
-	await thePC.methods.getReserves().call((e, r) =>
+	thePC.methods.getReserves().call((e, r) =>
 	{$("shop_out").value=$("shop_out").value/Number(r[1])*Number(r[0]);});
 }
 function s_t()
