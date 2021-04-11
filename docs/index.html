@@ -1080,7 +1080,7 @@ function s_i()
 		d=$("shop_in").value;
 		re=Number(r[0]);
 		rd=Number(r[1]);
-		pc= 100*(d/(rd - (re*rd(re+e))) -1);
+		pc= 100*(d/(rd - (re*rd/(re+e))) -1);
 		$("shop_d").innerHTML=100*(($("shop_in").value*1e18/(Number(r[0])-Number(r[1])*Number(r[0])/($("shop_out").value*1e18+Number(r[1]))*0.997))-1);
 	});
 }
