@@ -173,23 +173,23 @@ li{margin-left:10%;}
 	<img width="64px" src="img/learn.svg">
 	<br>Learn</a>
 	</div>
-	<div id="id_shopping" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<div id="id_shopping" onclick="c(this.id.substr(1))"><a href="#d_shopping">
 	<img width="64px" src="img/shopping.svg">
 	<br>Shop</a>
 	</div>
-	<div id="id_trading" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<div id="id_trading" onclick="c(this.id.substr(1))"><a href="#d_trading">
 	<img width="64px" src="img/exchange.svg">
 	<br>Swap</a>
 	</div>
-	<div id="id_farms" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<div id="id_farms" onclick="c(this.id.substr(1))"><a href="#d_farms">
 	<img width="64px" src="img/farmer.svg">
 	<br>Farms</a>
 	</div>
-	<div id="id_dao" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<div id="id_dao" onclick="c(this.id.substr(1))"><a href="#d_dao">
 	<img width="64px" src="img/govern.svg">
 	<br>D.A.O.</a>
 	</div>
-	<div id="id_revenues" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<div id="id_revenues" onclick="c(this.id.substr(1))"><a href="#d_revenues">
 	<img width="64px" src="img/toll.svg">
 	<br>Revenues</a>
 	</div>
@@ -201,15 +201,15 @@ li{margin-left:10%;}
 	<img width="64px" src="img/lab.svg">
 	<br>Laboratory</a>
 	</div>
-	<div id="id_integration" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<div id="id_integration" onclick="c(this.id.substr(1))"><a href="#d_integration">
 	<img width="64px" src="img/contract.svg">
 	<br>Integration</a>
 	</div>
 	<div id="id_heir" onclick="c(this.id.substr(1))"><a href="#d_heir">
 	<img width="64px" src="img/crown.svg">
-	<br>DAIX Heir</a>
+	<br>Heir to DaiX</a>
 	</div>
-	<div id="id_guides" onclick="c(this.id.substr(1))"><a href="#d_learn">
+	<div id="id_guides" onclick="c(this.id.substr(1))"><a href="#d_guides">
 	<img width="64px" src="img/guide.svg">
 	<br>Guides</a>
 	</div>
@@ -223,13 +223,148 @@ li{margin-left:10%;}
 	</div>
 </div>
 
-<div class="cu" id="d_shopping"></div>
-<div class="cu" id="d_trading"></div>
-<div class="cu" id="d_farms"></div>
-<div class="cu" id="d_dao"></div>
-<div class="cu" id="d_revenues"></div>
-<div class="cu" id="d_integration"></div>
-<div class="cu" id="d_guides"></div>
+
+
+
+<div class="cu" id="d_shopping">
+	<div style="font-size:1.25em" align="center">
+	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
+		<div style="border:2px solid orange; border-radius:5px" align="center">
+			Balance:<span id="shop_ethbal">?</span><br>
+			<input id="shop_in" style="color:black" placeholder="Coin spent" value=""></input><br>
+			<input id="shop_out" style="color:black" placeholder="DAIX received" value=""></input><br>
+			<button id="shop_trade">Buy now</button>
+			<br>Always ensure gas limit is NOT 21000. Set it to 500000.
+		</div><br>
+		<b onclick="c('d_laboratory')"><a href="#d_laboratory">Hit the baseCannon</a></b>first to purchase DAIX at a price of 1 DAI each.
+		<br><br><span style="font-size:0.75em">Don't press buy now unless you are sure. Doing so will directly take you to signing a blockchain transaction that costs real money from your account.
+	</div>
+</div>
+<div class="cu" id="d_trading">
+	<div style="font-size:1.25em" align="center">
+	Official trading pairs on xDAI Chain<br><br>
+		<div style="border:2px solid orange; border-radius:5px" align="center">
+			<h4>XDAIX/XDAI</h4>
+			<pre>Testnet pair on Uniswap (Ropsten)</pre>
+			Check it out in the<b onclick="c('d_laboratory')"><a href="#d_laboratory">Laboratory.</a></b>
+		</div>
+		<div style="border:2px solid orange; border-radius:5px" align="center">
+			Coming soon.
+		</div>
+		<br>Pair Explorer under development.
+	</div>
+</div>
+<div class="cu" id="d_farms">
+	<div style="font-size:1.25em" align="center">
+	No farm is active right now.<br><br>
+		<div style="border:2px solid orange; border-radius:5px" align="center">
+			Farm closed.
+		</div>
+		<div style="border:2px solid orange; border-radius:5px" align="center">
+			Farm closed.
+		</div>
+		<div style="border:2px solid orange; border-radius:5px" align="center">
+			Farm closed.
+		</div>
+	</div>
+</div>
+<div class="cu" id="d_dao">
+	<div style="border:2px solid orange; border-radius:5px" align="center">
+		Coming soon.
+	</div>
+</div>
+<div class="cu" id="d_revenues">
+	<div style="border:2px solid orange; border-radius:5px" align="center">
+		Revenue is generated from:
+		<ol><li>All DAIX transactions</li>
+		All revenues from the DAIX Transactions are sent to the "King-Maker" smart contract.
+		<li>Trades on the "Main-Pair"</li>
+		All revenues from the trades on the Main-Pair are used to increase the Total Value Locked in Daibase Protocol.</ol><br><br>
+		More detailed metrics will be available in the Dashboard soon.
+	</div>
+</div>
+<div class="cu" id="d_integration">
+	<h2 align="center">INTEGRATIONS</h2>
+	<div style="font-size:1.25em" align="center">
+		Daibase Protocol is designed chiefly for Chefs.
+		<br>Smart Contracts are its target audience.
+		<br><br>What PALM* merely promises in it's red&white-papers, Daibase delivers firsthand.
+		<br><span style="font-size:0.75em">(*name changed to avoid association.)</span><br>
+		<h4>Use-cases</h4>
+		<ul style="text-align:left">
+		<li>DAIX are suited for debt-denoted forward\future contracts.</li>
+		<li>Daibase can be used as a stable unit of account, much like a simple currency such as Bitcoin or Digital CHF, directly inside Smart Contracts.</li>
+		<li>Can be used as an automated hedge in smart contracts that are based on "Price-Denoted" "call writing" (Options).</li>
+		<li>Daibase Protocol can be used to replace the role of dollar-backed tokenizations to remove dependence on Tra-Fi (Traditional Finance).</li>
+		<li>Employed as a demand gauge for other "target-based" Elastic assets.</li>
+		<li>And as a spice in many, many more secret recipes of innovative Chefs.</li>
+		</ul>
+	</div>
+	<div style="border:2px solid orange; border-radius:5px" align="left">
+	Use the parti() function to participate in self-issuing DAIX tokens. The default function receive() can be used to send native coins to the DAIX smart contract and self-issue DAIX to the sender as well.
+	<br><ul>NOTES:
+	<li>No tax is levied on such transactions by the Daibase Protocol from the sender.</li>
+	<li>Such transactions do however charge the tax from the Main-Pair's Liquidity Pool and send it to the King-Maker contract.</li>
+	<li>These transactions would thus increase the price of DAIX tokens by a small amount, equal to square root of twice the issued amount's share in Liquidity Pool.</li>
+	<li>Each such call to <b>parti</b> shall return and emit a few important things back in the calldata.</li>
+	</ul>
+	<h3>About LibDAIX and IXD</h3>
+	Daibase Protocol has created its own interface and also a library. Anyone can introduce these in their own contracts today itself.
+	<br>The Llibrary consists of many helper functions, and is known as <b>"LibDAIX"</b>.
+	<br>The interface is named <b>"IXD"</b>. (DAIX was actually called XD prior to version v0.1)
+	<h3>Prototype</h3>
+	(Last update as of v0.1.41)<br>
+	<h4>Declaration</h4>
+	<ul><li>New</li>
+	<pre>function parti()
+	public override payable
+		returns (uint256 A)
+	</pre>
+	<li>Old</li>
+	<pre>function parti()
+	public override payable
+		returns (uint256 part)
+		</pre>
+	<b>"part" / "A"</b> signifies the amount of DAIX tokens issued to the sender of transaction message.<br>
+	<h4>Application interface</h4>
+	<pre></pre>
+	<h4>Events</h4>
+	<ul>
+	<li>Based</li>
+	<pre>
+	event Based(uint G, uint E, uint256 T);
+	</pre>
+	<li>Partied</li>
+	<pre>
+	event Partied(uint M, string R, uint N, string S, uint L);
+	</pre>
+	</ul>
+	<b>Reference</b>
+	<ol>
+	<li>E</li><pre>
+	Epoch</pre></pre>
+	<li>G</li><pre>
+	Internal</pre>
+	<li>L</li><pre>
+	Main-Pair's Liquidity equivalence</pre>
+	<li>M</li><pre>
+	Amount sent, denoted in Wei (1e-18)</pre>
+	<li>N</li><pre>
+	Issued DAIX, denoted in Wei (1e-18)</pre>
+	<li>R</li><pre>
+	Reference String</pre>
+	<li>S</li><pre>
+	Reference String</pre>
+	<li>T</li><pre>
+	Total inclusive DAIX supply</pre>
+	</ol>
+	<br>
+	</div>
+	<br><br>Detailed guides coming soon.
+</div>
+<div class="cu" id="d_guides">
+	<br><br>Detailed guides coming soon. Please check <b><a href="https://t.me/DaiBased">telegram channel.</a></b>
+</div>
 <div class="cu" id="d_dashboard">
 	<div id="stats">
 		<div class="statbox">
@@ -366,7 +501,7 @@ li{margin-left:10%;}
 	<h3 align="center">Tester's Control Panel</h3>
 	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.40<br><br>
 
-	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xDa1939F962F204443dC0D6c041E1F67FFc2B9380" placeholder="DAIX Contract"><br><button id="rb" onclick="gs()">Import</button>DAIX Contract<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xDa1939F962F204443dC0D6c041E1F67FFc2B9380" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
 
 	<div align="center" style="font-size:0.7em;">
 		<span id="er"></span><br>
@@ -576,6 +711,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 			Alternatively, you must await the present Chosen One to descend the throne at <span id="heir_clock">sometime within the next 210000 blocks.</span> .
 			</div>
 		</div>
+		<button style="font-size:1.5em" id="heir_pay" onclick="km_p()">Offer Sacrifice</button>
 		<button style="font-size:1.5em" id="heir_yield" onclick="km_y()">Conquer Coffer</button>
 		<br>Only <b>The Chosen One</b>, the legitimate heir to the Reserve Treasures of The DAIX, must press the button below, and be blessed with <span id="heir_purse">some DAIX</span>.<br><br>
 		<br><span style="font-size:0.75em">The King-Maker <span id="heir_kima"></span>'s wrath be cast unto those who fake 'Their identiticon!<br>Make sure thee useth gas limit 123456 to sacrifice to be crowned The Chosen One.</span>
