@@ -726,7 +726,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 
 <div style="text-align:center;"><b>Important note:</b>
 <br>There was never, and will be no "pre-sale".<br>
-There NO are Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.<br>
+There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.<br>
 Initial Supply will always be 1 Token, which will be entirely added to liquidity along with 1 DAI donated by Team.
 <br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
 
@@ -1076,12 +1076,11 @@ function s_i()
 	{
 		console.log(r);
 		$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);
-		e=$("shop_out").value;
-		d=$("shop_in").value;
-		re=Number(r[0]);
-		rd=Number(r[1]);
-		pc= 100*(d/(rd - (re*rd/(re+e))) -1);
-		$("shop_d").innerHTML=100*(($("shop_in").value*1e18/(Number(r[0])-Number(r[1])*Number(r[0])/($("shop_out").value*1e18+Number(r[1]))*0.997))-1);
+		ra=r[1];rb=r[0];ain=$("shop_out").value*1e18;aain=$("shop_out").value*1e18;
+		bout = rb - ((ra*rb)/(ra+ain*0.997));
+		sr=ra/rb;
+		about = aain / sr;
+		$("shop_d").innerHTML=(about/bout-1)*100;
 	});
 }
 function s_t()
