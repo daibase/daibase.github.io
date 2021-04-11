@@ -124,6 +124,8 @@ li{margin-left:10%;}
 
 #heir_new{display:grid;grid-template-columns: auto;border-radius:15px;}
 
+*:disabled{color:rgba(0,255,255,0.3)}
+
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -230,12 +232,12 @@ li{margin-left:10%;}
 	<div style="font-size:1.25em" align="center">
 	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
 		<div style="border:2px solid orange; border-radius:5px" align="center">
-			Balance:<span id="shop_ethbal">?</span><br>
-			<input id="shop_in" oninput="s_i()" style="color:black" placeholder="Coins to spend" value=""></input><br>
+			Current Balance:<br><span id="shop_ethbal">?</span><br>
+			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="Coins to spend" value=""></input><br>
 			<input id="shop_out" style="color:black" placeholder="DAIX received" disabled="true"></input><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
-			<br><span id="shop_rx" onclick="this.value=''" style="font-size:0.75em"></span>
-			<br><br>Always ensure gas limit is NOT 21000. Set it to 500000.
+			<br><br><span id="shop_rx" onclick="this.value=''" style="font-size:0.75em"></span>
+			<br>Always ensure gas limit is NOT 21000. Set it to 500000.
 		</div><br>
 		<b onclick="c('d_laboratory')"><a href="#d_laboratory">Hit the baseCannon</a></b>first to purchase DAIX at a price of 1 DAI each.
 		<br><br><span style="font-size:0.75em">Don't press buy now unless you are sure. Doing so will directly take you to signing a blockchain transaction that costs real money from your account.
@@ -898,8 +900,8 @@ function gs()
 			KMA=r;
 			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});
 			km_d();
-
 		});
+		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18})
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1062,13 +1064,13 @@ var PA=[
     "type": "function"
   }
 ];
-function s_i()
+function s_i(){
 {
-	$("shop_in").value=$("shop_in").value.replace(/(?![0-9])./gmi,'');
+	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
 	var pairAdd = "0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
-	{console.log(r);$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);});
+		{console.log(r);$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);});}
 }
 function s_t()
 {
