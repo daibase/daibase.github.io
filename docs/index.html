@@ -971,6 +971,7 @@ function km_p()
 	KMC.methods.sacrifice().call((e, r) =>
 	{
 		web3.eth.sendTransaction({
+			from: window.ethereum.selectedAddress,
 			to: KMA,
 			value: (Math.floor(r*1.09)+1)
 		})
