@@ -234,7 +234,7 @@ li{margin-left:10%;}
 			<input id="shop_in" oninput="s_i()" style="color:black" placeholder="Coins to spend" value=""></input><br>
 			<input id="shop_out" style="color:black" placeholder="DAIX received" disabled="true"></input><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
-			<br><span onclick="this.value=''" style="font-size:0.75em"></span>
+			<br><span od="shop_rx" onclick="this.value=''" style="font-size:0.75em"></span>
 			<br><br>Always ensure gas limit is NOT 21000. Set it to 500000.
 		</div><br>
 		<b onclick="c('d_laboratory')"><a href="#d_laboratory">Hit the baseCannon</a></b>first to purchase DAIX at a price of 1 DAI each.
@@ -1079,7 +1079,14 @@ function s_t()
 			to: CA,
 			value: (Math.floor($("shop_out").value*1e18))
 		})
-		.then((c)=>{console.log(c);gs();$("shop_rx").innerText="partied sum DAIX!"});
+		.then((o)=>
+		{
+			console.log(o);
+			gs();
+			a=o.logs[o.logs.length-1].data.split("0x")[1];
+			$("shop_rx").innerHTML+="Bought "+Number("0x"+a.substr(64*2,64))/1e18+" DAIX for "+Number("0x"+a.substr(64*0,64))/1e18+" Coins<br>"+
+			//"<b><a href='>"+"View on Explorer</a><b>"
+			"<b>Transaction Hash: <pre>"+o.transactionHash+"</pre>"});
 }
 KM=[
 	{
