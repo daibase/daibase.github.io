@@ -965,6 +965,20 @@ function km_y()
 	KMC = new web3.eth.Contract(KM, KMA);
 	KMC.methods.Yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
 }
+function km_p()
+{
+	KMC = new web3.eth.Contract(KM, KMA);
+	KMC.methods.sacrifice().call((e, r) =>
+	{
+		web3.eth.sendTransaction({
+			to: KMA,
+			value: (Math.floor(r*1.09)+1)
+		})
+		.then(function(receipt){
+		console.log(reciept)
+		});
+	});
+}
 async function wc()
 {
 	await window.ethereum.enable();
