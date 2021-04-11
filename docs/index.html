@@ -231,10 +231,11 @@ li{margin-left:10%;}
 	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
 		<div style="border:2px solid orange; border-radius:5px" align="center">
 			Balance:<span id="shop_ethbal">?</span><br>
-			<input id="shop_in" style="color:black" placeholder="Coin spent" value=""></input><br>
+			<input id="shop_in" oninput="s_i()" style="color:black" placeholder="Coin spent" value=""></input><br>
 			<input id="shop_out" style="color:black" placeholder="DAIX received" value=""></input><br>
-			<button id="shop_trade">Buy now</button>
-			<br>Always ensure gas limit is NOT 21000. Set it to 500000.
+			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
+			<br><span onclick="this.value=''" style="font-size:0.75em"></span>
+			<br><br>Always ensure gas limit is NOT 21000. Set it to 500000.
 		</div><br>
 		<b onclick="c('d_laboratory')"><a href="#d_laboratory">Hit the baseCannon</a></b>first to purchase DAIX at a price of 1 DAI each.
 		<br><br><span style="font-size:0.75em">Don't press buy now unless you are sure. Doing so will directly take you to signing a blockchain transaction that costs real money from your account.
@@ -499,7 +500,7 @@ li{margin-left:10%;}
 
 
 	<h3 align="center">Tester's Control Panel</h3>
-	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.40<br><br>
+	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.41<br><br>
 
 	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xDa1939F962F204443dC0D6c041E1F67FFc2B9380" placeholder="DAIX Contract"><br><button id="rb" onlick="gs()">Import</button>DAIX Contract<br>
 
@@ -567,7 +568,7 @@ li{margin-left:10%;}
 	<li>Make sure the amount you send or receive is the amount that was transacted.</li>
 	<li>Check if the Block Explorer shows the correct amounts in the transaction details.</li>
 	<li>Inspect your wallet balance manually from the Explorer and Control Panel for a match with your wallet balance</li>
-	<li>Verify if the per trasaction tax is 1% of the amount sent by sender. The receiver would receive 98%</li>
+	<li>Verify if the per trasaction tax is 1% of the amount sent by sender. The receiver would receive 99%</li>
 	<i>NOTE: There is no transaction tax for amounts smaller than 0.00000001 DAIX.</i><br><br>
 	<b>Adding and Removing Liquidity</b><br>
 	<li>Try to add and remove liquidity from any AMM of your choice.</li>
@@ -581,7 +582,7 @@ li{margin-left:10%;}
 	<li>Attempt Token to Token swaps: UNI to DAIX, DAIX to USDC, DAIX to DAI, etc.</li>
 	<li>Attempt multi-hop swaps, if possible: DAIX to UNI to USDC, UNI to DAI to DAIX, etc.</li>
 	<li>Attempt flash swaps, if possible: DAIX to UNI to USDC to DAIX, etc.</li>
-	<i>NOTE: Use a slippage of an additional 2% for each "hop" (due to the DAIX moving penalty of 2% on each move). A slippage tolerance of 3% to 5% is recommended.</i><br><br>
+	<i>NOTE: Use a slippage of an additional 2% for each "hop" (due to the DAIX moving penalty of 2% on each move). A slippage tolerance of 3% to 5% is recommended. This was reduced from 2% to 1% starting v0.1.41.</i><br><br>
 	<b>Direct trustless buying (from DAIX Contract)</b><br>
 	<li>Send a small amount of ETH (0.0001) to the Token's contract address to get back an equivalent worth of DAIX tokens based on the current market price.</li>
 	<li>Try to "hit the BaseCannon" before making such a purchase to receive DAIX at a 1:1 price.</li>
@@ -698,7 +699,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 <div class="cu" id="d_heir">
 	<div style="font-size:1.25em" align="center">
 		<h3>The Chosen Ones</h3>
-		Those who make the biggest sacrifices within the last 210000 blocks, get Crowned the legitimate Heir and receive 2% from each DAIX transaction!<br>
+		Those who make the biggest sacrifices within the last 210000 blocks, get Crowned the legitimate Heir and receive 1% from each DAIX transaction!<br>
 		<img src="img/crown.svg" width="200px"></img><br>
 		<span id="heir_tco">Nobody yet</span> is <b>The Chosen One</b> on xDAI Chain!<br><br>
 		<div id="heir_new">
@@ -886,9 +887,9 @@ function gs()
 		var conAdd = $("ci").value;
 		theCon = new web3.eth.Contract(abi, conAdd);
 		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
-		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r});
+		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r;$("shop_S").innerHTML = r});
 		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r/1e18 + "DAIX"});
-		theCon.methods.taxperk().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e9*1e2+"%)"});
+		theCon.methods.taxperk().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e3*1e2+"%)"});
 		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
 		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
 		theCon.methods.kingmaker().call((e, r) =>
@@ -908,7 +909,7 @@ function s_b()
 	{
 		var conAdd = $("ci").value;
 		theCon = new web3.eth.Contract(abi, conAdd);
-		theCon.methods.basecanon().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+		theCon.methods.basecanon().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r);}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -918,7 +919,7 @@ try
 	{
 		var conAdd = $("ci").value;
 		theCon = new web3.eth.Contract(abi, conAdd);
-		theCon.methods.allpairssync().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+		theCon.methods.allpairssync().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -963,21 +964,20 @@ function km_d()
 function km_y()
 {
 	KMC = new web3.eth.Contract(KM, KMA);
-	KMC.methods.Yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)});
+	KMC.methods.Yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r);}).then((c)=>{console.log(c);gs();});
 }
 function km_p()
 {
 	KMC = new web3.eth.Contract(KM, KMA);
 	KMC.methods.sacrifice().call((e, r) =>
 	{
-		web3.eth.sendTransaction({
+		web3.eth.sendTransaction
+		({
 			from: window.ethereum.selectedAddress,
 			to: KMA,
 			value: (Math.floor(r*1.09)+1)
 		})
-		.then(function(receipt){
-		console.log(reciept)
-		});
+		.then((c)=>{console.log(c);gs();});
 	});
 }
 async function wc()
@@ -1062,6 +1062,22 @@ var PA=[
     "type": "function"
   }
 ];
+function s_i()
+{ r=[103,99];
+	$("shop_in").value=Number($("shop_in").value.replace(/(?![0-9])./gmi,''));
+	{$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);}
+}
+function s_t()
+{
+	var CA = $("ci").value;
+	web3.eth.sendTransaction
+		({
+			from: window.ethereum.selectedAddress,
+			to: CA,
+			value: (Math.floor(r*1.09)+1)
+		})
+		.then((c)=>{console.log(c);gs();$("shop_rx").innerText="partied sum DAIX!"});
+}
 KM=[
 	{
 		"inputs": [],
