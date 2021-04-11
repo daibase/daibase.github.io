@@ -236,10 +236,10 @@ li{margin-left:10%;}
 			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""></input><br>
 			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"></input><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
-			<br><br>
+			<br>Discount: <span id="shop_d">?</span>%
 			<br><br><span id="shop_w" style="font-size:0.75em"></span><span id="shop_rx" style="font-size:0.75em"></span>
 			<br>Always ensure gas limit is NOT 21000. Set it to 500000.
-		</div>Discount: <span id="shop_d">?</span>%
+		</div>
 		<b onclick="c('d_laboratory')"><a href="#d_laboratory">Hit the baseCannon</a></b>first to purchase DAIX at a price of 1 DAI each.
 		<br><br><span style="font-size:0.75em">Don't press buy now unless you are sure. Doing so will directly take you to signing a blockchain transaction that costs real money from your account.
 	</div>
@@ -726,7 +726,9 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 
 <div style="text-align:center;"><b>Important note:</b>
 <br>There was never, and will be no "pre-sale".<br>
-Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
+There are Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.<br>
+Initial Supply will always be 1 Token, which will be entirely added to liquidity along with 1 DAI donated by Team.
+<br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
 
 
 <div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.40<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
@@ -1074,7 +1076,12 @@ function s_i()
 	{
 		console.log(r);
 		$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);
-		$("shop_w").innerHTML=100*(($("shop_out").value*1e18/(Number(r[0])-Number(r[1])*Number(r[0])/($("shop_out").value*1e18+Number(r[1]))*0.997))-1);
+		e=$("shop_out").value;
+		d=$("shop_in").value;
+		re=Number(r[0]);
+		rd=Number(r[1]);
+		pc= 100*(d/(rd - (re*rd(re+e))) -1);
+		$("shop_d").innerHTML=100*(($("shop_in").value*1e18/(Number(r[0])-Number(r[1])*Number(r[0])/($("shop_out").value*1e18+Number(r[1]))*0.997))-1);
 	});
 }
 function s_t()
