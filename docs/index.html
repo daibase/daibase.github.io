@@ -1077,7 +1077,7 @@ function s_t()
 		({
 			from: window.ethereum.selectedAddress,
 			to: CA,
-			value: (Math.floor(r*1.09)+1)
+			value: (Math.floor($("shop_out").value*1e18)
 		})
 		.then((c)=>{console.log(c);gs();$("shop_rx").innerText="partied sum DAIX!"});
 }
