@@ -233,12 +233,13 @@ li{margin-left:10%;}
 	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
 		<div style="border:2px solid orange; border-radius:5px" align="center">
 			Current Balance:<br><span id="shop_ethbal">?</span><br>
-			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="Coins to spend" value=""></input><br>
-			<input id="shop_out" style="color:black" placeholder="DAIX received" disabled="true"></input><br>
+			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""></input><br>
+			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"></input><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
-			<br><br><span id="shop_rx" onclick="this.value=''" style="font-size:0.75em"></span>
+			<br><br>
+			<br><br><span id="shop_w" style="font-size:0.75em"></span><span id="shop_rx" style="font-size:0.75em"></span>
 			<br>Always ensure gas limit is NOT 21000. Set it to 500000.
-		</div><br>
+		</div>Discount: <span id="shop_d">?</span>%
 		<b onclick="c('d_laboratory')"><a href="#d_laboratory">Hit the baseCannon</a></b>first to purchase DAIX at a price of 1 DAI each.
 		<br><br><span style="font-size:0.75em">Don't press buy now unless you are sure. Doing so will directly take you to signing a blockchain transaction that costs real money from your account.
 	</div>
@@ -1064,17 +1065,22 @@ var PA=[
     "type": "function"
   }
 ];
-function s_i(){
+function s_i()
 {
 	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
 	var pairAdd = "0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
-		{console.log(r);$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);});}
+	{
+		console.log(r);
+		$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);
+		$("shop_w").innerHTML=100*(($("shop_out").value/(1e18Number(r[0])-Number(r[1])*Number(r[0])/($("shop_out").value*1e18+Number(r[1]))*0.997))-1);
+	});
 }
 function s_t()
 {
 	var CA = $("ci").value;
+	$("shop_w").innerHTML="Please await 2 blocks for confirmation…"
 	web3.eth.sendTransaction
 		({
 			from: window.ethereum.selectedAddress,
@@ -1086,9 +1092,10 @@ function s_t()
 			console.log(o);
 			gs();
 			a=o.logs[o.logs.length-1].data.split("0x")[1];
-			$("shop_rx").innerHTML+="Bought "+Number("0x"+a.substr(64*2,64))/1e18+" DAIX for "+Number("0x"+a.substr(64*0,64))/1e18+" Coins<br>"+
+			$("shop_rx").innerHTML="Bought "+Number("0x"+a.substr(64*2,64))/1e18+" DAIX for "+Number("0x"+a.substr(64*0,64))/1e18+" Coins<br>"+
 			//"<b><a href='>"+"View on Explorer</a><b>"
-			"<b>Transaction Hash: <pre>"+o.transactionHash+"</pre>"});
+			"<b>Transaction Hash: <pre>"+o.transactionHash+"</pre><hr style='padding:0;width:25%'>"+
+			$("shop_rx").innerHTML;$("shop_w").innerHTML=""});
 }
 KM=[
 	{
