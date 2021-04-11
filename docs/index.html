@@ -1068,7 +1068,7 @@ function s_i()
 	var pairAdd = "0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
-	{$("shop_out").value=$("shop_out").value/Number(r[1])*Number(r[0]);});
+	{console.log(r);$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);});
 }
 function s_t()
 {
