@@ -1074,7 +1074,7 @@ function s_i()
 	{
 		console.log(r);
 		$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);
-		$("shop_w").innerHTML=100*(($("shop_out").value/(1e18Number(r[0])-Number(r[1])*Number(r[0])/($("shop_out").value*1e18+Number(r[1]))*0.997))-1);
+		$("shop_w").innerHTML=100*(($("shop_out").value*1e18/(Number(r[0])-Number(r[1])*Number(r[0])/($("shop_out").value*1e18+Number(r[1]))*0.997))-1);
 	});
 }
 function s_t()
