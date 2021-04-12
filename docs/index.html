@@ -236,7 +236,7 @@ li{margin-left:10%;}
 			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""></input><br>
 			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"></input><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
-			<br>Discount: <span id="shop_d">?</span>%
+			<br>Discount Offered:<br><span id="shop_d">?</span>%
 			<br><br><span id="shop_w" style="font-size:0.75em"></span><span id="shop_rx" style="font-size:0.75em"></span>
 			<br>Always ensure gas limit is NOT 21000. Set it to 500000.
 		</div>
@@ -638,6 +638,15 @@ li{margin-left:10%;}
 {UNI  Sushiswap}
 	</pre><br>
 	<br>
+	<b>v0.0.43 : Ropsten</b>
+	<pre>
+DAIX43 0x4E620EA3aBd2f042Caf2d1e661906D792bB20015
+
+KinMak none
+
+u/WETH 0xa81Aa84345043dfA24727724e4918ED1F36bCd23
+</pre>	<br>
+<br>
 	<b>v0.0.41 : Ropsten</b>
 	<pre>
 DAIX41 0xDa1939F962F204443dC0D6c041E1F67FFc2B9380
@@ -951,11 +960,11 @@ try
 		thePC = new web3.eth.Contract(PA, pairAdd);
 		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r;$("fpbb").innerHTML+=
 			`<br>Reserves
-			<br>R1 : ${Number(pairAddBal[0])/1e18}
-			<br>R2 : ${Number(pairAddBal[1])/1e18}
+			<br>Asset : ${Number(pairAddBal[0])/1e18}
+			<br>Base : ${Number(pairAddBal[1])/1e18}
 			<br>Prices
-			<br>Asset : ${Number(pairAddBal[0])/Number(pairAddBal[1])}
-			<br>Base : ${Number(pairAddBal[1])/Number(pairAddBal[0])}`;});
+			<br>Rate : ${Number(pairAddBal[0])/Number(pairAddBal[1])}
+			<br>Price : ${Number(pairAddBal[1])/Number(pairAddBal[0])}`;});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1074,13 +1083,13 @@ function s_i()
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
 	{
-		console.log(r);
-		$("shop_out").value=$("shop_in").value/Number(r[1])*Number(r[0]);
-		ra=r[1];rb=r[0];ain=$("shop_out").value*1e18;aain=$("shop_out").value*1e18;
-		bout = rb - ((ra*rb)/(ra+ain*0.997));
-		sr=ra/rb;
-		about = aain / sr;
-		$("shop_d").innerHTML=(about/bout-1)*100;
+		rc=Number(r[0]);rd=Number(r[1]);
+		$("shop_out").value=$("shop_in").value*(rc/rd);
+		coin=$("shop_out").value*1e18;
+		dx=$("shop_in").value*1e18;
+		dso = rd - (rc*rd)/(rc+coin);
+		$("shop_d").innerHTML=(dx/dso-1)*100;
+
 	});
 }
 function s_t()
