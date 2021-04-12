@@ -599,11 +599,17 @@ li{margin-left:10%;}
 	<li>Pressing the "Synchronize" button from the Control Panel.</li>
 	<i>NOTE: This is useful if you are experiencing an unusual Swap error ("This seems to be an error with one of the Tokens your're using"/"k-error"/undefined/"Insufficient Output Token Amount"), pressing this button should resolve it.<br>Each call of BaseCannon also includes an internal call to Synchronize.</i><br>
 	<h3 align="center">Known Bugs</h3>
-	<b>"This seems to be a problem with one of the tokens you're using"</b>
+	<b>"This seems to be a problem with one of the tokens you're swapping"</b>
 	It has been found that this situation can be solved by the below methods:
 	<ol>
 		<li>Increasing Slippage Tolerance to 3% or more depending on the number of "hops", or intermediary tokens traversed during your swap.</li>
 		<li>A slippage of 5% is enough to Add or Remove liquidity. Using 3% for simple ETH/DAIX pairs is ample.</li>
+		<li>Editing input and/or output amounts manually.</li>
+		<li>Removing excessive decimal parts and rounding the numbers.</li>
+		<li>Swapping in the opposite direction with near zero amounts.</li>
+		<li>Adding or removing liquidity.</li>
+		<li>Try a hard refresh (Ctrl-F5, CMD-F5 or Alt-Shift-R) and using a nearer but different amount.<li>
+<i>NOTE: This is a tricky error to overcome, and could depend on sheer luck. Almost all tokens with an elastic supply (or auto-burning features) experience this issue. Uniswap team hopes to resolve it in it's Uniswapv3 front-end wrapper. Advanced users can manually attempt a swap by directly interacting with a pair's smart contract. Otherwise atleast one or a combination of the above methods should cure this error.</i>
 	</ol>
 	<b>"Error: Undefined"</b>
 	Such a error arises if there's a disbalance in the pairs balances and the count of its reserves in its memory. This is common in newly listed pairs and can be cured by:
