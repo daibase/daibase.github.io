@@ -505,7 +505,7 @@ li{margin-left:10%;}
 	<h3 align="center">Tester's Control Panel</h3>
 	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.41<br><br>
 
-	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0x4E620EA3aBd2f042Caf2d1e6619064492bB20015" placeholder="DAIX Contract"><br><button id="rb" onclick="gs()">Import</button>DAIX Contract<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0x4E620EA3aBd2f042Caf2d1e661906D792bB20015" placeholder="DAIX Contract"><br><button id="rb" onclick="gs()">Import</button>DAIX Contract<br>
 
 	<div align="center" style="font-size:0.7em;">
 		<span id="er"></span><br>
@@ -1079,7 +1079,7 @@ var PA=[
 function s_i()
 {
 	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
-	var pairAdd = "0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46";
+	var pairAdd = "0xa81Aa84345043dfA24727724e4918ED1F36bCd23";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
 	{
