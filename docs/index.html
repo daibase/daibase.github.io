@@ -644,7 +644,17 @@ li{margin-left:10%;}
 {UNI  Sushiswap}
 	</pre><br>
 	<br>
-	<b>v0.0.43 : Ropsten</b>
+	<b>v0.1.46(d) : Ropsten</b>
+	<pre>
+DAIX43 0xb17Cd4aff17938a89A224ea93dFEd5c0FfAC3Dd8
+
+KinMak none
+
+u/WETH 0x856ab0F21F1A1dCAD630A87c4d1094a1aD6b9de9
+</pre>	<br>
+	</pre><br>
+	<br>
+	<b>v0.1.43 : Ropsten</b>
 	<pre>
 DAIX43 0x4E620EA3aBd2f042Caf2d1e661906D792bB20015
 
@@ -653,7 +663,7 @@ KinMak none
 u/WETH 0xa81Aa84345043dfA24727724e4918ED1F36bCd23
 </pre>	<br>
 <br>
-	<b>v0.0.41 : Ropsten</b>
+	<b>v0.1.41 : Ropsten</b>
 	<pre>
 DAIX41 0xDa1939F962F204443dC0D6c041E1F67FFc2B9380
 
@@ -661,7 +671,7 @@ KinMak 0xb326e41c5c7da7AD3bb9BDdA9c62E850ffdd3d3A
 
 u/WETH 0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46
 </pre>	<br>
-	<b>v0.0.40 : Ropsten</b>
+	<b>v0.1.40 : Ropsten</b>
 	<pre>
 DAIX40 0x18adb2264C802c0E3022036D477D5d55bdA7d5B4
 
@@ -670,7 +680,7 @@ KinMak 0xaD3Ed38b64E795e61Ff0E2DF5a8803CCBbd53e39
 u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 </pre>
 	<br>
-	<b>v0.0.37 : Ropsten</b>
+	<b>v0.1.37 : Ropsten</b>
 	<pre>
 0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A
 
@@ -681,7 +691,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04
 0xde5aB223e5DD542D4d9f6fCfB2C4C8c486399b2d
 0x7CdA68f364790CDf5913d67faee60F9b02A410d2</pre>
-	<b>v0.0.21 (r14) : Ropsten</b>
+	<b>v0.1.21 (r14) : Ropsten</b>
 	<pre>
 0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6
 
@@ -1085,7 +1095,7 @@ var PA=[
 function s_i()
 {
 	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
-	var pairAdd = "0xa81Aa84345043dfA24727724e4918ED1F36bCd23";
+	var pairAdd = "0x856ab0F21F1A1dCAD630A87c4d1094a1aD6b9de9";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
 	{
