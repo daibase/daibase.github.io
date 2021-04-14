@@ -229,8 +229,14 @@ li{margin-left:10%;}
 
 
 <div class="cu" id="d_shopping">
+	<div class="statbox">
+		<div class="stat statnumb">⚠ Outdated Version!</div>
+		<div class="stat statname">The below sectin is suited for versions existing prior to v0.1.44. If you intend to buy DAIX44 or above (above versions v0.1.44), please disregard the amount entered and discount displayed. You will be paying the coin amount (lower box) and will be issued more DAIX based on the cirrent market-prices (uniswap). This is do because beginning from v0.1.44, Daibase smart contract is "Chain-Independent" and includes a "router-router" that senses if the deployed blockchain is a stablechain or not. Older versions treated all chains as stablechains, because we were testing only for xDAI. Our next chain will be Harmony, BSC, MATIC, Tronix or HECO. If you love some other chain, you can recomment them in our telegram group or discord.
+		</div>
+	</div>
 	<div style="font-size:1.25em" align="center">
 	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
+
 		<div style="border:2px solid orange; border-radius:5px" align="center">
 			Current Balance:<br><span id="shop_ethbal">?</span><br>
 			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""></input><br>
@@ -317,8 +323,8 @@ li{margin-left:10%;}
 	<br>The Llibrary consists of many helper functions, and is known as <b>"LibDAIX"</b>.
 	<br>The interface is named <b>"IXD"</b>. (DAIX was actually called XD prior to version v0.1)
 	<h3>Prototype</h3>
-	(Last update as of v0.1.41)<br>
-	<h4>Declaration</h4>
+	(Last update as of v0.1.44)<br>
+	<h4>Function Declaration</h4>
 	<ul><li>New</li>
 	<pre>function parti()
 	public override payable
@@ -330,7 +336,34 @@ li{margin-left:10%;}
 		returns (uint256 part)
 		</pre>
 	<b>"part" / "A"</b> signifies the amount of DAIX tokens issued to the sender of transaction message.<br>
-	<h4>Application interface</h4>
+	<h4>Application Interface</h4>
+	<li>parti</li>
+	<pre>
+	{
+		"inputs": [],
+		"name": "parti",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "part",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	}
+	</pre>
+	<br>
+	<li>receive</li>
+	<pre>
+	{
+		"stateMutability": "payable",
+		"type": "receive"
+	}
+	</pre>
+	<br>
+	<b>"parti"</b> signifies the participate function of Daibase. DAIX tokens issued to the sender of transaction message.<br>
+	<h4>Event Declarations</h4>
 	<pre></pre>
 	<h4>Events</h4>
 	<ul>
@@ -343,7 +376,7 @@ li{margin-left:10%;}
 	event Partied(uint M, string R, uint N, string S, uint L);
 	</pre>
 	</ul>
-	<b>Reference</b>
+	<b>Event Reference</b>
 	<ol>
 	<li>E</li><pre>
 	Epoch</pre></pre>
@@ -628,25 +661,13 @@ li{margin-left:10%;}
 	This can occur when sending native coins (XDAI/ETH/BNB/ONE/MATIC/TRX,etc.) to the DAIX Smart Contract. It happens due to MetaMask or other Wallets erroneously ascribing a "Gas Limit" of "21000". We suggest manually editing it to "500000" (Five hundred thousands) instead.
 	</div>
 	<h4>Recently Tested Versions</h4>
-	(Ordered as per recency.)<br>Detailed as follows:<br><br>
-	<pre>
-{version} : {Network}
-{DAIX Token contract}
-
-{KingMaker Contract}
-
-{WETH Uniswap}
-{UNI  Uniswap}
-{DAI  Uniswap}
-
-{WETH Sushiswap}
-{USDC Sushiswap}
-{UNI  Sushiswap}
-	</pre><br>
+	(Ordered as per recency.)
 	<br>
 	<b>v0.1.46(d) : Ropsten</b>
 	<pre>
 DAIX43 0xb17Cd4aff17938a89A224ea93dFEd5c0FfAC3Dd8
+
+ercDAI 0xaD6D458402F60fD3Bd25163575031ACDce07538D
 
 KinMak none
 
@@ -679,7 +700,21 @@ KinMak 0xaD3Ed38b64E795e61Ff0E2DF5a8803CCBbd53e39
 
 u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 </pre>
-	<br>
+	<br><br>Below are detailed as follows:<br><br>
+	<pre>
+{version} : {Network}
+{DAIX Token contract}
+
+{KingMaker Contract}
+
+{WETH Uniswap}
+{UNI  Uniswap}
+{DAI  Uniswap}
+
+{WETH Sushiswap}
+{USDC Sushiswap}
+{UNI  Sushiswap}
+	</pre><br>
 	<b>v0.1.37 : Ropsten</b>
 	<pre>
 0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A
