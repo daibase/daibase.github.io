@@ -76,7 +76,7 @@ $COIL:
 html{
   font-family:  Arial, Helvetica Neue, Helvetica, sans-serif;
   background:
-  linear-gradient(27deg, rgba(255,0,0,.5) 20%,blueviolet) 100%;
+  linear-gradient(-153deg, rgba(6,64,86,1) 30%,rgba(138,3,126,1)) 100%;
   background-attachment: fixed;
 height:100%}
 *{color: white;
@@ -87,9 +87,9 @@ height:100%}
 button{background:
   linear-gradient(-153deg, rgba(255,0,0,.7) 20%,rgba(138,43,226,0.7)) 100%;}
 .statbox{margin: 8px;border-radius:15px;background:
-  linear-gradient(-153deg, rgba(255,0,0,.1) 20%,rgba(138,43,226,0.1)) 100%;}
+  linear-gradient(-153deg, rgba(255,0,0,.7)20%,rgba(138,43,226,1)) 100%;}
 .recentbox{margin: 8px;border-radius:15px;background:
-  linear-gradient(-127deg, rgba(255,0,0,.1) 20%,rgba(138,43,226,0.3)) 100%;
+  linear-gradient(127deg, rgba(255,0,0,0.5) 20%,rgba(138,43,226,0.5)) 100%;
   font-size:0.75em}
 .statnumb{font-size: 1.25em}
 .statname{font-size: 0.75em}
@@ -113,6 +113,8 @@ div#intro_sol_dis{background:
   width:60%
 }
 #exploreus{display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center}
+
+#topper_explore_img{width: 64px;position:absolute;top:10px;left:20px;border-radius:32%}
 
 #TCP{display:grid;grid-template-columns: auto;border-radius:15px;}
 
@@ -147,7 +149,7 @@ li{margin-left:10%;}
 </style>
 <div id="topper">
 	<div id="topper_explore">
-		<img src="img/daix.svg" width="32px" style="border-radius:32%"><!--++<br>++-->
+		<img id="topper_explore_img" src="img/daix.svg"><!--++<br>++-->
 	</div>
 	<div id="topper_links"><!--
 		<a href="https://discord.gg">Discord</a>
@@ -155,6 +157,7 @@ li{margin-left:10%;}
 	</div>
 	<div id="topper_logo">
 		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
+		<br><pre>v0.1.47(d)</pre>
 	</div>
 </div>
 
@@ -166,8 +169,17 @@ li{margin-left:10%;}
 	<div class="statbox">
 		<div class="stat statnumb">⚠ Important Notice!</div>
 		<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
-		We're looking for testers! If you want o contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section</b>.
-		<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Week of April '21.</div>
+		We're looking for testers! If you want to contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section</b>.
+		<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Half of April '21.
+		<br>Latest testing version is:<br>
+		<li>Version: v0.1.49</li>
+		<li>Network: Ropsten (c=3;n=3)</li>
+		<li>Symbol: DAIX0.1.49</li>
+		<li>Name: Daibase Ropsten v0.1.49</li>
+		<li>Target: 1 DAI (Ropsten ERC20)</li>
+		<li>Oracle: Uniswap (DAIX/DAI=X)</li>
+		<li>KingMaker: Enabled</li>
+		</div>
 	</div>
 
 <div id="exploreus">
@@ -177,7 +189,7 @@ li{margin-left:10%;}
 	</div>
 	<div id="id_shopping" onclick="c(this.id.substr(1))"><a href="#d_shopping">
 	<img width="64px" src="img/shopping.svg">
-	<br>Shop</a>
+	<br>Shopping</a>
 	</div>
 	<div id="id_trading" onclick="c(this.id.substr(1))"><a href="#d_trading">
 	<img width="64px" src="img/exchange.svg">
@@ -543,7 +555,7 @@ li{margin-left:10%;}
 	<h3 align="center">Tester's Control Panel</h3>
 	Please switch to Ropsten Testnet (Chain ID:3) to test v0.1.41<br><br>
 
-	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xb17Cd4aff17938a89A224ea93dFEd5c0FfAC3Dd8" placeholder="DAIX Contract"><br><button id="rb" onclick="gs()">Import</button>DAIX Contract<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0xe35C667f869DcA393e16141b66a2d83Fa892f320" placeholder="DAIX Contract"><br><button id="rb" onclick="gs()">Import</button>DAIX Contract<br>
 
 	<div align="center" style="font-size:0.7em;">
 		<span id="er"></span><br>
@@ -598,11 +610,11 @@ li{margin-left:10%;}
 
 
 	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x856ab0F21F1A1dCAD630A87c4d1094a1aD6b9de9" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x100Cca52742F38d4dA1216B4B7Ef054335816346" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
 	<span id="fpbb"></span><br>
 
 	<h4>Scope of Testing</h4>
-	<div class="tesins" style="text-align:left;font-size:0.81em">
+	<div class="recentbox" style="text-align:left;font-size:0.81em">
 	The chief objective of the testing phase of Daibase Smart Contracts is to ensure seamless quality and provide valuable feedback for improvment prior to launching v1.0.0 of DAIX Contracts. The main testing platform will be the various Ethereum testnets (Kovan & Ropsten) with focus on post-Istanbul architecture compatibility.<br><br><b>DAIX is not a fork.</b><br><br>Nor does it use any previously deployed Economic model. All major features of Daibase are a product of direct innovation and hence we call it "An Experimental Decentralized Finance" project.Daibase's primary contract ("core") is an ERC20 standard compliant smart-contract. It is capable of orchestrating an Elastic Supply book-keeping for its various users<br><br> To ensure expected behaviour, we will test the following aspects and make sure of their accuracy and precision:<br><br>
 	<i>Please note that during testing of upto v0.1.37 contracts, we shall be treating ETH as if it were XDAI.<br>i.e. 1 ETH represents 1 XDAI.<br>The "ETH/DAIX" pair of Uniswap AMM\DEX will be referred to as the "First Pair".</i><br><br>
 	<b>Sending & Receiving DAIX tokens</b><br>
@@ -668,15 +680,27 @@ li{margin-left:10%;}
 	<h4>Recently Tested Versions</h4>
 	(Ordered as per recency.)
 	<br>
+	<b>v0.1.47(d) : Ropsten</b>
+	<pre>
+DAIX47 0xe35C667f869DcA393e16141b66a2d83Fa892f320
+
+ercDAI 0xaD6D458402F60fD3Bd25163575031ACDce07538D
+
+KMaker 0x9cc7e64cD4c3ccBB7d4Cf1F7A0D3242D7035AF73
+
+u/:DAI 0x100Cca52742F38d4dA1216B4B7Ef054335816346
+</pre>	<br>
+	</pre><br>
+	<br>
 	<b>v0.1.46(d) : Ropsten</b>
 	<pre>
-DAIX43 0xb17Cd4aff17938a89A224ea93dFEd5c0FfAC3Dd8
+DAIX46 0xb17Cd4aff17938a89A224ea93dFEd5c0FfAC3Dd8
 
 ercDAI 0xaD6D458402F60fD3Bd25163575031ACDce07538D
 
 KinMak none
 
-u/WETH 0x856ab0F21F1A1dCAD630A87c4d1094a1aD6b9de9
+u/:DAI 0x856ab0F21F1A1dCAD630A87c4d1094a1aD6b9de9
 </pre>	<br>
 	</pre><br>
 	<br>
@@ -796,7 +820,7 @@ Initial Supply will always be 1 Token, which will be entirely added to liquidity
 <br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
 
 
-<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.40<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
+<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.47(d)<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
 
 <div align="center">
 <a href="https://twitter.com/daibased">Twitter</a>
@@ -1135,7 +1159,7 @@ var PA=[
 function s_i()
 {
 	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
-	var pairAdd = "0x856ab0F21F1A1dCAD630A87c4d1094a1aD6b9de9";
+	var pairAdd = "0x100Cca52742F38d4dA1216B4B7Ef054335816346";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
 	{
