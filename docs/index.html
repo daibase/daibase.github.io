@@ -610,7 +610,7 @@ li{margin-left:10%;}
 
 
 	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x100Cca52742F38d4dA1216B4B7Ef054335816346" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
+	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
 	<span id="fpbb"></span><br>
 
 	<h4>Scope of Testing</h4>
@@ -688,7 +688,7 @@ ercDAI 0xaD6D458402F60fD3Bd25163575031ACDce07538D
 
 KMaker 0x9cc7e64cD4c3ccBB7d4Cf1F7A0D3242D7035AF73
 
-u/:DAI 0x100Cca52742F38d4dA1216B4B7Ef054335816346
+uP:DAI 0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde
 </pre>	<br>
 	</pre><br>
 	<br>
@@ -1159,7 +1159,7 @@ var PA=[
 function s_i()
 {
 	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
-	var pairAdd = "0x100Cca52742F38d4dA1216B4B7Ef054335816346";
+	var pairAdd = "0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
 	{
