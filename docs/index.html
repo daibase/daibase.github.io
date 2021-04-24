@@ -76,7 +76,7 @@ $COIL:
 html{
   font-family:  Arial, Helvetica Neue, Helvetica, sans-serif;
   background:
-  linear-gradient(-153deg, rgba(6,64,86,1) 30%,rgba(138,3,126,1)) 100%;
+  linear-gradient(-153deg, rgba(1,111,111,1) 30%,rgba(111,1,111,1)) 100%;
   background-attachment: fixed;
 height:100%}
 *{color: white;
@@ -128,6 +128,14 @@ li{margin-left:10%;}
 
 *:disabled{color:rgba(0,255,255,0.3)}
 
+#farmland{display:grid;grid-template-columns: auto;border-radius:15px;}
+
+.newfarm{border: 2px solid white;width:;text-align:;font-weight: bold}
+
+.newfarmland{margin: 5%}
+
+.farm_b{width: 200px}
+
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -145,6 +153,9 @@ li{margin-left:10%;}
 		display:grid;grid-template-columns: auto auto auto;border-radius:15px;}
 	#heir_new{
 		display:grid;grid-template-columns: auto auto;border-radius:15px;}
+	#farmland{
+		display:grid;grid-template-columns: auto auto;border-radius:15px;}
+
 }
 </style>
 <div id="topper">
@@ -277,16 +288,110 @@ li{margin-left:10%;}
 	</div>
 </div>
 <div class="cu" id="d_farms">
-	<div style="font-size:1.25em" align="center">
-	No farm is active right now.<br><br>
-		<div style="border:2px solid orange; border-radius:5px" align="center">
-			Farm closed.
+	<br><br>
+	<div style="font-size:1.25em" align="center" id="farmland">
+		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
+			Farm 1 open.<br>
+			<div class="newfarm">
+				<br>Deposit<br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
+				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				DAIX-DDAO HLP<hr style="padding:0;width:50%">
+				<!--Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"></img><br>F3DPT<br>+<br>-->
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
+				<hr style="padding:0;width:50%">
+				<button class="farm_b farm_approve">Approve</button>
+				<button class="farm_b farm_deposit">Deposit</button>
+				<button class="farm_b farm_claim">Claim</button>
+				<button class="farm_b farm_withdraw">Withdraw</button>
+				<button class="farm_b farm_exit">Claim & Exit</button><br>
+			</div>
+			<b><i>Core</i></b><br>
+			<div class="farm_stat" style="font-size:0.6em">
+				<span id="farm_3_sg">1000</span>DAIX-DDAO HLP Staked Globally<br>
+				<span id="farm_3_ys">10.87</span>DAIX-DDAO HLP You've Staked<br>
+				<span id="farm_3_re">1.65</span>DDAO Rewards Earned<br>
+				<span id="farm_3_roi">21.01</span>% R.O.I. <br>
+				 <span id="farm_3_ap">8117</span>% A.P.Y.<br>
+				 <span id="farm_3_tvl">8117</span>USD in T.V.L.<br>
+			</div>
 		</div>
-		<div style="border:2px solid orange; border-radius:5px" align="center">
-			Farm closed.
+		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
+			Farm 2 Open.<br>
+			<div class="newfarm">
+				<br>Deposit<br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
+				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				DDAO<hr style="padding:0;width:50%">
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
+				<hr style="padding:0;width:50%">
+				<button class="farm_b farm_approve">Approve</button>
+				<button class="farm_b farm_deposit">Deposit</button>
+				<button class="farm_b farm_claim">Claim</button>
+				<button class="farm_b farm_withdraw">Withdraw</button>
+				<button class="farm_b farm_exit">Claim & Exit</button><br>
+			</div>
+			<b><i>Core</i></b><br>
+			<div class="farm_stat" style="font-size:0.6em">
+				<span id="farm_3_sg">1000</span>DDAO Staked Globally<br>
+				<span id="farm_3_ys">10.87</span>DDAO HLP You've Staked<br>
+				<span id="farm_3_re">1.65</span>DDAO Rewards Earned<br>
+				<span id="farm_3_roi">21.01</span>% R.O.I. <br>
+				 <span id="farm_3_ap">8117</span>% A.P.Y.<br>
+				 <span id="farm_3_tvl">8117</span>USD in T.V.L.<br>
+			</div>
 		</div>
-		<div style="border:2px solid orange; border-radius:5px" align="center">
-			Farm closed.
+		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
+			Farm 3 closed.<br>
+			<div class="newfarm">
+				<br>Deposit<br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
+				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				DAIX-DDAO HLP<hr style="padding:0;width:50%">
+				Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"></img><br>F3DPT<br>+<br>
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
+				<hr style="padding:0;width:50%">
+				<button class="farm_b farm_approve">Approve</button>
+				<button class="farm_b farm_deposit">Deposit</button>
+				<button class="farm_b farm_claim">Claim</button>
+				<button class="farm_b farm_withdraw">Withdraw</button>
+				<button class="farm_b farm_exit">Claim & Exit</button><br>
+			</div>
+			<b><i>Core</i></b><br>
+			<div class="farm_stat" style="font-size:0.6em">
+				<span id="farm_3_sg">1000</span>DAIX-F3DPT HLP Staked Globally<br>
+				<span id="farm_3_ys">10.87</span>DAIX-DDAO HLP You've Staked<br>
+				<span id="farm_3_re">1.65</span>DDAO Rewards Earned<br>
+				<span id="farm_3_roi">21.01</span>% R.O.I. <br>
+				 <span id="farm_3_ap">8117</span>% A.P.Y.<br>
+				 <span id="farm_3_tvl">8117</span>USD in T.V.L.<br>
+			</div>
+		</div>
+		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
+			Farm 4 closed.<br>
+			<div class="newfarm">
+				<br>Deposit<br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
+				<img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				DAIX-F3DPT HLP<hr style="padding:0;width:50%">
+				Get<br><img src="img/guide.svg" width="48px" style="padding:0;border-radius:50%"></img><br>F4DPT<br>+<br>
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
+				<hr style="padding:0;width:50%">
+				<button class="farm_b farm_approve">Approve</button>
+				<button class="farm_b farm_deposit">Deposit</button>
+				<button class="farm_b farm_claim">Claim</button>
+				<button class="farm_b farm_withdraw">Withdraw</button>
+				<button class="farm_b farm_exit">Claim & Exit</button><br>
+			</div>
+			<b><i>Boost</i></b><br>
+			<div class="farm_stat" style="font-size:0.6em">
+				<span id="farm_4_sg">1000</span>DAIX-F3DPT HLP Staked Globally<br>
+				<span id="farm_4_ys">10.87</span>DAIX-F3DPT HLP You've Staked<br>
+				<span id="farm_4_re">1.65</span>DDAO Rewards Earned<br>
+				<span id="farm_4_roi">21.01</span>% R.O.I. <br>
+				 <span id="farm_4_ap">8117</span>% A.P.Y.<br>
+				 <span id="farm_4_tvl">8117</span>USD in T.V.L.<br>
+			</div>
 		</div>
 	</div>
 </div>
