@@ -130,11 +130,12 @@ li{margin-left:10%;}
 
 #farmland{display:grid;grid-template-columns: auto;border-radius:15px;}
 
-.newfarm{border: 2px solid white;width:;text-align:;font-weight: bold}
+.newfarm{width:;text-align:;font-weight: bold}
 
 .newfarmland{margin: 5%}
-
+summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 .farm_b{width: 200px}
+.farm_i{width: 200px;text-align:center;color:purple}
 
 @media(min-width:641px){
 	#stats{
@@ -262,8 +263,8 @@ li{margin-left:10%;}
 
 		<div style="border:2px solid orange; border-radius:5px" align="center">
 			Current Balance:<br><span id="shop_ethbal">?</span><br>
-			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""></input><br>
-			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"></input><br>
+			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""><br>
+			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
 			<br>Discount Offered:<br><span id="shop_d">?</span>%
 			<br><br><span id="shop_w" style="font-size:0.75em"></span><span id="shop_rx" style="font-size:0.75em"></span>
@@ -294,36 +295,52 @@ li{margin-left:10%;}
 			Farm 1 open.<br>
 			<div class="newfarm">
 				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
-				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
+				<img src="img/ddao.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-16px"><br>
 				DAIX-DDAO HLP<hr style="padding:0;width:50%">
-				<!--Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"></img><br>F3DPT<br>+<br>-->
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
-				<hr style="padding:0;width:50%">
-				<button class="farm_b farm_approve">Approve</button>
-				<button class="farm_b farm_deposit">Deposit</button>
-				<button class="farm_b farm_claim">Claim</button>
-				<button class="farm_b farm_withdraw">Withdraw</button>
+				<!--Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"><br>F3DPT<br>+<br>-->
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
+				<hr style="padding:0;width:75%">
+				<b><i>Core</i></b><br>
+				<div class="farm_stat" style="font-size:0.6em">
+					<span id="farm_3_i_sg">1000</span>DAIX-DDAO HLP Staked Globally<br>
+					<span id="farm_3_i_ys">10.87</span>DAIX-DDAO HLP You've Staked<br>
+					<span id="farm_3_i_re">1.65</span>DDAO Rewards Earned<br>
+					<span id="farm_3_i_roi">21.01</span>% R.O.I. <br>
+					<span id="farm_3_i_ap">8117</span>% A.P.Y.<br>
+					<span id="farm_3_i_tvl">8117</span>USD in T.V.L.<br>
+				</div>
+			</div>
+			<details>
+				<summary><b>Visit this Farm</b></summary><br>
+				All this is still experimental. If approved once, don't do it again. Claim button will reap all earned rewards. Withdraw button takes out the staked LP tokens. Claim and Exit button will Harvest the farm: Reap + Unstake. Don't attempt to deposit more LP tokens, it will burn the gas. Make sure to check the numbers in wallet. When something goes wrong, report in the telegram or discord.<br><br>
+				<input class="farm_i farm_input_approve" value="Not Approved" disabled="true"><br>
+				<button class="farm_b farm_approve" onclick="farm_1_f_approve()">Approve</button><br><br>
+
+				<span class="farm_s farm_s_deposit" id="farm_1_s_deposit" onclick="$('farm_1_input_deposit).value=this.innerHTML">0</span><br>
+				<input class="farm_i farm_input_deposit" value="" placeholder="Deposit Amount" id="farm_1_input_deposit"><br>
+				<button class="farm_b farm_deposit" onclick="farm_1_f_deposit()">Deposit</button><br><br>
+
+				<input class="farm_i farm_input_claim" value="Earnings Unknown" disabled="true" id="farm_1_input_claim"><br>
+				<button class="farm_b farm_claim">Claim</button><br><br>
+
+				<span class="farm_s farm_s_deposit" id="farm_1_s_withdraw" onclick="$('farm_1_input_withdraw).value=this.innerHTML">0</span><br>
+				<input class="farm_i farm_input_withdraw" value="" placeholder="Nothing Staked" id="farm_1_input_withdraw"><br>
+				<button class="farm_b farm_withdraw">Withdraw</button><br><br>
+
+				<input class="farm_i farm_input_claim_e" value="Earnings Unknown" disabled="true" id="farm_1_input_claim_e"><br>
+				<input class="farm_i farm_input_claim_s" value="Stake Unknown" disabled="true" id="farm_1_input_claim_s"><br>
 				<button class="farm_b farm_exit">Claim & Exit</button><br>
-			</div>
-			<b><i>Core</i></b><br>
-			<div class="farm_stat" style="font-size:0.6em">
-				<span id="farm_3_sg">1000</span>DAIX-DDAO HLP Staked Globally<br>
-				<span id="farm_3_ys">10.87</span>DAIX-DDAO HLP You've Staked<br>
-				<span id="farm_3_re">1.65</span>DDAO Rewards Earned<br>
-				<span id="farm_3_roi">21.01</span>% R.O.I. <br>
-				 <span id="farm_3_ap">8117</span>% A.P.Y.<br>
-				 <span id="farm_3_tvl">8117</span>USD in T.V.L.<br>
-			</div>
+			</details>
 		</div>
 		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
-			Farm 2 Open.<br>
+			Farm 2 Closed.<br>
 			<div class="newfarm">
 				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
-				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
+				<!--<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px">--><br>
 				DDAO<hr style="padding:0;width:50%">
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
+				Earn<br><img src="img/ddao.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
 				<hr style="padding:0;width:50%">
 				<button class="farm_b farm_approve">Approve</button>
 				<button class="farm_b farm_deposit">Deposit</button>
@@ -345,11 +362,11 @@ li{margin-left:10%;}
 			Farm 3 closed.<br>
 			<div class="newfarm">
 				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
-				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
+				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"><br>
 				DAIX-DDAO HLP<hr style="padding:0;width:50%">
-				Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"></img><br>F3DPT<br>+<br>
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
+				Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"><br>F3DPT<br>+<br>
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
 				<hr style="padding:0;width:50%">
 				<button class="farm_b farm_approve">Approve</button>
 				<button class="farm_b farm_deposit">Deposit</button>
@@ -371,11 +388,11 @@ li{margin-left:10%;}
 			Farm 4 closed.<br>
 			<div class="newfarm">
 				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%"></img>
-				<img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"></img><br>
+				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
+				<img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"><br>
 				DAIX-F3DPT HLP<hr style="padding:0;width:50%">
-				Get<br><img src="img/guide.svg" width="48px" style="padding:0;border-radius:50%"></img><br>F4DPT<br>+<br>
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"></img><br>DDAO<br>
+				Get<br><img src="img/guide.svg" width="48px" style="padding:0;border-radius:50%"><br>F4DPT<br>+<br>
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
 				<hr style="padding:0;width:50%">
 				<button class="farm_b farm_approve">Approve</button>
 				<button class="farm_b farm_deposit">Deposit</button>
@@ -897,7 +914,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 	<div style="font-size:1.25em" align="center">
 		<h3>The Chosen Ones</h3>
 		Those who make the biggest sacrifices within the last 210000 blocks, get Crowned the legitimate Heir and receive 1% from each DAIX transaction!<br>
-		<img src="img/crown.svg" width="200px"></img><br>
+		<img src="img/crown.svg" width="200px"><br>
 		<span id="heir_tco">Nobody yet</span> is <b>The Chosen One</b> on xDAI Chain!<br><br>
 		<div id="heir_new">
 			<div>
@@ -1098,7 +1115,8 @@ function gs()
 			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});
 			km_d();
 		});
-		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18})
+		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18});
+		refreshFarm();
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1264,7 +1282,6 @@ var PA=[
 function s_i()
 {
 	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
-	var pairAdd = "0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde";
 	thePC = new web3.eth.Contract(PA, pairAdd);
 	thePC.methods.getReserves().call((e, r) =>
 	{
@@ -1356,5 +1373,431 @@ KM=[
 		"type": "function"
 	}
 ];
+
+farabi=[
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "earned",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "uniswapTokenExchange",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "rewards",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "DURATION",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdraw",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "notifyRewardAmount",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "getReward",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "rewardRate",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "lastTimeRewardApplicable",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userRewardPerTokenPaid",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "stake",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "lastUpdateTime",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "rewardPerToken",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "tradedToken",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "rewardPerTokenStored",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "exit",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "periodFinish",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_uniswapTokenExchange",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "reward",
+				"type": "uint256"
+			}
+		],
+		"name": "RewardAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "Staked",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "Withdrawn",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "reward",
+				"type": "uint256"
+			}
+		],
+		"name": "RewardPaid",
+		"type": "event"
+	}
+];
+
+function farm_1_f_approve()
+{
+	try
+	{
+		var conAdd = pairadd;
+		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon.methods.approve(f_1_add,-1).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+
+function farm_1_f_deposit()
+{
+	try
+	{
+		var conAdd = f_1_add;
+		theCon = new web3.eth.Contract(farabi, conAdd);
+		theCon.methods.stake((Number($("farm_1_input_deposit").value)*1e18)%1e18).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+
+function farm_1_f_claim()
+{
+	try
+	{
+		var conAdd = f_1_add;
+		theCon = new web3.eth.Contract(farabi, conAdd);
+		theCon.methods.getReward().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+
+function farm_1_f_withdraw()
+{
+	try
+	{
+		var conAdd = f_1_add;
+		theCon = new web3.eth.Contract(farabi, conAdd);
+		theCon.methods.withdraw((Number($("farm_1_input_withdraw").value)*1e18)%1e18).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+
+function farm_1_f_exit()
+{
+	try
+	{
+		var conAdd = f_1_add;
+		theCon = new web3.eth.Contract(farabi, conAdd);
+		theCon.methods.exit().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+
+function refreshFarm()
+{
+
+	try
+	{
+		var conAdd = f_1_add;
+		theCon = new web3.eth.Contract(farabi, conAdd);
+		theCon.methods.earned(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_claim").innerHTML=r;$("farm_1_s_claim_e").innerHTML=r});
+		theCon.methods.balanceOf(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_withdraw").innerHTML=r;$("farm_1_s_claim_s").innerHTML=r});
+		theCon.methods.earned(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_claim").innerHTML=r});
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+
+f_1_add = "0x6000f97e2079d2Aa6aB028e899436DF5CB5c4A7E";
+pairadd = "0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde";
+
 </script>
 </html>
