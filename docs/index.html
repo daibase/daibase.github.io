@@ -289,7 +289,9 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 	</div>
 </div>
 <div class="cu" id="d_farms">
-	<br><br>
+	<br>
+	All this is still experimental. If approved once, don't do it again. Claim button will reap all earned rewards. Withdraw button takes out the staked LP tokens. Claim and Exit button will Harvest the farm: Reap + Unstake. Don't attempt to deposit more LP tokens, it will burn the gas. Make sure to check the numbers in wallet. When something goes wrong, report in the telegram or discord. Please click <button onclick="gs()">refresh</button> sometimes when it gets stuck.<br><br>
+	<br>
 	<div style="font-size:1.25em" align="center" id="farmland">
 		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
 			Farm 1 open.<br>
@@ -313,7 +315,6 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 			</div>
 			<details>
 				<summary><b>Visit this Farm</b></summary><br>
-				All this is still experimental. If approved once, don't do it again. Claim button will reap all earned rewards. Withdraw button takes out the staked LP tokens. Claim and Exit button will Harvest the farm: Reap + Unstake. Don't attempt to deposit more LP tokens, it will burn the gas. Make sure to check the numbers in wallet. When something goes wrong, report in the telegram or discord.<br><br>
 				<input class="farm_i farm_input_approve" value="Not Approved" disabled="true"><br>
 				<button class="farm_b farm_approve" onclick="farm_1_f_approve()">Approve</button><br><br>
 
@@ -1282,7 +1283,7 @@ var PA=[
 function s_i()
 {
 	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
-	thePC = new web3.eth.Contract(PA, pairAdd);
+	thePC = new web3.eth.Contract(PA, pairadd);
 	thePC.methods.getReserves().call((e, r) =>
 	{
 		rc=Number(r[0]);rd=Number(r[1]);
@@ -1744,7 +1745,7 @@ function farm_1_f_deposit()
 	{
 		var conAdd = f_1_add;
 		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.stake((Number($("farm_1_input_deposit").value)*1e18)%1e18).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+		theCon.methods.stake(String((Number($("farm_1_input_deposit").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1766,7 +1767,7 @@ function farm_1_f_withdraw()
 	{
 		var conAdd = f_1_add;
 		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.withdraw((Number($("farm_1_input_withdraw").value)*1e18)%1e18).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+		theCon.methods.withdraw(String((Number($("farm_1_input_withdraw").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
