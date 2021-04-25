@@ -1733,7 +1733,7 @@ function farm_1_f_approve()
 	{
 		var conAdd = pairadd;
 		theCon = new web3.eth.Contract(abbrove, conAdd);
-		theCon.methods.approve(f_1_add,-1).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+		theCon.methods.approve(f_1_add,"999999999999999999999999999999").send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
