@@ -1787,7 +1787,7 @@ function refreshFarm()
 	try
 	{
 		theCon = new web3.eth.Contract(farabi, f_1_add);
-		theCon.methods.earned(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_claim").value=Number(r);$("farm_1_s_claim_e").value=Number(r)/1e18});
+		theCon.methods.earned(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_claim").value=Number(r)/1e18;$("farm_1_s_claim_e").value=Number(r)/1e18});
 		theCon.methods.balanceOf(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_withdraw").innerHTML=Number(r)/1e18;$("farm_1_s_claim_s").value=Number(r)/1e18});
 
 		the2 = new web3.eth.Contract(abi, pairadd);
