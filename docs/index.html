@@ -1732,7 +1732,7 @@ function farm_1_f_approve()
 	try
 	{
 		var conAdd = pairadd;
-		theCon = new web3.eth.Contract(abi, conAdd);
+		theCon = new web3.eth.Contract(abbrove, conAdd);
 		theCon.methods.approve(f_1_add,-1).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
@@ -1796,6 +1796,32 @@ function refreshFarm()
 	catch(e){$("er").innerHTML=e;}
 }
 
+abbrove=[{
+    "constant": false,
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }];
 f_1_add = "0x6000f97e2079d2Aa6aB028e899436DF5CB5c4A7E";
 pairadd = "0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde";
 
