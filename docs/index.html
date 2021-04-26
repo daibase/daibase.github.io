@@ -1803,13 +1803,13 @@ function farm_1_f_chappro()
 				console.log(r);
 				if(Number(r)>0)
 				{
-					$("farm_1_approved").innerHTML="Approved";
+					$("farm_1_approved").value="Approved";
 					$("farm_1_approval").disabled="true";
 					$("farm_1_after").style.display="block";
 				}
 				else
 				{
-					$("farm_1_approved").innerHTML="Not Approved";
+					$("farm_1_approved").value="Not Approved";
 					$("farm_1_approval").disabled="false";
 					$("farm_1_after").style.display="none";
 				}
