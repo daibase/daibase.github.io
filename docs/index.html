@@ -342,12 +342,12 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 				<hr style="padding:0;width:75%">
 				<b><i>Core</i></b><br>
 				<div class="farm_stat" style="font-size:0.6em">
-					<span id="farm_3_i_sg">1000</span>DAIX-DDAO HLP Staked Globally<br>
-					<span id="farm_3_i_ys">10.87</span>DAIX-DDAO HLP You've Staked<br>
-					<span id="farm_3_i_re">1.65</span>DDAO Rewards Earned<br>
-					<span id="farm_3_i_roi">21.01</span>% R.O.I. <br>
-					<span id="farm_3_i_ap">8117</span>% A.P.Y.<br>
-					<span id="farm_3_i_tvl">8117</span>USD in T.V.L.<br>
+					<span id="farm_3_i_sg">?</span>DAIX-DDAO HLP Staked Globally<br>
+					<span id="farm_3_i_ys">?</span>DAIX-DDAO HLP You've Staked<br>
+					<span id="farm_3_i_re">?</span>DDAO Rewards Earned<br>
+					<span id="farm_3_i_roi">?</span>% R.O.I. <br>
+					<span id="farm_3_i_ap">?</span>% A.P.Y.<br>
+					<span id="farm_3_i_tvl">?</span>USD in T.V.L.<br>
 				</div>
 			</div>
 			<details>
@@ -1825,7 +1825,7 @@ function farm_1_f_deposit()
 	{
 		var conAdd = f_1_add;
 		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.stake(String((Number($("farm_1_input_deposit").value)*1e18)-(Number($("farm_1_input_deposit").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+		theCon.methods.stake(String((Number($("farm_1_input_deposit").value)*1e18)-(Number($("farm_1_input_deposit").value)*1e18)%1)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1847,7 +1847,7 @@ function farm_1_f_withdraw()
 	{
 		var conAdd = f_1_add;
 		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.withdraw(String((Number($("farm_1_input_withdraw").value)*1e18)-(Number($("farm_1_input_withdraw").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+		theCon.methods.withdraw(String((Number($("farm_1_input_withdraw").value)*1e18)-(Number($("farm_1_input_withdraw").value)*1e18)%1)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
