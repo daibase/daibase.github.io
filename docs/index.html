@@ -352,23 +352,28 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 			</div>
 			<details>
 				<summary><b>Visit this Farm</b></summary><br>
-				<input class="farm_i farm_input_approve" value="Not Approved" disabled="true"><br>
-				<button class="farm_b farm_approve" onclick="farm_1_f_approve()">Approve</button><br><br>
+				<input class="farm_i farm_input_approve" value="Not Approved" disabled="true" id="farm_1_approved"><br>
+				<button class="farm_b farm_approve" onclick="farm_1_f_approve()" id="farm_1_approval">Approve</button><br><br>
 
-				<span class="farm_s farm_s_deposit" id="farm_1_s_deposit" onclick="$('farm_1_input_deposit').value=this.innerHTML">0</span><br>
-				<input class="farm_i farm_input_deposit" value="" placeholder="Deposit Amount" id="farm_1_input_deposit"><br>
-				<button class="farm_b farm_deposit" onclick="farm_1_f_deposit()">Deposit</button><br><br>
+				<div id="farm_1_later" style="display:none">
 
-				<input class="farm_i farm_input_claim" value="Earnings Unknown" disabled="true" id="farm_1_s_claim"><br>
-				<button class="farm_b farm_claim" onclick="farm_1_f_claim()">Claim</button><br><br>
+					<span class="farm_s farm_s_deposit" id="farm_1_s_deposit" onclick="$('farm_1_input_deposit').value=this.innerHTML">0</span><br>
+					<input class="farm_i farm_input_deposit" value="" placeholder="Deposit Amount" id="farm_1_input_deposit"><br>
+					<button class="farm_b farm_deposit" onclick="farm_1_f_deposit()">Deposit</button><br><br>
 
-				<span class="farm_s farm_s_deposit" id="farm_1_s_withdraw" onclick="$('farm_1_input_withdraw').value=this.innerHTML">0</span><br>
-				<input class="farm_i farm_input_withdraw" value="" placeholder="Un-Stake Amount" id="farm_1_input_withdraw"><br>
-				<button class="farm_b farm_withdraw" onclick="farm_1_f_withdraw()">Withdraw</button><br><br>
+					<input class="farm_i farm_input_claim" value="Earnings Unknown" disabled="true" id="farm_1_s_claim"><br>
+					<button class="farm_b farm_claim" onclick="farm_1_f_claim()">Claim</button><br><br>
 
-				<input class="farm_i farm_input_claim_e" value="Earnings Unknown" disabled="true" id="farm_1_s_claim_e"><br>
-				<input class="farm_i farm_input_claim_s" value="Stake Unknown" disabled="true" id="farm_1_s_claim_s"><br>
-				<button class="farm_b farm_exit" onclick="farm_1_f_exit()">Claim & Exit</button><br>
+					<span class="farm_s farm_s_deposit" id="farm_1_s_withdraw" onclick="$('farm_1_input_withdraw').value=this.innerHTML">0</span><br>
+					<input class="farm_i farm_input_withdraw" value="" placeholder="Un-Stake Amount" id="farm_1_input_withdraw"><br>
+					<button class="farm_b farm_withdraw" onclick="farm_1_f_withdraw()">Withdraw</button><br><br>
+
+					<input class="farm_i farm_input_claim_e" value="Earnings Unknown" disabled="true" id="farm_1_s_claim_e"><br>
+					<input class="farm_i farm_input_claim_s" value="Stake Unknown" disabled="true" id="farm_1_s_claim_s"><br>
+					<button class="farm_b farm_exit" onclick="farm_1_f_exit()">Claim & Exit</button><br>
+
+				</div>
+
 			</details>
 		</div>
 		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
@@ -388,12 +393,12 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 			</div>
 			<b><i>Core</i></b><br>
 			<div class="farm_stat" style="font-size:0.6em">
-				<span id="farm_3_sg">1000</span>DDAO Staked Globally<br>
-				<span id="farm_3_ys">10.87</span>DDAO HLP You've Staked<br>
-				<span id="farm_3_re">1.65</span>DDAO Rewards Earned<br>
-				<span id="farm_3_roi">21.01</span>% R.O.I. <br>
-				 <span id="farm_3_ap">8117</span>% A.P.Y.<br>
-				 <span id="farm_3_tvl">8117</span>USD in T.V.L.<br>
+				<span id="farm_1_sg">?</span>DDAO Staked Globally<br>
+				<span id="farm_1_ys">?</span>DDAO HLP You've Staked<br>
+				<span id="farm_1_re">?</span>DDAO Rewards Earned<br>
+				<span id="farm_1_roi">?</span>% R.O.I. <br>
+				 <span id="farm_1_ap">?</span>% A.P.Y.<br>
+				 <span id="farm_1_tvl">?</span>USD in T.V.L.<br>
 			</div>
 		</div>
 		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
@@ -1785,13 +1790,41 @@ function farm_1_f_approve()
 	catch(e){$("er").innerHTML=e;}
 }
 
+function farm_1_f_chappro()
+{
+	try
+	{
+		var conAdd = pairadd;
+		theCon = new web3.eth.Contract(abbrove, conAdd);
+		theCon.methods.allowance(window.ethereum.selectedAddress,f_1_add).call
+			({from:window.ethereum.selectedAddress},(e, r) =>
+				{
+					console.log(r);
+					if(Number(r)>0)
+					{
+						$("farm_1_approved").innerHTML="Approved";
+						$("farm_1_approval").disabled="true";
+						$("farm_1_after").style.display="block";
+					}
+					else
+					{
+						$("farm_1_approved").innerHTML="Not Approved";
+						$("farm_1_approval").disabled="false";
+						$("farm_1_after").style.display="none";
+					}
+				}
+			);
+	}
+	catch(e){$("er").innerHTML=e;}
+}
+
 function farm_1_f_deposit()
 {
 	try
 	{
 		var conAdd = f_1_add;
 		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.stake(String((Number($("farm_1_input_deposit").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+		theCon.methods.stake(String((Number($("farm_1_input_deposit").value)*1e18)-(Number($("farm_1_input_deposit").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1813,7 +1846,7 @@ function farm_1_f_withdraw()
 	{
 		var conAdd = f_1_add;
 		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.withdraw(String((Number($("farm_1_input_withdraw").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
+		theCon.methods.withdraw(String((Number($("farm_1_input_withdraw").value)*1e18)-(Number($("farm_1_input_withdraw").value)*1e18)%1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1833,42 +1866,71 @@ function refreshFarm()
 {
 	try
 	{
+		farm_1_f_chappro();
+
 		theCon = new web3.eth.Contract(farabi, f_1_add);
 		theCon.methods.earned(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_claim").value=Number(r)/1e18;$("farm_1_s_claim_e").value=Number(r)/1e18});
 		theCon.methods.balanceOf(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_withdraw").innerHTML=Number(r)/1e18;$("farm_1_s_claim_s").value=Number(r)/1e18});
 
 		the2 = new web3.eth.Contract(abi, pairadd);
 		the2.methods.balanceOf(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_deposit").innerHTML=Number(r)/1e18});
+
 	}
 	catch(e){$("er").innerHTML=e;}
 }
 
 abbrove=[{
-    "constant": false,
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "spender",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "approve",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }];
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}];
 f_1_add = "0x6000f97e2079d2Aa6aB028e899436DF5CB5c4A7E";
 pairadd = "0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde";
 
