@@ -137,6 +137,9 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 .farm_b{width: 200px}
 .farm_i{width: 200px;text-align:center;color:purple}
 
+#d_base_s1{display:grid;grid-template-columns:auto;}
+#d_base_s1_2{text-align:center;font-size: 1.25em;text-align: right;padding-right: 5% }
+
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -156,12 +159,24 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 		display:grid;grid-template-columns: auto auto;border-radius:15px;}
 	#farmland{
 		display:grid;grid-template-columns: auto auto;border-radius:15px;}
+	#d_base_s1{
+		display:grid;grid-template-columns: auto auto;}
+  #d_base_s1_2{text-align:center;font-size: 1.25em;text-align: right; display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;}
 
 }
+
 </style>
 <div id="topper">
 	<div id="topper_explore">
-		<img id="topper_explore_img" src="img/daix.svg"><!--++<br>++-->
+		<img onclick="c('d_base')" id="topper_explore_img" src="img/daix.svg"><!--++<br>++-->
 	</div>
 	<div id="topper_links"><!--
 		<a href="https://discord.gg">Discord</a>
@@ -173,26 +188,49 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 	</div>
 </div>
 
-	<span id="ua">You're not connected.</span><br>
-	<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet.</span></b>
-	<br>
+<span id="ua">You're not connected.</span><br>
+<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet.</span></b>
+<br>
 
+<br><br>
 
-	<div class="statbox">
-		<div class="stat statnumb">⚠ Important Notice!</div>
-		<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.<br>
-		We're looking for testers! If you want to contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section</b>.
-		<br>It is expected that Daibase will debut on the xDAI blockchain in the Second Half of April '21.
-		<br>Latest testing version is:<br>
-		<li>Version: v0.1.49</li>
-		<li>Network: Ropsten (c=3;n=3)</li>
-		<li>Symbol: DAIX0.1.49</li>
-		<li>Name: Daibase Ropsten v0.1.49</li>
-		<li>Target: 1 DAI (Ropsten ERC20)</li>
-		<li>Oracle: Uniswap (DAIX/DAI=X)</li>
-		<li>KingMaker: Enabled</li>
+<div class="cu" id="d_base" style="display:block">
+	<h1>Programmable.<br>Elastic.<br>De-Central Bank.</h1>
+	<div id="d_base_s1">
+		<div>
+			<img src="img/ddao.svg" width="30%" style="border-radius:50%"></img>
+			<img src="img/daix.svg" width="30%" style="border-radius:50%;position:relative;left:-10%"></img>
+		</div>
+		<div id="d_base_s1_2">
+			Mint DAIX<br>↡<br>
+			Re-Leverage<br>⥁<br>
+			Farm<br>⥯<br>
+			Govern<br>
 		</div>
 	</div>
+	<br><br>
+	<b>$DAIX : Algorithmic Stablecoin</b><br>
+	<div style="font-size:0.8em;line-height:2">
+	⇨ First-ever Rebasing asset regulated by Protocol Controlled Value.<br>
+	⇨ Governed by the DAOX holders.<br>
+	⇨ Ever-increasing market-cap floor.<br>
+	⇨ On-chain auction of Protocol Revenues using a "KingMaker".<br>
+	⇨ Flash-minting from within other smart-contracts.<br>
+	⇨ Highly interoperable <font style="font-family:mono">interface IXD</font> and <font style="font-family:mono">library LibDAIX.</font><br>
+	⇨ Made for Yield Farmers, Leverage Traders and the Creative Chefs.<br>
+	⇨ On a dozen blockchains near you!
+	</div>
+</div>
+
+
+<br><br>
+
+<div class="statbox">
+	<div class="stat statnumb">⚠ Important Notice!</div>
+	<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.	We're looking for testers! If you want to contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section</b>. It is expected that Daibase will debut on the xDAI blockchain in the Second Half of April '21.<br>
+	NEVER BUY FROM THE DEX! <b><a href="#d_shopping" onclick="c('d_shopping')">ALWAYS PURCHASE DIRECTLY FROM THE DAIBASE SMART CONTRACT AND GET DISCOUNTS.</a></b>Use Gas Limit of 500000 (half-million) while minting.
+	</div>
+</div>
 
 <div id="exploreus">
 	<div id="id_learn" onclick="c(this.id.substr(1))"><a href="#d_learn">
@@ -936,12 +974,20 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 
 <hr style="padding:0;width:50%">
 
-<div style="text-align:center;"><b>Important note:</b>
+<div style="text-align:center;"><b>[DISCLAIMER]</b>
 <br>There was never, and will be no "pre-sale".<br>
 There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.<br>
-Initial Supply will always be 1 Token, which will be entirely added to liquidity along with 1 DAI donated by Team.
-<br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.</div>
-
+Initial Supply will always be 1 Token irrespective of Chain, which will be entirely added to liquidity along with 1 DAI donated by Team.
+<br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.<br><br>
+<b>[PRIVACY POLICY]</b>
+<br>We dont log anything. We run serverless. Your blockchain interactions stay in your own browser. There are no trackers, no data analytics or any other profilers on this website.<br><br>
+<b>[MIRRORS]</b><br>
+In event this webpage is unavailable, please visit us via the below links. Our contracts are available via the various blockchain explorers and can be found documneted in the addressbook.<br>
+<b><a href="https://daibase.github.io">daibase.github.io</a></b><br>
+<b><a href="https://daibase.github.io">[].onion.to</a></b><br>
+<b><a href="https://daibase.github.io">[].ipfs.to</a></b><br>
+</div>
+<br>
 
 <div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.47(d)<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
 
@@ -1206,6 +1252,7 @@ async function wc()
 	theCon = new web3.eth.Contract(abi, conAdd);
 	theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
 	$("cb").style.display="none";
+	gs();
 }
 function _n()
 {
