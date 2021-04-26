@@ -355,7 +355,7 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 				<input class="farm_i farm_input_approve" value="Not Approved" disabled="true" id="farm_1_approved"><br>
 				<button class="farm_b farm_approve" onclick="farm_1_f_approve()" id="farm_1_approval">Approve</button><br><br>
 
-				<div id="farm_1_later" style="display:none">
+				<div id="farm_1_after" style="display:none">
 
 					<span class="farm_s farm_s_deposit" id="farm_1_s_deposit" onclick="$('farm_1_input_deposit').value=this.innerHTML">0</span><br>
 					<input class="farm_i farm_input_deposit" value="" placeholder="Deposit Amount" id="farm_1_input_deposit"><br>
@@ -1797,23 +1797,24 @@ function farm_1_f_chappro()
 		var conAdd = pairadd;
 		theCon = new web3.eth.Contract(abbrove, conAdd);
 		theCon.methods.allowance(window.ethereum.selectedAddress,f_1_add).call
-			({from:window.ethereum.selectedAddress},(e, r) =>
+		(
+			{from:window.ethereum.selectedAddress},(e, r) =>
+			{
+				console.log(r);
+				if(Number(r)>0)
 				{
-					console.log(r);
-					if(Number(r)>0)
-					{
-						$("farm_1_approved").innerHTML="Approved";
-						$("farm_1_approval").disabled="true";
-						$("farm_1_after").style.display="block";
-					}
-					else
-					{
-						$("farm_1_approved").innerHTML="Not Approved";
-						$("farm_1_approval").disabled="false";
-						$("farm_1_after").style.display="none";
-					}
+					$("farm_1_approved").innerHTML="Approved";
+					$("farm_1_approval").disabled="true";
+					$("farm_1_after").style.display="block";
 				}
-			);
+				else
+				{
+					$("farm_1_approved").innerHTML="Not Approved";
+					$("farm_1_approval").disabled="false";
+					$("farm_1_after").style.display="none";
+				}
+			}
+		);
 	}
 	catch(e){$("er").innerHTML=e;}
 }
