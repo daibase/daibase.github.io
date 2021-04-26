@@ -161,22 +161,13 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 		display:grid;grid-template-columns: auto auto;border-radius:15px;}
 	#d_base_s1{
 		display:grid;grid-template-columns: auto auto;}
-  #d_base_s1_2{text-align:center;font-size: 1.25em;text-align: right; display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-
-    align-items: center;}
-
+#d_base_s1_2{
+    font-weight: bolder;font-size: 1.25em;text-align: right; padding:10% 15% 0 0;border-left:2px solid white;}
 }
-
 </style>
 <div id="topper">
 	<div id="topper_explore">
-		<img onclick="c('d_base')" id="topper_explore_img" src="img/daix.svg"><!--++<br>++-->
+		<a href="#d_base" onclick="c('d_base')"><img id="topper_explore_img" src="img/daix.svg"><!--++<br>++--></a>
 	</div>
 	<div id="topper_links"><!--
 		<a href="https://discord.gg">Discord</a>
@@ -202,10 +193,10 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 			<img src="img/daix.svg" width="30%" style="border-radius:50%;position:relative;left:-10%"></img>
 		</div>
 		<div id="d_base_s1_2">
-			Mint DAIX<br>↡<br>
-			Re-Leverage<br>⥁<br>
-			Farm<br>⥯<br>
-			Govern<br>
+			<a href="#d_shopping" onclick="c('d_shopping')">Mint DAIX</a><br>↡<br>
+			<a href="#d_trading" onclick="c('d_trading')">Re-Leverage</a><br>⥁<br>
+			<a href="#d_farms" onclick="c('d_farms')">Farm</a><br>⥯<br>
+			<a href="#d_dao" onclick="c('d_dao')">Govern</a><br>
 		</div>
 	</div>
 	<br><br>
