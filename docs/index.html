@@ -133,13 +133,17 @@ li{margin-left:10%;}
 .newfarm{width:;text-align:;font-weight: bold}
 
 .newfarmland{margin: 5%}
-summary{border: 2px solid pink;border-radius: 25px;width: max-content}
+summary:not(#d_guides summary){border: 2px solid pink;border-radius: 25px;width: max-content}
 .farm_b{width: 200px}
 .farm_i{width: 200px;text-align:center;color:purple}
 
 #d_base_s1{display:grid;grid-template-columns:auto;}
 #d_base_s1_2{text-align:center;font-size: 1.25em;text-align: right;padding-right: 5% }
 
+#bbm {   padding:64px;border-radius: 50%}
+button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);transition: 0.2s}
+
+#d_guides li {margin:  0;}
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -218,7 +222,7 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 
 <div class="statbox">
 	<div class="stat statnumb">⚠ Important Notice!</div>
-	<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.	We're looking for testers! If you want to contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section</b>. It is expected that Daibase will debut on the xDAI blockchain in the Second Half of April '21.<br>
+	<div class="stat statname">Daibase and the DAIX tokens are still in testing phase. Do not buy any tokens from anyone claiming to sell any Daibase tokens to avoid being scammed.	We're looking for testers! If you want to contribute, head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section</b>.
 	NEVER BUY FROM THE DEX! <b><a href="#d_shopping" onclick="c('d_shopping')">ALWAYS PURCHASE DIRECTLY FROM THE DAIBASE SMART CONTRACT AND GET DISCOUNTS.</a></b>Use Gas Limit of 500000 (half-million) while minting.
 	</div>
 </div>
@@ -236,6 +240,10 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 	<img width="64px" src="img/exchange.svg">
 	<br>Swap</a>
 	</div>
+	<div id="id_basecannon" onclick="c(this.id.substr(1))"><a href="#d_basecannon">
+	<img width="64px" src="img/bass.svg">
+	<br>BaseCannon</a>
+	</div>
 	<div id="id_farms" onclick="c(this.id.substr(1))"><a href="#d_farms">
 	<img width="64px" src="img/farmer.svg">
 	<br>Farms</a>
@@ -251,10 +259,6 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 	<div id="id_dashboard" onclick="c(this.id.substr(1))"><a href="#d_dashboard">
 	<img width="64px" src="img/charts.svg">
 	<br>Dashboard</a>
-	</div>
-	<div id="id_laboratory" onclick="c(this.id.substr(1))"><a href="#d_laboratory">
-	<img width="64px" src="img/lab.svg">
-	<br>Laboratory</a>
 	</div>
 	<div id="id_integration" onclick="c(this.id.substr(1))"><a href="#d_integration">
 	<img width="64px" src="img/contract.svg">
@@ -283,6 +287,10 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 	<div><a href="/goldpaper" target="_blank">
 	<img width="64px" src="img/goldpaper.svg">
 	<br>Goldpaper</a>
+	</div>
+	<div id="id_laboratory" onclick="c(this.id.substr(1))"><a href="#d_laboratory">
+	<img width="64px" src="img/lab.svg">
+	<br>Laboratory</a>
 	</div>
 </div>
 
@@ -323,6 +331,17 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 			Coming soon.
 		</div>
 		<br>Pair Explorer under development.
+	</div>
+</div>
+<div class="cu" id="d_basecannon">
+	<div align="center">
+		<br><br>
+		<button style="height:auto;font-size:1.5em" class="bb" id="bbm" onclick="s_b()"><img width="128px" src="img/bass.svg"></button>
+				<br><h3>Hit the Base Cannon!</h3><br><br>
+				Tap the buton above to create a new epoch in Daibase Protocol!<br>
+				<br>This function can be used only once every 50 blocks.
+				<br><b>It brings back price of 1 DAIX to 1 DAI.</b><br>
+				<br>Please make sure you're on the right network!<br>
 	</div>
 </div>
 <div class="cu" id="d_farms">
@@ -576,8 +595,86 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 	</div>
 	<br><br>Detailed guides coming soon.
 </div>
-<div class="cu" id="d_guides">
-	<br><br>Detailed guides coming soon. Please check <b><a href="https://t.me/DaiBased">telegram channel.</a></b>
+<div class="cu" id="d_guides"  align="center">
+	<h3>Frequently Asked Questions</h3>
+	<h4>ALWAYS "MINT" DAIX. NEVER "BUY" DAIX.</h4>
+	If you "buy", you are certain to lose DAIX. Always use the "mint" function to acquire DAIX or get some from our shopping section.<hr style="padding:0;width:50%"><br><br>
+	<div align="left">
+		<details><summary><b>What is DAIX?</b></summary>
+		DAIX is an elastic supply "rebasing" algorithmic stablecoin ―it adjusts to market conditions and maintains it's price at $1 by changing its circulating supply dynamically whenever someone presses the "BaseCannon" button on our Dapp.
+		</details>
+		<details><summary><b>What is DAOX?</b></summary>
+		DAOX is the governance token of Daibase Protocol. Holders of DAOX get to decide the future of Daibase via creating and voting on "proposals". DAOX can always be earned through one of our farms, partner programs or other ecosytem incentives.
+		</details>
+		<details><summary><b>How to<i>"mint"</i>DAIX?</b></summary>
+		There are 2 ways to mint DAIX tokens:<ol>
+		<li>Visit the shopping section and enter the amounts you wish to buy.</li>
+		<li>Send some XDAI directly to the Daibase Contract address.</li></ol>
+		Please note that:<ul></li>
+		<li>Use "Gas Limit" of 500000 (500k) when minting DAIX.</li>
+		<li>"Minting" doesn't have any fees.</li>
+		<li>"Minting" helps us increase the Protocol Controlled Value (PCV, a.k.a. "TVL").</li>
+		<li>The XDAI sent for minting gets locked forever into liquidity.</li>
+		<li>DON"T TRY TO "BUY DAIX" ― if you "buy" it, you will lose DAIX.</li></ul>
+		<b>ALWAYS "MINT" DAIX. NEVER BUY DAIX.</b>
+		</details>
+		<details><summary><b>How to buy DAOX?</b></summary>
+		DAOX is available at the leading DEXes of the blockchains. On xDAI Chain, DAOX can be swapped for DAIX at BaoSwap, HoneySwap, LevinSwap and Swapr.<br>
+		It could be possible to buy DAOX from honeyswap with XDAI, as it would simply route you through DAIX. This would mean your XDAI first buys DAIX from honeyswap and then that DAIX buys DAOX.
+		<br><b>This is NOT RECOMMENDED.</b><br>
+		Always "buy" DAIX from our Daibase smart contract direclty. Buying DAOX directly from the DEX is not a problem in itself. However, we should avoid buying DAIX from a DEX. For example, buying DAOX with XDAI could have resulted in buying DAIX from the DEX first.<br>
+You might ask, "Why someone should buy ('mint') DAIX from the contract instead of buying directly?"
+		</details>
+		<details><summary><b>Why someone should buy ('mint') DAIX from the contract instead of buying directly?</b></summary>
+	There are a few reasons:
+	<ol>
+		<li>Buying DAIX from honeyswap (or any DEX) is very expensive.
+		<ul>
+			<li>This incurs 1% transaction tax.</li>
+			<li>It incurs 0.3% trade fees.</li>
+			<li>If your trade gets 'routed through DAIX', honeyswap would charge you 1.3% extra for each 'hop'.</li>
+		</ul></li>
+		<li>Buying DAIX from the DEX incurs slippage.
+		<ul>
+			<li>if someone else is also trading in DAIX when you go to buy it on honeyswap, the amounts you receive might not be the ones expected by you. Other trades would influence the DAIX amounts you receive.</li>
+			<li>Direct minting DAIX helps in growing the PCV (Protocol Controlled Value)</li>
+			<li>This eases trading for future trades.</li>
+			<li>Helps to reduce slippage in future.</li>
+			<li>Makes for a bigger (de-)Central Bank Reserve (which is directly owned by all DAIX holders)</li>
+		</ul></li>
+		<li>Buying from the Daibase contract (by sending XDAI directly to its address, with gas limit 500k) is way more cheaper and efficient.
+		<ul>
+			<li>Incurs zero (0%) slippage losses.</li>
+			<li>Incurs zero (0%) trading fees.</li>
+			<li>Incurs zero (0%) transaction tax.</li>
+			<li>Fully predictable amounts of DAIX received.</li>
+			<li>Allows you to reset price back to $1 (optional― it's your wish, just need to press the "BaseCannon" button).</li>
+		</ul></li>
+		</ol>
+		So, if you want to buy DAOX, the best way is to:
+		<br>1. Send your XDAI to Daibase contract address directly. (Use gas limit of 500000)
+		<br>2. Use the DAIX received in step 1. above to buy DAOX from honeyswap.
+		<br>This method will be a lot, lot cheaper and give you a lot, lot more DAOX than buying with Native Coins (XDAI) at a DEX.
+		</details>
+		<details><summary><b>Which blockchains are supported?</b></summary>
+		As of now, Ropsten (testnet) and xDAI Chain (mainnet) version are supported.</details>
+		<details><summary><b>How often can we press the<i>"BaseCannon"</i>button?</b></summary>
+		On-Demand "bases" are a core tenet of Daibase Protocol. However, it's restricted to once in 50 blocks (about 4m10s on xDAI Chain, 12m30s on Ropsten) to prevent over-spamming.</details>
+		<details><summary><b>What is the<i>"rebase lag"</i>?</b></summary>
+		There is no lag. Lag is needed on blockchains like ETH where we need to prioritize gas savings.</details>
+		<details><summary><b>Is there a<i>"transaction tax"</i>?</b></summary>
+		A small fee of 1% is initially levied on each DAIX and DAOX transaction. The taxes collected are used by the KingMaker contract, if enabled, otherwise they're used to fund more farms or other ecosystem incentices, as dictated by the aixDAO by voting with their DAOX rights. The fees for DAIX are expected to be reduced as it's usage increases within smart-contracts.</details>
+		<details><summary><b>What is the<i>"KingMaker"</i>?</b></summary>
+		The KingMaker is a smart-contract that orchestrates an<i>on-chain open-auctioning</i> of transaction taxes generated by DAIX and DAOX. Anyone is allowed to bid with their native coins (XDAI) to contest for the right to drain all the treasures from this contract. The highest bidder is crowned as<i>"The Chosen One"</i> for 500000 blocks. Whenever someone makes a<i>"sacrifice"</i>8% greater than the previous<i>"Heir to DaiX"</i>, they ascend the throne as the new<i>Chosen One</i>. The reward is a huge, direct 1% from the whole of transaction volumes generated by DAIX and DAOX. After a "Heir" goes "unchallenged" through their "reign", the "sacrifice" resets to 0.001 Coins (XDAI).<br>
+		To keep an eye on the timers or make a sacrifice, visit the "Heir to DaiX" section!</details>
+		<details><summary><b>Where does the money bid into the KingMaker go?</b></summary>
+		The bids are used to fund even more farms, vaults, staking services, partner programs and other things mandated by the DAO. The KingMaker relieves the sell pressure at a single point and distributes it to the Heirs of DaiX.</details>
+		<details><summary><b>What is the use-case of Daibase?</b></summary>
+		Daibase Protocol at large aspires to serve as an alternate (De-)Central Bank. It issues 1 DAIX only when it is paid 1 DAI in advance by the issuer, and locks it into it's Protocol Controlled Value (PCV). The currency it issues (DAIX) can be used akin to a real-life cash-asset: For trading, purchasing, borrowing, lending, mortgaging, leveraging and releveraging, and for a multitude of other things as highlighted in the<b>Supplement - I</b>section of our Goldpaper (permalink:https://daibase.github.io/goldpaper).</details>
+		<details><summary><b>Are the DAIX collateralized?</b></summary>
+		No. DAIX are entirely<b>uncollateralized</b>. There is no promise of 1:1 backing of DAIX with DAI. However, if and when the DaixDAO decides to<i>"Dissolve the Reserves",</i>the P.C.V. backs the entire issuancce of DAIX outside the<i>"Cardinal Pair".</i><br>This kind of an event however rare, is possible, and ascertains an<i>implicit collateralization"</i>to DAIX.</details>
+		<br><br><br><br>
+	</div>
 </div>
 <div class="cu" id="d_dashboard">
 	<div class="statbox">
@@ -639,7 +736,13 @@ summary{border: 2px solid pink;border-radius: 25px;width: max-content}
 
 <div class="cu" id="d_learn">
 
-Please note that this section is outdated and does not include developments that took place during March and April of 2021. A more detailed introduction, FAQ, docs and guides section will replace this page soon.
+<div class="statbox">
+	<div class="stat statnumb">⚠ Important Notice!</div>
+	<div class="stat statname">Please note that this section is outdated and does not include developments that took place during March and April of 2021. A more detailed introduction, FAQ, docs and guides section will replace this page soon.
+Please visit the <b><a href="#d_guides" onclick="c('d_guides')">Guides section for more information.</a></b
+	</div>
+</div>
+
 
 	<div style="font-size:1.25em" align="center">
 	<i>DAIX is growing!</i>
@@ -766,7 +869,7 @@ Please note that this section is outdated and does not include developments that
 	<br>
 
 	<button style="height:auto;font-size:1.5em" id="sb" onclick="s_s()">Synchronize</button>
-	<button style="height:auto;font-size:1.5em" id="bb" onclick="s_b()">BaseCannon</button><br>
+	<button style="height:auto;font-size:1.5em" class="bb" onclick="s_b()">BaseCannon</button><br>
 
 
 	<br>
@@ -1005,9 +1108,10 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 
 <div style="text-align:center;"><b>[DISCLAIMER]</b>
 <br>There was never, and will be no "pre-sale".<br>
-There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.<br>
-Initial Supply will always be 1 Token irrespective of Chain, which will be entirely added to liquidity along with 1 DAI donated by Team.
-<br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.<br>DAIX Protocol is a highly experimental project and guarantees no profits.<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.<br><br>
+There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.
+<br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.
+<br>DAIX Protocol is a highly experimental project and guarantees no profits. Please treat it as an experiment in Decentralized Finance instead of an investment opportunity.
+<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.<br><br>
 <b>[PRIVACY POLICY]</b>
 <br>We dont log anything. We run serverless. Your blockchain interactions stay in your own browser. There are no trackers, no data analytics or any other profilers on this website.<br><br>
 <b>[MIRRORS]</b><br>
