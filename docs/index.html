@@ -143,7 +143,7 @@ summary:not(#d_guides summary){border: 2px solid pink;border-radius: 25px;width:
 #bbm {   padding:64px;border-radius: 50%}
 button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);transition: 0.2s}
 
-#d_guides li {margin:  0;}
+#d_guides li, #d_revenues li {margin:  0;}
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -477,12 +477,16 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 </div>
 <div class="cu" id="d_revenues">
 	<div style="border:2px solid orange; border-radius:5px" align="center">
+		<div class="statbox">
+			<div class="stat statnumb" id="rev_d">$000 000 000 000</div>
+			<div class="stat statname">Total Revenue</div>
+		</div>
 		Revenue is generated from:
 		<ol><li>All DAIX transactions</li>
 		All revenues from the DAIX Transactions are sent to the "King-Maker" smart contract.
 		<li>Trades on the "Main-Pair"</li>
 		All revenues from the trades on the Main-Pair are used to increase the Total Value Locked in Daibase Protocol.</ol><br><br>
-		More detailed metrics will be available in the Dashboard soon.
+		<h3 align="center"><b onclick="c('d_dashboard')"><a href="#d_dashboard">For more detailed metrics, open the Dashboard.</a></b></h3>
 	</div>
 </div>
 <div class="cu" id="d_integration">
@@ -749,7 +753,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_cs">000 000 000 000</div>
-			<div class="stat statname">Circulting Supply</div>
+			<div class="stat statname">Circulating Supply</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_ts">000 000 000 000</div>
@@ -1816,6 +1820,53 @@ KM=[
 	}
 ];
 
+async function refreshDash()
+{
+	//tvl,vlf,pcv,ap,cs,ts,mc,fd,tr
+	ap = [];
+	bops=[];
+	CP=1;
+	pctl = 1
+	l055 = 1
+	var tc = new web3.eth.Contract(abi, db1DAIX);
+	al = await tc.methods.allpairslength().call((e,r)=>{return r});
+	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
+	bcard = await tc.methods.balanceOf(ap[0]).call((e,r)=>{return r});
+	for (i=1;i< al;i++){bops.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
+	bdep = await tc.methods.balanceOf(depDAIX).call((e,r)=>{return r});
+	ee = await tc.methods.lastepoch().call((e,r)=>{return r});
+	ts = await tc.methods.totalSupply().call((e,r)=>{return r});
+	var pc = new web3.eth.Contract(PA,pairadd);
+	cpr=await pc.methods.getReserves().call((e,r)=>{CP=(r[1]/r[0])})
+	//tvl = sum of all liq. but denoted in $, we can count 2x DAI, but small pools are unbalanced, so we count the DAIX in pools, multiplied with Card Price
+	tvld=bdep;
+	for(i=0;i< bops.length;i++){tvld+=bops[i]}
+	tvl=tvld*CP/5e17;
+	//vlf=liquidity owned by zero address (NOT THE "_burn", but the "BURN"), 1564076957032043536444 at 10:55 of sun9ma21 (yes, it was a l055)
+	await pc.methods.totalSupply().call((e,r)=>{pctl=r})
+	await pc.methods.balanceOf('0x0000000000000000000000000000000000000000').call((e,r)=>{l055=r})
+	vlf = cpr[1]*CP*2/pctl*l055;
+	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
+	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
+	lpcv = await pc.methods.balanceOf(PCVC).call((e,r)=>{return(r)})
+	pcv = cpr[1]*CP*2/pctl*lpcv;
+	ap=CP;
+	cs=ts-2021e18
+	mc=cs*CP;
+	fd=CP*ts;
+	tr=(bdep-2021e18)*CP/1e18;
+	console.log(tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
+	$("db_tvl").innerHTML = "$ "+(tvl/1e18).toFixed(8);
+	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toFixed(8);
+	$("db_pcv").innerHTML = "$ "+(pcv/1e18).toFixed(8);
+	$("db_ap").innerHTML = "$ "+CP.toFixed(8);
+	$("db_cs").innerHTML = (cs/1e18).toFixed(8);
+	$("db_ts").innerHTML = (ts/1e18).toFixed(8);
+	$("db_mc").innerHTML = "$ "+(mc/1e18).toFixed(8);
+	$("db_fd").innerHTML = "$ "+(fd/1e18).toFixed(8);
+	$("db_tr").innerHTML = "$ "+tr.toFixed(8);
+	$("db_rev_d").innerHTML = "$ "+tr.toFixed(8);
+}
 farabi=[
 	{
 		"constant": true,
@@ -2323,51 +2374,6 @@ abbrove=[{
 		"type": "function"
 	}];
 
-async function refreshDash()
-{
-	//tvl,vlf,pcv,ap,cs,ts,mc,fd,tr
-	ap = [];
-	bops=[];
-	CP=1;
-	pctl = 1
-	l055 = 1
-	var tc = new web3.eth.Contract(abi, db1DAIX);
-	al = await tc.methods.allpairslength().call((e,r)=>{return r});
-	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
-	bcard = await tc.methods.balanceOf(ap[0]).call((e,r)=>{return r});
-	for (i=1;i< al;i++){bops.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
-	bdep = await tc.methods.balanceOf(depDAIX).call((e,r)=>{return r});
-	ee = await tc.methods.lastepoch().call((e,r)=>{return r});
-	ts = await tc.methods.totalSupply().call((e,r)=>{return r});
-	var pc = new web3.eth.Contract(PA,pairadd);
-	cpr=await pc.methods.getReserves().call((e,r)=>{CP=(r[1]/r[0])})
-	//tvl = sum of all liq. but denoted in $, we can count 2x DAI, but small pools are unbalanced, so we count the DAIX in pools, multiplied with Card Price
-	tvld=bdep;
-	for(i=0;i< bops.length;i++){tvld+=bops[i]}
-	tvl=tvld*CP/5e17;
-	//vlf=liquidity owned by zero address (NOT THE "_burn", but the "BURN"), 1564076957032043536444 at 10:55 of sun9ma21 (yes, it was a l055)
-	await pc.methods.totalSupply().call((e,r)=>{pctl=r})
-	await pc.methods.balanceOf('0x0000000000000000000000000000000000000000').call((e,r)=>{l055=r})
-	vlf = cpr[1]*CP*2/pctl*l055;
-	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
-	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
-	lpcv = await pc.methods.balanceOf(PCVC).call((e,r)=>{return(r)})
-	pcv = cpr[1]*CP*2/pctl*lpcv;
-	ap=CP;
-	cs=ts-2021e18
-	mc=cs*CP;
-	fd=CP*ts;
-	tr=(bdep-2021e18)*CP/1e18;
-	console.log(tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
-	$("db_tvl").innerHTML = "$ "+tvl;
-	$("db_vlf").innerHTML = "$ "+vlf/1e18;
-	$("db_ap").innerHTML = "$ "+CP.toFixed(8);
-	$("db_cs").innerHTML = cs;
-	$("db_ts").innerHTML = ts;
-	$("db_mc").innerHTML = "$ "+mc;
-	$("db_fd").innerHTML = "$ "+fd;
-	$("db_tr").innerHTML = "$ "+tr;
-}
 f_1_add = "0x6dB739FF338F88D5db8788d0a6b64b6217fB9947";
 pairadd = "0x9ACBbFb21d854092B0325e7F27F2ad536f64C219";
 db1DAIX = "0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987";
