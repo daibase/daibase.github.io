@@ -1852,7 +1852,7 @@ async function refreshDash()
 	l055 = 1
 	var tc = new web3.eth.Contract(abi, db1DAIX);
 	al = await tc.methods.allpairslength().call((e,r)=>{return r});
-	$("db_al") = al;
+	//$("db_al") = al;
 	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
 	bcard = await tc.methods.balanceOf(ap[0]).call((e,r)=>{return r});
 	for (i=1;i< al;i++){bops.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
