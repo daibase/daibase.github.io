@@ -707,7 +707,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 <div class="cu" id="d_dashboard">
 	<div class="statbox">
 		<div class="stat statnumb">Dashboard is Live!</div>
-		<div class="stat statname">DAIX is deployed on 2 blockchains, Ropsten and xDAI. Below includes basic stats for xDAI Chain only unless marked with an "*" asterisk. Developers and testers can utilize the<b><a onclick="c(id_laboratory)">Laboratory</a></b> area for finding out the testnet statistics.
+		<div class="stat statname">DAIX is deployed on 2 blockchains, Ropsten and xDAI. Below includes basic stats for xDAI Chain only. Ropsten metrics are marked with an asterisk(*). Non-real-time values are marked with a carrat(^). In case of mixed values, Ropsten values preceed xDAI. Developers and testers can utilize the<b><a onclick="c(id_laboratory)">Laboratory</a></b> area for finding out the testnet statistics for Custom and Historical versions.
 		</div>
 	</div>
 	<div id="stats">
@@ -716,19 +716,19 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">Epochs Elapsed</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_uu">26</div>
+			<div class="stat statnumb" id="db_uu">32*^</div>
 			<div class="stat statname">Unique Users</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_nc">2* (1+1)</div>
+			<div class="stat statnumb" id="db_nc">1 + 1*</div>
 			<div class="stat statname">№ of Blockchains</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_nt">4* (2+2)</div>
+			<div class="stat statnumb" id="db_nt">2^ + 2*^</div>
 			<div class="stat statname">Number of Tokens</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_tc">142 (134+8)</div>
+			<div class="stat statnumb" id="db_tc">152^ + 8*^</div>
 			<div class="stat statname">Transaction Count</div>
 		</div>
 		<div class="statbox">
@@ -748,7 +748,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">Average Price</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_dp">3</div>
+			<div class="stat statnumb" id="db_dp">1*^ + <span id="dp_al">1?</span></div>
 			<div class="stat statname">№ of DEX pairs</div>
 		</div>
 		<div class="statbox">
@@ -1822,7 +1822,7 @@ KM=[
 
 async function refreshDash()
 {
-	//tvl,vlf,pcv,ap,cs,ts,mc,fd,tr
+	//ee,tvl,vlf,pcv,ap,cs,ts,mc,fd,tr
 	ap = [];
 	bops=[];
 	CP=1;
@@ -1856,6 +1856,7 @@ async function refreshDash()
 	fd=CP*ts;
 	tr=(bdep-2021e18)*CP/1e18;
 	console.log(tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
+	$("db_ee").innerHTML = ee;
 	$("db_tvl").innerHTML = "$ "+(tvl/1e18).toFixed(8);
 	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toFixed(8);
 	$("db_pcv").innerHTML = "$ "+(pcv/1e18).toFixed(8);
@@ -1865,7 +1866,7 @@ async function refreshDash()
 	$("db_mc").innerHTML = "$ "+(mc/1e18).toFixed(8);
 	$("db_fd").innerHTML = "$ "+(fd/1e18).toFixed(8);
 	$("db_tr").innerHTML = "$ "+tr.toFixed(8);
-	$("db_rev_d").innerHTML = "$ "+tr.toFixed(8);
+	$("rev_d").innerHTML = "$ "+tr.toFixed(8);
 }
 farabi=[
 	{
