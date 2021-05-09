@@ -144,6 +144,7 @@ summary:not(#d_guides summary){border: 2px solid pink;border-radius: 25px;width:
 button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);transition: 0.2s}
 
 #d_guides li, #d_revenues li {margin:  0;}
+
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -167,6 +168,15 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 		display:grid;grid-template-columns: auto auto;}
 #d_base_s1_2{
     font-size: 2.4vw;text-align: right; position: absolute;right:20%;border-left:1px dashed white;}
+}
+
+@media(max-width:481px){
+	#stats{
+		border-radius:15px;
+		display:grid;
+		grid-template-columns:auto;}
+	#exploreus{
+		display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center}
 }
 </style>
 <div id="topper">
@@ -712,6 +722,10 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 	</div>
 	<div id="stats">
 		<div class="statbox">
+			<div class="stat statnumb" id="db_ap">000 000</div>
+			<div class="stat statname">Average Price</div>
+		</div>
+		<div class="statbox">
 			<div class="stat statnumb" id="db_ee">000</div>
 			<div class="stat statname">Epochs Elapsed</div>
 		</div>
@@ -728,12 +742,20 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">Number of Tokens</div>
 		</div>
 		<div class="statbox">
+			<div class="stat statnumb" id="db_dp">1*^ + <span id="db_al">1?</span></div>
+			<div class="stat statname">№ of DEX pairs</div>
+		</div>
+		<div class="statbox">
 			<div class="stat statnumb" id="db_tc">152^ + 8*^</div>
 			<div class="stat statname">Transaction Count</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_tvl">$000 000 000 000</div>
-			<div class="stat statname">Total Value Locked</div>
+			<div class="stat statnumb" id="db_cs">000 000 000 000</div>
+			<div class="stat statname">Circulating Supply</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_ts">000 000 000 000</div>
+			<div class="stat statname">Total Supply</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_vlf">$000 000 000 000</div>
@@ -744,20 +766,8 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">Protocol Controlled Value</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_ap">000 000</div>
-			<div class="stat statname">Average Price</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_dp">1*^ + <span id="dp_al">1?</span></div>
-			<div class="stat statname">№ of DEX pairs</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_cs">000 000 000 000</div>
-			<div class="stat statname">Circulating Supply</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_ts">000 000 000 000</div>
-			<div class="stat statname">Total Supply</div>
+			<div class="stat statnumb" id="db_tvl">$000 000 000 000</div>
+			<div class="stat statname">Total Value Locked</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_mc">$000 000 000 000</div>
@@ -770,6 +780,18 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 		<div class="statbox">
 			<div class="stat statnumb" id="db_tr">000 000 000</div>
 			<div class="stat statname">Total Revenue</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_tr">000 000 000</div>
+			<div class="stat statname">Total Revenue</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_cr">100%</div>
+			<div class="stat statname">Credit Reserve Ratio</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_sd">$000 000 000 000</div>
+			<div class="stat statname">Sovereign Debt</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb">more info…?</div>
@@ -1830,43 +1852,50 @@ async function refreshDash()
 	l055 = 1
 	var tc = new web3.eth.Contract(abi, db1DAIX);
 	al = await tc.methods.allpairslength().call((e,r)=>{return r});
+	$("db_al") = al;
 	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
 	bcard = await tc.methods.balanceOf(ap[0]).call((e,r)=>{return r});
 	for (i=1;i< al;i++){bops.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
 	bdep = await tc.methods.balanceOf(depDAIX).call((e,r)=>{return r});
 	ee = await tc.methods.lastepoch().call((e,r)=>{return r});
+	$("db_ee").innerHTML = ee;
 	ts = await tc.methods.totalSupply().call((e,r)=>{return r});
+	$("db_ts").innerHTML = (ts/1e18).toFixed(8);
 	var pc = new web3.eth.Contract(PA,pairadd);
 	cpr=await pc.methods.getReserves().call((e,r)=>{CP=(r[1]/r[0])})
 	//tvl = sum of all liq. but denoted in $, we can count 2x DAI, but small pools are unbalanced, so we count the DAIX in pools, multiplied with Card Price
-	tvld=bdep;
-	for(i=0;i< bops.length;i++){tvld+=bops[i]}
-	tvl=tvld*CP/5e17;
+	tvld=Number(bcard)
+	for(i=0;i< bops.length;i++){tvld+=Number(bops[i])}
+	tvl=tvld*CP*2;
+	$("db_tvl").innerHTML = "$ "+(tvl/1e18).toFixed(8);
 	//vlf=liquidity owned by zero address (NOT THE "_burn", but the "BURN"), 1564076957032043536444 at 10:55 of sun9ma21 (yes, it was a l055)
 	await pc.methods.totalSupply().call((e,r)=>{pctl=r})
 	await pc.methods.balanceOf('0x0000000000000000000000000000000000000000').call((e,r)=>{l055=r})
 	vlf = cpr[1]*CP*2/pctl*l055;
+	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toFixed(8);
 	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
 	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
 	lpcv = await pc.methods.balanceOf(PCVC).call((e,r)=>{return(r)})
 	pcv = cpr[1]*CP*2/pctl*lpcv;
+	$("db_pcv").innerHTML = "$ "+(pcv/1e18).toFixed(8);
 	ap=CP;
+	$("db_ap").innerHTML = "$ "+CP.toFixed(8);
 	cs=ts-2021e18
+	$("db_cs").innerHTML = (cs/1e18).toFixed(8);
 	mc=cs*CP;
 	fd=CP*ts;
-	tr=(bdep-2021e18)*CP/1e18;
-	console.log(tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
-	$("db_ee").innerHTML = ee;
-	$("db_tvl").innerHTML = "$ "+(tvl/1e18).toFixed(8);
-	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toFixed(8);
-	$("db_pcv").innerHTML = "$ "+(pcv/1e18).toFixed(8);
-	$("db_ap").innerHTML = "$ "+CP.toFixed(8);
-	$("db_cs").innerHTML = (cs/1e18).toFixed(8);
-	$("db_ts").innerHTML = (ts/1e18).toFixed(8);
 	$("db_mc").innerHTML = "$ "+(mc/1e18).toFixed(8);
 	$("db_fd").innerHTML = "$ "+(fd/1e18).toFixed(8);
+	tr=(bdep-2021e18)*CP/1e18;
 	$("db_tr").innerHTML = "$ "+tr.toFixed(8);
 	$("rev_d").innerHTML = "$ "+tr.toFixed(8);
+	cr=tvl/mc;
+	$("db_cr").innerHTML=cr;
+	sd=(ts-tvld)/1e18-tvl/2;
+	sd=(ts-tvld)/1e18-tvld*CP/5e17/2;
+	sd=((ts-tvld)-tvld*CP)/1e18;
+	$("db_sd").innerHTML = sd;
+	//console.log(al,tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
 }
 farabi=[
 	{
