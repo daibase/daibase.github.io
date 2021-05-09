@@ -220,12 +220,8 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 
 <br><br>
 
-<div class="statbox">
-	<div class="stat statnumb">⚠ Important Notice!</div>
-	<div class="stat statname">DAIX and DAOX have been deployed to the xDAI Chain!<br>A testnet version is available on Ropsten for developers at the same address. Head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate in the community discussions. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section</b>.
-	NEVER BUY FROM THE DEX! <b><a href="#d_shopping" onclick="c('d_shopping')">ALWAYS PURCHASE DIRECTLY FROM THE DAIBASE SMART CONTRACT AND GET DISCOUNTS.</a></b>Use Gas Limit of 500000 (half-million) while minting.
-	</div>
-</div>
+
+
 
 <div id="exploreus">
 	<div id="id_learn" onclick="c(this.id.substr(1))"><a href="#d_learn">
@@ -593,7 +589,7 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 	</ol>
 	<br>
 	</div>
-	<br><br>Detailed guides coming soon.
+	<br><br>Detailed guides coming soon. Last Update: v0.1.44 (April, Week 1)
 </div>
 <div class="cu" id="d_guides"  align="center">
 	<h3>Frequently Asked Questions</h3>
@@ -706,53 +702,69 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 </div>
 <div class="cu" id="d_dashboard">
 	<div class="statbox">
-		<div class="stat statnumb">⚠ Live Network Unreleased!</div>
-		<div class="stat statname">The below section will be populated automatically when the first production version goes live. For now, testers can utilize the<b><a onclick="c(id_laboratory)">Laboratory</a></b> area for finding out the testnet statistics.
+		<div class="stat statnumb">Dashboard is Live!</div>
+		<div class="stat statname">DAIX is deployed on 2 blockchains, Ropsten and xDAI. Below includes basic stats for xDAI Chain only unless marked with an "*" asterisk. Developers and testers can utilize the<b><a onclick="c(id_laboratory)">Laboratory</a></b> area for finding out the testnet statistics.
 		</div>
 	</div>
 	<div id="stats">
 		<div class="statbox">
-			<div class="stat statnumb">000</div>
+			<div class="stat statnumb" id="db_ee">000</div>
 			<div class="stat statname">Epochs Elapsed</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000</div>
+			<div class="stat statnumb" id="db_uu">26</div>
 			<div class="stat statname">Unique Users</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000</div>
+			<div class="stat statnumb" id="db_nc">2* (1+1)</div>
 			<div class="stat statname">№ of Blockchains</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000</div>
+			<div class="stat statnumb" id="db_nt">4* (2+2)</div>
 			<div class="stat statname">Number of Tokens</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000 000 000</div>
+			<div class="stat statnumb" id="db_tc">142 (134+8)</div>
 			<div class="stat statname">Transaction Count</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000 000 000</div>
+			<div class="stat statnumb" id="db_tvl">$000 000 000 000</div>
 			<div class="stat statname">Total Value Locked</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000</div>
+			<div class="stat statnumb" id="db_vlf">$000 000 000 000</div>
+			<div class="stat statname">Value Locked Forever</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_pcv">$000 000 000 000</div>
+			<div class="stat statname">Protocol Controlled Value</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_ap">000 000</div>
 			<div class="stat statname">Average Price</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000</div>
+			<div class="stat statnumb" id="db_dp">3</div>
 			<div class="stat statname">№ of DEX pairs</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000 000 000</div>
+			<div class="stat statnumb" id="db_cs">000 000 000 000</div>
+			<div class="stat statname">Circulting Supply</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_ts">000 000 000 000</div>
 			<div class="stat statname">Total Supply</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000 000 000</div>
+			<div class="stat statnumb" id="db_mc">$000 000 000 000</div>
 			<div class="stat statname">Market Cap.</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb">000 000 000</div>
+			<div class="stat statnumb" id="db_fd">$000 000 000 000</div>
+			<div class="stat statname">F.D. Market Cap.</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_tr">000 000 000</div>
 			<div class="stat statname">Total Revenue</div>
 		</div>
 		<div class="statbox">
@@ -1251,6 +1263,17 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 	</div>
 </div>
 
+
+<br><br>
+<div class="statbox">
+	<div class="stat statnumb">⚠ Important Notice!</div>
+	<div class="stat statname" style="font-size:1em">
+		DAIX and DAOX have been deployed to the xDAI Chain! A testnet version is available on Ropsten for developers at the same address. Head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate in the community discussions. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section.</b>
+		<div align="center"><b><a href="#d_shopping" onclick="c('d_shopping')">NEVER BUY FROM THE DEX! ALWAYS PURCHASE ("Mint", "Parti" or "Delegate"/"Gift") DIRECTLY FROM THE DAIBASE SMART CONTRACT AND GET DISCOUNTS.</a></b><br>Use Gas Limit of 500000 (half-million) while minting.</div>
+	</div>
+</div>
+
+<br><br>
 <hr style="padding:0;width:50%">
 
 <div style="text-align:center;"><b>[DISCLAIMER]</b>
@@ -1287,6 +1310,7 @@ xDAI Chain (ID:100) and Ropsten (ID:3)</pre>
 <a href="https://github.com/daibase" target="_blank">Github</a>
 <a href="https://daibase.medium.com" target="_blank">Medium</a>
 </div>
+
 
 
 <script src="web3.min.js"></script>
@@ -1430,6 +1454,51 @@ var abi = [
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "PCVC",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "allpairs",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "allpairslength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
 //above is perma
@@ -1454,7 +1523,8 @@ function gs()
 			km_d();
 		});
 		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18});
-		refreshFarm();
+		refreshFarm();//for farm#1
+		refreshDash();
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1514,7 +1584,7 @@ function km_d()
 	KMC = new web3.eth.Contract(KM, KMA);
 	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r/1e18*1.09});
 	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp*1e3+60000))})});//60k for 4blocks
-	KMC.methods.TheChosenOne().call((e, r) =>{$("heir_tco").innerHTML = r});
+	KMC.methods.TheChosenOne().call((e, r) =>{$("heir_tco").innerHTML =typeof(r)=="undefined"?"Nobody yet": r});
 }
 function km_y()
 {
@@ -1588,6 +1658,39 @@ var PA=[
     "type": "function"
 },
 {
+	"inputs": [
+		{
+			"internalType": "address",
+			"name": "guy",
+			"type": "address"
+		}
+	],
+	"name": "balanceOf",
+	"outputs": [
+		{
+			"internalType": "uint256",
+			"name": "",
+			"type": "uint256"
+		}
+	],
+	"stateMutability": "view",
+	"type": "function"
+},
+{
+	"constant": true,
+	"inputs": [],
+	"name": "totalSupply",
+	"outputs": [
+		{
+			"name": "",
+			"type": "uint256"
+		}
+	],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+},
+{
     "constant": true,
     "inputs": [],
     "name": "token0",
@@ -1629,7 +1732,7 @@ function s_i()
 		coin=$("shop_out").value*1e18;
 		dx=$("shop_in").value*1e18;
 		dso = rd - (rc*rd)/(rc+coin);
-		$("shop_d").innerHTML=(dx/dso-1)*100;
+		$("shop_d").innerHTML=(dx/dso-1)*100+1.3; //Manually set here (0.3 Trade fee + 1% tranaction tax)
 
 	});
 }
@@ -2219,8 +2322,55 @@ abbrove=[{
 		"stateMutability": "view",
 		"type": "function"
 	}];
+
+async function refreshDash()
+{
+	//tvl,vlf,pcv,ap,cs,ts,mc,fd,tr
+	ap = [];
+	bops=[];
+	CP=1;
+	pctl = 1
+	l055 = 1
+	var tc = new web3.eth.Contract(abi, db1DAIX);
+	al = await tc.methods.allpairslength().call((e,r)=>{return r});
+	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
+	bcard = await tc.methods.balanceOf(ap[0]).call((e,r)=>{return r});
+	for (i=1;i< al;i++){bops.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
+	bdep = await tc.methods.balanceOf(depDAIX).call((e,r)=>{return r});
+	ee = await tc.methods.lastepoch().call((e,r)=>{return r});
+	ts = await tc.methods.totalSupply().call((e,r)=>{return r});
+	var pc = new web3.eth.Contract(PA,pairadd);
+	cpr=await pc.methods.getReserves().call((e,r)=>{CP=(r[1]/r[0])})
+	//tvl = sum of all liq. but denoted in $, we can count 2x DAI, but small pools are unbalanced, so we count the DAIX in pools, multiplied with Card Price
+	tvld=bdep;
+	for(i=0;i< bops.length;i++){tvld+=bops[i]}
+	tvl=tvld*CP/5e17;
+	//vlf=liquidity owned by zero address (NOT THE "_burn", but the "BURN"), 1564076957032043536444 at 10:55 of sun9ma21 (yes, it was a l055)
+	await pc.methods.totalSupply().call((e,r)=>{pctl=r})
+	await pc.methods.balanceOf('0x0000000000000000000000000000000000000000').call((e,r)=>{l055=r})
+	vlf = cpr[1]*CP*2/pctl*l055;
+	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
+	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
+	lpcv = await pc.methods.balanceOf(PCVC).call((e,r)=>{return(r)})
+	pcv = cpr[1]*CP*2/pctl*lpcv;
+	ap=CP;
+	cs=ts-2021e18
+	mc=cs*CP;
+	fd=CP*ts;
+	tr=(bdep-2021e18)*CP/1e18;
+	console.log(tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
+	$("db_tvl").innerHTML = "$ "+tvl;
+	$("db_vlf").innerHTML = "$ "+vlf/1e18;
+	$("db_ap").innerHTML = "$ "+CP.toFixed(8);
+	$("db_cs").innerHTML = cs;
+	$("db_ts").innerHTML = ts;
+	$("db_mc").innerHTML = "$ "+mc;
+	$("db_fd").innerHTML = "$ "+fd;
+	$("db_tr").innerHTML = "$ "+tr;
+}
 f_1_add = "0x6dB739FF338F88D5db8788d0a6b64b6217fB9947";
 pairadd = "0x9ACBbFb21d854092B0325e7F27F2ad536f64C219";
-
+db1DAIX = "0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987";
+depDAIX = "0xE0C50aC605b255EC2b02963f8DB2B9fbC3274402";
 </script>
 </html>
