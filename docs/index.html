@@ -778,12 +778,12 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">F.D. Market Cap.</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_tr">000 000 000</div>
-			<div class="stat statname">Total Revenue</div>
+			<div class="stat statnumb" id="db_tri">000 000 000</div>
+			<div class="stat statname">Revenues from DAIX</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_tr">000 000 000</div>
-			<div class="stat statname">Total Revenue</div>
+			<div class="stat statnumb" id="db_tro">000 000 000</div>
+			<div class="stat statname">Revenues from DAOX</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_cr">100%</div>
@@ -1311,7 +1311,7 @@ There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens
 <b>[PRIVACY POLICY]</b>
 <br>We dont log anything. We run serverless. Your blockchain interactions stay in your own browser. There are no trackers, no data analytics or any other profilers on this website.<br><br>
 <b>[MIRRORS]</b><br>
-In event this webpage is unavailable, please visit us via the below links. Our contracts are available via the various blockchain explorers and can be found documneted in the addressbook.<br>
+In event this webpage is unavailable, please visit us via the below links. Our contracts are available via the various blockchain explorers and can be found documneted in the addressbook.<br><br>
 <b><a href="https://daibase.org" target="_blank">daibase.org</a></b><br>
 <b><a href="https://daibase.github.io" target="_blank">daibase.github.io</a></b><br>
 <b><a href="https://daibase.github.io" target="_blank">[].onion.to</a></b><br>
@@ -1852,7 +1852,7 @@ async function refreshDash()
 	pctl = 1
 	l055 = 1
 	var tc = new web3.eth.Contract(abi, db1DAIX);
-	al = await tc.methods.allpairslength().call((e,r)=>{return r});
+	await tc.methods.allpairslength().call((e,r)=>{al = Number(r)});
 	//$("db_al") = al;
 	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
 	bcard = await tc.methods.balanceOf(ap[0]).call((e,r)=>{return r});
@@ -1888,7 +1888,8 @@ async function refreshDash()
 	$("db_mc").innerHTML = "$ "+(mc/1e18).toFixed(8);
 	$("db_fd").innerHTML = "$ "+(fd/1e18).toFixed(8);
 	tr=(bdep-2021e18)*CP/1e18;
-	$("db_tr").innerHTML = "$ "+tr.toFixed(8);
+	$("db_tro").innerHTML = "$ "+tr.toFixed(8);
+	$("db_tri").innerHTML = "$ "+0;
 	$("rev_d").innerHTML = "$ "+tr.toFixed(8);
 	cr=tvl/mc;
 	$("db_cr").innerHTML=cr;
