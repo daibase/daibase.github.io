@@ -145,6 +145,14 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 
 #d_guides li, #d_revenues li {margin:  0;}
 
+.t_swap {overflow-x: auto}
+#t_swap_1{text-align:center;font-size:0.75em;;width: max-content}
+#t_swap_1 th{font-size:1.2em}
+#t_swap_1 img{padding: 0;margin: 0}
+#t_swap_1 td {padding: 10px}
+#t_swap_1 tr td:last-child {font-weight:bolder;}
+#t_swap_1 tr td:nth-of-type(2n) {font-size: 1.5em}
+
 @media(min-width:641px){
 	#stats{
 		border-radius:15px;
@@ -203,7 +211,7 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 	<h1>Programmable.<br>Elastic.<br>De-Central Bank.</h1>
 	<div id="d_base_s1">
 		<div>
-			<img src="img/ddao.svg" width="30%" style="border-radius:50%"></img>
+			<img src="img/daox.svg" width="30%" style="border-radius:50%"></img>
 			<img src="img/daix.svg" width="30%" style="border-radius:50%;position:relative;left:-10%"></img>
 		</div>
 		<div id="d_base_s1_2">
@@ -326,17 +334,151 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 	</div>
 </div>
 <div class="cu" id="d_trading">
-	<div style="font-size:1.25em" align="center">
-	Official trading pairs on xDAI Chain<br><br>
-		<div style="border:2px solid orange; border-radius:5px" align="center">
-			<h4>XDAIX/XDAI</h4>
-			<pre>Testnet pair on Uniswap (Ropsten)</pre>
-			Check it out in the<b onclick="c('d_laboratory')"><a href="#d_laboratory">Laboratory.</a></b>
+	<div style="font-size:1.25em" align="center"><br><br>
+		<i>Pair Explorer under development.</i><br><br>
+		<div class="t_swap">
+			<table id="t_swap_1">
+				<tr>
+					<th>
+						Pair
+					</th>
+					<th>
+						Price
+					</th>
+					<th>
+						Chain
+					</th>
+					<th>
+						Liquidity
+					</th>
+					<th>
+						DEX
+					</th>
+					<th>
+						<!--Volume-->
+					</th>
+					<th>
+						Links
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
+					</td>
+					<td id="t_swap_1_p_1">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
+					</td>
+					<td id="t_swap_1_l_1">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/baoswap.svg" height="32px width="32px"><br>BaoSwap
+					</td>
+					<td>
+						<!--$ ‽.‽‽‽-->
+					</td>
+					<td>
+						<a target="_blank" href="">Pool</a><br><a target="_blank" href="">Trade</a><br><a target="_blank" href="">Chart</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
+					</td>
+					<td id="t_swap_1_p_2">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
+					</td>
+					<td id="t_swap_1_l_1">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/honeyswap.svg" height="32px height="32px width="32px"><br>HoneySwap
+					</td>
+					<td>
+						<!--$ ‽.‽‽‽-->
+					</td>
+					<td>
+						<a target="_blank" href="">Pool</a><br><a target="_blank" href="">Trade</a><br><a target="_blank" href="">Chart</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
+					</td>
+					<td id="t_swap_1_p_3">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
+					</td>
+					<td id="t_swap_1_l_3">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/levin.svg" height="32px width="32px"><br>LevinSwap
+					</td>
+					<td>
+						<!--$ ‽.‽‽‽-->
+					</td>
+					<td>
+						<a target="_blank" href="">Pool</a><br><a target="_blank" href="">Trade</a><br><a target="_blank" href="">Chart</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
+					</td>
+					<td id="t_swap_1_p_4">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
+					</td>
+					<td id="t_swap_1_l_4">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/sushiswap.svg" height="32px width="32px"><br>SushiSwap
+					</td>
+					<td>
+						<!--$ ‽.‽‽‽-->
+					</td>
+					<td>
+						<a target="_blank" href="">Pool</a><br><a target="_blank" href="">Trade</a><br><a target="_blank" href="">Chart</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
+					</td>
+					<td id="t_swap_1_p_5">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
+					</td>
+					<td id="t_swap_1_l_5">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/swapr.svg" height="32px width="32px"><br>Swapr
+					</td>
+					<td>
+						<!--$ ‽.‽‽‽-->
+					</td>
+					<td>
+						<a target="_blank" href="">Pool</a><br><a target="_blank" href="">Trade</a><br><a target="_blank" href="">Chart</a>
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div style="border:2px solid orange; border-radius:5px" align="center">
-			Coming soon.
-		</div>
-		<br>Pair Explorer under development.
+		<br>
 	</div>
 </div>
 <div class="cu" id="d_basecannon">
@@ -360,16 +502,16 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 			<div class="newfarm">
 				<br>Deposit<br>
 				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
-				<img src="img/ddao.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-16px"><br>
-				DAIX-DDAO HLP<hr style="padding:0;width:50%">
+				<img src="img/daox.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-16px"><br>
+				DAIX-DAOX HLP<hr style="padding:0;width:50%">
 				<!--Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"><br>F3DPT<br>+<br>-->
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
 				<hr style="padding:0;width:75%">
 				<b><i>Core</i></b><br>
 				<div class="farm_stat" style="font-size:0.6em">
-					<span id="farm_3_i_sg">?</span>DAIX-DDAO HLP Staked Globally<br>
-					<span id="farm_3_i_ys">?</span>DAIX-DDAO HLP You've Staked<br>
-					<span id="farm_3_i_re">?</span>DDAO Rewards Earned<br>
+					<span id="farm_3_i_sg">?</span>DAIX-DAOX HLP Staked Globally<br>
+					<span id="farm_3_i_ys">?</span>DAIX-DAOX HLP You've Staked<br>
+					<span id="farm_3_i_re">?</span>DAOX Rewards Earned<br>
 					<span id="farm_3_i_roi">?</span>% R.O.I. <br>
 					<span id="farm_3_i_ap">?</span>% A.P.Y.<br>
 					<span id="farm_3_i_tvl">?</span>USD in T.V.L.<br>
@@ -407,8 +549,8 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 				<br>Deposit<br>
 				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
 				<!--<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px">--><br>
-				DDAO<hr style="padding:0;width:50%">
-				Earn<br><img src="img/ddao.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
+				DAOX<hr style="padding:0;width:50%">
+				Earn<br><img src="img/daox.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
 				<hr style="padding:0;width:50%">
 				<button class="farm_b farm_approve">Approve</button>
 				<button class="farm_b farm_deposit">Deposit</button>
@@ -418,9 +560,9 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 			</div>
 			<b><i>Core</i></b><br>
 			<div class="farm_stat" style="font-size:0.6em">
-				<span id="farm_1_sg">?</span>DDAO Staked Globally<br>
-				<span id="farm_1_ys">?</span>DDAO HLP You've Staked<br>
-				<span id="farm_1_re">?</span>DDAO Rewards Earned<br>
+				<span id="farm_1_sg">?</span>DAOX Staked Globally<br>
+				<span id="farm_1_ys">?</span>DAOX HLP You've Staked<br>
+				<span id="farm_1_re">?</span>DAOX Rewards Earned<br>
 				<span id="farm_1_roi">?</span>% R.O.I. <br>
 				<span id="farm_1_ap">?</span>% A.P.Y.<br>
 				<span id="farm_1_tvl">?</span>USD in T.V.L.<br>
@@ -432,9 +574,9 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 				<br>Deposit<br>
 				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
 				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"><br>
-				DAIX-DDAO HLP<hr style="padding:0;width:50%">
+				DAIX-DAOX HLP<hr style="padding:0;width:50%">
 				Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"><br>F3DPT<br>+<br>
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
 				<hr style="padding:0;width:50%">
 				<button class="farm_b farm_approve">Approve</button>
 				<button class="farm_b farm_deposit">Deposit</button>
@@ -445,8 +587,8 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 			<b><i>Core</i></b><br>
 			<div class="farm_stat" style="font-size:0.6em">
 				<span id="farm_3_sg">1000</span>DAIX-F3DPT HLP Staked Globally<br>
-				<span id="farm_3_ys">10.87</span>DAIX-DDAO HLP You've Staked<br>
-				<span id="farm_3_re">1.65</span>DDAO Rewards Earned<br>
+				<span id="farm_3_ys">10.87</span>DAIX-DAOX HLP You've Staked<br>
+				<span id="farm_3_re">1.65</span>DAOX Rewards Earned<br>
 				<span id="farm_3_roi">21.01</span>% R.O.I. <br>
 				<span id="farm_3_ap">8117</span>% A.P.Y.<br>
 				<span id="farm_3_tvl">8117</span>USD in T.V.L.<br>
@@ -460,7 +602,7 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 				<img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"><br>
 				DAIX-F3DPT HLP<hr style="padding:0;width:50%">
 				Get<br><img src="img/guide.svg" width="48px" style="padding:0;border-radius:50%"><br>F4DPT<br>+<br>
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DDAO<br>
+				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
 				<hr style="padding:0;width:50%">
 				<button class="farm_b farm_approve">Approve</button>
 				<button class="farm_b farm_deposit">Deposit</button>
@@ -472,7 +614,7 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 			<div class="farm_stat" style="font-size:0.6em">
 				<span id="farm_4_sg">1000</span>DAIX-F3DPT HLP Staked Globally<br>
 				<span id="farm_4_ys">10.87</span>DAIX-F3DPT HLP You've Staked<br>
-				<span id="farm_4_re">1.65</span>DDAO Rewards Earned<br>
+				<span id="farm_4_re">1.65</span>DAOX Rewards Earned<br>
 				<span id="farm_4_roi">21.01</span>% R.O.I. <br>
 				<span id="farm_4_ap">8117</span>% A.P.Y.<br>
 				<span id="farm_4_tvl">8117</span>USD in T.V.L.<br>
@@ -1295,7 +1437,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 	<div class="stat statnumb">⚠ Important Notice!</div>
 	<div class="stat statname" style="font-size:1em">
 		DAIX and DAOX have been deployed to the xDAI Chain! A testnet version is available on Ropsten for developers at the same address. Head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate in the community discussions. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section.</b>
-		<div align="center"><b><a href="#d_shopping" onclick="c('d_shopping')">NEVER BUY FROM THE DEX! ALWAYS PURCHASE ("Mint", "Parti" or "Delegate"/"Gift") DIRECTLY FROM THE DAIBASE SMART CONTRACT AND GET DISCOUNTS.</a></b><br>Use Gas Limit of 500000 (half-million) while minting.</div>
+		<div align="center"><b><a href="#d_shopping" onclick="c('d_shopping')">NEVER BUY FROM THE DEX!<br>Always purchase ("mint", "parti" or "delegate"/"gift") directly from the daibase smart contract and get discounts.</a></b><br>Use Gas Limit of 500000 (half-million) while minting.</div>
 	</div>
 </div>
 
@@ -1550,8 +1692,10 @@ function gs()
 			km_d();
 		});
 		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18});
-		refreshFarm();//for farm#1
+		//farms be dead man
+		//refreshFarm();//for farm#1
 		refreshDash();
+		cmd(0);cmd(4);
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -1861,42 +2005,40 @@ async function refreshDash()
 	ee = await tc.methods.lastepoch().call((e,r)=>{return r});
 	$("db_ee").innerHTML = ee;
 	ts = await tc.methods.totalSupply().call((e,r)=>{return r});
-	$("db_ts").innerHTML = (ts/1e18).toFixed(8);
+	$("db_ts").innerHTML = (ts/1e18).toLocaleString();
 	var pc = new web3.eth.Contract(PA,pairadd);
 	cpr=await pc.methods.getReserves().call((e,r)=>{CP=(r[1]/r[0])})
 	//tvl = sum of all liq. but denoted in $, we can count 2x DAI, but small pools are unbalanced, so we count the DAIX in pools, multiplied with Card Price
 	tvld=Number(bcard)
 	for(i=0;i< bops.length;i++){tvld+=Number(bops[i])}
 	tvl=tvld*CP*2;
-	$("db_tvl").innerHTML = "$ "+(tvl/1e18).toFixed(8);
+	$("db_tvl").innerHTML = "$ "+(tvl/1e18).toLocaleString();
 	//vlf=liquidity owned by zero address (NOT THE "_burn", but the "BURN"), 1564076957032043536444 at 10:55 of sun9ma21 (yes, it was a l055)
 	await pc.methods.totalSupply().call((e,r)=>{pctl=r})
 	await pc.methods.balanceOf('0x0000000000000000000000000000000000000000').call((e,r)=>{l055=r})
 	vlf = cpr[1]*CP*2/pctl*l055;
-	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toFixed(8);
+	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toLocaleString();
 	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
 	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
 	lpcv = await pc.methods.balanceOf(PCVC).call((e,r)=>{return(r)})
 	pcv = cpr[1]*CP*2/pctl*lpcv;
-	$("db_pcv").innerHTML = "$ "+(pcv/1e18).toFixed(8);
+	$("db_pcv").innerHTML = "$ "+(pcv/1e18).toLocaleString();
 	ap=CP;
-	$("db_ap").innerHTML = "$ "+CP.toFixed(8);
+	$("db_ap").innerHTML = "$ "+CP.toFixed(6);
 	cs=ts-2021e18
-	$("db_cs").innerHTML = (cs/1e18).toFixed(8);
+	$("db_cs").innerHTML = (cs/1e18).toLocaleString();
 	mc=cs*CP;
 	fd=CP*ts;
-	$("db_mc").innerHTML = "$ "+(mc/1e18).toFixed(8);
-	$("db_fd").innerHTML = "$ "+(fd/1e18).toFixed(8);
+	$("db_mc").innerHTML = "$ "+(mc/1e18).toLocaleString();
+	$("db_fd").innerHTML = "$ "+(fd/1e18).toLocaleString();
 	tr=(bdep-2021e18)*CP/1e18;
-	$("db_tro").innerHTML = "$ "+tr.toFixed(8);
+	$("db_tro").innerHTML = "$ "+tr.toLocaleString();
 	$("db_tri").innerHTML = "$ "+0;
-	$("rev_d").innerHTML = "$ "+tr.toFixed(8);
-	cr=tvl/mc;
+	$("rev_d").innerHTML = "$ "+tr.toLocaleString();
+	cr=(tvl/mc).toLocaleString();
 	$("db_cr").innerHTML=cr;
-	sd=(ts-tvld)/1e18-tvl/2;
-	sd=(ts-tvld)/1e18-tvld*CP/5e17/2;
-	sd=((ts-tvld)-tvld*CP)/1e18;
-	$("db_sd").innerHTML = sd;
+	sd="$ "+(((ts-tvld)-tvld*CP)/1e18).toLocaleString();
+	$("db_sd").innerHTML = sd.toLocaleString();
 	//console.log(al,tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
 }
 farabi=[
@@ -2353,6 +2495,18 @@ function refreshFarm()
 	catch(e){$("er").innerHTML=e;}
 }
 
+async function cmd(i)
+{
+		var pc=new web3.eth.Contract(PA,pi[i]);
+		await pc.methods.getReserves().call((e,r)=>{
+			a=Number(r[0]);b=Number(r[1]);
+			p=b/a;l=2*b/1e18;
+			$("t_swap_1_p_"+(i+1)).innerHTML="$"+p.toLocaleString();
+			$("t_swap_1_l_"+(i+1)).innerHTML="$"+l.toLocaleString();
+			console.log(r,i,p,l);
+		})
+}
+
 abbrove=[{
 		"constant": false,
 		"inputs": [
@@ -2410,5 +2564,7 @@ f_1_add = "0x6dB739FF338F88D5db8788d0a6b64b6217fB9947";
 pairadd = "0x9ACBbFb21d854092B0325e7F27F2ad536f64C219";
 db1DAIX = "0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987";
 depDAIX = "0xE0C50aC605b255EC2b02963f8DB2B9fbC3274402";
+pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","","","","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219"];
+
 </script>
 </html>
