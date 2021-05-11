@@ -872,7 +872,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">Epochs Elapsed</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_uu">32*^</div>
+			<div class="stat statnumb" id="db_uu">36*^</div>
 			<div class="stat statname">Unique Users</div>
 		</div>
 		<div class="statbox">
@@ -884,11 +884,11 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">Number of Tokens</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_dp">1*^ + <span id="db_al">1?</span></div>
+			<div class="stat statnumb" id="db_dp">1*^ + <span id="db_al">2*</span></div>
 			<div class="stat statname">№ of DEX pairs</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_tc">152^ + 8*^</div>
+			<div class="stat statnumb" id="db_tc">198^ + 17*^</div>
 			<div class="stat statname">Transaction Count</div>
 		</div>
 		<div class="statbox">
@@ -1437,7 +1437,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 	<div class="stat statnumb">⚠ Important Notice!</div>
 	<div class="stat statname" style="font-size:1em">
 		DAIX and DAOX have been deployed to the xDAI Chain! A testnet version is available on Ropsten for developers at the same address. Head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate in the community discussions. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section.</b>
-		<div align="center"><b><a href="#d_shopping" onclick="c('d_shopping')">NEVER BUY FROM THE DEX!<br>Always purchase ("mint", "parti" or "delegate"/"gift") directly from the daibase smart contract and get discounts.</a></b><br>Use Gas Limit of 500000 (half-million) while minting.</div>
+		<br><div align="center"><b><a href="#d_shopping" onclick="c('d_shopping')">NEVER BUY DAIX FROM THE DEX!<br><br>Always "purchase", "mint", "parti" or "delegate" or "gift" <i>directly from the daibase smart contract</i> and get discounts.</a></b><br>Use Gas Limit of 500000 (half-million) while minting.</div>
 	</div>
 </div>
 
@@ -1691,11 +1691,12 @@ function gs()
 			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});
 			km_d();
 		});
-		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18});
 		//farms be dead man
 		//refreshFarm();//for farm#1
 		refreshDash();
 		cmd(0);cmd(4);
+		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18});
+
 	}
 	catch(e){$("er").innerHTML=e;}
 }
@@ -2503,7 +2504,7 @@ async function cmd(i)
 			p=b/a;l=2*b/1e18;
 			$("t_swap_1_p_"+(i+1)).innerHTML="$"+p.toLocaleString();
 			$("t_swap_1_l_"+(i+1)).innerHTML="$"+l.toLocaleString();
-			console.log(r,i,p,l);
+			//console.log(r,i,p,l);
 		})
 }
 
