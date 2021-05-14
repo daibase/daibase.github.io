@@ -1992,16 +1992,16 @@ async function refreshDash()
 {
 	//ee,tvl,vlf,pcv,ap,cs,ts,mc,fd,tr
 	ap = [];
-	bops=[];
+	bpa=[];
 	CP=1;
 	pctl = 1
 	l055 = 1
+	tri=0
 	var tc = new web3.eth.Contract(abi, db1DAIX);
 	await tc.methods.allpairslength().call((e,r)=>{al = Number(r)});
 	//$("db_al") = al;
 	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
-	bcard = await tc.methods.balanceOf(ap[0]).call((e,r)=>{return r});
-	for (i=1;i< al;i++){bops.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
+	for (i=0;i< al;i++){bpa.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
 	bdep = await tc.methods.balanceOf(depDAIX).call((e,r)=>{return r});
 	ee = await tc.methods.lastepoch().call((e,r)=>{return r});
 	$("db_ee").innerHTML = ee;
@@ -2009,11 +2009,6 @@ async function refreshDash()
 	$("db_ts").innerHTML = (ts/1e18).toLocaleString();
 	var pc = new web3.eth.Contract(PA,pairadd);
 	cpr=await pc.methods.getReserves().call((e,r)=>{CP=(r[1]/r[0])})
-	//tvl = sum of all liq. but denoted in $, we can count 2x DAI, but small pools are unbalanced, so we count the DAIX in pools, multiplied with Card Price
-	tvld=Number(bcard)
-	for(i=0;i< bops.length;i++){tvld+=Number(bops[i])}
-	tvl=tvld*CP*2;
-	$("db_tvl").innerHTML = "$ "+(tvl/1e18).toLocaleString();
 	//vlf=liquidity owned by zero address (NOT THE "_burn", but the "BURN"), 1564076957032043536444 at 10:55 of sun9ma21 (yes, it was a l055)
 	await pc.methods.totalSupply().call((e,r)=>{pctl=r})
 	await pc.methods.balanceOf('0x0000000000000000000000000000000000000000').call((e,r)=>{l055=r})
@@ -2021,12 +2016,8 @@ async function refreshDash()
 	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toLocaleString();
 	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
 	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
-	lpcv = await pc.methods.balanceOf(PCVC).call((e,r)=>{return(r)})
-	pcv = cpr[1]*CP*2/pctl*lpcv;
-	$("db_pcv").innerHTML = "$ "+(pcv/1e18).toLocaleString();
-	ap=CP;
 	$("db_ap").innerHTML = "$ "+CP.toFixed(6);
-	cs=ts-2021e18
+	cs=ts-2021e18//but grav
 	$("db_cs").innerHTML = (cs/1e18).toLocaleString();
 	mc=cs*CP;
 	fd=CP*ts;
@@ -2036,11 +2027,28 @@ async function refreshDash()
 	$("db_tri").innerHTML = "$ "+tr.toLocaleString();
 	$("db_tro").innerHTML = "$ "+0;
 	$("rev_d").innerHTML = "$ "+tr.toLocaleString();
+	//tvl = sum of all liq. but denoted in $,
+	//we can count 2x DAI, but small pools are unbalanced,
+	//so we count the DAIX in pools,
+	//multiplied with Card Price
+	for(i=0;i<al;i++)
+	{
+		if(ap[i])
+		{
+			_b=1;_t=1;_0=1;_1=1;_d=bpa[i];_tri=0;
+			pr=new web3.eth.Contract(PA,ap[i]);
+			await pr.methods.totalSupply().call((e,r)=>{_t=Number(r)})
+			await pr.methods.balanceOf(PCVC).call((e,r)=>{_b=Number(r)})
+			_tri=_b/_t*_d;
+			tri+=2*_tri;
+		}
+	}
+	$("db_pcv").innerHTML = "$ "+(tri*CP/1e18).toLocaleString();
+	tvl=tri*CP/1e18;
 	cr=(tvl/mc).toLocaleString();
 	$("db_cr").innerHTML=cr;
-	sd="$ "+(((ts-tvld)-tvld*CP)/1e18).toLocaleString();
-	$("db_sd").innerHTML = sd.toLocaleString();
-	//console.log(al,tvl,vlf,pcv,ap,cs,ts,mc,fd,tr);
+	sd="$ "+(mc-tvl).toLocaleString();
+	$("db_sd").innerHTML = sd;
 }
 farabi=[
 	{
