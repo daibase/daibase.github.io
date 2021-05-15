@@ -2639,9 +2639,11 @@ function refreshFarm()
 
 async function cmd(i)
 {
+		x=[5];//for base : list in pi
 		var pc=new web3.eth.Contract(PA,pi[i]);
 		await pc.methods.getReserves().call((e,r)=>{
-			a=Number(r[0]);b=Number(r[1]);
+			if(x.indexOf(i)==-1){a=Number(r[0]);b=Number(r[1]);}
+			else{a=Number(r[1]);b=Number(r[0]);}
 			p=b/a;l=2*b/1e18;
 			$("t_swap_1_p_"+(i+1)).innerHTML="$"+p.toLocaleString();
 			$("t_swap_1_l_"+(i+1)).innerHTML="$"+l.toLocaleString();
