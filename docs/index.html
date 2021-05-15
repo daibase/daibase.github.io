@@ -82,7 +82,7 @@ height:100%}
 *{color: white;
 //  text-shadow: rgba(0,0,0,0.1) 2px 2px 20px;
 text-decoration: none;padding: 5px}
-#stats{display:grid;grid-template-columns: 50% 50%;text-align: center}
+.stats{display:grid;grid-template-columns: 50% 50%;text-align: center}
 #recents{display:grid;grid-template-columns: auto;}
 button{background:
 linear-gradient(-153deg, rgba(255,0,0,.7) 20%,rgba(138,43,226,0.7)) 100%;}
@@ -152,9 +152,13 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 #t_swap_1 td {padding: 10px}
 #t_swap_1 tr td:last-child {font-weight:bolder;}
 #t_swap_1 tr td:nth-of-type(2n) {font-size: 1.5em}
+#t_swap_1 tr td:first-child img{border-radius:25%;}
+
+#cb{background: linear-gradient(-153deg, rgba(255,0,0,.25) 20%,rgba(138,43,226,0.25)) 100%;border-radius: 25px }
+#cb:hover{background: linear-gradient(-153deg, rgba(255,0,0,.5) 20%,rgba(138,43,226,0.5)) 100%;border-radius: 25px }
 
 @media(min-width:641px){
-	#stats{
+	.stats{
 		border-radius:15px;
 		display:grid;
 		grid-template-columns:33% 33% 33%;}
@@ -179,7 +183,7 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 }
 
 @media(max-width:481px){
-	#stats{
+	.stats{
 		border-radius:15px;
 		display:grid;
 		grid-template-columns:auto;}
@@ -201,8 +205,8 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 	</div>
 </div>
 
-<span id="ua">You're not connected.</span><br>
-<b><span id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet.</span></b>
+<span id="ua">You're Not Connected.</span><br>
+<b><button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button></b>
 <br>
 
 <br><br>
@@ -480,6 +484,29 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 						<a target="_blank" href="">Pool</a><br><a target="_blank" href="">Trade</a><br><a target="_blank" href="">Chart</a>
 					</td>
 				</tr>
+				<tr>
+					<td>
+						<img src="img/xdaichain.svg" height="32px width="32px"><img src="img/daix.svg" height="32px width="32px"><br>STAKE/DAIX
+					</td>
+					<td id="t_swap_1_p_6">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
+					</td>
+					<td id="t_swap_1_l_6">
+						$ ‽.‽‽‽
+					</td>
+					<td>
+						<img src="img/sushiswap.svg" height="32px width="32px"><br>SushiSwap
+					</td>
+					<td>
+						<!--$ ‽.‽‽‽-->
+					</td>
+					<td>
+						<a target="_blank" href="">Pool</a><br><a target="_blank" href="">Trade</a><br><a target="_blank" href="">Chart</a>
+					</td>
+				</tr>
 			</table>
 		</div>
 		<br>
@@ -502,7 +529,7 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 		Wallet section is under Development.<br>
 		This web-based wallet can be used to view Daibase Holdings and transact tokens.<br>
 		It also allows to add liquidity to any pair of choice using any Token of choice while doing the optimal market-rate conversions in the background by itself.<br>
-		<i>Example: If you have ETH, you can add Liquidity to DAOX/FTM pair easily. The wallet converts ETH into FTM and DAOX and pools them at the right proportions and sends the LP tokens to your address!<br>
+		<i>Example: If you have ETH, you can add Liquidity to DAOX/FTM pair easily. The wallet converts ETH into FTM and DAOX and pools them at the right proportions and sends the LP tokens to your address!</i><br>
 	</div>
 </div>
 <div class="cu" id="d_farms">
@@ -878,7 +905,9 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 		<div class="stat statname">DAIX is deployed on 2 blockchains, Ropsten and xDAI. Below includes basic stats for xDAI Chain only. Ropsten metrics are marked with an asterisk(*). Non-real-time values are marked with a carrat(^). In case of mixed values, Ropsten values preceed xDAI. Developers and testers can utilize the<b><a onclick="c(id_laboratory)">Laboratory</a></b> area for finding out the testnet statistics for Custom and Historical versions.
 		</div>
 	</div>
-	<div id="stats">
+	<br>
+	<h3 align="center"><img width="128px" src="img/xdaichain.svg"><br>xDAI Chain</h3>
+	<div class="stats">
 		<div class="statbox">
 			<div class="stat statnumb" id="db_ap">000 000</div>
 			<div class="stat statname">Average Price</div>
@@ -949,6 +978,89 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_sd">$000 000 000 000</div>
+			<div class="stat statname">Sovereign Debt</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb">more info…?</div>
+			<div class="stat statname">Open Dashboard</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<h3 align="center">Global Statistics</h3>
+	<b><div align="center">***Global Stats are not synced. Please view your specific Blockchain's stats below. You may change your network from your wallet to switch chains</div></b>
+	<br>
+	<div class="stats">
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_ap">$1***</div>
+			<div class="stat statname">Average Price</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_ee">0***</div>
+			<div class="stat statname">Epochs Elapsed</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_uu">39*^</div>
+			<div class="stat statname">Unique Users</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_nc">1 + 1*</div>
+			<div class="stat statname">№ of Blockchains</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_nt">2^ + 2*^</div>
+			<div class="stat statname">Number of Tokens</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_dp">1*^ + <span id="db_o_al">6*</span></div>
+			<div class="stat statname">№ of DEX pairs</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_tc">241^ + 17*^</div>
+			<div class="stat statname">Transaction Count</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_cs">0***</div>
+			<div class="stat statname">Circulating Supply</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_ts">0***</div>
+			<div class="stat statname">Total Supply</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_vlf">$0***</div>
+			<div class="stat statname">Value Locked Forever</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_pcv">$0***</div>
+			<div class="stat statname">Protocol Controlled Value</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_tvl">$0***</div>
+			<div class="stat statname">Total Value Locked</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_mc">$0***</div>
+			<div class="stat statname">Market Cap.</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_fd">$0***</div>
+			<div class="stat statname">F.D. Market Cap.</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_tri">$0***0</div>
+			<div class="stat statname">Revenues from DAIX</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_tro">$0***</div>
+			<div class="stat statname">Revenues from DAOX</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_cr">1***</div>
+			<div class="stat statname">Cash Reserve Ratio</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_o_sd">$0***</div>
 			<div class="stat statname">Sovereign Debt</div>
 		</div>
 		<div class="statbox">
@@ -2602,7 +2714,7 @@ f_1_add = "0x6dB739FF338F88D5db8788d0a6b64b6217fB9947";
 pairadd = "0x9ACBbFb21d854092B0325e7F27F2ad536f64C219";
 db1DAIX = "0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987";
 depDAIX = "0xE0C50aC605b255EC2b02963f8DB2B9fbC3274402";
-pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","0x634a571b537a466f15a8c8f660d685340543878f","0xe9cd05E4DB6fa0F0C594A1a6CD7ed85e35522508","0xc1cfd03efc95e7d922ecfe60820c506408bd998e","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219"];
+pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","0x634a571b537a466f15a8c8f660d685340543878f","0xe9cd05E4DB6fa0F0C594A1a6CD7ed85e35522508","0xc1cfd03efc95e7d922ecfe60820c506408bd998e","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219","0xbba341efc430c641c16de4940b8eab1cfdc4abfe"];
 
 </script>
 </html>
