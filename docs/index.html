@@ -306,6 +306,10 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 	<img width="64px" src="img/lab.svg">
 	<br>Laboratory</a>
 	</div>
+	<div id="id_wallet" onclick="c(this.id.substr(1))"><a href="#d_wallet">
+	<img width="64px" src="img/wallet.svg">
+	<br>Wallet</a>
+	</div>
 </div>
 
 
@@ -492,6 +496,15 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 				<br>Please make sure you're on the right network!<br>
 	</div>
 </div>
+<div class="cu" id="d_wallet">
+	<div align="center">
+		<br><br>
+		Wallet section is under Development.<br>
+		This web-based wallet can be used to view Daibase Holdings and transact tokens.<br>
+		It also allows to add liquidity to any pair of choice using any Token of choice while doing the optimal market-rate conversions in the background by itself.<br>
+		<i>Example: If you have ETH, you can add Liquidity to DAOX/FTM pair easily. The wallet converts ETH into FTM and DAOX and pools them at the right proportions and sends the LP tokens to your address!<br>
+	</div>
+</div>
 <div class="cu" id="d_farms">
 	<br>
 	All this is still experimental. If approved once, don't do it again. Claim button will reap all earned rewards. Withdraw button takes out the staked LP tokens. Claim and Exit button will Harvest the farm: Reap + Unstake. Don't attempt to deposit more LP tokens, it will burn the gas. Make sure to check the numbers in wallet. When something goes wrong, report in the telegram or discord. Please click <button onclick="gs()">refresh</button> sometimes when it gets stuck.<br><br>
@@ -637,7 +650,10 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 		<ol><li>All DAIX transactions</li>
 		All revenues from the DAIX Transactions are sent to the "King-Maker" smart contract.
 		<li>Trades on the "Main-Pair"</li>
-		All revenues from the trades on the Main-Pair are used to increase the Total Value Locked in Daibase Protocol.</ol><br><br>
+		All revenues from the trades on the Main-Pair are used to increase the Total Value Locked in Daibase Protocol.
+		<li>From issuing Sovereign Debt</li>
+		Sovereign Debt gets created when expansion of Supply takes place without adding to Total Value Locked (T.V.L.) or Protocol Controlled Value (P.C.V.). This primarily consists of Cardinal Price (Price at the Cardinal Pair) goes above 1 DAI and the Daibase Protocol enters anew Epoch.<br><i>(There is no debt creation within the same epoch and this incentivizes participants to rebalance the Cardinal Price back to 1 DAIX = 1 DAI This can also be viewed as a penalty to P&D traders ensuring stability.)</i>
+		</ol><br><br>
 		<h3 align="center"><b onclick="c('d_dashboard')"><a href="#d_dashboard">For more detailed metrics, open the Dashboard.</a></b></h3>
 	</div>
 </div>
@@ -929,7 +945,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_cr">100%</div>
-			<div class="stat statname">Credit Reserve Ratio</div>
+			<div class="stat statname">Cash Reserve Ratio</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_sd">$000 000 000 000</div>
@@ -1996,7 +2012,7 @@ async function refreshDash()
 	CP=1;
 	pctl = 1
 	l055 = 1
-	tri=0
+	tr=0
 	var tc = new web3.eth.Contract(abi, db1DAIX);
 	await tc.methods.allpairslength().call((e,r)=>{al = Number(r)});
 	//$("db_al") = al;
@@ -2023,32 +2039,37 @@ async function refreshDash()
 	fd=CP*ts;
 	$("db_mc").innerHTML = "$ "+(mc/1e18).toLocaleString();
 	$("db_fd").innerHTML = "$ "+(fd/1e18).toLocaleString();
-	tr=(bdep-2021e18)*CP/1e18;
-	$("db_tri").innerHTML = "$ "+tr.toLocaleString();
-	$("db_tro").innerHTML = "$ "+0;
-	$("rev_d").innerHTML = "$ "+tr.toLocaleString();
-	//tvl = sum of all liq. but denoted in $,
-	//we can count 2x DAI, but small pools are unbalanced,
-	//so we count the DAIX in pools,
-	//multiplied with Card Price
+	pcvca=0;
 	for(i=0;i<al;i++)
 	{
 		if(ap[i])
 		{
-			_b=1;_t=1;_0=1;_1=1;_d=bpa[i];_tri=0;
+			_b=1;_t=1;_0=1;_1=1;_d=bpa[i];_pcvca=0;
 			pr=new web3.eth.Contract(PA,ap[i]);
 			await pr.methods.totalSupply().call((e,r)=>{_t=Number(r)})
 			await pr.methods.balanceOf(PCVC).call((e,r)=>{_b=Number(r)})
-			_tri=_b/_t*_d;
-			tri+=2*_tri;
+			_pcvca=_b/_t*_d;
+			pcvca+=2*_pcvca;
 		}
 	}
-	$("db_pcv").innerHTML = "$ "+(tri*CP/1e18).toLocaleString();
-	tvl=tri*CP/1e18;
-	cr=(tvl/mc).toLocaleString();
-	$("db_cr").innerHTML=cr;
-	sd="$ "+(mc-tvl).toLocaleString();
+	$("db_pcv").innerHTML = "$ "+(pcvca*CP/1e18).toLocaleString();
+	//tvl = sum of all liq. but denoted in $,
+	//we can count 2x DAI, but small pools are unbalanced,
+	//so we count the DAIX in pools,
+	//multiplied with Card Price
+	//DAIX Locked; TVL=tvl*2
+	//(DAIX+DAI)
+	tvl=0;
+	for(i=0;i< al;i++){tvl+=Number(bpa[i])}
+	$("db_tvl").innerHTML="$ "+(2*tvl*CP/1e18).toLocaleString();
+	cr=(2*tvl/cs);
+	$("db_cr").innerHTML=cr.toLocaleString();
+	sd="$ "+((cs-2*tvl)/1e18).toLocaleString();
 	$("db_sd").innerHTML = sd;
+	tr=(bdep-2021e18)*CP/1e18;
+	$("db_tri").innerHTML = "$ "+tr.toLocaleString();
+	$("db_tro").innerHTML = "$ "+0;
+	$("rev_d").innerHTML = "$ "+tr.toLocaleString();
 }
 farabi=[
 	{
@@ -2581,7 +2602,7 @@ f_1_add = "0x6dB739FF338F88D5db8788d0a6b64b6217fB9947";
 pairadd = "0x9ACBbFb21d854092B0325e7F27F2ad536f64C219";
 db1DAIX = "0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987";
 depDAIX = "0xE0C50aC605b255EC2b02963f8DB2B9fbC3274402";
-pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","0x634a571b537a466f15a8c8f660d685340543878f","0xe9cd05E4DB6fa0F0C594A1a6CD7ed85e35522508","","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219"];
+pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","0x634a571b537a466f15a8c8f660d685340543878f","0xe9cd05E4DB6fa0F0C594A1a6CD7ed85e35522508","0xc1cfd03efc95e7d922ecfe60820c506408bd998e","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219"];
 
 </script>
 </html>
