@@ -1,2622 +1,308 @@
 <!doctype html><html><meta charset="UTF-8">
-<!--
-	Written by @itsN1X on day 8941
-	LINK:https://daibase.github.io
-	To tip me or to donate, visit:
-	>> https://9xo.github.io/R/teb
-	This Software is void of every
-	warranty, guarentee, assurance
-	or any liability of all kinds.
-	Please use this ware carefuly.
-	It was made for a Client based
-	over the International Waters,
-	and has been deployed for them
-	over their private network. It
-	should be noted that sending a
-	request over internet is risky
-	& due diligence is obligatory.
-	The E. X. (I) Technologies has
-	to be indemnified for any loss
-	or misfortunes rendered by use
-	of this Software solution, and
-	must be done in any Legal, sub
-	-legal and other jurisdictions
-	under any court of Law or jury
-	or a consortium or institution
-	of Justice, local, federal and
-	international. Every user must
-	consent to this clause if they
-	interact, view or download our
-	Softwares/product/Information.
-	-->
 <head>
-<title>Daibase Protocol</title>
-<!--
-To tip me or to donate, visit:
-"https://9xo.github.io/R/teb".
-BITCOIN:
-1N1X8i5VuRS1BeMxiy5ZaeensjhsVWdQeC
-BITCOIN CASH:
-1TsNiXCQkPKaB6zfDQQXAwMBfe12ySoKa
-DOGECOIN:
-DFTEuCkJwX3Djh1EMT4XNK6a6NixxrMfhx
-NIX Platform:
-GUNS36xAq9Kzr8ehDiTnAVH94Rai34SHDC
-ETH:
-0xD0f79B71A8ffB7f70392630f8BFc900fcA27af42
-$COIL:
-0xD0f79B71A8ffB7f70392630f8BFc900fcA27af42
--->
-<meta name="description" content="Daibase is an algorithmic, cross-blockchain and multi-blockchain array of Smart Cotracts that targets multi-collateral Dai. Learn more!">
-<meta name="keywords" content="Dai DAIX Daibase Rebase Algorithmic Cross-chain Multi-blockchain Stablecoin xDAI BDAIX EDAIX MDAIX ODAIX TDAIX XDAIX Decentralized Finance defi">
+<title>FTM1337 (ftm.monster | ftm.guru)</title>
+<meta name="description" content="FTM.guru : Fantom Opera blockchain tools, DEX pair Explorer, Fantom Scan, Top FTM Tokens on-chain voting.">
+<meta name="keywords" content="Fantom Opera, FTM, Decentralized Finance, ELITE, 1337, defi, farming, FTM1337">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--This stylesheet is under a copyright by itsN1X.
-© 2020 itsN1X | E. X. Information Technologies | 9Xo.github.io-->
 <head>
-<link rel="shortcut icon" href="img/daix.svg" />
+<link rel="shortcut icon" href="img/ftm1337.jpg" />
+  <style>
+    * {
+      color:#eee;
+    }
+    a{text-decoration-line:none}
+    html{
+      background:#000;
+      font-family:helvetica nueve, robotica, ubuntu, sans-serif
+    }
+    input,button{border-radius:25px;background:black;text-align:center}
+	button:hover{  box-shadow: 0 0px 10px 5px rgba(255,255,255,.2), 0px 0px 10px 5px rgba(255,255,255,0.1);transition: 0.2s}
+    pre{overflow-x:auto;max-width:80%}
+    .mainpanels{display:grid}
+    .mainpanel{grid-template-columns:auto;background: #222;margin:5%;border-radius: 15px}
+    @media(min-width:641px){
+        .mainpanels{grid-template-columns:50% 50%}
+    }
+  </style>
 </head>
-<link rel="stylesheet" id="ss" type="text/css" href="a.css">
-<div id="topper">
-	<div id="topper_explore">
-		<a href="#d_base" onclick="c('d_base')"><img id="topper_explore_img" src="img/daix.svg"><!--++<br>++--></a>
-	</div>
-	<div id="topper_links"><!--
-		<a href="https://discord.gg">Discord</a>
-		<a href="https://t.me/daibase">Telegram</a>-->
-		<div id="theswi" onclick="theme()">\o/</div>
-	</div>
-	<div id="topper_logo">
-		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
-		<br><pre>v0.1.61(m)</pre>
-	</div>
-</div>
-
-<span id="ua">You're Not Connected.</span><br>
-<b><button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button></b>
-<br>
-
-<br><br>
-
-<div class="cu" id="d_base" style="display:block">
-	<h1>Programmable.<br>Elastic.<br>De-Central Bank.</h1>
-	<div id="d_base_s1">
-		<div>
-			<img src="img/daox.svg" width="30%" style="border-radius:50%"></img>
-			<img src="img/daix.svg" width="30%" style="border-radius:50%;position:relative;left:-10%"></img>
-		</div>
-		<div id="d_base_s1_2">
-			<a href="#d_shopping" onclick="c('d_shopping')">Mint DAIX</a><br>↡<br>
-			<a href="#d_trading" onclick="c('d_trading')">Re-Leverage</a><br>⥁<br>
-			<a href="#d_farms" onclick="c('d_farms')">Farm</a><br>⥯<br>
-			<a href="#d_dao" onclick="c('d_dao')">Govern</a><br>
-		</div>
-	</div>
-	<br><br>
-	<b>$DAIX : Algorithmic Stablecoin</b><br>
-	<div style="font-size:0.8em;line-height:2">
-	⇨ First-ever Rebasing asset regulated by Protocol Controlled Value.<br>
-	⇨ Governed by the DAOX holders.<br>
-	⇨ Ever-increasing market-cap floor.<br>
-	⇨ On-chain auction of Protocol Revenues using a "KingMaker".<br>
-	⇨ Flash-minting from within other smart-contracts.<br>
-	⇨ Highly interoperable <font style="font-family:mono">interface IXD</font> and <font style="font-family:mono">library LibDAIX.</font><br>
-	⇨ Made for Yield Farmers, Leverage Traders and the Creative Chefs.<br>
-	⇨ On a dozen blockchains near you!
-	</div>
-</div>
-
-
-<br><br>
-
-
-
-
-<div id="exploreus">
-	<div id="id_learn" onclick="c(this.id.substr(1))"><a href="#d_learn">
-	<img width="64px" src="img/learn.svg">
-	<br>Learn</a>
-	</div>
-	<div id="id_shopping" onclick="c(this.id.substr(1))"><a href="#d_shopping">
-	<img width="64px" src="img/shopping.svg">
-	<br>Shopping</a>
-	</div>
-	<div id="id_trading" onclick="c(this.id.substr(1))"><a href="#d_trading">
-	<img width="64px" src="img/exchange.svg">
-	<br>Swap</a>
-	</div>
-	<div id="id_basecannon" onclick="c(this.id.substr(1))"><a href="#d_basecannon">
-	<img width="64px" src="img/bass.svg">
-	<br>BaseCannon</a>
-	</div>
-	<div id="id_farms" onclick="c(this.id.substr(1))"><a href="#d_farms">
-	<img width="64px" src="img/farmer.svg">
-	<br>Farms</a>
-	</div>
-	<div id="id_dao" onclick="c(this.id.substr(1))"><a href="#d_dao">
-	<img width="64px" src="img/govern.svg">
-	<br>D.A.O.</a>
-	</div>
-	<div id="id_revenues" onclick="c(this.id.substr(1))"><a href="#d_revenues">
-	<img width="64px" src="img/toll.svg">
-	<br>Revenues</a>
-	</div>
-	<div id="id_dashboard" onclick="c(this.id.substr(1))"><a href="#d_dashboard">
-	<img width="64px" src="img/charts.svg">
-	<br>Dashboard</a>
-	</div>
-	<div id="id_integration" onclick="c(this.id.substr(1))"><a href="#d_integration">
-	<img width="64px" src="img/contract.svg">
-	<br>Integration</a>
-	</div>
-	<div id="id_heir" onclick="c(this.id.substr(1))"><a href="#d_heir">
-	<img width="64px" src="img/crown.svg">
-	<br>Heir to DaiX</a>
-	</div>
-	<div id="id_guides" onclick="c(this.id.substr(1))"><a href="#d_guides">
-	<img width="64px" src="img/guide.svg">
-	<br>Guides</a>
-	</div>
-	<div><a href="https://t.me/s/DaiBased" target="_blank">
-	<img width="64px" src="img/news.svg">
-	<br>News</a>
-	</div>
-	<div><a href="https://t.me/s/DaiBased/4" target="_blank">
-	<img width="64px" src="img/roadmap.svg">
-	<br>Roadmap</a>
-	</div>
-	<div><a href="https://t.me/s/DaiBased/4" target="_blank">
-	<img width="64px" src="img/calendar.svg">
-	<br>Events</a>
-	</div>
-	<div><a href="/goldpaper" target="_blank">
-	<img width="64px" src="img/goldpaper.svg">
-	<br>Goldpaper</a>
-	</div>
-	<div id="id_laboratory" onclick="c(this.id.substr(1))"><a href="#d_laboratory">
-	<img width="64px" src="img/lab.svg">
-	<br>Laboratory</a>
-	</div>
-	<div id="id_wallet" onclick="c(this.id.substr(1))"><a href="#d_wallet">
-	<img width="64px" src="img/wallet.svg">
-	<br>Wallet</a>
-	</div>
-</div>
-
-
-
-
-<div class="cu" id="d_shopping">
-	<div class="statbox">
-		<div class="stat statnumb">Welcome to the Shopping Section!</div>
-		<div class="stat statname">While using xDai (stablechain), enter the amount of DAIX you wish to receive. While using volatile currency chains like ETH, BNB or ONE, adjust the number of DAIX such that the cost displayed underneath is the amount of ETH/BNB/ONE you desire to spend.
-		</div>
-	</div>
-	<div style="font-size:1.25em" align="center">
-	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
-
-		<div style="border:2px solid orange; border-radius:5px" align="center">
-			Current Balance:<br><span id="shop_ethbal">?</span><br>
-			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""><br>
-			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"><br>
-			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
-			<br>Discount Offered:<br><span id="shop_d">?</span>%
-			<br><br><span id="shop_w" style="font-size:0.75em"></span><span id="shop_rx" style="font-size:0.75em"></span>
-			<br>Always ensure gas limit is NOT 21000. Set it to 500000.
-		</div>
-		<b onclick="c('d_laboratory')"><a href="#d_laboratory">Hit the baseCannon</a></b>first to purchase DAIX at a price of 1 DAI each.
-		<br><br><span style="font-size:0.75em">Don't press buy now unless you are sure. Doing so will directly take you to signing a blockchain transaction that costs real money from your account.
-	</div>
-</div>
-<div class="cu" id="d_trading">
-	<div style="font-size:1.25em" align="center"><br><br>
-		<i>Pair Explorer under development.</i><br><br>
-		<div class="t_swap">
-			<table id="t_swap_1">
-				<tr>
-					<th>
-						Pair
-					</th>
-					<th>
-						Price
-					</th>
-					<th>
-						Chain
-					</th>
-					<th>
-						Liquidity
-					</th>
-					<th>
-						D.E.X.
-					</th>
-					<th>
-						<!--Volume-->
-					</th>
-					<th>
-						Links
-					</th>
-				</tr>
-				<tr>
-					<td>
-						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
-					</td>
-					<td id="t_swap_1_p_1">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
-					</td>
-					<td id="t_swap_1_l_1">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/bao.svg" height="32px width="32px"><br>BaoSwap
-					</td>
-					<td>
-						<!--$ ‽.‽-->
-					</td>
-					<td>
-						<a target="_blank" href="https://baoswap.com/#/add/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987/ETH">Pool</a><br>
-						<a target="_blank" href="https://baoswap.com/#/swap?outputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Trade</a><br>
-						<a target="_blank" href="">Chart</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
-					</td>
-					<td id="t_swap_1_p_2">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
-					</td>
-					<td id="t_swap_1_l_2">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/honeyswap.svg" height="32px height="32px width="32px"><br>HoneySwap
-					</td>
-					<td>
-						<!--$ ‽.‽-->
-					</td>
-					<td>
-						<a target="_blank" href="https://app.honeyswap.org/#/add/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987/ETH">Pool</a><br>
-						<a target="_blank" href="https://app.honeyswap.org/#/swap?outputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Trade</a><br>
-						<a target="_blank" href="https://info.honeyswap.org/token/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987">Chart</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
-					</td>
-					<td id="t_swap_1_p_3">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
-					</td>
-					<td id="t_swap_1_l_3">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/levin.svg" height="32px width="32px"><br>LevinSwap
-					</td>
-					<td>
-						<!--$ ‽.‽-->
-					</td>
-					<td>
-						<a target="_blank" href="https://app.levinswap.org/#/add/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987/ETH">Pool</a><br>
-						<a target="_blank" href="https://app.levinswap.org/#/swap?outputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Trade</a><br>
-						<a target="_blank" href="https://info.levinswap.org/token/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987">Chart</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
-					</td>
-					<td id="t_swap_1_p_4">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
-					</td>
-					<td id="t_swap_1_l_4">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/sushiswap.svg" height="32px width="32px"><br>SushiSwap
-					</td>
-					<td>
-						<!--$ ‽.‽-->
-					</td>
-					<td>
-						<a target="_blank" href="https://app.sushi.com/#/add/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987/ETH">Pool</a><br>
-						<a target="_blank" href="https://app.sushi.com/#/swap?outputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Trade</a><br>
-						<a target="_blank" href="https://analytics-xdai.sushi.com/tokens/0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Chart</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="img/daix.svg" height="32px width="32px"><img src="img/xdai.svg" height="32px width="32px"><br>DAIX/WXDAI
-					</td>
-					<td id="t_swap_1_p_5">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
-					</td>
-					<td id="t_swap_1_l_5">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/swapr.svg" height="32px width="32px"><br>Swapr
-					</td>
-					<td>
-						<!--$ ‽.‽-->
-					</td>
-					<td>
-						<a target="_blank" href="https://swapr.eth.link/#/add/0x4ef1d9a329a0cb0658156aff55c406cc4393a987/0xb7d311e2eb55f2f68a9440da38e7989210b9a05e?chainId=100&">Pool</a><br>
-						<a target="_blank" href="https://swapr.eth.link/#/add/?chainId=100&outputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Trade</a><br>
-						<a target="_blank" href="https://dxstats.eth.link/tokens/0x4ef1d9a329a0cb0658156aff55c406cc4393a987?chainId=100">Chart</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><img src="img/daix.svg" height="32px width="32px"><br>STAKE/DAIX
-					</td>
-					<td id="t_swap_1_p_6">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
-					</td>
-					<td id="t_swap_1_l_6">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/sushiswap.svg" height="32px width="32px"><br>SushiSwap
-					</td>
-					<td>
-						<!--$ ‽.‽-->
-					</td>
-					<td>
-						<a target="_blank" href="https://app.sushi.com/#/add/0x4ef1d9a329a0cb0658156aff55c406cc4393a987/0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Pool</a><br>
-						<a target="_blank" href="https://app.sushi.com/#/swap?inputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987&outputCurrency=0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Trade</a><br>
-						<a target="_blank" href="https://analytics-xdai.sushi.com/tokens/0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Chart</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><img src="img/daix.svg" height="32px width="32px"><br>STAKE/DAIX
-					</td>
-					<td id="t_swap_1_p_7">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/xdaichain.svg" height="32px width="32px"><br>xDaiChain
-					</td>
-					<td id="t_swap_1_l_7">
-						$ ‽.‽
-					</td>
-					<td>
-						<img src="img/honeyswap.svg" height="32px height="32px width="32px"><br>HoneySwap
-					</td>
-					<td>
-						<!--$ ‽.‽-->
-					</td>
-					<td>
-						<a target="_blank" href="https://app.honeyswap.org/#/add/0x4ef1d9a329a0cb0658156aff55c406cc4393a987/0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Pool</a><br>
-						<a target="_blank" href="https://app.honeyswap.org/#/swap?inputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987&outputCurrency=0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Trade</a><br>
-						<a target="_blank" href="https://info.honeyswap.org/pair/0xf7f65a2fa87630e6df0c9b2707cf188ee7b2fac0">Chart</a>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<br>
-	</div>
-</div>
-<div class="cu" id="d_basecannon">
+<div class="topbar">
 	<div align="center">
-		<br><br>
-		<button style="height:auto;font-size:1.5em" class="bb" id="bbm" onclick="s_b()"><img width="128px" src="img/bass.svg"></button>
-				<br><h3>Hit the Base Cannon!</h3><br><br>
-				Tap the buton above to create a new epoch in Daibase Protocol!<br>
-				<br>This function can be used only once every 50 blocks.
-				<br><b>It brings back price of 1 DAIX to 1 DAI.</b><br>
-				<br>Please make sure you're on the right network!<br>
+		<a href="index.html"><b style="font-size:2em">FTM.guru</b></a><br><br>
+		<a href="index.html">Top FTM Gems</a> |
+		<a href="pair.html">DEX Explorer</a> |
+		<a href="fantomscan.html">Fantom Scan</a>
 	</div>
-</div>
-<div class="cu" id="d_wallet">
-	<div align="center">
-		<br><br>
-		Wallet section is under Development.<br>
-		This web-based wallet can be used to view Daibase Holdings and transact tokens.<br>
-		It also allows to add liquidity to any pair of choice using any Token of choice while doing the optimal market-rate conversions in the background by itself.<br>
-		<i>Example: If you have ETH, you can add Liquidity to DAOX/FTM pair easily. The wallet converts ETH into FTM and DAOX and pools them at the right proportions and sends the LP tokens to your address!</i><br>
-	</div>
-</div>
-<div class="cu" id="d_farms">
-	<br>
-	All this is still experimental. If approved once, don't do it again. Claim button will reap all earned rewards. Withdraw button takes out the staked LP tokens. Claim and Exit button will Harvest the farm: Reap + Unstake. Don't attempt to deposit more LP tokens, it will burn the gas. Make sure to check the numbers in wallet. When something goes wrong, report in the telegram or discord. Please click <button onclick="gs()">refresh</button> sometimes when it gets stuck.<br><br>
-	<br>
-	<div style="font-size:1.25em" align="center" id="farmland">
-		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
-			Farm 1 CLOSED.<br>
-			<div class="newfarm">
-				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
-				<img src="img/daox.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-16px"><br>
-				DAIX-DAOX HLP<hr style="padding:0;width:50%">
-				<!--Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"><br>F3DPT<br>+<br>-->
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
-				<hr style="padding:0;width:75%">
-				<b><i>Core</i></b><br>
-				<div class="farm_stat" style="font-size:0.6em">
-					<span id="farm_3_i_sg">?</span>DAIX-DAOX HLP Staked Globally<br>
-					<span id="farm_3_i_ys">?</span>DAIX-DAOX HLP You've Staked<br>
-					<span id="farm_3_i_re">?</span>DAOX Rewards Earned<br>
-					<span id="farm_3_i_roi">?</span>% R.O.I. <br>
-					<span id="farm_3_i_ap">?</span>% A.P.Y.<br>
-					<span id="farm_3_i_tvl">?</span>USD in T.V.L.<br>
-				</div>
-			</div>
-			<details>
-				<summary><b>Visit this Farm</b></summary><br>
-				<input class="farm_i farm_input_approve" value="Not Approved" disabled="true" id="farm_1_approved"><br>
-				<button class="farm_b farm_approve" onclick="farm_1_f_approve()" id="farm_1_approval">Approve</button><br><br>
-
-				<div id="farm_1_after" style="display:none">
-
-					<span class="farm_s farm_s_deposit" id="farm_1_s_deposit" onclick="$('farm_1_input_deposit').value=this.innerHTML">0</span><br>
-					<input class="farm_i farm_input_deposit" value="" placeholder="Deposit Amount" id="farm_1_input_deposit"><br>
-					<button class="farm_b farm_deposit" onclick="farm_1_f_deposit()">Deposit</button><br><br>
-
-					<input class="farm_i farm_input_claim" value="Earnings Unknown" disabled="true" id="farm_1_s_claim"><br>
-					<button class="farm_b farm_claim" onclick="farm_1_f_claim()">Claim</button><br><br>
-
-					<span class="farm_s farm_s_deposit" id="farm_1_s_withdraw" onclick="$('farm_1_input_withdraw').value=this.innerHTML">0</span><br>
-					<input class="farm_i farm_input_withdraw" value="" placeholder="Un-Stake Amount" id="farm_1_input_withdraw"><br>
-					<button class="farm_b farm_withdraw" onclick="farm_1_f_withdraw()">Withdraw</button><br><br>
-
-					<input class="farm_i farm_input_claim_e" value="Earnings Unknown" disabled="true" id="farm_1_s_claim_e"><br>
-					<input class="farm_i farm_input_claim_s" value="Stake Unknown" disabled="true" id="farm_1_s_claim_s"><br>
-					<button class="farm_b farm_exit" onclick="farm_1_f_exit()">Claim & Exit</button><br>
-
-				</div>
-
-			</details>
-		</div>
-		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
-			Farm 2 Closed.<br>
-			<div class="newfarm">
-				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
-				<!--<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px">--><br>
-				DAOX<hr style="padding:0;width:50%">
-				Earn<br><img src="img/daox.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
-				<hr style="padding:0;width:50%">
-				<button class="farm_b farm_approve">Approve</button>
-				<button class="farm_b farm_deposit">Deposit</button>
-				<button class="farm_b farm_claim">Claim</button>
-				<button class="farm_b farm_withdraw">Withdraw</button>
-				<button class="farm_b farm_exit">Claim & Exit</button><br>
-			</div>
-			<b><i>Core</i></b><br>
-			<div class="farm_stat" style="font-size:0.6em">
-				<span id="farm_1_sg">?</span>DAOX Staked Globally<br>
-				<span id="farm_1_ys">?</span>DAOX HLP You've Staked<br>
-				<span id="farm_1_re">?</span>DAOX Rewards Earned<br>
-				<span id="farm_1_roi">?</span>% R.O.I. <br>
-				<span id="farm_1_ap">?</span>% A.P.Y.<br>
-				<span id="farm_1_tvl">?</span>USD in T.V.L.<br>
-			</div>
-		</div>
-		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
-			Farm 3 closed.<br>
-			<div class="newfarm">
-				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
-				<img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"><br>
-				DAIX-DAOX HLP<hr style="padding:0;width:50%">
-				Get<br><img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%"><br>F3DPT<br>+<br>
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
-				<hr style="padding:0;width:50%">
-				<button class="farm_b farm_approve">Approve</button>
-				<button class="farm_b farm_deposit">Deposit</button>
-				<button class="farm_b farm_claim">Claim</button>
-				<button class="farm_b farm_withdraw">Withdraw</button>
-				<button class="farm_b farm_exit">Claim & Exit</button><br>
-			</div>
-			<b><i>Core</i></b><br>
-			<div class="farm_stat" style="font-size:0.6em">
-				<span id="farm_3_sg">1000</span>DAIX-F3DPT HLP Staked Globally<br>
-				<span id="farm_3_ys">10.87</span>DAIX-DAOX HLP You've Staked<br>
-				<span id="farm_3_re">1.65</span>DAOX Rewards Earned<br>
-				<span id="farm_3_roi">21.01</span>% R.O.I. <br>
-				<span id="farm_3_ap">8117</span>% A.P.Y.<br>
-				<span id="farm_3_tvl">8117</span>USD in T.V.L.<br>
-			</div>
-		</div>
-		<div class="newfarmland" style="border:2px solid orange; border-radius:5px" align="center">
-			Farm 4 closed.<br>
-			<div class="newfarm">
-				<br>Deposit<br>
-				<img src="img/daix.svg" width="48px" style="padding:0;border-radius:50%">
-				<img src="img/farmer.svg" width="48px" style="padding:0;border-radius:50%;position:relative;left:-24px"><br>
-				DAIX-F3DPT HLP<hr style="padding:0;width:50%">
-				Get<br><img src="img/guide.svg" width="48px" style="padding:0;border-radius:50%"><br>F4DPT<br>+<br>
-				Earn<br><img src="img/crown.svg" width="48px" style="padding:0;border-radius:50%"><br>DAOX<br>
-				<hr style="padding:0;width:50%">
-				<button class="farm_b farm_approve">Approve</button>
-				<button class="farm_b farm_deposit">Deposit</button>
-				<button class="farm_b farm_claim">Claim</button>
-				<button class="farm_b farm_withdraw">Withdraw</button>
-				<button class="farm_b farm_exit">Claim & Exit</button><br>
-			</div>
-			<b><i>Boost</i></b><br>
-			<div class="farm_stat" style="font-size:0.6em">
-				<span id="farm_4_sg">1000</span>DAIX-F3DPT HLP Staked Globally<br>
-				<span id="farm_4_ys">10.87</span>DAIX-F3DPT HLP You've Staked<br>
-				<span id="farm_4_re">1.65</span>DAOX Rewards Earned<br>
-				<span id="farm_4_roi">21.01</span>% R.O.I. <br>
-				<span id="farm_4_ap">8117</span>% A.P.Y.<br>
-				<span id="farm_4_tvl">8117</span>USD in T.V.L.<br>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="cu" id="d_dao">
-	<div style="border:2px solid orange; border-radius:5px" align="center">
-		Coming soon.
-	</div>
-</div>
-<div class="cu" id="d_revenues">
-	<div style="border:2px solid orange; border-radius:5px" align="center">
-		<div class="statbox">
-			<div class="stat statnumb" id="rev_d">$ ‽.‽</div>
-			<div class="stat statname">Total Revenue</div>
-		</div>
-		Revenue is generated from:
-		<ol><li>All DAIX transactions</li>
-		All revenues from the DAIX Transactions are sent to the "King-Maker" smart contract.
-		<li>Trades on the "Main-Pair"</li>
-		All revenues from the trades on the Main-Pair are used to increase the Total Value Locked in Daibase Protocol.
-		<li>From issuing Sovereign Debt</li>
-		Sovereign Debt gets created when expansion of Supply takes place without adding to Total Value Locked (T.V.L.) or Protocol Controlled Value (P.C.V.). This primarily consists of Cardinal Price (Price at the Cardinal Pair) goes above 1 DAI and the Daibase Protocol enters anew Epoch.<br><i>(There is no debt creation within the same epoch and this incentivizes participants to rebalance the Cardinal Price back to 1 DAIX = 1 DAI This can also be viewed as a penalty to P&D traders ensuring stability.)</i>
-		</ol><br><br>
-		<h3 align="center"><b onclick="c('d_dashboard')"><a href="#d_dashboard">For more detailed metrics, open the Dashboard.</a></b></h3>
-	</div>
-</div>
-<div class="cu" id="d_integration">
-	<h2 align="center">INTEGRATIONS</h2>
-	<div style="font-size:1.25em" align="center">
-		Daibase Protocol is designed chiefly for Chefs.
-		<br>Smart Contracts are its target audience.
-		<br><br>What PALM* merely promises in it's red&white-papers, Daibase delivers firsthand.
-		<br><span style="font-size:0.75em">(*name changed to avoid association.)</span><br>
-		<h4>Use-cases</h4>
-		<ul style="text-align:left">
-		<li>DAIX are suited for debt-denoted forward\future contracts.</li>
-		<li>Daibase can be used as a stable unit of account, much like a simple currency such as Bitcoin or Digital CHF, directly inside Smart Contracts.</li>
-		<li>Can be used as an automated hedge in smart contracts that are based on "Price-Denoted" "call writing" (Options).</li>
-		<li>Daibase Protocol can be used to replace the role of dollar-backed tokenizations to remove dependence on Tra-Fi (Traditional Finance).</li>
-		<li>Employed as a demand gauge for other "target-based" Elastic assets.</li>
-		<li>And as a spice in many, many more secret recipes of innovative Chefs.</li>
-		</ul>
-	</div>
-	<div style="border:2px solid orange; border-radius:5px" align="left">
-	Use the parti() function to participate in self-issuing DAIX tokens. The default function receive() can be used to send native coins to the DAIX smart contract and self-issue DAIX to the sender as well.
-	<br><ul>NOTES:
-	<li>No tax is levied on such transactions by the Daibase Protocol from the sender.</li>
-	<li>Such transactions do however charge the tax from the Main-Pair's Liquidity Pool and send it to the King-Maker contract.</li>
-	<li>These transactions would thus increase the price of DAIX tokens by a small amount, equal to square root of twice the issued amount's share in Liquidity Pool.</li>
-	<li>Each such call to <b>parti</b> shall return and emit a few important things back in the calldata.</li>
-	</ul>
-	<h3>About LibDAIX and IXD</h3>
-	Daibase Protocol has created its own interface and also a library. Anyone can introduce these in their own contracts today itself.
-	<br>The Llibrary consists of many helper functions, and is known as <b>"LibDAIX"</b>.
-	<br>The interface is named <b>"IXD"</b>. (DAIX was actually called XD prior to version v0.1)
-	<h3>Prototype</h3>
-	(Last update as of v0.1.44)<br>
-	<h4>Function Declaration</h4>
-	<ul><li>New</li>
-	<pre>function parti()
-	public override payable
-		returns (uint256 A)
-	</pre>
-	<li>Old</li>
-	<pre>function parti()
-	public override payable
-		returns (uint256 part)
-		</pre>
-	<b>"part" / "A"</b> signifies the amount of DAIX tokens issued to the sender of transaction message.<br>
-	<h4>Application Interface</h4>
-	<li>parti</li>
-	<pre>
-	{
-		"inputs": [],
-		"name": "parti",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "part",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "payable",
-		"type": "function"
-	}
-	</pre>
-	<br>
-	<li>receive</li>
-	<pre>
-	{
-		"stateMutability": "payable",
-		"type": "receive"
-	}
-	</pre>
-	<br>
-	<b>"parti"</b> signifies the participate function of Daibase. DAIX tokens issued to the sender of transaction message.<br>
-	<h4>Event Declarations</h4>
-	<pre></pre>
-	<h4>Events</h4>
-	<ul>
-	<li>Based</li>
-	<pre>
-	event Based(uint G, uint E, uint256 T);
-	</pre>
-	<li>Partied</li>
-	<pre>
-	event Partied(uint M, string R, uint N, string S, uint L);
-	</pre>
-	</ul>
-	<b>Event Reference</b>
-	<ol>
-	<li>E</li><pre>
-	Epoch</pre></pre>
-	<li>G</li><pre>
-	Internal</pre>
-	<li>L</li><pre>
-	Main-Pair's Liquidity equivalence</pre>
-	<li>M</li><pre>
-	Amount sent, denoted in Wei (1e-18)</pre>
-	<li>N</li><pre>
-	Issued DAIX, denoted in Wei (1e-18)</pre>
-	<li>R</li><pre>
-	Reference String</pre>
-	<li>S</li><pre>
-	Reference String</pre>
-	<li>T</li><pre>
-	Total inclusive DAIX supply</pre>
-	</ol>
-	<br>
-	</div>
-	<br><br>Detailed guides coming soon. Last Update: v0.1.44 (April, Week 1)
-</div>
-<div class="cu" id="d_guides"  align="center">
-	<h3>Frequently Asked Questions</h3>
-	<h4>ALWAYS "MINT" DAIX. NEVER "BUY" DAIX.</h4>
-	If you "buy", you are certain to lose DAIX. Always use the "mint" function to acquire DAIX or get some from our shopping section.<hr style="padding:0;width:50%"><br><br>
-	<div align="left">
-		<details><summary><b>What is DAIX?</b></summary>
-		DAIX is an elastic supply "rebasing" algorithmic stablecoin ―it adjusts to market conditions and maintains it's price at $1 by changing its circulating supply dynamically whenever someone presses the "BaseCannon" button on our Dapp.
-		</details>
-		<details><summary><b>What is DAOX?</b></summary>
-		DAOX is the governance token of Daibase Protocol. Holders of DAOX get to decide the future of Daibase via creating and voting on "proposals". DAOX can always be earned through one of our farms, partner programs or other ecosytem incentives.
-		</details>
-		<details><summary><b>How to<i>"mint"</i>DAIX?</b></summary>
-		There are 2 ways to mint DAIX tokens:<ol>
-		<li>Visit the shopping section and enter the amounts you wish to buy.</li>
-		<li>Send some XDAI directly to the Daibase Contract address.</li></ol>
-		Please note that:<ul></li>
-		<li>Use "Gas Limit" of 500000 (500k) when minting DAIX.</li>
-		<li>"Minting" doesn't have any fees.</li>
-		<li>"Minting" helps us increase the Protocol Controlled Value (PCV, a.k.a. "TVL").</li>
-		<li>The XDAI sent for minting gets locked forever into liquidity.</li>
-		<li>DON"T TRY TO "BUY DAIX" ― if you "buy" it, you will lose DAIX.</li></ul>
-		<b>ALWAYS "MINT" DAIX. NEVER BUY DAIX.</b>
-		</details>
-		<details><summary><b>How to buy DAOX?</b></summary>
-		DAOX is available at the leading DEXes of the blockchains. On xDAI Chain, DAOX can be swapped for DAIX at BaoSwap, HoneySwap, LevinSwap and Swapr.<br>
-		It could be possible to buy DAOX from honeyswap with XDAI, as it would simply route you through DAIX. This would mean your XDAI first buys DAIX from honeyswap and then that DAIX buys DAOX.
-		<br><b>This is NOT RECOMMENDED.</b><br>
-		Always "buy" DAIX from our Daibase smart contract direclty. Buying DAOX directly from the DEX is not a problem in itself. However, we should avoid buying DAIX from a DEX. For example, buying DAOX with XDAI could have resulted in buying DAIX from the DEX first.<br>
-You might ask, "Why someone should buy ('mint') DAIX from the contract instead of buying directly?"
-		</details>
-		<details><summary><b>Why someone should buy ('mint') DAIX from the contract instead of buying directly?</b></summary>
-	There are a few reasons:
-	<ol>
-		<li>Buying DAIX from honeyswap (or any DEX) is very expensive.
-		<ul>
-			<li>This incurs 1% transaction tax.</li>
-			<li>It incurs 0.3% trade fees.</li>
-			<li>If your trade gets 'routed through DAIX', honeyswap would charge you 1.3% extra for each 'hop'.</li>
-		</ul></li>
-		<li>Buying DAIX from the DEX incurs slippage.
-		<ul>
-			<li>if someone else is also trading in DAIX when you go to buy it on honeyswap, the amounts you receive might not be the ones expected by you. Other trades would influence the DAIX amounts you receive.</li>
-			<li>Direct minting DAIX helps in growing the PCV (Protocol Controlled Value)</li>
-			<li>This eases trading for future trades.</li>
-			<li>Helps to reduce slippage in future.</li>
-			<li>Makes for a bigger (de-)Central Bank Reserve (which is directly owned by all DAIX holders)</li>
-		</ul></li>
-		<li>Buying from the Daibase contract (by sending XDAI directly to its address, with gas limit 500k) is way more cheaper and efficient.
-		<ul>
-			<li>Incurs zero (0%) slippage losses.</li>
-			<li>Incurs zero (0%) trading fees.</li>
-			<li>Incurs zero (0%) transaction tax.</li>
-			<li>Fully predictable amounts of DAIX received.</li>
-			<li>Allows you to reset price back to $1 (optional― it's your wish, just need to press the "BaseCannon" button).</li>
-		</ul></li>
-		</ol>
-		So, if you want to buy DAOX, the best way is to:
-		<br>1. Send your XDAI to Daibase contract address directly. (Use gas limit of 500000)
-		<br>2. Use the DAIX received in step 1. above to buy DAOX from honeyswap.
-		<br>This method will be a lot, lot cheaper and give you a lot, lot more DAOX than buying with Native Coins (XDAI) at a DEX.
-		</details>
-		<details><summary><b>Which blockchains are supported?</b></summary>
-		As of now, Ropsten (testnet) and xDAI Chain (mainnet) version are supported.</details>
-		<details><summary><b>How often can we press the<i>"BaseCannon"</i>button?</b></summary>
-		On-Demand "bases" are a core tenet of Daibase Protocol. However, it's restricted to once in 50 blocks (about 4m10s on xDAI Chain, 12m30s on Ropsten) to prevent over-spamming.</details>
-		<details><summary><b>What is the<i>"rebase lag"</i>?</b></summary>
-		There is no lag. Lag is needed on blockchains like ETH where we need to prioritize gas savings.</details>
-		<details><summary><b>Is there a<i>"transaction tax"</i>?</b></summary>
-		A small fee of 1% is initially levied on each DAIX and DAOX transaction. The taxes collected are used by the KingMaker contract, if enabled, otherwise they're used to fund more farms or other ecosystem incentices, as dictated by the aixDAO by voting with their DAOX rights. The fees for DAIX are expected to be reduced as it's usage increases within smart-contracts.</details>
-		<details><summary><b>What is the<i>"KingMaker"</i>?</b></summary>
-		The KingMaker is a smart-contract that orchestrates an<i>on-chain open-auctioning</i> of transaction taxes generated by DAIX and DAOX. Anyone is allowed to bid with their native coins (XDAI) to contest for the right to drain all the treasures from this contract. The highest bidder is crowned as<i>"The Chosen One"</i> for 500000 blocks. Whenever someone makes a<i>"sacrifice"</i>8% greater than the previous<i>"Heir to DaiX"</i>, they ascend the throne as the new<i>Chosen One</i>. The reward is a huge, direct 1% from the whole of transaction volumes generated by DAIX and DAOX. After a "Heir" goes "unchallenged" through their "reign", the "sacrifice" resets to 0.001 Coins (XDAI).<br>
-		To keep an eye on the timers or make a sacrifice, visit the "Heir to DaiX" section!</details>
-		<details><summary><b>Where does the money bid into the KingMaker go?</b></summary>
-		The bids are used to fund even more farms, vaults, staking services, partner programs and other things mandated by the DAO. The KingMaker relieves the sell pressure at a single point and distributes it to the Heirs of DaiX.</details>
-		<details><summary><b>What is the use-case of Daibase?</b></summary>
-		Daibase Protocol at large aspires to serve as an alternate (De-)Central Bank. It issues 1 DAIX only when it is paid 1 DAI in advance by the issuer, and locks it into it's Protocol Controlled Value (PCV). The currency it issues (DAIX) can be used akin to a real-life cash-asset: For trading, purchasing, borrowing, lending, mortgaging, leveraging and releveraging, and for a multitude of other things as highlighted in the<b>Supplement - I</b>section of our Goldpaper (permalink:https://daibase.github.io/goldpaper).</details>
-		<details><summary><b>Are the DAIX collateralized?</b></summary>
-		No. DAIX are entirely<b>uncollateralized</b>. There is no promise of 1:1 backing of DAIX with DAI. However, if and when the DaixDAO decides to<i>"Dissolve the Reserves",</i>the P.C.V. backs the entire issuancce of DAIX outside the<i>"Cardinal Pair".</i><br>This kind of an event however rare, is possible, and ascertains an<i>implicit collateralization"</i>to DAIX.</details>
-		<br><br><br><br>
-	</div>
-	<h3 align="center">Known Bugs</h3>
-	<b>"This seems to be a problem with one of the tokens you're swapping"</b>
-	It has been found that this situation can be solved by the below methods:
-	<ol>
-		<li>Increasing Slippage Tolerance to 3% or more depending on the number of "hops", or intermediary tokens traversed during your swap.</li>
-		<li>A slippage of 5% is enough to Add or Remove liquidity. Using 3% for simple ETH/DAIX pairs is ample.</li>
-		<li>Editing input and/or output amounts manually.</li>
-		<li>Removing excessive decimal parts and rounding the numbers.</li>
-		<li>Swapping in the opposite direction with near zero amounts.</li>
-		<li>Adding or removing liquidity.</li>
-		<li>Try a hard refresh (Ctrl-F5, CMD-F5 or Alt-Shift-R) and using a nearer but different amount.<li>
-<i>NOTE: This is a tricky error to overcome, and could depend on sheer luck. Almost all tokens with an elastic supply (or auto-burning features) experience this issue. Uniswap team hopes to resolve it in it's Uniswapv3 front-end wrapper. Advanced users can manually attempt a swap by directly interacting with a pair's smart contract. Otherwise atleast one or a combination of the above methods should cure this error.</i>
-	</ol>
-	<b>"Error: Undefined"</b>
-	Such a error arises if there's a disbalance in the pairs balances and the count of its reserves in its memory. This is common in newly listed pairs and can be cured by:
-	<ol>
-		<li>Making a "multi-hop" swap.</li>
-		<li>Executing a "flash" swap.</li>
-		<li>Having the pair contract added to the Daibase "core" smart contract.<br>This can be done only by the DaixDAO voting if DAIX has already launched.<br>Such a pair must have adequate liquidity to be eligible/adopted by the DAO because adding a new pair results in increased costs for each new epoch.</li>
-		<li>Hitting the BaseCannon can cure it sometimes.</li>
-		<li>Synchronizing also can solve this issue, and would be cheaper than creating a new Epoch.</li>
-	</ol>
-	<h3 align="center">Exceptions</h3>
-	<li>Don't send more than 10 Billion coins (ETH/XDAI/BNB/ONE,etc.) to the contract for a direct purchase or parti().</li>
-	<li>Don't hit the BaseCannon twice within 60 blocks (about 12 min. on Eth, 5 mins. on xDAI and Polygon, 3 min. on BSC and Tron, 2 min. on Harmony, etc.).</li>
-	<i>NOTE: This limit is reduced to 4 Blocks during the testing phase.</i>
-	<li>"FAIL: OUT OF GAS"</li>
-	This can occur when sending native coins (XDAI/ETH/BNB/ONE/MATIC/TRX,etc.) to the DAIX Smart Contract. It happens due to MetaMask or other Wallets erroneously ascribing a "Gas Limit" of "21000". We suggest manually editing it to "500000" (Five hundred thousands) instead.
-</div>
-<div class="cu" id="d_dashboard">
-	<div class="statbox">
-		<div class="stat statnumb">Dashboard is Live!</div>
-		<div class="stat statname">DAIX is deployed on 2 blockchains, Ropsten and xDAI. Below includes basic stats for xDAI Chain only. Ropsten metrics are marked with an asterisk(*). Non-real-time values are marked with a carrat(^). In case of mixed values, Ropsten values preceed xDAI. Developers and testers can utilize the<b><a onclick="c(id_laboratory)">Laboratory</a></b> area for finding out the testnet statistics for Custom and Historical versions.
-		</div>
-	</div>
-	<br>
-	<h3 align="center"><img width="128px" src="img/xdaichain.svg"><br>xDAI Chain</h3>
-	<div class="stats">
-		<div class="statbox">
-			<div class="stat statnumb" id="db_ap">000</div>
-			<div class="stat statname">Average Price</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_ee">000</div>
-			<div class="stat statname">Epochs Elapsed</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_uu">36*^</div>
-			<div class="stat statname">Unique Users</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_dp">1*^ + <span id="db_al">2*</span></div>
-			<div class="stat statname">№ of DEX pairs</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_tc">198^ + 17*^</div>
-			<div class="stat statname">Transaction Count</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_cs">$ ‽.‽</div>
-			<div class="stat statname">Circulating Supply</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_ts">$ ‽.‽</div>
-			<div class="stat statname">Total Supply</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_vlf">$ ‽.‽</div>
-			<div class="stat statname">Value Locked Forever</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_pcv">$ ‽.‽</div>
-			<div class="stat statname">Protocol Controlled Value</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_tvl">$ ‽.‽</div>
-			<div class="stat statname">Total Value Locked</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_mc">$ ‽.‽</div>
-			<div class="stat statname">Market Cap.</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_fd">$ ‽.‽</div>
-			<div class="stat statname">F.D. Market Cap.</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_tri">$ ‽.‽</div>
-			<div class="stat statname">Revenues from DAIX</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_tro">$ ‽.‽</div>
-			<div class="stat statname">Revenues from DAOX</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_cr">100%</div>
-			<div class="stat statname">Cash Reserve Ratio</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_sd">$ ‽.‽</div>
-			<div class="stat statname">Sovereign Debt</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb">more info…?</div>
-			<div class="stat statname">Open Dashboard</div>
-		</div>
-	</div>
-	<br>
-	<br>
-	<h3 align="center">Global Statistics</h3>
-	<b><div align="center">***Global Stats are not synced. Please view your specific Blockchain's stats below. You may change your network from your wallet to switch chains</div></b>
-	<br>
-	<div class="stats">
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_ap">$1***</div>
-			<div class="stat statname">Average Price</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_ee">0***</div>
-			<div class="stat statname">Epochs Elapsed</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_uu">39*^</div>
-			<div class="stat statname">Unique Users</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_nc">1 + 1*</div>
-			<div class="stat statname">№ of Blockchains</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_nt">2^ + 2*^</div>
-			<div class="stat statname">Number of Tokens</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_dp">1*^ + <span id="db_o_al">6*</span></div>
-			<div class="stat statname">№ of DEX pairs</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_tc">241^ + 17*^</div>
-			<div class="stat statname">Transaction Count</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_cs">0***</div>
-			<div class="stat statname">Circulating Supply</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_ts">0***</div>
-			<div class="stat statname">Total Supply</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_vlf">$0***</div>
-			<div class="stat statname">Value Locked Forever</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_pcv">$0***</div>
-			<div class="stat statname">Protocol Controlled Value</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_tvl">$0***</div>
-			<div class="stat statname">Total Value Locked</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_mc">$0***</div>
-			<div class="stat statname">Market Cap.</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_fd">$0***</div>
-			<div class="stat statname">F.D. Market Cap.</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_tri">$0***0</div>
-			<div class="stat statname">Revenues from DAIX</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_tro">$0***</div>
-			<div class="stat statname">Revenues from DAOX</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_cr">1***</div>
-			<div class="stat statname">Cash Reserve Ratio</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_o_sd">$0***</div>
-			<div class="stat statname">Sovereign Debt</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb">more info…?</div>
-			<div class="stat statname">Open Dashboard</div>
-		</div>
-	</div>
-</div>
-
-<div class="cu" id="d_learn">
-
-<div class="statbox">
-	<div class="stat statnumb">⚠ Important Notice!</div>
-	<div class="stat statname">Please note that this section is outdated and does not include developments that took place during March and April of 2021. A more detailed introduction, FAQ, docs and guides section will replace this page soon.
-Please visit the <b><a href="#d_guides" onclick="c('d_guides')">Guides section for more information.</a></b>
-	</div>
-</div>
-
-
-	<div style="font-size:1.25em" align="center">
-	<i>DAIX is growing!</i>
-	<hr style="padding:0;width:50%">
-
-
-	<div id="intro">
-		<div></div>
-		<div id="intro_sol">
-		<i><b>What are DAIX tokens?</b><br>
-		<br>DAIX is a cross-chain compatible array of tokens that target the multi-collateral DAI stablecoin.<br>
-		<br>Native DAIX tokens are non-collateralized algorithmic stablecoins, issued on multiple chains:<div align="left" style="margin:10px">
-		⇨ xDAI Chain (XDAI)<br>
-		⇨ Binance Smart Chain (BNB)<br>
-		⇨ Harmony (ONE)<br>
-		⇨ Polygon (MATIC)<br>
-		⇨ Avalanche (AVAX)<br>
-		… and more to come!</div>
-		</i>
-		</div>
-		<div id="intro_pro">
-		<i><b>Why do we need DAIX?</b><br>
-		<br>Chances are, you have used ERC20-DAI and other similar assets on Ethereum. But now, along with the cryptocurrency prices, the transaction costs have also gone up, and aren't essentially too attractive as compared to the competetive blockchain solutions of today, like xDAI.</i><br><br>DAIX brings a brand new sub-asset class to the most efficient, day-to-day use blockchains.<br><br>It is the first multi-chain Decentral Bank with Protocol Controlled Value pivoted Elastic Currency in the world.<br><br>
-		<div id="intro_sol_dis">Discover DAIX Ecosytem!</div>
-		</div>
-		<div></div>
-		<div></div>
-		<div id="intro_sol">
-		<i><b>Where to find DAIX tokens?</b><br>
-		<br>DAIX protocol strives to be multi-chain compatible.<br>
-		<br>Native DAIX stablecoins will be launched on multiple blockchains, including Binance Smart Chain (BSC), Polygon (MATIC), Solana ($SOL) and Ethereum.<br>
-		<br>First listing will be at Honeyswap of the xDAI blockchain network.<br>
-		<br>You can also generate xDAIX (DAIX native to xDAI blockachain) by simply sending some xDAI coins to the DAIX smart contract.<br>Kindly use a "gas limit" of 500000 (500k).</i>
-		<br><br><div id="intro_sol_dis">Discover DAIX Ecosytem!</div><!--The FEES Protocol is very simple to use: Just transform your TRC-20 Tokens into thier *F pegged-assets, and use these pegged-tokens for your daily use, without worrying about the energy costs burning your precious TRX away!-->
-		</div>
-		<div id="intro_pro">
-		<i><b>How do these DAIX stabilize?</b><br>
-		<br>When the price of any DAIX is above 1 DAI (roughly $1) in the open market, DAIX coins are sent across all addresses upto the amount which brings the price back to 1 DAI inthe open markets.<br>
-		<br>Similarly, when the price falls under a DAI, the stabilization mechanism makes all users burn their DAIX tokens!<br>
-		Apart from this, there is a tiny fees that goes to the promotional aspect of DAIX: Farms and Vaults, which help secure the DAIX against flash attacks by locking up (staking) *DAIX tokens. All DAIX users can participate in these promotional events and earn rewards!</i><br><br>Anyone can make 1 DAIX equal 1 DAI at the press of a big button below!<br>
-
-		</div>
-		<div></div>
-	</div>
-	<div align="centre"><button id="stabutton" style="font-size:1.2em; width:" href="#d_laboratory" onclick="c('d_laboratory')"><b><i>STABILIZE DAIX!</i></b></button></div>
-
-	<hr style="padding:0;width:50%">
-	<i id="joinus">Join our wonderful community today!</i><br>
-	<b><a href="https://t.me/SaveFees">@Daibase</a></b>
-
-
-	<div id="recents">
-		<div class="recentbox">
-			DAIX Protocol is introduced and public testing begins!
-				<div>
-				The ideas behind DAIX tokens are introduced publicly and initial development begins in the later weeks of March 2021.<br>
-				First official testing was scheduled for 31st March (Wednesday).
-				</div>
-		</div>
-		<div class="recentbox">
-			Initial 'premiere' unviels $DAIX on xDAI Chain.
-				<div>
-				The first mainnet version of DAIX Protocol proposed to be launched on the xDAI network : also better known as the most stable "Layer 2" blockchain.<br>It will be first listed on Honeyswap AMM-DEX for the public to trade.<br></div>
-		</div>
-	</div>
-
-
-	</div>
-	<h3>Frequently Asked Questions</h3>
-	<h4>ALWAYS "MINT" DAIX. NEVER "BUY" DAIX.</h4>
-	If you "buy", you are certain to lose DAIX. Always use the "mint" function to acquire DAIX or get some from our shopping section.<hr style="padding:0;width:50%"><br><br>
-	<div align="left">
-		<details><summary><b>What is DAIX?</b></summary>
-		DAIX is an elastic supply "rebasing" algorithmic stablecoin ―it adjusts to market conditions and maintains it's price at $1 by changing its circulating supply dynamically whenever someone presses the "BaseCannon" button on our Dapp.
-		</details>
-		<details><summary><b>What is DAOX?</b></summary>
-		DAOX is the governance token of Daibase Protocol. Holders of DAOX get to decide the future of Daibase via creating and voting on "proposals". DAOX can always be earned through one of our farms, partner programs or other ecosytem incentives.
-		</details>
-		<details><summary><b>How to<i>"mint"</i>DAIX?</b></summary>
-		There are 5 ways to mint DAIX tokens. Please use one of these methods:<ol>
-		<li>Visit the shopping section and enter the amounts you wish to buy.</li>
-		<li>Send some XDAI directly to the Daibase Contract address.</li>
-		<li>Call the <code>parti()</code> function on the Daibase contract.</li>
-		<li>Implement <code>interface IXD</code> in a smart contract to mint from within.</li>
-		<li>Use the <code>override parti()</code> function to mint DAIX to a different address.</li>
-		<li>Via the <code>interface IXD</code> from a smart contract, <code>override parti()</code> can delegate a mint to an E.O.A. or even another smart-contract.</li></ol>
-		Please note that:<ul></li>
-		<li>Use "Gas Limit" of 500000 (500k) when minting DAIX.</li>
-		<li>"Minting" doesn't have any fees.</li>
-		<li>"Minting" helps us increase the Protocol Controlled Value (PCV, a.k.a. "TVL").</li>
-		<li>The XDAI sent for minting gets locked forever into liquidity.</li>
-		<li>DON"T TRY TO "BUY DAIX" ― if you "buy" it, you will lose DAIX.</li></ul>
-		<b>ALWAYS "MINT" DAIX. NEVER BUY DAIX.</b>
-		</details>
-		<details><summary><b>How to buy DAOX?</b></summary>
-		DAOX is available at the leading DEXes of the blockchains. On xDAI Chain, DAOX can be swapped for DAIX at BaoSwap, HoneySwap, LevinSwap and Swapr.<br>
-		It could be possible to buy DAOX from honeyswap with XDAI, as it would simply route you through DAIX. This would mean your XDAI first buys DAIX from honeyswap and then that DAIX buys DAOX.
-		<br><b>This is NOT RECOMMENDED.</b><br>
-		Always "buy" DAIX from our Daibase smart contract direclty. Buying DAOX directly from the DEX is not a problem in itself. However, we should avoid buying DAIX from a DEX. For example, buying DAOX with XDAI could have resulted in buying DAIX from the DEX first.<br>
-You might ask, "Why someone should buy ('mint') DAIX from the contract instead of buying directly?"
-		</details>
-		<details><summary><b>Why someone should buy ('mint') DAIX from the contract instead of buying directly?</b></summary>
-	There are a few reasons:
-	<ol>
-		<li>Buying DAIX from honeyswap (or any DEX) is very expensive.
-		<ul>
-			<li>This incurs 1% transaction tax.</li>
-			<li>It incurs 0.3% trade fees.</li>
-			<li>If your trade gets 'routed through DAIX', honeyswap would charge you 1.3% extra for each 'hop'.</li>
-		</ul></li>
-		<li>Buying DAIX from the DEX incurs slippage.
-		<ul>
-			<li>if someone else is also trading in DAIX when you go to buy it on honeyswap, the amounts you receive might not be the ones expected by you. Other trades would influence the DAIX amounts you receive.</li>
-			<li>Direct minting DAIX helps in growing the PCV (Protocol Controlled Value)</li>
-			<li>This eases trading for future trades.</li>
-			<li>Helps to reduce slippage in future.</li>
-			<li>Makes for a bigger (de-)Central Bank Reserve (which is directly owned by all DAIX holders)</li>
-		</ul></li>
-		<li>Buying from the Daibase contract (by sending XDAI directly to its address, with gas limit 500k) is way more cheaper and efficient.
-		<ul>
-			<li>Incurs zero (0%) slippage losses.</li>
-			<li>Incurs zero (0%) trading fees.</li>
-			<li>Incurs zero (0%) transaction tax.</li>
-			<li>Fully predictable amounts of DAIX received.</li>
-			<li>Allows you to reset price back to $1 (optional― it's your wish, just need to press the "BaseCannon" button).</li>
-		</ul></li>
-		</ol>
-		So, if you want to buy DAOX, the best way is to:
-		<br>1. Send your XDAI to Daibase contract address directly. (Use gas limit of 500000)
-		<br>2. Use the DAIX received in step 1. above to buy DAOX from honeyswap.
-		<br>This method will be a lot, lot cheaper and give you a lot, lot more DAOX than buying with Native Coins (XDAI) at a DEX.
-		</details>
-		<details><summary><b>Which blockchains are supported?</b></summary>
-		As of now, Ropsten (testnet) and xDAI Chain (mainnet) version are supported.</details>
-		<details><summary><b>How often can we press the<i>"BaseCannon"</i>button?</b></summary>
-		On-Demand "bases" are a core tenet of Daibase Protocol. However, it's restricted to once in 50 blocks (about 4m10s on xDAI Chain, 12m30s on Ropsten) to prevent over-spamming.</details>
-		<details><summary><b>What is the<i>"rebase lag"</i>?</b></summary>
-		There is no lag. Lag is needed on blockchains like ETH where we need to prioritize gas savings.</details>
-		<details><summary><b>Is there a<i>"transaction tax"</i>?</b></summary>
-		A small fee of 1% is initially levied on each DAIX and DAOX transaction. The taxes collected are used by the KingMaker contract, if enabled, otherwise they're used to fund more farms or other ecosystem incentices, as dictated by the aixDAO by voting with their DAOX rights. The fees for DAIX are expected to be reduced as it's usage increases within smart-contracts.</details>
-		<details><summary><b>What is the<i>"KingMaker"</i>?</b></summary>
-		The KingMaker is a smart-contract that orchestrates an<i>on-chain open-auctioning</i> of transaction taxes generated by DAIX and DAOX. Anyone is allowed to bid with their native coins (XDAI) to contest for the right to drain all the treasures from this contract. The highest bidder is crowned as<i>"The Chosen One"</i> for 500000 blocks. Whenever someone makes a<i>"sacrifice"</i>8% greater than the previous<i>"Heir to DaiX"</i>, they ascend the throne as the new<i>Chosen One</i>. The reward is a huge, direct 1% from the whole of transaction volumes generated by DAIX and DAOX. After a "Heir" goes "unchallenged" through their "reign", the "sacrifice" resets to 0.001 Coins (XDAI).<br>
-		To keep an eye on the timers or make a sacrifice, visit the "Heir to DaiX" section!</details>
-		<details><summary><b>Where does the money bid into the KingMaker go?</b></summary>
-		The bids are used to fund even more farms, vaults, staking services, partner programs and other things mandated by the DAO. The KingMaker relieves the sell pressure at a single point and distributes it to the Heirs of DaiX.</details>
-		<details><summary><b>What is the use-case of Daibase?</b></summary>
-		Daibase Protocol at large aspires to serve as an alternate (De-)Central Bank. It issues 1 DAIX only when it is paid 1 DAI in advance by the issuer, and locks it into it's Protocol Controlled Value (PCV). The currency it issues (DAIX) can be used akin to a real-life cash-asset: For trading, purchasing, borrowing, lending, mortgaging, leveraging and releveraging, and for a multitude of other things as highlighted in the<b>Supplement - I</b>section of our Goldpaper (permalink:https://daibase.github.io/goldpaper).</details>
-		<details><summary><b>Are the DAIX collateralized?</b></summary>
-		No. DAIX are entirely<b>uncollateralized</b>. There is no promise of 1:1 backing of DAIX with DAI. However, if and when the DaixDAO decides to<i>"Dissolve the Reserves",</i>the P.C.V. backs the entire issuancce of DAIX outside the<i>"Cardinal Pair".</i><br>This kind of an event however rare, is possible, and ascertains an<i>implicit collateralization"</i>to DAIX.</details>
-		<br><br><br><br>
-	</div>
-Please note that this section is outdated and does not include developments that took place during March and April of 2021. A more detailed introduction, FAQ, docs and guides section will replace this page soon.
-</div>
-
-
-
-<div class="cu" id="d_laboratory">
-	<div style="font-size:1.25em" align="center">
-
-
-	<h3 align="center">Tester's Control Panel</h3>
-	MAKE SURE TO USE THE RIGHT NETWORK<br><br>
-
-	<input style="background:transparent; border-radius:10px;border: 5px dashed gold; width:70%;text-align: center;" id="ci" maxlength="42" value="0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987" placeholder="DAIX Contract"><br><button id="rb" onclick="gs()">Import</button>DAIX Contract<br>
-
-	<div align="center" style="font-size:0.7em;">
-		<span id="er"></span><br>
-		<div id="TCP">
-			<div class="statbox">
-				<div class="stat statnumb" id="i_n">Nameless</div>
-				<div class="stat statname">Full Name</div>
-			</div>
-			<div class="statbox">
-				<div class="stat statnumb" id="i_s">UNKNOWN</div>
-				<div class="stat statname">Token Symbol</div>
-			</div>
-			<div class="statbox">
-				<div class="stat statnumb" id="i_b">Nothing</div>
-				<div class="stat statname">Your Balance</div>
-			</div>
-			<div class="statbox">
-				<div class="stat statnumb" id="i_e">Timeless</div>
-				<div class="stat statname">Epochs Elapsed</div>
-			</div>
-			<div class="statbox">
-				<div class="stat statnumb" id="i_h">Zero</div>
-				<div class="stat statname">Base Block</div>
-			</div>
-			<div class="statbox">
-				<div class="stat statnumb" id="i_t">Uncountable</div>
-				<div class="stat statname">Total Supply</div>
-			</div>
-			<div class="statbox">
-				<div class="stat statnumb" id="i_x">Undefined</div>
-				<div class="stat statname">Tax per thousand</div>
-			</div>
-			<!--
-			Name : <span id="i_n"></span><br>
-			Symbol : <span id="i_s"></span><br>
-			Supply : <span id="i_t"></span><br>
-			Epoch : <span id="i_e"></span><br>
-			Height : <span id="i_h"></span><br>
-			Tax/Bn : <span id="i_x"></span><br>
-			-->
-		</div>
-	</div>
-	<br>
-
-	<button style="height:auto;font-size:1.5em" id="sb" onclick="s_s()">Synchronize</button>
-	<button style="height:auto;font-size:1.5em" class="bb" onclick="s_b()">BaseCannon</button><br>
-
-
-	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed purple; width:70%;text-align: center;" id="fab" maxlength="42" value="0xE0C50aC605b255EC2b02963f8DB2B9fbC3274402" placeholder="Some DAIX hodlr"><br><button id="fb" onclick="fb()">Check</button>someone's balance<br>
-	<span id="fabb"></span><br>
-
-
-	<br>
-	<input style="background:transparent; border-radius:10px;border: 5px dashed pink; width:70%;text-align: center;" id="ipb" maxlength="42" value="0x9ACBbFb21d854092B0325e7F27F2ad536f64C219" placeholder="Address of a Pair"><br><button id="fb" onclick="fpb()">Fetch</button>a pair's price<br>
-	<span id="fpbb"></span><br>
-
-	<h4>Scope of Testing</h4>
-	<div class="recentbox" style="text-align:left;font-size:0.81em">
-	The chief objective of the testing phase of Daibase Smart Contracts is to ensure seamless quality and provide valuable feedback for improvment prior to launching v1.0.0 of DAIX Contracts. The main testing platform will be the various Ethereum testnets (Kovan & Ropsten) with focus on post-Istanbul architecture compatibility.<br><br><b>DAIX is not a fork.</b><br><br>Nor does it use any previously deployed Economic model. All major features of Daibase are a product of direct innovation and hence we call it "An Experimental Decentralized Finance" project.Daibase's primary contract ("core") is an ERC20 standard compliant smart-contract. It is capable of orchestrating an Elastic Supply book-keeping for its various users<br><br> To ensure expected behaviour, we will test the following aspects and make sure of their accuracy and precision:<br><br>
-	<i>Please note that during testing of upto v0.1.37 contracts, we shall be treating ETH as if it were XDAI.<br>i.e. 1 ETH represents 1 XDAI.<br>The "ETH/DAIX" pair of Uniswap AMM\DEX will be referred to as the "First Pair".</i><br><br>
-	<b>Sending & Receiving DAIX tokens</b><br>
-	<li>Make sure the amount you send or receive is the amount that was transacted.</li>
-	<li>Check if the Block Explorer shows the correct amounts in the transaction details.</li>
-	<li>Inspect your wallet balance manually from the Explorer and Control Panel for a match with your wallet balance</li>
-	<li>Verify if the per trasaction tax is 1% of the amount sent by sender. The receiver would receive 99%</li>
-	<i>NOTE: There is no transaction tax for amounts smaller than 0.00000001 DAIX.</i><br><br>
-	<b>Adding and Removing Liquidity</b><br>
-	<li>Try to add and remove liquidity from any AMM of your choice.</li>
-	<li>Use partial or fractional amounts as well as 100% while testing.</li>
-	<li>Move around your L.P. Tokens</li>
-	<li>Redeem your liquidity from a different address.</li>
-	<i>NOTE: We will test with Uniswap (WETH, UNI, DAI) and Sushiswap (WETH, USDC, UNI) pairs initially. Anyone can list DAIX anywhere, but there might be some errors encountered, which can be resolved by calling the "SYNCHRONIZE" function that removes any such bugs ("k-errors"). For this method to be effective, each new pair will have to be added to the Smart Contract manually. This shall be decided by the DaixDAO voting at later stages post launch, or simply be recommended by the community prior launch at any of our Social channels (links below).</i>
-	<br><br>
-	<b>Swapping DAIX</b>
-	<li>Perform simple swaps: ETH to DAIX, DAIX to ETH.</li>
-	<li>Attempt Token to Token swaps: UNI to DAIX, DAIX to USDC, DAIX to DAI, etc.</li>
-	<li>Attempt multi-hop swaps, if possible: DAIX to UNI to USDC, UNI to DAI to DAIX, etc.</li>
-	<li>Attempt flash swaps, if possible: DAIX to UNI to USDC to DAIX, etc.</li>
-	<i>NOTE: Use a slippage of an additional 2% for each "hop" (due to the DAIX moving penalty of 2% on each move). A slippage tolerance of 3% to 5% is recommended. This was reduced from 2% to 1% starting v0.1.41.</i><br><br>
-	<b>Direct trustless buying (from DAIX Contract)</b><br>
-	<li>Send a small amount of ETH (0.0001) to the Token's contract address to get back an equivalent worth of DAIX tokens based on the current market price.</li>
-	<li>Try to "hit the BaseCannon" before making such a purchase to receive DAIX at a 1:1 price.</li>
-	<li>Attempt sending some ETH via a Smart Contract that is capable to recieve DAIX (Flashing), if possible.</li>
-	<i>NOTE: Read more about the "Need" of this mechanism in our<b><a href="">Goldpaper</a></b>and learn how Daibase is poised to become the b̶a̶c̶k̶b̶o̶n̶e̶ <b>Vertebrae of the Permissionless Future..</b><br>
-	DEV NOTE: This the default "receive()" method which generates an internal call to "parti()", which upon success returns an unsigned integer of 16 Bytes, representing the amount of DAIX sent to the caller, emitting the "Partied" event. If you are a buidlr, we welcome you to stack over and under us in your Legonomics.</i><br><br>
-	<b>Hit the BaseCannon</b>
-	<li>Push the "BaseCannon" button from the Control Panel, and sign the generated transaction. Doing this will create a new "Epoch" and "Synchronize" the Daibase Ecosytem on the respective chain.<br>Expected behaviour: At confirmation, the price in the "First Pair" would be restabilized to unity (1:1).</li>
-	<i>NOTE: Please note down your balance provided from the Control Panel, Explorer or Wallet. Additionally, note down the balances and reserves of the trading pairs. After the transaction succeeds, instantly compare and recheck if these numbers behave as per design. The balances will be sent more DAIX tokens if the price at the time of Stabilization is over unity. The converse will also hold, and the users would burn their tokens on account of setting the Ecosystem back to equilibrium (1 DAIX = 1 DAI).</i><br><br>
-	<b>Synchronize the Daibase Ecosytem</b>
-	<li>Pressing the "Synchronize" button from the Control Panel.</li>
-	<i>NOTE: This is useful if you are experiencing an unusual Swap error ("This seems to be an error with one of the Tokens your're using"/"k-error"/undefined/"Insufficient Output Token Amount"), pressing this button should resolve it.<br>Each call of BaseCannon also includes an internal call to Synchronize.</i><br>
-	<h3 align="center">Known Bugs</h3>
-	<b>"This seems to be a problem with one of the tokens you're swapping"</b>
-	It has been found that this situation can be solved by the below methods:
-	<ol>
-		<li>Increasing Slippage Tolerance to 3% or more depending on the number of "hops", or intermediary tokens traversed during your swap.</li>
-		<li>A slippage of 5% is enough to Add or Remove liquidity. Using 3% for simple ETH/DAIX pairs is ample.</li>
-		<li>Editing input and/or output amounts manually.</li>
-		<li>Removing excessive decimal parts and rounding the numbers.</li>
-		<li>Swapping in the opposite direction with near zero amounts.</li>
-		<li>Adding or removing liquidity.</li>
-		<li>Try a hard refresh (Ctrl-F5, CMD-F5 or Alt-Shift-R) and using a nearer but different amount.<li>
-<i>NOTE: This is a tricky error to overcome, and could depend on sheer luck. Almost all tokens with an elastic supply (or auto-burning features) experience this issue. Uniswap team hopes to resolve it in it's Uniswapv3 front-end wrapper. Advanced users can manually attempt a swap by directly interacting with a pair's smart contract. Otherwise atleast one or a combination of the above methods should cure this error.</i>
-	</ol>
-	<b>"Error: Undefined"</b>
-	Such a error arises if there's a disbalance in the pairs balances and the count of its reserves in its memory. This is common in newly listed pairs and can be cured by:
-	<ol>
-		<li>Making a "multi-hop" swap.</li>
-		<li>Executing a "flash" swap.</li>
-		<li>Having the pair contract added to the Daibase "core" smart contract.<br>This can be done only by the DaixDAO voting if DAIX has already launched.<br>Such a pair must have adequate liquidity to be eligible/adopted by the DAO because adding a new pair results in increased costs for each new epoch.</li>
-		<li>Hitting the BaseCannon can cure it sometimes.</li>
-		<li>Synchronizing also can solve this issue, and would be cheaper than creating a new Epoch.</li>
-	</ol>
-	<h3 align="center">Exceptions</h3>
-	<li>Don't send more than 10 Billion coins (ETH/XDAI/BNB/ONE,etc.) to the contract for a direct purchase or parti().</li>
-	<li>Don't hit the BaseCannon twice within 60 blocks (about 10 min. on Eth, 3-4 mins. on xDAI and Polygon, 2 min. on BSC and Tron, 84 secs. on Harmony, etc.).</li>
-	<i>NOTE: This limit is reduced to 4 Blocks during the testing phase.</i>
-	<li>"FAIL: OUT OF GAS"</li>
-	This can occur when sending native coins (XDAI/ETH/BNB/ONE/MATIC/TRX,etc.) to the DAIX Smart Contract. It happens due to MetaMask or other Wallets erroneously ascribing a "Gas Limit" of "21000". We suggest manually editing it to "500000" (Five hundred thousands) instead.
-	</div>
-	<h4>Current Versions</h4>
-	(Ordered as per recency.)
-	<br>
-	<b>v0.1.61 : Ropsten & xDAI Chain</b>
-	<pre>
-DAIX
-0x86D430f4F6389A7f15B5864F8BDbb55Ba8B9C013
-
-DAOX
-0x8fdD8c3053EFFDa8756d40B63b9F45ACaa4Bd0Ee
-(This contract was Depreciated and Burned)
-
-WXDAI
-0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d
-
-KiMaker
-Not Enabled
-
-Farm:DAOX-DAIX(LP)=>DAOX(Rewards)
-Not Created
-
-Ropsten - Uniswap:DAIX-DAI(LP)
-0xeDe60e3c83Bb7927188781bB5B675554Cb838151
-
-uniswap:DAOX-DAIX(LP)
-Not Created
-
-xDAI Chain - Swapr:DAIX-WETH(LP)
-0x9ACBbFb21d854092B0325e7F27F2ad536f64C219
-
-xDAI Chain - Swapr:DAOX-DAIX(LP)
-Not Created
-</pre>	<br>
-	</pre><br>
-	<br>
-	<h4>Recently Tested Versions</h4>
-	(Ordered as per recency.)
-	<br>
-	<b>v0.1.47(d) : Ropsten</b>
-	<pre>
-DAIX158
-0x86D430f4F6389A7f15B5864F8BDbb55Ba8B9C013
-
-DAOX158
-0x6d9e90Df6797d28583C98BC10AeBC6C49B3E77ee
-
-ercWETH
-0xc778417E063141139Fce010982780140Aa0cD5Ab
-
-KiMaker
-0x9cc7e64cD4c3ccBB7d4Cf1F7A0D3242D7035AF73
-
-Farm:DAOX-DAIX(LP)=>DAOX(Rewards)
-0x6dB739FF338F88D5db8788d0a6b64b6217fB9947
-
-uniswap:DAIX-WETH(LP)
-0x33608bC8aDf66a8dD54D9f2F66BE6250D5Fd1430
-
-uniswap:DAOX-DAIX(LP)
-0xc4351FA79d3808A810e25A9Dd6f4E47117fAf8e0
-</pre>	<br>
-	</pre><br>
-	<br>
-	<b>v0.1.47(d) : Ropsten</b>
-	<pre>
-DAIX47 0xe35C667f869DcA393e16141b66a2d83Fa892f320
-
-ercDAI 0xaD6D458402F60fD3Bd25163575031ACDce07538D
-
-KMaker 0x9cc7e64cD4c3ccBB7d4Cf1F7A0D3242D7035AF73
-
-uP:DAI 0x81F9A1cAF03fE84dEb913F98c33B9ecF3e2B6Cde
-</pre>	<br>
-	</pre><br>
-	<br>
-	<b>v0.1.46(d) : Ropsten</b>
-	<pre>
-DAIX46 0xb17Cd4aff17938a89A224ea93dFEd5c0FfAC3Dd8
-
-ercDAI 0xaD6D458402F60fD3Bd25163575031ACDce07538D
-
-KinMak none
-
-u/:DAI 0x856ab0F21F1A1dCAD630A87c4d1094a1aD6b9de9
-</pre>	<br>
-	</pre><br>
-	<br>
-	<b>v0.1.43 : Ropsten</b>
-	<pre>
-DAIX43 0x4E620EA3aBd2f042Caf2d1e661906D792bB20015
-
-KinMak none
-
-u/WETH 0xa81Aa84345043dfA24727724e4918ED1F36bCd23
-</pre>	<br>
-<br>
-	<b>v0.1.41 : Ropsten</b>
-	<pre>
-DAIX41 0xDa1939F962F204443dC0D6c041E1F67FFc2B9380
-
-KinMak 0xb326e41c5c7da7AD3bb9BDdA9c62E850ffdd3d3A
-
-u/WETH 0xD021020F3d6eDE94f07aa3b5F9802390BB3c9F46
-</pre>	<br>
-	<b>v0.1.40 : Ropsten</b>
-	<pre>
-DAIX40 0x18adb2264C802c0E3022036D477D5d55bdA7d5B4
-
-KinMak 0xaD3Ed38b64E795e61Ff0E2DF5a8803CCBbd53e39
-
-u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
-</pre>
-	<br><br>Below are detailed as follows:<br><br>
-	<pre>
-{version} : {Network}
-{DAIX Token contract}
-
-{KingMaker Contract}
-
-{WETH Uniswap}
-{UNI  Uniswap}
-{DAI  Uniswap}
-
-{WETH Sushiswap}
-{USDC Sushiswap}
-{UNI  Sushiswap}
-	</pre><br>
-	<b>v0.1.37 : Ropsten</b>
-	<pre>
-0xEC4658bC5A8C994FCe785d9Da707F70e66d9fb5A
-
-0x00Fcc7B1243a5b873751f7905Cf3693DB751775E
-0xb95fDc24067225b14A74FF053AC035162a70d168
-0xc95b55f931557801D6109F395A17D540b30087dD
-
-0x2eFfec1047f7795f7a83bA73Ec4ce0Fa081e1b04
-0xde5aB223e5DD542D4d9f6fCfB2C4C8c486399b2d
-0x7CdA68f364790CDf5913d67faee60F9b02A410d2</pre>
-	<b>v0.1.21 (r14) : Ropsten</b>
-	<pre>
-0x9b9a362B2cd407932Ce225aC4DbA170109E6e2C6
-
-0x095D094cc3C58b5979966a872C42382fdbB3852f
-0x682Bc44BCb5A5AB1Ec5796502f781A7b750Ae803
-
-0xE668B83AFC06672E4BA0014E92394DDD2C102D68</pre>
-
-	<b>v0.0.4 : Kovan</b>
-	<pre>
-0x1376BB93c4BCEd5e1d5D3517656775043E050482</pre>
-
-	Older versions can be found in the CHEF's wallet on Ropsten, Kovan, B.S.C. and Rinkeby.<br>
-
-
-	<br>
-	<h4>Addressbook</h4>
-	<pre>
-0xc778417E063141139Fce010982780140Aa0cD5Ab  WETH
-0x1f9840a85d5af5bf1d1762f925bdaddc4201f984  _UNI
-0xad6d458402f60fd3bd25163575031acdce07538d  _DAI
-0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f  U.F.
-0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D  U.R.
-0xd8db9b7a20a7716aC22c85518D0aFED1D8a851E8  CHEF
-	</pre>
-
-
-
-
-	</div>
-</div>
-
-<div class="cu" id="d_heir">
-	<div style="font-size:1.25em" align="center">
-		<h3>The Chosen Ones</h3>
-		Those who make the biggest sacrifices within the last 210000 blocks, get Crowned the legitimate Heir and receive 1% from each DAIX transaction!<br>
-		<img src="img/crown.svg" width="200px"><br>
-		<br><font size="7">The KingMaker is Disabled!</font><br>
-		<span id="heir_tco">Nobody yet</span> is <b>The Chosen One</b> on xDAI Chain!<br><br>
-		<div id="heir_new">
-			<div>
-			<img src="img/bag.svg" width="128px"><br>
-			To become The Chosen One, you must donate <span id="heir_sacrifice">1</span> XDAI to the <b>KingMaker</b> smart contract, 8% further than the previous sacrifices.
-			</div>
-			<div>
-			<img src="img/clock.svg" width="128px"><br>
-			Alternatively, you must await the present Chosen One to descend the throne at <span id="heir_clock">sometime within the next 210000 blocks.</span> .
-			</div>
-		</div>
-		<button style="font-size:1.5em" id="heir_pay" onclick="km_p()">Offer Sacrifice</button>
-		<button style="font-size:1.5em" id="heir_yield" onclick="km_y()">Conquer Coffer</button>
-		<br>Only <b>The Chosen One</b>, the legitimate heir to the Reserve Treasures of The DAIX, must press the button below, and be blessed with <span id="heir_purse">some DAIX</span>.<br><br>
-		<br><span style="font-size:0.75em">The King-Maker <span id="heir_kima"></span>'s wrath be cast unto those who fake 'Their identiticon!<br>Make sure thee useth gas limit 123456 to sacrifice to be crowned The Chosen One.</span>
-	</div>
-</div>
-
-
-<br><br>
-<div class="statbox">
-	<div class="stat statnumb">⚠ Important Notice!</div>
-	<div class="stat statname" style="font-size:1em">
-		DAIX and DAOX have been deployed to the xDAI Chain! A testnet version is available on Ropsten for developers at the same address. Head towards our<b><a href="https://t.me/daibase">Telegram group</a></b>to participate in the community discussions. Please use the control panel provided in the<b><a href="#d_laboratory" onclick="c('d_laboratory')">Laboratory</a> section.</b>
-		<br><div align="center"><b><a href="#d_shopping" onclick="c('d_shopping')">NEVER BUY DAIX FROM THE DEX!<br><br>Always "purchase", "mint", "parti" or "delegate" or "gift" <i>directly from the daibase smart contract</i> and get discounts.</a></b><br>Use Gas Limit of 500000 (half-million) while minting.</div>
-	</div>
-</div>
-
-<br><br>
-<hr style="padding:0;width:50%">
-
-<div style="text-align:center;"><b>[DISCLAIMER]</b>
-<br>There was never, and will be no "pre-sale".<br>
-There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.
-<br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.
-<br>DAIX Protocol is a highly experimental project and guarantees no profits. Please treat it as an experiment in Decentralized Finance instead of an investment opportunity.
-<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.<br><br>
-<b>[PRIVACY POLICY]</b>
-<br>We dont log anything. We run serverless. Your blockchain interactions stay in your own browser. There are no trackers, no data analytics or any other profilers on this website.<br><br>
-<b>[MIRRORS]</b><br>
-In event this webpage is unavailable, please visit us via the below links. Our contracts are available via the various blockchain explorers and can be found documneted in the addressbook.<br><br>
-<b><a href="https://daibase.org" target="_blank">daibase.org</a></b><br>
-<b><a href="https://daibase.github.io" target="_blank">daibase.github.io</a></b><br>
-<b><a href="https://daibase.github.io" target="_blank">[].onion.to</a></b><br>
-<b><a href="https://daibase.github.io" target="_blank">[].ipfs.to</a></b><br>
 </div>
 <br>
-
-<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.61(m)<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
-<div align="center">
-<pre>DAIX Smart Contract
-0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987
-
-Available on:
-xDAI Chain (ID:100) and Ropsten (ID:3)</pre>
+<hr>
+<h2 align="center">FantomScan</h2>
+<div class="mainpanels" align="center">
+	<div class="mainpanel">
+		<h4>Check FTM Balance</h4>
+		<input id="ibf" placeholder="Enter Address"><br>
+		<button onclick="fbf(ibf.value)"> ▶</button>
+		<br><br>
+		<span id="sbf"></span>
+	</div>
+	<div class="mainpanel">
+		<h4>Check Transaction Status</h4>
+		<input id="its" placeholder="Transaction Hash"><br>
+		<button onclick="fts(its.value)"> ▶</button>
+		<br><br>
+		<span id="sts"></span>
+	</div>
+	<div class="mainpanel">
+		<h4>Check Token Balance</h4>
+		<input id="ibtt" placeholder="Token's Address">
+		<br><input id="ibth" placeholder="Holder's Address"><br>
+		<button onclick="fbt(ibtt.value,ibth.value)"> ▶</button>
+		<br><br>
+		<span id="sbt"></span>
+	</div>
+	<div class="mainpanel">
+		<h4>Check Allowances</h4>
+		<input id="icat" placeholder="Token's Address"><br>
+		<input id="icao" placeholder="Owner's Address"><br>
+		<input id="icas" placeholder="Spender's Address"><br>
+		<button onclick="fca(ica.value)"> ▶</button>
+		<br><br>
+		<span id="sca"></span>
+	</div>
 </div>
+<hr>
+<br>
+<br>
 <div align="center">
-<a href="https://twitter.com/daibased" target="_blank">Twitter</a>
-<a href="https://discord.gg/VU8NHdmYu6" target="_blank">Discord</a>
-<a href="https://t.me/daibase" target="_blank">Telegram</a>
+<pre>$ELITE
+0xf43Cc235E686d7BC513F53Fbffb61F760c3a1882</pre>
+<a href="https://ftmscan.com/token/0xf43cc235e686d7bc513f53fbffb61f760c3a1882" target="_blank"><button>ftmScan</button></a>
+<a href="https://app.sushi.com/#/swap?outputCurreny=0xf43cc235e686d7bc513f53fbffb61f760c3a1882" target="_blank"><button>Sushi</button></a>
+<a href="https://spookyswap.finance/#/swap?outputCurreny=0xf43cc235e686d7bc513f53fbffb61f760c3a1882" target="_blank"><button>Spooky</button></a><br><br>
+<h2><a href="https://ftm.guru">FTM.guru</a></h2>
+<h3><a href="https://t.me/FTM1337">t.me/FTM1337</a></h3>
 </div>
-<div align="center">
-<a href="https://forum.1hive.org/u/daibase" target="_blank">1Hive</a>
-<a href="https://github.com/daibase" target="_blank">Github</a>
-<a href="https://daibase.medium.com" target="_blank">Medium</a>
-</div>
-
-
-
 <script src="web3.min.js"></script>
 <script>
+window.addEventListener('load',function()
+{
+	if(window.ethereum){web3 = new Web3(web3.currentProvider);}
+	else{web3 = new Web3("https://rpc.ftm.tools")}
+}, false);
 function $(_) {return document.getElementById(_);}
-function c(u)
-{
-	u=$(u);
-	a=document.getElementsByClassName("cu");
-	for(let aa=0;aa< a.length;aa++)
-		{a[aa].style.display="none"}
-	u.style.display="block";
-}
-function theme()
-{
-	$("theswi").innerHTML=$("theswi").innerHTML=="\\o/"?"Zz.":"\\o/";
-	$("ss").getAttribute("href")=="a.css"?$("ss").setAttribute("href","b.css"):$("ss").setAttribute("href","a.css");
-}
-window.addEventListener('load',
-	function()
-	{
-		if(!window.ethereum){$("er").innerHTML=("Please use a web3-enabled browser / Metamask");}
-		else{web3 = new Web3(web3.currentProvider);gs();}
-	}, false);
-var abi = [
-	{
-		"inputs": [],
-		"name": "allpairssync",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "guy",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "basecanon",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "lastepoch",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "lastheight",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "taxperk",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "kingmaker",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "PCVC",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "allpairs",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "allpairslength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
-//above is perma
-var KMA;
-function gs()
-{
-	try
-	{
-		var conAdd = $("ci").value;
-		theCon = new web3.eth.Contract(abi, conAdd);
-		theCon.methods.name().call((e, r) => {$("i_n").innerHTML = r});
-		theCon.methods.symbol().call((e, r) => {$("i_s").innerHTML = r;$("shop_S").innerHTML = r});
-		theCon.methods.totalSupply().call((e, r) =>{$("i_t").innerHTML = r/1e18 + "DAIX"});
-		theCon.methods.taxperk().call((e, r) => {$("i_x").innerHTML = r+" ("+r/1e3*1e2+"%)"});
-		theCon.methods.lastheight().call((e, r) => {$("i_h").innerHTML = r});
-		theCon.methods.lastepoch().call((e, r) => {$("i_e").innerHTML = r});
-		theCon.methods.kingmaker().call((e, r) =>
-		{
-			$("heir_kima").innerHTML = r;
-			KMA=r;
-			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});
-			km_d();
-		});
-		//farms be dead man
-		//refreshFarm();//for farm#1
-		refreshDash();
-		cmdr();
-		window.web3.eth.getBalance(window.ethereum.selectedAddress).then(a=>{$("shop_ethbal").innerHTML=a/1e18});
 
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-function s_b()
-{
-	try
-	{
-		var conAdd = $("ci").value;
-		theCon = new web3.eth.Contract(abi, conAdd);
-		theCon.methods.basecanon().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r);}).then((c)=>{console.log(c);gs();});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-function s_s()
-{
-try
-	{
-		var conAdd = $("ci").value;
-		theCon = new web3.eth.Contract(abi, conAdd);
-		theCon.methods.allpairssync().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-function fb()
-{
-try
-	{
-		var conAdd = $("ci").value;
-		theCon = new web3.eth.Contract(abi, conAdd);
-		theCon.methods.balanceOf($("fab").value).call((e, r) => {$("fabb").innerHTML = r/1e18 +"DAIX"});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-async function fpb()
-{
-		var conAddBal;
-		var pairAddBal;
-try
-	{
-		var conAdd = $("ci").value;
-		theCon = new web3.eth.Contract(abi, conAdd);
-		await theCon.methods.balanceOf($("ipb").value).call((e, r) => {conAddBal=Number(r);$("fpbb").innerHTML=`Balance: ${(conAddBal)/1e18+"DAIX"}<br>`;});
-		var pairAdd = $("ipb").value;
-		thePC = new web3.eth.Contract(PA, pairAdd);
-		await thePC.methods.getReserves().call((e, r) => {pairAddBal=r;$("fpbb").innerHTML+=
-			`<br>Reserves
-			<br>Asset : ${Number(pairAddBal[0])/1e18}
-			<br>Base : ${Number(pairAddBal[1])/1e18}
-			<br>Prices
-			<br>Rate : ${Number(pairAddBal[0])/Number(pairAddBal[1])}
-			<br>Price : ${Number(pairAddBal[1])/Number(pairAddBal[0])}`;});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-function km_d()
-{
-	KMC = new web3.eth.Contract(KM, KMA);
-	KMC.methods.sacrifice().call((e, r) =>{$("heir_sacrifice").innerHTML = r/1e18*1.09});
-	KMC.methods.clock().call((e, r) => {(web3.eth.getBlock(r)).then(t => {$("heir_clock").innerHTML=(new Date(t.timestamp*1e3+60000))})});//60k for 4blocks
-	KMC.methods.TheChosenOne().call((e, r) =>{$("heir_tco").innerHTML =typeof(r)=="undefined"?"Nobody yet": r});
-}
-function km_y()
-{
-	KMC = new web3.eth.Contract(KM, KMA);
-	KMC.methods.Yield().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r);}).then((c)=>{console.log(c);gs();});
-}
-function km_p()
-{
-	KMC = new web3.eth.Contract(KM, KMA);
-	KMC.methods.sacrifice().call((e, r) =>
-	{
-		web3.eth.sendTransaction
-		({
-			from: window.ethereum.selectedAddress,
-			to: KMA,
-			value: (Math.floor(r*1.09)+1)
-		})
-		.then((c)=>{console.log(c);gs();});
-	});
-}
-async function wc()
-{
-	await window.ethereum.enable();
-	$("ua").innerHTML= window.ethereum.selectedAddress + " is connected on " + _n() + " Network.";
-	var conAdd = $("ci").value;
-	theCon = new web3.eth.Contract(abi, conAdd);
-	theCon.methods.balanceOf(window.ethereum.selectedAddress).call((e, r) =>{$("i_b").innerHTML = r/1e18 + "DAIX"});
-	$("cb").style.display="none";
-	gs();
-}
-function _n()
-{
-	switch(window.ethereum.networkVersion+"#"+window.ethereum.chainId)
-	{
-		case "1#0x1": return "Ethereum Mainnet";
-		case "1#0x2": return "Expanse";
-		case "3#0x3": return "Ropsten Testnet";
-		case "4#0x4": return "Ethereum Testnet Rinkeby";
-		case "5#0x5": return "Ethereum Testnet Görli";
-		case "56#0x38": return "Binance Smart Chain";
-		case "42#0x2a": return "Ethereum Testnet Kovan";
-		case "99#0x63": return "POA Network Core";
-		case "100#0x64": return "xDAI Blockchain";
-		case "137#0x89": return "Matic Mainnet";
-	}
-}
-var PA=[
-{
+ab1=[
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "allowance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "balanceOf",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "decimals",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "factory",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [],
     "name": "getReserves",
     "outputs": [
-        {
+      {
         "internalType": "uint112",
         "name": "_reserve0",
         "type": "uint112"
-        },
-        {
+      },
+      {
         "internalType": "uint112",
         "name": "_reserve1",
         "type": "uint112"
-        },
-        {
+      },
+      {
         "internalType": "uint32",
         "name": "_blockTimestampLast",
         "type": "uint32"
-        }
+      }
     ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
-},
-{
-	"inputs": [
-		{
-			"internalType": "address",
-			"name": "guy",
-			"type": "address"
-		}
-	],
-	"name": "balanceOf",
-	"outputs": [
-		{
-			"internalType": "uint256",
-			"name": "",
-			"type": "uint256"
-		}
-	],
-	"stateMutability": "view",
-	"type": "function"
-},
-{
-	"constant": true,
-	"inputs": [],
-	"name": "totalSupply",
-	"outputs": [
-		{
-			"name": "",
-			"type": "uint256"
-		}
-	],
-	"payable": false,
-	"stateMutability": "view",
-	"type": "function"
-},
-{
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_token0",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_token1",
+        "type": "address"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [],
-    "name": "token0",
+    "name": "symbol",
     "outputs": [
-        {
-        "internalType": "address",
+      {
+        "internalType": "string",
         "name": "",
-        "type": "address"
-        }
+        "type": "string"
+      }
     ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
-},
-{
+  },
+  {
     "constant": true,
     "inputs": [],
-    "name": "token1",
+    "name": "name",
     "outputs": [
-        {
-        "internalType": "address",
+      {
+        "internalType": "string",
         "name": "",
-        "type": "address"
-        }
+        "type": "string"
+      }
     ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
-}
+  }
 ];
-function s_i()
+async function fbt(t,h)
 {
-	$("shop_trade").disabled=$("shop_in").validity.badInput?true:false;
-	thePC = new web3.eth.Contract(PA, pairadd);
-	thePC.methods.getReserves().call((e, r) =>
-	{
-		rc=Number(r[0]);rd=Number(r[1]);
-		$("shop_out").value=$("shop_in").value*(rc/rd);
-		coin=$("shop_out").value*1e18;
-		dx=$("shop_in").value*1e18;
-		dso = rd - (rc*rd)/(rc+coin);
-		$("shop_d").innerHTML=(dx/dso-1)*100+1.3; //Manually set here (0.3 Trade fee + 1% tranaction tax)
-
-	});
+	C=new web3.eth.Contract(ab1,t);
+	s="";b=0;
+	await C.methods.symbol().call((e,r)=>{s=r});
+	await C.methods.balanceOf(h).call((e,r)=>{b=r})
+	$("sbf").innerHTML=(Number(b)/1e18).toFixed(8)+" "+s;
 }
-function s_t()
+async function fbt(t,h)
 {
-	var CA = $("ci").value;
-	$("shop_w").innerHTML="Please await 2 blocks for confirmation…"
-	web3.eth.sendTransaction
-		({
-			from: window.ethereum.selectedAddress,
-			to: CA,
-			value: (Math.floor($("shop_out").value*1e18))
-		})
-		.then((o)=>
-		{
-			console.log(o);
-			gs();
-			a=o.logs[o.logs.length-1].data.split("0x")[1];
-			$("shop_rx").innerHTML="Bought "+Number("0x"+a.substr(64*2,64))/1e18+" DAIX for "+Number("0x"+a.substr(64*0,64))/1e18+" Coins<br>"+
-			//"<b><a href='>"+"View on Explorer</a><b>"
-			"<b>Transaction Hash: <pre>"+o.transactionHash+"</pre><hr style='padding:0;width:25%'>"+
-			$("shop_rx").innerHTML;$("shop_w").innerHTML=""});
+	C=new web3.eth.Contract(ab1,t);
+	s="";d=0;b=0;
+	await C.methods.decimals().call((e,r)=>{d=r});
+	await C.methods.symbol().call((e,r)=>{s=r});
+	await C.methods.balanceOf(h).call((e,r)=>{b=r})
+	$("sbt").innerHTML=(Number(b)/10**Number(d)).toFixed(8)+" "+s;
 }
-KM=[
-	{
-		"inputs": [],
-		"name": "Yield",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "clock",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "sacrifice",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "TheChosenOne",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
-
-async function refreshDash()
+async function fca(t,s,o)
 {
-	//ee,tvl,vlf,pcv,ap,cs,ts,mc,fd,tr
-	ap = [];
-	bpa=[];
-	CP=1;
-	pctl = 1
-	l055 = 1
-	tr=0
-	var tc = new web3.eth.Contract(abi, db1DAIX);
-	await tc.methods.allpairslength().call((e,r)=>{al = Number(r)});
-	//$("db_al") = al;
-	for (i=0;i< al;i++){ap.push(await tc.methods.allpairs(i).call((e,r)=>{return r}))}
-	for (i=0;i< al;i++){bpa.push(await tc.methods.balanceOf(ap[i]).call((e,r)=>{return Number(r)}))}
-	bdep = await tc.methods.balanceOf(depDAIX).call((e,r)=>{return r});
-	ee = await tc.methods.lastepoch().call((e,r)=>{return r});
-	$("db_ee").innerHTML = ee;
-	ts = await tc.methods.totalSupply().call((e,r)=>{return r});
-	$("db_ts").innerHTML = (ts/1e18).toLocaleString();
-	var pc = new web3.eth.Contract(PA,pairadd);
-	cpr=await pc.methods.getReserves().call((e,r)=>{CP=(r[1]/r[0])})
-	//vlf=liquidity owned by zero address (NOT THE "_burn", but the "BURN"), 1564076957032043536444 at 10:55 of sun9ma21 (yes, it was a l055)
-	await pc.methods.totalSupply().call((e,r)=>{pctl=r})
-	await pc.methods.balanceOf('0x0000000000000000000000000000000000000000').call((e,r)=>{l055=r})
-	vlf = cpr[1]*CP*2/pctl*l055;
-	$("db_vlf").innerHTML = "$ "+(vlf/1e18).toLocaleString();
-	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
-	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
-	$("db_ap").innerHTML = "$ "+CP.toFixed(6);
-	cs=ts-2021e18//but grav
-	$("db_cs").innerHTML = (cs/1e18).toLocaleString();
-	mc=cs*CP;
-	fd=CP*ts;
-	$("db_mc").innerHTML = "$ "+(mc/1e18).toLocaleString();
-	$("db_fd").innerHTML = "$ "+(fd/1e18).toLocaleString();
-	pcvca=0;
-	for(i=0;i<al;i++)
-	{
-		if(ap[i])
-		{
-			_b=1;_t=1;_0=1;_1=1;_d=bpa[i];_pcvca=0;
-			pr=new web3.eth.Contract(PA,ap[i]);
-			await pr.methods.totalSupply().call((e,r)=>{_t=Number(r)})
-			await pr.methods.balanceOf(PCVC).call((e,r)=>{_b=Number(r)})
-			_pcvca=_b/_t*_d;
-			pcvca+=2*_pcvca;
-		}
-	}
-	$("db_pcv").innerHTML = "$ "+(pcvca*CP/1e18).toLocaleString();
-	//tvl = sum of all liq. but denoted in $,
-	//we can count 2x DAI, but small pools are unbalanced,
-	//so we count the DAIX in pools,
-	//multiplied with Card Price
-	//DAIX Locked; TVL=tvl*2
-	//(DAIX+DAI)
-	tvl=0;
-	for(i=0;i< al;i++){tvl+=Number(bpa[i])}
-	$("db_tvl").innerHTML="$ "+(2*tvl*CP/1e18).toLocaleString();
-	cr=(2*tvl/cs);
-	$("db_cr").innerHTML=cr.toLocaleString();
-	sd="$ "+((cs-2*tvl)/1e18).toLocaleString();
-	$("db_sd").innerHTML = sd;
-	tr=(bdep-2021e18)*CP/1e18;
-	$("db_tri").innerHTML = "$ "+tr.toLocaleString();
-	$("db_tro").innerHTML = "$ "+0;
-	$("rev_d").innerHTML = "$ "+tr.toLocaleString();
+	C=new web3.eth.Contract(ab1,t);
+	s="";d=0;b=0;
+	await C.methods.decimals().call((e,r)=>{d=r});
+	await C.methods.symbol().call((e,r)=>{s=r});
+	await C.methods.allowance(o,s).call((e,r)=>{b=r})
+	$("sca").innerHTML=(Number(b)/10**Number(d)).toFixed(8)+" "+s;
 }
-farabi=[
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "earned",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "uniswapTokenExchange",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "rewards",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "DURATION",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdraw",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "notifyRewardAmount",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "getReward",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardRate",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "lastTimeRewardApplicable",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "userRewardPerTokenPaid",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "stake",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "lastUpdateTime",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardPerToken",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "tradedToken",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardPerTokenStored",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "exit",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "periodFinish",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"name": "_uniswapTokenExchange",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "reward",
-				"type": "uint256"
-			}
-		],
-		"name": "RewardAdded",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "user",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "Staked",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "user",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "Withdrawn",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "user",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "reward",
-				"type": "uint256"
-			}
-		],
-		"name": "RewardPaid",
-		"type": "event"
-	}
-];
-
-function farm_1_f_approve()
+function fbf(h)
 {
-	try
-	{
-		var conAdd = pairadd;
-		theCon = new web3.eth.Contract(abbrove, conAdd);
-		theCon.methods.approve(f_1_add,"999999999999999999999999999999").send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
-	}
-	catch(e){$("er").innerHTML=e;}
+	web3.eth.getBalance(h).then(r=>$("sbf").innerHTML=(Number(r)/1e18).toFixed(8)+" FTM")
 }
-
-function farm_1_f_chappro()
+async function fts(t)
 {
-	try
-	{
-		var conAdd = pairadd;
-		theCon = new web3.eth.Contract(abbrove, conAdd);
-		theCon.methods.allowance(window.ethereum.selectedAddress,f_1_add).call
-		(
-			{from:window.ethereum.selectedAddress},(e, r) =>
-			{
-				console.log(r);
-				if(Number(r)>0)
-				{
-					$("farm_1_approved").value="Approved";
-					$("farm_1_approval").disabled=true;
-					$("farm_1_after").style.display="block";
-				}
-				else
-				{
-					$("farm_1_approved").value="Not Approved";
-					$("farm_1_approval").disabled=false;
-					$("farm_1_after").style.display="none";
-				}
-			}
-		);
-	}
-	catch(e){$("er").innerHTML=e;}
+	web3.eth.getTransactionReceipt(t).then(r=>$("sts").innerHTML=r==null?"Not found!":r)
 }
-
-function farm_1_f_deposit()
-{
-	try
-	{
-		var conAdd = f_1_add;
-		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.stake(String(Number($("farm_1_input_deposit").value)*1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-
-function farm_1_f_claim()
-{
-	try
-	{
-		var conAdd = f_1_add;
-		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.getReward().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-
-function farm_1_f_withdraw()
-{
-	try
-	{
-		var conAdd = f_1_add;
-		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.withdraw(String(Number($("farm_1_input_withdraw").value)*1e18)).send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-
-function farm_1_f_exit()
-{
-	try
-	{
-		var conAdd = f_1_add;
-		theCon = new web3.eth.Contract(farabi, conAdd);
-		theCon.methods.exit().send({from:window.ethereum.selectedAddress},(e, r) => {console.log(r)}).then((c)=>{console.log(c);gs();});
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-
-function refreshFarm()
-{
-	try
-	{
-		farm_1_f_chappro();
-
-		theCon = new web3.eth.Contract(farabi, f_1_add);
-		theCon.methods.earned(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_claim").value=Number(r)/1e18;$("farm_1_s_claim_e").value=Number(r)/1e18});
-		theCon.methods.balanceOf(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_withdraw").innerHTML=Number(r)/1e18;$("farm_1_s_claim_s").value=Number(r)/1e18});
-
-		the2 = new web3.eth.Contract(abi, pairadd);
-		the2.methods.balanceOf(window.ethereum.selectedAddress).call({from:window.ethereum.selectedAddress},(e, r) => {$("farm_1_s_deposit").innerHTML=Number(r)/1e18});
-
-	}
-	catch(e){$("er").innerHTML=e;}
-}
-
-async function cmd(i)
-{
-	x=[5,6];//for base : list in pi
-	var pc=new web3.eth.Contract(PA,pi[i]);
-	await pc.methods.getReserves().call((e,r)=>{
-		if(x.indexOf(i)==-1){a=Number(r[0]);b=Number(r[1]);}
-		else{a=Number(r[1]);b=Number(r[0]);}
-		p=b/a;l=2*b/1e18;
-		$("t_swap_1_p_"+(i+1)).innerHTML="$"+p.toLocaleString();
-		$("t_swap_1_l_"+(i+1)).innerHTML="$"+l.toLocaleString();
-		//console.log(r,i,p,l);
-	})
-}
-
-function cmdr()
-{
-	for (i=0;i< pi.length;i++)
-	{
-		if(pi[i]) {cmd(i)}
-	}
-}
-
-abbrove=[{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "spender",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "allowance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}];
-
-f_1_add = "0x6dB739FF338F88D5db8788d0a6b64b6217fB9947";
-pairadd = "0x9ACBbFb21d854092B0325e7F27F2ad536f64C219";
-db1DAIX = "0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987";
-depDAIX = "0xE0C50aC605b255EC2b02963f8DB2B9fbC3274402";
-pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","0x634a571b537a466f15a8c8f660d685340543878f","0xe9cd05E4DB6fa0F0C594A1a6CD7ed85e35522508","0xc1cfd03efc95e7d922ecfe60820c506408bd998e","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219","0xbba341efc430c641c16de4940b8eab1cfdc4abfe","0xf7f65a2fa87630e6df0c9b2707cf188ee7b2fac0"];
-
 </script>
 </html>
