@@ -1524,7 +1524,7 @@ function theme()
 window.addEventListener('load',
 	function()
 	{
-		if(window.ethereum&&Number(window.ethereum.chainId)==100)){web3 = new Web3(web3.currentProvider);}
+		if(window.ethereum&&(Number(window.ethereum.chainId)==100)){web3 = new Web3(web3.currentProvider);}
 		else{web3 = new Web3("https://rpc.xdaichain.com")}
 		gs();
 	}, false);
