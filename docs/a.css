@@ -53,6 +53,8 @@ width:60%
 }
 #exploreus{display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center;font-weight: bolder}
 
+#chonet{display: grid;grid-template-columns: auto;font-size:1em;text-align: center;font-weight: bolder}
+
 #topper_explore_img{width: 64px;position:absolute;top:10px;left:20px;border-radius:32%}
 
 #TCP{display:grid;grid-template-columns: auto;border-radius:15px;}
@@ -120,8 +122,12 @@ a{color: #247}
 		display:grid;grid-template-columns: auto auto;border-radius:15px;}
 	#d_base_s1{
 		display:grid;grid-template-columns: auto auto;}
-#d_base_s1_2{
-    font-size: 2.4vw;text-align: right; position: absolute;right:20%;border-left:1px dashed white;}
+	#d_base_s1_2{
+		font-size: 2.4vw;text-align: right; position: absolute;right:20%;border-left:1px dashed white;}
+	#chonet{
+		display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center;font-weight: bolder}
+	#chonet img{
+		width: 256px}
 }
 
 @media(max-width:481px){
