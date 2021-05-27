@@ -127,7 +127,7 @@ a{color: #247}
 	#chonet{
 		display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center;font-weight: bolder}
 	#chonet img{
-		width: 256px}
+		width: 200px}
 }
 
 @media(max-width:481px){
