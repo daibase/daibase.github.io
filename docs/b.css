@@ -130,7 +130,7 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 	#chonet{
 		display: grid;grid-template-columns: auto auto auto;font-size:1em;text-align: center;font-weight: bolder}
 	#chonet img{
-		width: 200px}
+		height: 200px}
 }
 
 @media(max-width:481px){
