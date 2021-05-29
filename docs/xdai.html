@@ -1393,7 +1393,7 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 <br><br>
 <hr style="padding:0;width:50%">
 
-<div style="text-align:center;"><b>[DISCLAIMER]</b>
+<div id="disclaimer" style="text-align:center;"><b>[DISCLAIMER]</b>
 <br>There was never, and will be no "pre-sale".<br>
 There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.
 <br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.
@@ -1431,7 +1431,7 @@ xDAI (Chain ID:100)</pre>
 
 
 <script src="web3.min.js"></script>
-<script>
+<script>da
 window.location="#d_base";
 function $(_) {return document.getElementById(_);}
 function c(u)
@@ -1447,8 +1447,7 @@ function theme()
 	$("theswi").innerHTML=$("theswi").innerHTML=="☼"?"☽":"☼";
 	$("ss").getAttribute("href")=="a.css"?$("ss").setAttribute("href","b.css"):$("ss").setAttribute("href","a.css");
 }
-theme()
-window.addEventListener('load',
+if(Math.trunc(Math.random()*1000)%2){theme()}window.addEventListener('load',
 	function()
 	{
 		if(window.ethereum&&(Number(window.ethereum.chainId)==100)){web3 = new Web3(web3.currentProvider);}
@@ -1644,7 +1643,8 @@ function gs()
 		{
 			$("heir_kima").innerHTML = r;
 			KMA=r;
-			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});
+			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});theme()
+
 			km_d();
 		});
 		//farms be dead man
