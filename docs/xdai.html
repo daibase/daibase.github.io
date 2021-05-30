@@ -59,20 +59,26 @@ $COIL:
 <div id="topper">
 	<div id="topper_explore">
 		<a href="#d_base" onclick="c('d_base')"><img id="topper_explore_img" src="img/daix.svg"><!--++<br>++--></a>
-	</div>
-	<div id="topper_links"><!--
+	</div><!--
+	<div id="topper_links">
 		<a href="https://discord.gg">Discord</a>
-		<a href="https://t.me/daibase">Telegram</a>-->
-		<div id="theswi" onclick="theme()">☼</div>
-	</div>
+		<a href="https://t.me/daibase">Telegram</a>
+		<div id="theswi" onclick="theme()">☀</div>
+	</div>-->
+	<div></div>
 	<div id="topper_logo">
-		<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span>Daibase<!--🟢-->
-		<br><pre>v0.1.61(m)</pre>
+		Daibase Protocol<!--🟢-->
+		<br><span id="theswi" onclick="theme()">☀</span><code>v0.1.61(m)</code>
 	</div>
+	<div></div>
+	<div></div>
+	<div>
+	<span id="ua">You're Not Connected.</span><br>
+	<b><button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button></b>
+	</div>
+	<div></div>
+	<div></div>
 </div>
-
-<span id="ua">You're Not Connected.</span><br>
-<b><button id="cb" style="font-size:1.2em" onclick="wc()">Connect Wallet</button></b>
 <br>
 
 <br><br>
@@ -1444,10 +1450,11 @@ function c(u)
 }
 function theme()
 {
-	$("theswi").innerHTML=$("theswi").innerHTML=="☼"?"☽":"☼";
+	$("theswi").innerHTML=$("theswi").innerHTML=="☀"?"🌙":"☀";
 	$("ss").getAttribute("href")=="a.css"?$("ss").setAttribute("href","b.css"):$("ss").setAttribute("href","a.css");
 }
-if(Math.trunc(Math.random()*1000)%2){theme()}window.addEventListener('load',
+if(Math.trunc(Math.random()*1000)%2){theme()}
+window.addEventListener('load',
 	function()
 	{
 		if(window.ethereum&&(Number(window.ethereum.chainId)==100)){web3 = new Web3(web3.currentProvider);}
