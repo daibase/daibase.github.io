@@ -55,7 +55,7 @@ $COIL:
 <head>
 <link rel="shortcut icon" href="img/daix.svg" />
 </head>
-<link rel="stylesheet" id="ss" type="text/css" href="a.css">
+<link rel="stylesheet" id="ss" type="text/css" href="b.css">
 <div id="topper">
 	<div id="topper_explore">
 		<a href="#d_base" onclick="c('d_base')"><img id="topper_explore_img" src="img/daix.svg"><!--++<br>++--></a>
@@ -205,10 +205,10 @@ $COIL:
 	<div style="font-size:1.25em" align="center">
 	Buying directly from the shop offers big discounts and avoids slippage loss at Automated Market Making Decentralized Exchanges.<br><br>
 
-		<div style="border:2px solid orange; border-radius:5px" align="center">
-			Current Balance:<br><span id="shop_ethbal">?</span><br>
+		<div id="shoppingcenter" align="center">
+			Current Balance:<br><span id="shop_ethbal">Disonnected<br><i onclick="wc()">Please connect wallet</i></span><br><br>
 			<input id="shop_in" type="number" step="0.001" length="9" oninput="s_i()" style="color:black" placeholder="DAIX Desired…" value=""><br>
-			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"><br>
+			<input id="shop_out" style="color:black" placeholder="Coins expended" disabled="true"><br><br>
 			<button id="shop_trade" style="font-size:1.2em" onclick="s_t()">Buy <span id="shop_S"></span> now!</button>
 			<br>Discount Offered:<br><span id="shop_d">?</span>%
 			<br><br><span id="shop_w" style="font-size:0.75em"></span><span id="shop_rx" style="font-size:0.75em"></span>
@@ -1397,45 +1397,64 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 </div>
 
 <br><br>
-<hr style="padding:0;width:50%">
 
-<div id="disclaimer" style="text-align:center;"><b>[DISCLAIMER]</b>
-<br>There was never, and will be no "pre-sale".<br>
-There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens.
-<br>Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions.
-<br>DAIX Protocol is a highly experimental project and guarantees no profits. Please treat it as an experiment in Decentralized Finance instead of an investment opportunity.
-<br>All information given here or from any other "official" sources are only for educational purposes and <b>does not constitute of financial advice</b> of any order.<br><br>
-<b>[PRIVACY POLICY]</b>
-<br>We dont log anything. We run serverless. Your blockchain interactions stay in your own browser. There are no trackers, no data analytics or any other profilers on this website.<br><br>
-<b>[MIRRORS]</b><br>
-In event this webpage is unavailable, please visit us via the below links. Our contracts are available via the various blockchain explorers and can be found documneted in the addressbook.<br><br>
-<b><a href="https://daibase.org" target="_blank">daibase.org</a></b><br>
-<b><a href="https://daibase.github.io" target="_blank">daibase.github.io</a></b><br>
-<b><a href="https://daibase.github.io" target="_blank">[].onion.to</a></b><br>
-<b><a href="https://daibase.github.io" target="_blank">[].ipfs.to</a></b><br>
-</div>
-<br>
+<div style="font-size:1.5em" align="center"><b>© DAIBASE<span style="font-size:0.5em">v0.1.61(m)<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></b></div>
 
-<div style="font-size:1.5em" align="center">© DAIBASE<span style="font-size:0.5em">v0.1.61(m)<span onclick="this.textContent=this.textContent=='🟢'?this.textContent='⭕':this.textContent='🟢'">🟢</span></span></div>
+
 <div align="center">
-<pre>DAIX Smart Contract
-0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987
-
-xDAI (Chain ID:100)</pre>
-</div>
-<div align="center">
+<b>Daibase Protocol in Media</b><br>
 <a href="https://twitter.com/daibased" target="_blank">Twitter</a>
 <a href="https://discord.gg/VU8NHdmYu6" target="_blank">Discord</a>
 <a href="https://t.me/daibase" target="_blank">Telegram</a>
-</div>
-<div align="center">
 <a href="https://forum.1hive.org/u/daibase" target="_blank">1Hive</a>
 <a href="https://github.com/daibase" target="_blank">Github</a>
 <a href="https://daibase.medium.com" target="_blank">Medium</a>
 </div>
 
+<br>
+<div align="center">
+<b>DAIX Smart Contract</b>
+<pre style="margin:0">0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987</pre>
+Available on <a href="" target="_blank">xDAI (Blockscout.com)</a> and <a href="" target="_blank">Ropsten (Etherscan.io).</a>
+</div>
+<br>
+<div align="center">
+<b>Decentralized Daibase Markets</b><br>
+<a href="" target="_blank"><img src="img/uniswap.svg"style="padding:0; height:14px">Uniswap (Ropsten)</a>
+<a href="" target="_blank"><img src="img/sushiswap.svg"style="padding:0; height:14px">Sushi.com (Ropsten)</a>
+<a href="" target="_blank"><img src="img/swapr.svg"style="padding:0; height:14px">Swapr (xDAI)</a>
+<a href="" target="_blank"><img src="img/bao.svg"style="padding:0; height:14px">BaoSwap (xDAI)</a>
+<a href="" target="_blank"><img src="img/levin.svg"style="padding:0; height:14px">Levinswap (xDAI)</a>
+<a href="" target="_blank"><img src="img/sushiswap.svg"style="padding:0; height:14px">Sushi.com (xDAI)</a>
+<a href="" target="_blank"><img src="img/honeyswap.svg"style="padding:0; height:14px">HoneySwap (xDAI)</a>
+</div>
 
 
+<div align="center">
+<b>External Data & Analytics</b><br>
+<a href="https://www.tradingview.com/symbols/DAIXWXDAI/" target="_blank">TradingView</a>
+<a href="https://coinranking.com/coin/daibasexdai-daix" target="_blank">CoinRanking</a>
+<a href="https://dxstats.eth.link/#/token/0x4ef1d9a329a0cb0658156aff55c406cc4393a987?chainId=100" target="_blank">dxStats</a>
+<a href="https://analytics-xdai.sushi.com/tokens/0x4ef1d9a329a0cb0658156aff55c406cc4393a987" target="_blank">Analytics-xDAI</a>
+<a href="https://app.moontools.io/pairs/honeyswap/0x634a571b537a466f15a8c8f660d685340543878f" target="_blank">Moontools</a>
+</div>
+<br>
+
+
+<hr style="padding:0;width:50%">
+<div id="disclaimer" style="text-align:center;"><b>[DISCLAIMER]</b>
+<br>There was never and will never be a "pre-sale".<br>
+There are NO Team tokens, Dev tokens, Promotion Tokens, Pre-allocation of tokens, Pledged funds, etc. or any such reserved tokens. Using smart contracts and cryptocurrencies entail significant risks. The users and only the users themselves are responsible for each of their actions. DAIX Protocol is a highly experimental project and guarantees no profits. Please treat it as an experiment in Decentralized Finance instead of an investment opportunity. All information given here or from any other "official" sources are only for educational purposes and<b>does not constitute of financial advice</b>of any order.<br><br>
+<b>[MIRRORS]</b><br>
+In event this webpage is unavailable, please visit us via the below links. Our contracts are available via the various blockchain explorers and can be found documented in the addressbook.<br>
+<b><a href="https://daibase.org" target="_blank">daibase.org</a></b><br>
+<b><a href="https://daibase.github.io" target="_blank">daibase.github.io</a></b><br>
+<!--<b><a href="https://daibase.github.io" target="_blank">[].onion.to</a></b><br>
+<b><a href="https://daibase.github.io" target="_blank">[].ipfs.to</a></b><br>-->
+<br>
+<b>[PRIVACY POLICY]</b>
+<br>We dont log anything. We run serverless. Your blockchain interactions stay in your own browser. There are no trackers, no data analytics or any other profilers on this website. We don't use, create or read your cookies. We have NO access to your IP, location or user-agent data. We do not serve ads or extensions.<br>
+</div>
 <script src="web3.min.js"></script>
 <script>
 function $(_) {return document.getElementById(_);}
@@ -1452,7 +1471,6 @@ function theme()
 	$("theswi").innerHTML=$("theswi").innerHTML=="☀"?"🌙":"☀";
 	$("ss").getAttribute("href")=="a.css"?$("ss").setAttribute("href","b.css"):$("ss").setAttribute("href","a.css");
 }
-if(Math.trunc(Math.random()*1000)%2){theme()}
 window.addEventListener('load',
 	function()
 	{
@@ -2479,7 +2497,7 @@ async function cmd(i)
 		if(x.indexOf(i)==-1){a=Number(r[0]);b=Number(r[1]);}
 		else{a=Number(r[1]);b=Number(r[0]);}
 		p=b/a;l=2*b/1e18;
-		$("t_swap_1_p_"+(i+1)).innerHTML="$"+p.toLocaleString();
+		$("t_swap_1_p_"+(i+1)).innerHTML=+p.toLocaleString();
 		$("t_swap_1_l_"+(i+1)).innerHTML="$"+l.toLocaleString();
 		//console.log(r,i,p,l);
 	})

@@ -107,6 +107,14 @@ button:hover{  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,
 
 #disclaimer{color:#ededed}
 
+#shoppingcenter{
+  border: ridge 0 transparent;
+  border-radius: 40px;
+  background-image: linear-gradient(rgba(0,0,255,.1),rgba(0,255,0,.4)), radial-gradient(circle at top, rgba(1,255,111,1), rgba(111,1,111,1));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+button#shop_trade{border-radius: 20px}
 
 @media(min-width:641px){
 	.stats{
