@@ -21,7 +21,7 @@ background:
 linear-gradient(-153deg, rgba(211,111,211,.5) 30%,rgba(111,211,221,.5)) 100%;
 background-attachment: fixed;
 height:100%}
-*{color: #brown;
+*{color: #321;
 //  text-shadow: rgba(0,0,0,0.1) 2px 2px 20px;
 text-decoration: none;padding: 5px}
 .stats{display:grid;grid-template-columns: 50% 50%;text-align: center}

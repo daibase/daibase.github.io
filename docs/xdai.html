@@ -293,7 +293,7 @@ $COIL:
 					<td>
 						<a target="_blank" href="https://app.honeyswap.org/#/add/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987/ETH">Pool</a><br>
 						<a target="_blank" href="https://app.honeyswap.org/#/swap?outputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Trade</a><br>
-						<a target="_blank" href="https://info.honeyswap.org/pair/0x634a571b537a466f15a8c8f660d685340543878f">Chart</a>
+						<a target="_blank" href="https://info.honeyswap.org/#/pair/0x634a571b537a466f15a8c8f660d685340543878f">Chart</a>
 					</td>
 				</tr>
 				<tr>
@@ -318,7 +318,7 @@ $COIL:
 					<td>
 						<a target="_blank" href="https://app.levinswap.org/#/add/0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987/ETH">Pool</a><br>
 						<a target="_blank" href="https://app.levinswap.org/#/swap?outputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987">Trade</a><br>
-						<a target="_blank" href="https://info.levinswap.org/pair/0xe9cd05e4db6fa0f0c594a1a6cd7ed85e35522508">Chart</a>
+						<a target="_blank" href="https://info.levinswap.org/#/pair/0xe9cd05e4db6fa0f0c594a1a6cd7ed85e35522508">Chart</a>
 					</td>
 				</tr>
 				<tr>
@@ -418,7 +418,7 @@ $COIL:
 					<td>
 						<a target="_blank" href="https://app.honeyswap.org/#/add/0x4ef1d9a329a0cb0658156aff55c406cc4393a987/0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Pool</a><br>
 						<a target="_blank" href="https://app.honeyswap.org/#/swap?inputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987&outputCurrency=0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Trade</a><br>
-						<a target="_blank" href="https://info.honeyswap.org/pair/0xf7f65a2fa87630e6df0c9b2707cf188ee7b2fac0">Chart</a>
+						<a target="_blank" href="https://info.honeyswap.org/#/pair/0xf7f65a2fa87630e6df0c9b2707cf188ee7b2fac0">Chart</a>
 					</td>
 				</tr>
 			</table>
@@ -585,7 +585,7 @@ $COIL:
 	<div style="border:2px solid orange; border-radius:5px" align="center">
 		<div class="statbox">
 			<div class="stat statnumb" id="rev_d">$ ‽.‽</div>
-			<div class="stat statname">Total Revenue</div>
+			<div class="stat statname">Total Gov. Reserve</div>
 		</div>
 		Revenue is generated from:
 		<ol><li>All DAIX transactions</li>
@@ -594,6 +594,7 @@ $COIL:
 		All revenues from the trades on the Main-Pair are used to increase the Total Value Locked in Daibase Protocol.
 		<li>From issuing Sovereign Debt</li>
 		Sovereign Debt gets created when expansion of Supply takes place without adding to Total Value Locked (T.V.L.) or Protocol Controlled Value (P.C.V.). This primarily consists of Cardinal Price (Price at the Cardinal Pair) goes above 1 DAI and the Daibase Protocol enters anew Epoch.<br><i>(There is no debt creation within the same epoch and this incentivizes participants to rebalance the Cardinal Price back to 1 DAIX = 1 DAI This can also be viewed as a penalty to P&D traders ensuring stability.)</i>
+		<li>On xDAI, it includes 2021 DAIX for DAOX liquidity seed.</li>
 		</ol><br><br>
 		<h3 align="center"><b onclick="c('d_dashboard')"><a href="#d_dashboard">For more detailed metrics, open the Dashboard.</a></b></h3>
 	</div>
@@ -684,7 +685,7 @@ $COIL:
 	<b>Event Reference</b>
 	<ol>
 	<li>E</li><pre>
-	Epoch</pre></pre>
+	Epoch</pre>
 	<li>G</li><pre>
 	Internal</pre>
 	<li>L</li><pre>
@@ -706,7 +707,7 @@ $COIL:
 </div>
 <div class="cu" id="d_guides"  align="center">
 	<h3>Frequently Asked Questions</h3>
-	<h4>ALWAYS "MINT" DAIX. NEVER "BUY" DAIX.</h4>
+	<h4>ALWAYS "MINT" DAIX INSTEAD OF "BUYING" DAIX.</h4>
 	If you "buy", you are certain to lose DAIX. Always use the "mint" function to acquire DAIX or get some from our shopping section.<hr style="padding:0;width:50%"><br><br>
 	<div align="left">
 		<details><summary><b>What is DAIX?</b></summary>
@@ -719,13 +720,13 @@ $COIL:
 		There are 2 ways to mint DAIX tokens:<ol>
 		<li>Visit the shopping section and enter the amounts you wish to buy.</li>
 		<li>Send some XDAI directly to the Daibase Contract address.</li></ol>
-		Please note that:<ul></li>
+		Please note that:<ul>
 		<li>Use "Gas Limit" of 500000 (500k) when minting DAIX.</li>
 		<li>"Minting" doesn't have any fees.</li>
 		<li>"Minting" helps us increase the Protocol Controlled Value (PCV, a.k.a. "TVL").</li>
 		<li>The XDAI sent for minting gets locked forever into liquidity.</li>
 		<li>DON"T TRY TO "BUY DAIX" ― if you "buy" it, you will lose DAIX.</li></ul>
-		<b>ALWAYS "MINT" DAIX. NEVER BUY DAIX.</b>
+		<b>ALWAYS "MINT" DAIX. DON'T BUY DAIX.</b>
 		</details>
 		<details><summary><b>How to buy DAOX?</b></summary>
 		DAOX is available at the leading DEXes of the blockchains. On xDAI Chain, DAOX can be swapped for DAIX at BaoSwap, HoneySwap, LevinSwap and Swapr.<br>
@@ -820,8 +821,17 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 		</div>
 	</div>
 	<br>
+	<br>
+	<h3 align="center">Global Statistics</h3>
+	<b><div align="center">***Global Stats are not synced. Please view your specific Blockchain's stats here.<br><a href="index.html">Click here to choose a different chain.</a></div></b>
+	<br>
+	<br>
 	<h3 align="center"><img width="128px" src="img/xdaichain.svg"><br>xDAI Chain</h3>
 	<div class="stats">
+		<div class="statbox">
+			<div class="stat statnumb" id="db_ee">Dashboard</div>
+			<div class="stat statname">Daibase xDAI</div>
+		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_ap">$‽.‽</div>
 			<div class="stat statname">Average Price</div>
@@ -851,16 +861,27 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">Total Supply</div>
 		</div>
 		<div class="statbox">
+			<div class="stat statnumb" id="db_tri">$ ‽.‽</div>
+			<div class="stat statname">DAIX Reserve</div>
+		</div><!--
+		<div class="statbox">
+			<div class="stat statnumb" id="db_tro">$ ‽.‽</div>
+			<div class="stat statname">Revenues from DAOX</div>
+		</div>-->
+	</div>
+	<b>DAIX reserve</b> consists of Transaction taxes & DAOX funds. These DAIX are excluded from the circulating supply. More information can be learnt from the<a href="#d_revenues" onclick="c(d_revenues)">Revenues section.</a><br>
+	<div class="stats">
+		<div class="statbox">
+			<div class="stat statnumb" id="db_tvl">$ ‽.‽</div>
+			<div class="stat statname">Total Value Locked</div>
+		</div>
+		<div class="statbox">
 			<div class="stat statnumb" id="db_vlf">$ ‽.‽</div>
 			<div class="stat statname">Value Locked Forever</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_pcv">$ ‽.‽</div>
 			<div class="stat statname">Protocol Controlled Value</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_tvl">$ ‽.‽</div>
-			<div class="stat statname">Total Value Locked</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_mc">$ ‽.‽</div>
@@ -871,31 +892,36 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statname">F.D. Market Cap.</div>
 		</div>
 		<div class="statbox">
-			<div class="stat statnumb" id="db_tri">$ ‽.‽</div>
-			<div class="stat statname">Revenues from DAIX</div>
+			<div class="stat statnumb" id="db_tmr">‽.‽ %</div>
+			<div class="stat statname">TVL/MC Ratio</div>
 		</div>
+	</div>
+	<b>PCV (Protocol Controlled Value)</b> consists of the Liquidity additions due to mints and it is governed by the PCV-Controller Smart Contract. It functions to rebalance the pools across various DAI-DAIX pairs.<b>VLF (Value Locked Forever)</b> is part of PCV but it was been burned, essentially locking up liquidity irrevocably.<br>
+	<div class="stats">
 		<div class="statbox">
-			<div class="stat statnumb" id="db_tro">$ ‽.‽</div>
-			<div class="stat statname">Revenues from DAOX</div>
-		</div>
-		<div class="statbox">
-			<div class="stat statnumb" id="db_cr">100%</div>
+			<div class="stat statnumb" id="db_cr">‽.‽ %</div>
 			<div class="stat statname">Cash Reserve Ratio</div>
 		</div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_sd">$ ‽.‽</div>
 			<div class="stat statname">Sovereign Debt</div>
 		</div>
+	</div>
+	<div class="stats">
+		<div class="statbox">
+			<div class="stat statnumb" id="db_b_e">$ ‽.‽</div>
+			<div class="stat statname">Explicit Backing</div>
+		</div>
+		<div class="statbox">
+			<div class="stat statnumb" id="db_b_i">$ ‽.‽</div>
+			<div class="stat statname">Implicit Backing</div>
+		</div><!--
 		<div class="statbox">
 			<div class="stat statnumb">more info…?</div>
 			<div class="stat statname">Open Dashboard</div>
-		</div>
+		</div>-->
 	</div>
-	<br>
-	<br>
-	<h3 align="center">Global Statistics</h3>
-	<b><div align="center">***Global Stats are not synced. Please view your specific Blockchain's stats here.<br><a href="index.html">Click here to choose a different chain.</div></b>
-	<br>
+	DAIX can be ascribed an<i>implicit collateralization</i> backing it's issuance by virtue of the PCV. In event of a Dissolution, PCV can be distributed pro-rata to DAIX holders.<b>Sovereign Debt</b>is created when entities start buying DAIX outright without minting. Such a process increases price per DAIX above 1 DAI ($1), making a Positive Rebase possible, which in turn airdrops more DAIX to each holder. These newly issued DAIX aren't backed by DAI lockups into PCV but they play a pivot role in bringing price back to the equilibrium. A negative Debt can be thought of as Credit Interest earned by all DAIX holders, proportional to their holdings, denoted by the<b>CRR (Credit/Cash Reserve Ratio)</b>above unity (1).
 </div>
 
 <div class="cu" id="d_learn">
@@ -1389,12 +1415,6 @@ u/WETH 0x86E34e85519088eF75D6AF9ef39050bfa753216e
 
 
 <br><br>
-<div class="statbox" align="center">
-	<div class="stat statnumb">⚠ Caution! ⚠</div>
-	<div class="stat statname" style="font-size:1em"><b><a href="#d_shopping" onclick="c('d_shopping')">NEVER BUY DAIX FROM THE DEX!
-		<br><div align="center">Always "mint" DAIX <i>directly from the daibase smart contract</i>to get discounts.</a></b><br>Use Gas Limit of 500000 (500k) while minting.</div>
-	</div>
-</div>
 
 <br><br>
 
@@ -1471,6 +1491,7 @@ function theme()
 	$("theswi").innerHTML=$("theswi").innerHTML=="☀"?"🌙":"☀";
 	$("ss").getAttribute("href")=="a.css"?$("ss").setAttribute("href","b.css"):$("ss").setAttribute("href","a.css");
 }
+if((new Date).getHours()>6||(new Date).getHours()< 18){theme()}
 window.addEventListener('load',
 	function()
 	{
@@ -1667,7 +1688,7 @@ function gs()
 		{
 			$("heir_kima").innerHTML = r;
 			KMA=r;
-			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});theme()
+			theCon.methods.balanceOf(r).call((e, r) => {$("heir_purse").innerHTML = r/1e18 +"DAIX"});
 
 			km_d();
 		});
@@ -1997,7 +2018,7 @@ async function refreshDash()
 	//pcv is the liq. owned at PCVC contract [[[PCV !=== TVL]]]
 	PCVC = await tc.methods.PCVC().call((e,r)=>{return(r)})
 	$("db_ap").innerHTML = "$ "+CP.toFixed(6);
-	cs=ts-2021e18//but grav
+	cs=ts-bdep;
 	$("db_cs").innerHTML = (cs/1e18).toLocaleString();
 	mc=cs*CP;
 	fd=CP*ts;
@@ -2025,15 +2046,50 @@ async function refreshDash()
 	//(DAIX+DAI)
 	tvl=0;
 	for(i=0;i< al;i++){tvl+=Number(bpa[i])}
-	$("db_tvl").innerHTML="$ "+(2*tvl*CP/1e18).toLocaleString();
-	cr=(2*tvl/cs);
+	TVL=2*tvl*CP;
+	$("db_tvl").innerHTML="$ "+(TVL/1e18).toLocaleString();
+	tmr=(TVL/mc)*100;
+	PCV=pcvca*CP;
+	tpcv=(PCV+vlf);
+	os=cs-tpcv/2;
+	$("db_tmr").innerHTML = tmr.toLocaleString() + " %";
+	cr=(tpcv/2)/os;
 	$("db_cr").innerHTML=cr.toLocaleString();
-	sd="$ "+((cs-2*tvl)/1e18).toLocaleString();
-	$("db_sd").innerHTML = sd;
-	tr=(bdep-2021e18)*CP/1e18;
+	sd=(os-tpcv/2)/1e18
+	$("db_sd").innerHTML = "$ "+sd.toLocaleString();
+	b_e=(PCV/2)/os;
+	$("db_b_e").innerHTML=b_e.toLocaleString()
+	b_i=(vlf/2)/os;
+	$("db_b_i").innerHTML=b_i.toLocaleString()
+	//b_t=cr+CP-1;
+	//$("db_b_t").innerHTML=b_t.toLocaleString()
+	tr=(bdep)*CP/1e18;
 	$("db_tri").innerHTML = "$ "+tr.toLocaleString();
-	$("db_tro").innerHTML = "$ "+0;
+	//$("db_tro").innerHTML = "$ "+0;
 	$("rev_d").innerHTML = "$ "+tr.toLocaleString();
+	/*
+	console.log(
+		"rev_d = tr :",tr,
+		"\ndb_tri = tr :",tr,
+		"\ndb_b_t :",b_t,
+		"\ndb_b_e :",b_e,
+		"\ndb_b_i :",b_i,
+		"\ndb_cs :",cs,
+		"\ndb_CP :",CP,
+		"\ndb_pcv :",pcvca*CP,"pcvca*CP",
+		"\ndb_sd :",sd,
+		"\ndb_cr :",cr,
+		"\ndb_tmr :",tmr,
+		"\ndb_tvl :",tvl,
+		"\nTVL :",TVL,
+		"\ndb_mc :",mc,
+		"\ndb_fd :",fd,
+		"\ndb_ts :",ts,
+		"\ndb_cpr :",cpr,
+		"\ndb_vlf :",vlf,
+		"\ndb_PCV :",PCV,
+	)
+	*/
 }
 farabi=[
 	{

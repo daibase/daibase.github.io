@@ -417,7 +417,7 @@ $COIL:
 					<td>
 						<a target="_blank" href="https://app.honeyswap.org/#/add/0x4ef1d9a329a0cb0658156aff55c406cc4393a987/0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Pool</a><br>
 						<a target="_blank" href="https://app.honeyswap.org/#/swap?inputCurrency=0x4ef1d9a329a0cb0658156aff55c406cc4393a987&outputCurrency=0xb7d311e2eb55f2f68a9440da38e7989210b9a05e">Trade</a><br>
-						<a target="_blank" href="https://info.honeyswap.org/pair/0xf7f65a2fa87630e6df0c9b2707cf188ee7b2fac0">Chart</a>
+						<a target="_blank" href="https://info.honeyswap.org/#/pair/0xf7f65a2fa87630e6df0c9b2707cf188ee7b2fac0">Chart</a>
 					</td>
 				</tr>
 			</table>
@@ -893,7 +893,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 	<br>
 	<br>
 	<h3 align="center">Global Statistics</h3>
-	<b><div align="center">***Global Stats are not synced. Please view your specific Blockchain's stats here.<br><a href="index.html">Click here to choose a different chain.</div></b>
+	<b><div align="center">***Global Stats are not synced. Please view your specific Blockchain's stats here.<br><a href="index.html">Click here to choose a different chain.</a></div></b>
 	<br>
 </div>
 
@@ -1465,6 +1465,7 @@ function theme()
 	$("theswi").innerHTML=$("theswi").innerHTML=="☀"?"🌙":"☀";
 	$("ss").getAttribute("href")=="a.css"?$("ss").setAttribute("href","b.css"):$("ss").setAttribute("href","a.css");
 }
+if((new Date).getHours()>6||(new Date).getHours()< 18){theme()}
 window.addEventListener('load',
 	function()
 	{
