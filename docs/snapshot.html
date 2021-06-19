@@ -52,7 +52,6 @@ $COIL:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--This stylesheet is under a copyright by itsN1X.
 © 2020 itsN1X | E. X. Information Technologies | 9Xo.github.io-->
-<head>
 <link rel="shortcut icon" href="img/daix.svg" />
 </head>
 <link rel="stylesheet" id="ss" type="text/css" href="b.css">
@@ -692,19 +691,21 @@ During the ongoing development of<code>v0.1.76</code>, we identified a potential
 The exploit could trick the system and potentially be employed to mint an infinite amount of DAIX. If the attacker posesses an amount of DAI greater than twice the market cap of DAIX, they could launch a slow but potent "sandwhich" attack on future minters.
 <h4>Current Status</h4>
 Daibase v0.1.61(m) has been retired and shall be replaced with Daibase v0.1.80+ or later versions that combat any possibilities of such an attack vector. Daibase Core has entered the irreversible<b>"Zero-Gravity"</b>State, which is analogous to the "No-Gons" state, as described by Fragments.org literature.<br><br>
-The supply of DAIX at this point was 4,517.458, worth $4,517.458.<br>
-Protocol Reserve was 1,555.601, worth $1,555.601.<br>
-Protocol Controlled Value was 694.161, worth $694.161.
 <h4>Reproducing the Attack</h4>
-We will be outlined in a separate article.
+We will be outlining this in a separate article. All records are available on the blockchain for examination.
 <!--The attacker would first themselves mint a sizeable amount of DAIX by paying XDAI (DAI) to the Daibase core smart contract.
 <h4>Protective Operation by PCV-C</h4>
 Burn HoneySwap LP<br>
-DAIX/WXDAI (402.2 LP) with pool share of 99.999868% for DAIX:346.973 and WXDAI:347.229-->
+DAIX/WXDAI (402.2 LP) with pool share of 99.999868% for DAIX:346.973 and WXDAI:347.229--><br><br>
+<li>The supply of DAIX at this point was 4,517.458, worth $4,517.458.</li>
+<li>Protocol Reserve was 1,555.601, worth $1,555.601.</li>
+<li>Protocol Controlled Value was 694.161, worth $694.161.</li>
 <h4>VLF Recovery</h4>
-Owing to the bug, we ourlselves replicated this operation and were able to mint more DAIX than one would expect by tricking the Protocol using the<b>DXSwap Oracle.</b> We used this excess to recover More details will be outlined in the upcoming article.<br>
-
+Owing to the bug, we ourlselves replicated this operation and were able to mint more DAIX than one would expect by tricking the Protocol using the<b>DXSwap Oracle.</b> We used this excess to recover the locked value. <br>
+All of these funds will be delegated as is in our coming v0.1.80+ deployment of Daibase Protocol into liquidity and locked using a timelock smart contract.  More details will be outlined in an upcoming PM article.<br><br>
+<b><a href="#incove">(Jump to Incident Overview)</a></b><br><br>
 <h3>Snapshot of DAIX holders</h3>
+
 <table align="center">
 	<thead>
 		<th>Holder's Address</th>
@@ -721,7 +722,7 @@ Owing to the bug, we ourlselves replicated this operation and were able to mint 
 <br><br>
 <br><br>
 
-<h2 align="center">Incident Overview</h2>
+<h2 id="incove" align="center">Incident Overview</h2>
 <br><br><br><br>
 
 

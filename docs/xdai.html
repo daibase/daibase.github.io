@@ -52,8 +52,7 @@ $COIL:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--This stylesheet is under a copyright by itsN1X.
 © 2020 itsN1X | E. X. Information Technologies | 9Xo.github.io-->
-<head>
-<link rel="shortcut icon" href="img/daix.svg" />
+<link rel="shortcut icon" href="img/daix.svg" /><a href="snapshot.html"><div alig="center" id="retire" style="text-align: center;font-weight: bolder;font-size: 1.25em;background:#f5ac37;text-shadow: 2px 2px 2px black ;position: sticky;top:0;position: -webkit-sticky;border: 5px solid wheat;border-radius: 20px">Daibase xDAI v0.1.61 has been retired. DO NOT MINT DAIX. Learn more at Daibase.org/snapshot.</div></a>
 </head>
 <link rel="stylesheet" id="ss" type="text/css" href="b.css">
 <div id="topper">
@@ -192,7 +191,7 @@ $COIL:
 	<br>Networks</a>
 	</div>
 </div>
-
+<br><br><br><br>
 
 
 
@@ -829,7 +828,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 	<h3 align="center"><img width="128px" src="img/xdaichain.svg"><br>xDAI Chain</h3>
 	<div class="stats">
 		<div class="statbox">
-			<div class="stat statnumb" id="db_ee">Dashboard</div>
+			<div class="stat statnumb" id="">Dashboard</div>
 			<div class="stat statname">Daibase xDAI</div>
 		</div>
 		<div class="statbox">
@@ -906,12 +905,14 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statnumb" id="db_sd">$ ‽.‽</div>
 			<div class="stat statname">Sovereign Debt</div>
 		</div>
-	</div>
-	<div class="stats">
 		<div class="statbox">
 			<div class="stat statnumb" id="db_b_e">$ ‽.‽</div>
 			<div class="stat statname">Explicit Backing</div>
 		</div>
+	</div>
+	DAIX can be ascribed an<i>implicit collateralization</i> backing it's issuance by virtue of the PCV. In event of a Dissolution, PCV can be distributed pro-rata to DAIX holders. A negative Debt can be thought of as Credit Interest earned by all DAIX holders, proportional to their holdings, denoted by the<b>CRR (Credit/Cash Reserve Ratio)</b>above unity (1).
+	<div class="stats">
+		<div></div>
 		<div class="statbox">
 			<div class="stat statnumb" id="db_b_i">$ ‽.‽</div>
 			<div class="stat statname">Implicit Backing</div>
@@ -920,8 +921,7 @@ You might ask, "Why someone should buy ('mint') DAIX from the contract instead o
 			<div class="stat statnumb">more info…?</div>
 			<div class="stat statname">Open Dashboard</div>
 		</div>-->
-	</div>
-	DAIX can be ascribed an<i>implicit collateralization</i> backing it's issuance by virtue of the PCV. In event of a Dissolution, PCV can be distributed pro-rata to DAIX holders.<b>Sovereign Debt</b>is created when entities start buying DAIX outright without minting. Such a process increases price per DAIX above 1 DAI ($1), making a Positive Rebase possible, which in turn airdrops more DAIX to each holder. These newly issued DAIX aren't backed by DAI lockups into PCV but they play a pivot role in bringing price back to the equilibrium. A negative Debt can be thought of as Credit Interest earned by all DAIX holders, proportional to their holdings, denoted by the<b>CRR (Credit/Cash Reserve Ratio)</b>above unity (1).
+	</div><b>Sovereign Debt</b>is created when entities start buying DAIX outright without minting. Such a process increases price per DAIX above 1 DAI ($1), making a Positive Rebase possible, which in turn airdrops more DAIX to each holder. These newly issued DAIX aren't backed by DAI lockups into PCV but they play a pivot role in bringing price back to the equilibrium.
 </div>
 
 <div class="cu" id="d_learn">
@@ -1798,6 +1798,7 @@ function _n()
 		case "4#0x4": return "Ethereum Testnet Rinkeby";
 		case "5#0x5": return "Ethereum Testnet Görli";
 		case "56#0x38": return "Binance Smart Chain";
+		case "97#0x61": return "Binance Smart Chain TESTNET";
 		case "42#0x2a": return "Ethereum Testnet Kovan";
 		case "99#0x63": return "POA Network Core";
 		case "100#0x64": return "xDAI Blockchain";
@@ -2553,7 +2554,7 @@ async function cmd(i)
 		if(x.indexOf(i)==-1){a=Number(r[0]);b=Number(r[1]);}
 		else{a=Number(r[1]);b=Number(r[0]);}
 		p=b/a;l=2*b/1e18;
-		$("t_swap_1_p_"+(i+1)).innerHTML=+p.toLocaleString();
+		$("t_swap_1_p_"+(i+1)).innerHTML=p.toLocaleString();
 		$("t_swap_1_l_"+(i+1)).innerHTML="$"+l.toLocaleString();
 		//console.log(r,i,p,l);
 	})
@@ -2624,7 +2625,6 @@ f_1_add = "0x6dB739FF338F88D5db8788d0a6b64b6217fB9947";
 pairadd = "0x9ACBbFb21d854092B0325e7F27F2ad536f64C219";
 db1DAIX = "0x4Ef1d9A329a0CB0658156aFF55c406cC4393A987";
 depDAIX = "0xE0C50aC605b255EC2b02963f8DB2B9fbC3274402";
-pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","0x634a571b537a466f15a8c8f660d685340543878f","0xe9cd05E4DB6fa0F0C594A1a6CD7ed85e35522508","0xc1cfd03efc95e7d922ecfe60820c506408bd998e","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219","0xbba341efc430c641c16de4940b8eab1cfdc4abfe","0xf7f65a2fa87630e6df0c9b2707cf188ee7b2fac0"];
-
+pi = ["0xa3dF3D794F1955Fc98d001aC66E7570Dd6bB7499","0x634a571b537a466f15A8c8F660d685340543878f","0xe9cd05E4DB6fa0F0C594A1a6CD7ed85e35522508","0xC1CfD03efc95E7d922eCfe60820c506408Bd998e","0x9ACBbFb21d854092B0325e7F27F2ad536f64C219","0xbBA341EfC430C641C16DE4940B8eAb1cFDc4aBfe","0xf7F65A2fA87630e6DF0C9b2707cF188ee7b2fAc0"]
 </script>
 </html>
